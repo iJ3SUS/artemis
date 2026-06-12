@@ -1,6 +1,6 @@
 export const url = '/dashboard/permissions'
 
-import Model from "../models/permission.js"
+import Permission from "../models/permission.js"
 
 export const controller = async (req, rep) => {
 
@@ -8,7 +8,7 @@ export const controller = async (req, rep) => {
 
     const pipelines = req.pipelines ?? []
 
-    const docs = await Model.query(pipelines)
+    const docs = await Permission.query(pipelines)
         .get()
 
     return rep.send(docs)
@@ -21,6 +21,6 @@ export const middlewares = [
     new AuthMiddleware()
         .message("Debes estar autenticado para acceder a este recurso"),
     
-    new CanMiddleware('permissions.browse')
-        .on('pre-handler')
+    // new CanMiddleware('permissions.browse')
+    //     .on('pre-handler')
 ]
