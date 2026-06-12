@@ -1,4 +1,4 @@
-import Joi from '#plugins/joi'
+import Joi from '#plugins/joi.js'
 
 export default Joi.object({
     password: Joi.string()

@@ -1,6 +1,6 @@
 import { ObjectId } from 'lemon-api/plugins/mongodb'
 
-import Joi from '#plugins/joi'
+import Joi from '#plugins/joi.js'
 
 export default Joi.object({
 
@@ -41,5 +41,9 @@ export default Joi.object({
                 return helpers.error('any.invalid')
             }
         }))
+        .required(),
+
+    password: Joi.string()
+        .min(6)
         .required()
 }).options({ stripUnknown: true })
