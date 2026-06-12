@@ -1,9 +1,13 @@
 import Login from '@/pages/Login.vue'
 import Home from '@/pages/Home.vue'
+import Settings from '@/pages/Settings.vue'
+import Users from '@/pages/Users.vue'
 
 export const routes = [
     { path: '/login', label: 'Login', component: Login },
-    { path: '/', label: 'Home', icon: 'home', component: Home, meta: { protected: true } },
+    { path: '/', label: 'Dashboard', icon: 'Home', component: Home, meta: { protected: true, section: 'main' } },
+    { path: '/settings', label: 'Configuración', icon: 'Cog', component: Settings, meta: { protected: true, section: 'management' } },
+    { path: '/users', label: 'Usuarios', icon: 'Account', component: Users, meta: { protected: true, section: 'management' } },
 ]
 
 export const icons = {
