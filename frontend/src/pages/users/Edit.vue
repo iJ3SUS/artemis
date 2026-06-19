@@ -11,9 +11,7 @@
         </div>
 
         <div v-if="user">
-
             <Form :form></Form>
-
         </div>
     </Page>
 </template>
