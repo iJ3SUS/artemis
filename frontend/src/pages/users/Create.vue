@@ -1,23 +1,28 @@
 <template>
     <Page>
-        <div class="mb-6 flex items-center justify-between">
-            <div class="flex items-center gap-4">
+        <Heading :sticky="true">
+            <template #back>
                 <Button color="gray" @handle="router.push('/users')">
                     <Icon icon="ArrowLeft" width="16" height="16" />
                 </Button>
+            </template>
+            <template #title>
                 <div>
                     <h1 class="text-2xl font-bold text-gray-900">Crear usuario</h1>
                     <p class="text-gray-600 mt-1">Agrega un nuevo usuario al sistema</p>
                 </div>
-            </div>
-            <Button color="primary" @handle="create" :disabled="!http.loading">Guardar</Button>
-        </div>
+            </template>
+            <template #actions>
+                <Button color="primary" @handle="create" :disabled="!http.loading">Guardar</Button>
+            </template>
+        </Heading>
 
         <Form :form :errors></Form>
     </Page>
 </template>
 
 <script setup lang="ts">
+import Heading from '@/components/page/Heading.vue'
 import { UserSchema } from "./schemas.ts"
 
 import Form from './components/Form.vue'

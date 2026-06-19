@@ -1,15 +1,19 @@
 <template>
     <Page>
-        <div class="mb-6 flex items-center justify-between">
-            <div>
-                <h1 class="text-2xl font-bold text-gray-900">Usuarios</h1>
-                <p class="text-gray-600 mt-1">Gestiona los usuarios del sistema</p>
-            </div>
-            <Button color="primary" @handle="router.push('/users/create')">
-                <Icon icon="Plus" width="16" height="16" />
-                Nuevo usuario
-            </Button>
-        </div>
+        <Heading :sticky="true">
+            <template #title>
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-900">Usuarios</h1>
+                    <p class="text-gray-600 mt-1">Gestiona los usuarios del sistema</p>
+                </div>
+            </template>
+            <template #actions>
+                <Button color="primary" @handle="router.push('/users/create')">
+                    <Icon icon="Plus" width="16" height="16" />
+                    Nuevo usuario
+                </Button>
+            </template>
+        </Heading>
 
         <Table v-if="users">
             <template #top>
@@ -80,6 +84,7 @@
 </template>
 
 <script setup lang="ts">
+import Heading from '@/components/page/Heading.vue'
 
 const http = useHttp()
 const route = useRoute()
