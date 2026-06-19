@@ -12,5 +12,5 @@ export default Joi.object({
     active: Joi.boolean().optional(),
     identification: Joi.string().min(5).max(20).required(),
     properties: Joi.object().optional().pattern(Joi.string(), Joi.any()),
-    roles: Joi.array().items(Joi.string()).optional()
+    roles: Joi.array().items(Joi.objectId()).optional()
 }).options({ stripUnknown: true })

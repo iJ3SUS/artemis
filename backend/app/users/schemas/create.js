@@ -1,5 +1,3 @@
-import { ObjectId } from 'lemon-api/plugins/mongodb'
-
 import Joi from '#plugins/joi.js'
 
 export default Joi.object({
@@ -34,12 +32,6 @@ export default Joi.object({
         .pattern(Joi.string(), Joi.any()),
 
     roles: Joi.array()
-        .items(Joi.custom((value, helpers) => {
-            try {
-                return ObjectId.createFromHexString(value)
-            } catch (error) {
-                return helpers.error('any.invalid')
-            }
-        }))
+        .items(Joi.objectId())
         .required(),
 }).options({ stripUnknown: true })

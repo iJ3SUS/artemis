@@ -1,20 +1,17 @@
 import Joi from 'joi'
+import { ObjectId } from 'lemon-api/plugins/mongodb'
 
-// const _joi = Joi.defaults((schema) => schema.messages({
-//     'any.required': 'Campo obligatorio.',
-//     'any.invalid': 'Campo obligatorio.',
-//     'string.empty': 'Campo obligatorio.',
-//     'string.base': 'Debe ser texto.',
-//     'string.email': 'Email inválido.',
-//     'string.min': 'Mínimo {{#limit}} caracteres.',
-//     'string.max': 'Máximo {{#limit}} caracteres.',
-//     'string.pattern.base': 'El formato no es válido.',
-//     'any.only': 'Valores permitidos {{#valids}}',
-//     'number.base': 'Debe ser número.',
-//     'number.min': 'Mínimo {{#limit}}.',
-//     'number.max': 'Máximo {{#limit}}.',
-//     'boolean.base': 'Debe ser verdadero o falso.',
-//     'array.length': 'Debe tener {{#limit}} elementos.',
-// }))
+const objectId = () => Joi.custom((value, helpers) => {
+    if (value instanceof ObjectId) return value
+    if (typeof value === 'string' && ObjectId.isValid(value)) return ObjectId.createFromHexString(value)
+    return helpers.error('any.invalid')
+}).messages({
+    'any.invalid': 'ID inválido.'
+})
 
-export default Joi
+const _joi = Joi.extend({
+    type: 'objectId',
+    base: objectId()
+})
+
+export default _joi
