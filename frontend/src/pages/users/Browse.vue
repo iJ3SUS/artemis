@@ -1,19 +1,21 @@
 <template>
     <Page>
-        <Heading :sticky="true">
-            <template #title>
-                <div>
-                    <h1 class="text-2xl font-semibold text-gray-900">Usuarios</h1>
-                    <p class="text-sm text-gray-500 mt-0.5">Gestiona los usuarios del sistema</p>
-                </div>
-            </template>
-            <template #actions>
-                <Button color="primary" @handle="router.push('/users/create')">
-                    <Icon icon="Plus" width="16" height="16" />
-                    Nuevo usuario
-                </Button>
-            </template>
-        </Heading>
+        <template #heading>
+            <Heading :sticky="true">
+                <template #title>
+                    <div>
+                        <h1 class="text-2xl font-semibold text-gray-900">Usuarios</h1>
+                        <p class="text-sm text-gray-500 mt-0.5">Gestiona los usuarios del sistema</p>
+                    </div>
+                </template>
+                <template #actions>
+                    <Button color="primary" @handle="router.push('/users/create')">
+                        <Icon icon="Plus" width="16" height="16" />
+                        Nuevo usuario
+                    </Button>
+                </template>
+            </Heading>
+        </template>
 
         <Table v-if="users">
             <template #top>

@@ -1,5 +1,6 @@
 <template>
     <div class="px-6 pb-6 pt-0 bg-gray-100 min-h-screen">
+        <slot name="heading"></slot>
         <Transition 
             name="fade-slide"
             appear
