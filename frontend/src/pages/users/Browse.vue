@@ -30,6 +30,8 @@
                     <Column class="text-center">Email</Column>
                     <Column class="text-center">Identificación</Column>
                     <Column class="text-center">Estado</Column>
+                    <Column class="text-center">Creado</Column>
+                    <Column class="text-center">Actualizado</Column>
                     <Column class="text-center">Acciones</Column>
                 </Row>
             </template>
@@ -51,13 +53,29 @@
                         <p class="text-sm text-gray-700">{{ user.email }}</p>
                     </Column>
                     <Column>
-                        <p class="text-sm text-gray-700">{{ user.identification }}</p>
+                        <div class="flex items-center justify-center">
+                            <p class="text-sm text-gray-700">{{ user.identification }}</p>
+                        </div>
                     </Column>
                     <Column>
-                        <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium"
-                            :class="user.active ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'">
-                            {{ user.active ? 'Activo' : 'Inactivo' }}
-                        </span>
+                        <div class="flex items-center justify-center">
+                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium"
+                                :class="user.active ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'">
+                                {{ user.active ? 'Activo' : 'Inactivo' }}
+                            </span>
+                        </div>
+                    </Column>
+                    <Column>
+                        <div class="flex flex-col items-center">
+                            <p class="text-sm text-gray-900">{{ $ParseDate(user.created_at).toFormat('dd/MM/yyyy') }}</p>
+                            <p class="text-xs text-gray-500">{{ $ParseDate(user.created_at).toFormat('hh:mm a') }}</p>
+                        </div>
+                    </Column>
+                    <Column>
+                        <div class="flex flex-col items-center">
+                            <p class="text-sm text-gray-900">{{ $ParseDate(user.updated_at).toFormat('dd/MM/yyyy') }}</p>
+                            <p class="text-xs text-gray-500">{{ $ParseDate(user.updated_at).toFormat('hh:mm a') }}</p>
+                        </div>
                     </Column>
                     <Column>
                         <div class="flex items-center justify-center gap-2">

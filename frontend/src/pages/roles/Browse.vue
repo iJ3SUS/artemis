@@ -28,6 +28,8 @@
                 <Row>
                     <Column class="text-center">Nombre</Column>
                     <Column class="text-center">Descripción</Column>
+                    <Column class="text-center">Creado</Column>
+                    <Column class="text-center">Actualizado</Column>
                     <Column class="text-center">Acciones</Column>
                 </Row>
             </template>
@@ -39,6 +41,18 @@
                     </Column>
                     <Column>
                         <p class="text-sm text-gray-700">{{ role.description || '-' }}</p>
+                    </Column>
+                    <Column>
+                        <div class="flex flex-col items-center">
+                            <p class="text-sm text-gray-900">{{ $ParseDate(role.created_at).toFormat('dd/MM/yyyy') }}</p>
+                            <p class="text-xs text-gray-500">{{ $ParseDate(role.created_at).toFormat('hh:mm a') }}</p>
+                        </div>
+                    </Column>
+                    <Column>
+                        <div class="flex flex-col items-center">
+                            <p class="text-sm text-gray-900">{{ $ParseDate(role.updated_at).toFormat('dd/MM/yyyy') }}</p>
+                            <p class="text-xs text-gray-500">{{ $ParseDate(role.updated_at).toFormat('hh:mm a') }}</p>
+                        </div>
                     </Column>
                     <Column>
                         <div class="flex items-center justify-center gap-2">
