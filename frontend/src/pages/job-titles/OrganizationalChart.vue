@@ -1,5 +1,5 @@
 <template>
-    <Page :padding="false">
+    <Page :padding="false" class="org-chart-page">
         <template #heading>
             <Heading :sticky="false">
                 <template #back>
@@ -16,7 +16,7 @@
             </Heading>
         </template>
 
-        <div v-if="tree" ref="chartContainer" class="org-chart-container" @mousedown="startDrag" @mousemove="onDrag" @mouseup="stopDrag" @mouseleave="stopDrag">
+        <div v-if="tree" ref="chartContainer" class="org-chart-container" @mousedown="startDrag" @mousemove="onDrag" @mouseup="stopDrag" @mouseleave="stopDrag" @wheel.prevent="onWheel">
             <div ref="chartContent" class="org-chart-root">
                 <TreeNode v-for="node in tree" :key="node._id" :node="node" :is-root="true" />
             </div>
@@ -42,8 +42,10 @@ const chartContent = ref(null)
 const isDragging = ref(false)
 const startX = ref(0)
 const startY = ref(0)
-const scrollLeft = ref(0)
-const scrollTop = ref(0)
+const translateX = ref(0)
+const translateY = ref(0)
+let currentTranslateX = 0
+let currentTranslateY = 0
 
 const load = async () => {
 
@@ -60,27 +62,40 @@ const load = async () => {
 
 const startDrag = (e: MouseEvent) => {
     isDragging.value = true
-    startX.value = e.pageX - chartContainer.value.offsetLeft
-    startY.value = e.pageY - chartContainer.value.offsetTop
-    scrollLeft.value = chartContainer.value.scrollLeft
-    scrollTop.value = chartContainer.value.scrollTop
+    startX.value = e.clientX
+    startY.value = e.clientY
     chartContainer.value.style.cursor = 'grabbing'
 }
 
 const onDrag = (e: MouseEvent) => {
     if (!isDragging.value) return
     e.preventDefault()
-    const x = e.pageX - chartContainer.value.offsetLeft
-    const y = e.pageY - chartContainer.value.offsetTop
-    const walkX = x - startX.value
-    const walkY = y - startY.value
-    chartContainer.value.scrollLeft = scrollLeft.value - walkX
-    chartContainer.value.scrollTop = scrollTop.value - walkY
+    const dx = e.clientX - startX.value
+    const dy = e.clientY - startY.value
+    translateX.value = currentTranslateX + dx
+    translateY.value = currentTranslateY + dy
+    if (chartContent.value) {
+        chartContent.value.style.transform = `translate(${translateX.value}px, ${translateY.value}px)`
+    }
 }
 
 const stopDrag = () => {
+    if (!isDragging.value) return
     isDragging.value = false
+    currentTranslateX = translateX.value
+    currentTranslateY = translateY.value
     chartContainer.value.style.cursor = 'grab'
+}
+
+const onWheel = (e: WheelEvent) => {
+    e.preventDefault()
+    translateX.value = currentTranslateX - e.deltaX
+    translateY.value = currentTranslateY - e.deltaY
+    currentTranslateX = translateX.value
+    currentTranslateY = translateY.value
+    if (chartContent.value) {
+        chartContent.value.style.transform = `translate(${translateX.value}px, ${translateY.value}px)`
+    }
 }
 
 onMounted(() => {
@@ -93,11 +108,12 @@ onMounted(() => {
 
 <style scoped>
 .org-chart-container {
+    width: 100%;
     height: calc(100vh - 48px);
-    padding: 32px;
-    overflow: auto;
+    overflow: hidden;
     user-select: none;
     position: relative;
+    box-sizing: border-box;
 }
 
 .org-chart-container * {
@@ -108,7 +124,10 @@ onMounted(() => {
     display: inline-flex;
     justify-content: center;
     gap: 48px;
-    padding-bottom: 32px;
-    min-width: 100%;
+    padding: 32px;
+    min-width: max-content;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 </style>
