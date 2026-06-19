@@ -1,20 +1,31 @@
 <template>
-    <div class="px-6 pb-6 pt-0 bg-gray-100 min-h-screen">
+    <div class="bg-gray-100 min-h-screen">
         <slot name="heading"></slot>
         <Transition 
             name="fade-slide"
             appear
             mode="out-in"
         >
-            <div>
+            <div :class="contentClasses">
                 <slot></slot>
             </div>
         </Transition>
     </div>
 </template>
 
+<script setup lang="ts">
+
+const props = defineProps({
+    padding: { type: Boolean, default: true }
+})
+
+const contentClasses = computed(() => {
+    return props.padding ? 'px-6 pb-6 pt-0' : ''
+})
+
+</script>
+
 <style scoped>
-/* Transición fade-slide */
 .fade-slide-enter-active,
 .fade-slide-leave-active {
     transition: all 0.3s ease;

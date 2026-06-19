@@ -1,5 +1,5 @@
 <template>
-    <Page>
+    <Page :padding="false">
         <template #heading>
             <Heading :sticky="false">
                 <template #back>
@@ -93,10 +93,11 @@ onMounted(() => {
 
 <style scoped>
 .org-chart-container {
-    flex: 1;
+    height: calc(100vh - 48px);
     padding: 32px;
     overflow: auto;
     user-select: none;
+    position: relative;
 }
 
 .org-chart-container * {
@@ -104,10 +105,10 @@ onMounted(() => {
 }
 
 .org-chart-root {
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     gap: 48px;
-    min-width: fit-content;
     padding-bottom: 32px;
+    min-width: 100%;
 }
 </style>
