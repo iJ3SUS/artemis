@@ -26,8 +26,8 @@
 
             <template #head>
                 <Row>
-                    <Column class="text-center">Nombre</Column>
                     <Column class="text-center">Identificación</Column>
+                    <Column class="text-center">Nombre</Column>
                     <Column class="text-center">Email</Column>
                     <Column class="text-center">Cargo</Column>
                     <Column class="text-center">Género</Column>
@@ -39,16 +39,20 @@
             <template #body>
                 <Row v-for="emp in employees.items" :key="emp._id">
                     <Column>
-                        <p class="text-sm font-medium text-gray-900">{{ emp.names }} {{ emp.surnames }}</p>
+                        <div class="flex items-center justify-center">
+                            <p class="text-sm text-gray-700">{{ emp.identification }}</p>
+                        </div>
                     </Column>
                     <Column>
-                        <p class="text-sm text-gray-700">{{ emp.identification }}</p>
+                        <p class="text-sm font-medium text-gray-900">{{ emp.names }} {{ emp.surnames }}</p>
                     </Column>
                     <Column>
                         <p class="text-sm text-gray-700">{{ emp.email || '-' }}</p>
                     </Column>
                     <Column>
-                        <p class="text-sm text-gray-700">{{ getJobTitleName(emp.job_title_id) }}</p>
+                        <div class="flex items-center justify-center">
+                            <p class="text-sm text-gray-700">{{ getJobTitleName(emp.job_title_id) }}</p>
+                        </div>
                     </Column>
                     <Column>
                         <div class="flex items-center justify-center">

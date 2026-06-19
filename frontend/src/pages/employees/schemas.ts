@@ -5,7 +5,7 @@ export const EmployeeSchema = {
     "identification": "",
     "email": "",
     "phone": {
-        "indicative": "",
+        "indicative": "57",
         "number": ""
     },
     "gender": "",
