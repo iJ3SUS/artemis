@@ -71,8 +71,8 @@ const router = useRouter()
 const auth = useAuthStore()
 const ui = useUiStore()
 
-const mainItems = computed(() => menuItems.filter(item => item.meta?.protected && item.meta?.section === 'main' && item.meta?.sidebar !== false))
-const managementItems = computed(() => menuItems.filter(item => item.meta?.protected && item.meta?.section === 'management' && item.meta?.sidebar !== false))
+const mainItems = computed(() => menuItems.filter(item => item.meta?.protected && item.meta?.section === 'main' && item.meta?.sidebar !== false).sort((a, b) => (a.meta?.order ?? 99) - (b.meta?.order ?? 99)))
+const managementItems = computed(() => menuItems.filter(item => item.meta?.protected && item.meta?.section === 'management' && item.meta?.sidebar !== false).sort((a, b) => (a.meta?.order ?? 99) - (b.meta?.order ?? 99)))
 
 const isActive = (path: string) => route.path === path
 
