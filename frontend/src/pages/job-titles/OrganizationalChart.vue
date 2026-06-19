@@ -155,7 +155,7 @@ onMounted(() => {
 <style scoped>
 .org-chart-container {
     width: 100%;
-    height: calc(100vh - 48px);
+    height: calc(100vh - 180px);
     overflow: hidden;
     user-select: none;
     position: relative;
