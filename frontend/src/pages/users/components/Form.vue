@@ -166,7 +166,7 @@ const options = computed(() => {
 
 const selected_roles = computed(() => {
     return props.form.roles
-        .map(id => props.roles.find(role => role._id == id))
+        .map(id => options.value.roles.find(role => role._id == id))
         .filter(role => role !== undefined)
 })
 
