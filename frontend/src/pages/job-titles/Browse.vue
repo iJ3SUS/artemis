@@ -13,7 +13,7 @@
                         <Icon icon="Plus" width="16" height="16" />
                         Nuevo cargo
                     </Button>
-                    <Button color="gray" @handle="router.push('/job-titles/organigrama')">
+                    <Button color="gray" @handle="router.push('/job-titles/organizational-chart')">
                         <Icon icon="Sitemap" width="16" height="16" />
                         Organigrama
                     </Button>

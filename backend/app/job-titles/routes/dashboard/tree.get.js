@@ -13,9 +13,12 @@ export const controller = async (req, rep) => {
     const roots = []
 
     jobTitles.forEach(jt => {
-        const node = { ...jt.serialize(), children: [] }
-        map.set(node._id.toString(), node)
+        const node = { ...jt, children: [] }
+        const id = node._id instanceof ObjectId ? node._id.toString() : node._id
+        map.set(id, node)
+    })
 
+    map.forEach(node => {
         if (node.parent_id) {
             const parentId = node.parent_id instanceof ObjectId
                 ? node.parent_id.toString()

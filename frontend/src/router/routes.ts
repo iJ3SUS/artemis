@@ -10,7 +10,7 @@ const RoleCreate = () => import('@/pages/roles/Create.vue')
 const JobTitles = () => import('@/pages/job-titles/Browse.vue')
 const JobTitleEdit = () => import('@/pages/job-titles/Edit.vue')
 const JobTitleCreate = () => import('@/pages/job-titles/Create.vue')
-const JobTitleOrganigrama = () => import('@/pages/job-titles/Organigrama.vue')
+const JobTitleOrganizationalChart = () => import('@/pages/job-titles/OrganizationalChart.vue')
 
 export const routes = [
     { path: '/login', label: 'Login', component: Login },
@@ -25,7 +25,7 @@ export const routes = [
     { path: "/job-titles", label: "Cargos laborales", icon: "Briefcase", component: JobTitles, meta: { protected: true, section: "management" } },
     { path: "/job-titles/create", label: "Crear cargo", component: JobTitleCreate, meta: { protected: true, section: "management", sidebar: false } },
     { path: "/job-titles/:id/edit", label: "Editar cargo", component: JobTitleEdit, meta: { protected: true, section: "management", sidebar: false } },
-    { path: "/job-titles/organigrama", label: "Organigrama", component: JobTitleOrganigrama, meta: { protected: true, section: "management", sidebar: false } },
+    { path: "/job-titles/organizational-chart", label: "Organigrama", component: JobTitleOrganizationalChart, meta: { protected: true, section: "management", sidebar: false } },
 ]
 
 export const icons = {
