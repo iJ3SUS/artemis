@@ -30,6 +30,8 @@ import { RoleSchema } from "./schemas.ts"
 
 import Form from './components/Form.vue'
 
+import Swal from 'sweetalert2'
+
 const http = useHttp()
 
 const router = useRouter()
@@ -62,6 +64,13 @@ const update = async () => {
     })
 
     if(!success) return
+
+    Swal.fire({
+        icon: 'success',
+        title: 'Guardado',
+        text: 'El rol se actualizó correctamente',
+        confirmButtonText: 'Aceptar'
+    })
 
 }
 

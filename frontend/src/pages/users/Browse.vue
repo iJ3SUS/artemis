@@ -85,9 +85,6 @@
                             <Button theme="icon" title="Cambiar contraseña">
                                 <Icon icon="Key" width="16" height="16" />
                             </Button>
-                            <Button theme="icon" color="danger" title="Eliminar">
-                                <Icon icon="Trash" width="16" height="16" />
-                            </Button>
                         </div>
                     </Column>
                 </Row>

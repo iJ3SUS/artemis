@@ -28,6 +28,8 @@ import { UserSchema } from "./schemas.ts"
 
 import Form from './components/Form.vue'
 
+import Swal from 'sweetalert2'
+
 const http = useHttp()
 
 const router = useRouter()
@@ -44,6 +46,13 @@ const create = async () => {
     })
 
     if(!success) return
+
+    Swal.fire({
+        icon: 'success',
+        title: 'Guardado',
+        text: 'El usuario se guardó correctamente',
+        confirmButtonText: 'Aceptar'
+    })
 
     router.push('/users')
 

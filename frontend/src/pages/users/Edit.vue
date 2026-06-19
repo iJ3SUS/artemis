@@ -30,6 +30,8 @@ import { UserSchema } from "./schemas.ts"
 
 import Form from './components/Form.vue'
 
+import Swal from 'sweetalert2'
+
 const http = useHttp()
 
 const router = useRouter()
@@ -63,7 +65,14 @@ const update = async () => {
         url: `dashboard/users/${route.params.id}`
     })
 
-    if(!success) return 
+    if(!success) return
+
+    Swal.fire({
+        icon: 'success',
+        title: 'Guardado',
+        text: 'El usuario se actualizó correctamente',
+        confirmButtonText: 'Aceptar'
+    })
 
 }
 
