@@ -14,7 +14,7 @@
         </div>
 
         <div v-if="user">
-            <Form :form></Form>
+            <Form :form :errors></Form>
         </div>
     </Page>
 </template>
@@ -29,7 +29,7 @@ const http = useHttp()
 const router = useRouter()
 const route = useRoute()
 
-const { form, fill } = useForm(UserSchema)
+const { form, errors, fill, submit } = useForm(UserSchema)
 
 const user = ref(null)
 
@@ -50,7 +50,9 @@ const load = async () => {
 
 const update = async () => {
 
-    const { success, response } = await http.request({
+    form.display_name = `${form.names} ${form.surnames}`.trim()
+
+    const { success, response } = await submit({
         method: 'PUT',
         url: `dashboard/users/${route.params.id}`
     })

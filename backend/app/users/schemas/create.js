@@ -17,9 +17,9 @@ export default Joi.object({
         .required(),
 
     phone: Joi.object({
-        indicative: Joi.string().optional().allow(''),
-        number: Joi.string().optional().allow('')
-    }).optional(),
+        indicative: Joi.string().required(),
+        number: Joi.string().required()
+    }).required(),
 
     active: Joi.boolean()
         .default(true),

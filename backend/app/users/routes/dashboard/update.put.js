@@ -11,6 +11,9 @@ export const controller = async (req, rep) => {
         .match({ _id: _id })
         .first()
 
+
+        console.log(body)
+
     if (!user) {
         return rep.status(404).send({
             message: 'Usuario no encontrado'
