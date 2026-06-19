@@ -1,11 +1,18 @@
 <template>
-    <div :class="['mb-6', sticky && 'sticky top-0 z-10 bg-white py-4']">
-        <div class="flex items-center justify-between">
+    <div :class="[
+        'mb-8',
+        sticky && 'sticky top-0 z-10 -mx-6 px-6 py-4 bg-white border-b border-gray-200 shadow-xs'
+    ]">
+        <div class="flex items-center justify-between gap-4">
             <div class="flex items-center gap-4">
                 <slot name="back"></slot>
-                <slot name="title"></slot>
+                <div>
+                    <slot name="title"></slot>
+                </div>
             </div>
-            <slot name="actions"></slot>
+            <div class="flex items-center gap-3">
+                <slot name="actions"></slot>
+            </div>
         </div>
     </div>
 </template>

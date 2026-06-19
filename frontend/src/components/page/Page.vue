@@ -1,5 +1,5 @@
 <template>
-    <div class="p-6">
+    <div class="px-6 pb-6 pt-0 bg-gray-100 min-h-screen">
         <Transition 
             name="fade-slide"
             appear
