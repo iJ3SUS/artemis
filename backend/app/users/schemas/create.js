@@ -42,8 +42,4 @@ export default Joi.object({
             }
         }))
         .required(),
-
-    password: Joi.string()
-        .min(6)
-        .required()
 }).options({ stripUnknown: true })
