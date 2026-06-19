@@ -16,7 +16,7 @@
             </Heading>
         </template>
 
-        <div v-if="tree" ref="chartContainer" class="org-chart-container" @mousedown="startDrag" @mousemove="onDrag" @mouseup="stopDrag" @mouseleave="stopDrag" @wheel.prevent="onWheel">
+        <div v-if="tree" ref="chartContainer" class="org-chart-container" @mousedown="startDrag" @mousemove="onDrag" @mouseup="stopDrag" @mouseleave="stopDrag" @wheel.prevent="onWheel" @touchstart="startTouchDrag" @touchmove="onTouchDrag" @touchend="stopTouchDrag">
             <div ref="chartContent" class="org-chart-root">
                 <TreeNode v-for="node in tree" :key="node._id" :node="node" :is-root="true" />
             </div>
@@ -67,6 +67,22 @@ const startDrag = (e: MouseEvent) => {
     chartContainer.value.style.cursor = 'grabbing'
 }
 
+const clampTranslate = () => {
+    if (!chartContainer.value || !chartContent.value) return
+    const containerRect = chartContainer.value.getBoundingClientRect()
+    const contentRect = chartContent.value.getBoundingClientRect()
+    const contentWidth = contentRect.width
+    const contentHeight = contentRect.height
+    const containerWidth = containerRect.width
+    const containerHeight = containerRect.height
+    const minX = Math.min(0, containerWidth - contentWidth)
+    const maxX = Math.max(0, containerWidth - contentWidth)
+    const minY = Math.min(0, containerHeight - contentHeight)
+    const maxY = Math.max(0, containerHeight - contentHeight)
+    translateX.value = Math.max(minX, Math.min(maxX, translateX.value))
+    translateY.value = Math.max(minY, Math.min(maxY, translateY.value))
+}
+
 const onDrag = (e: MouseEvent) => {
     if (!isDragging.value) return
     e.preventDefault()
@@ -74,6 +90,7 @@ const onDrag = (e: MouseEvent) => {
     const dy = e.clientY - startY.value
     translateX.value = currentTranslateX + dx
     translateY.value = currentTranslateY + dy
+    clampTranslate()
     if (chartContent.value) {
         chartContent.value.style.transform = `translate(${translateX.value}px, ${translateY.value}px)`
     }
@@ -91,11 +108,40 @@ const onWheel = (e: WheelEvent) => {
     e.preventDefault()
     translateX.value = currentTranslateX - e.deltaX
     translateY.value = currentTranslateY - e.deltaY
+    clampTranslate()
     currentTranslateX = translateX.value
     currentTranslateY = translateY.value
     if (chartContent.value) {
         chartContent.value.style.transform = `translate(${translateX.value}px, ${translateY.value}px)`
     }
+}
+
+const startTouchDrag = (e: TouchEvent) => {
+    const touch = e.touches[0]
+    isDragging.value = true
+    startX.value = touch.clientX
+    startY.value = touch.clientY
+}
+
+const onTouchDrag = (e: TouchEvent) => {
+    if (!isDragging.value) return
+    e.preventDefault()
+    const touch = e.touches[0]
+    const dx = touch.clientX - startX.value
+    const dy = touch.clientY - startY.value
+    translateX.value = currentTranslateX + dx
+    translateY.value = currentTranslateY + dy
+    clampTranslate()
+    if (chartContent.value) {
+        chartContent.value.style.transform = `translate(${translateX.value}px, ${translateY.value}px)`
+    }
+}
+
+const stopTouchDrag = () => {
+    if (!isDragging.value) return
+    isDragging.value = false
+    currentTranslateX = translateX.value
+    currentTranslateY = translateY.value
 }
 
 onMounted(() => {
@@ -114,6 +160,7 @@ onMounted(() => {
     user-select: none;
     position: relative;
     box-sizing: border-box;
+    touch-action: none;
 }
 
 .org-chart-container * {
