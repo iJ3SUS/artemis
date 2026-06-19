@@ -11,6 +11,9 @@ const JobTitles = () => import('@/pages/job-titles/Browse.vue')
 const JobTitleEdit = () => import('@/pages/job-titles/Edit.vue')
 const JobTitleCreate = () => import('@/pages/job-titles/Create.vue')
 const JobTitleOrganizationalChart = () => import('@/pages/job-titles/OrganizationalChart.vue')
+const Employees = () => import('@/pages/employees/Browse.vue')
+const EmployeeEdit = () => import('@/pages/employees/Edit.vue')
+const EmployeeCreate = () => import('@/pages/employees/Create.vue')
 
 export const routes = [
     { path: '/login', label: 'Login', component: Login },
@@ -26,6 +29,9 @@ export const routes = [
     { path: "/job-titles/create", label: "Crear cargo", component: JobTitleCreate, meta: { protected: true, section: "management", sidebar: false } },
     { path: "/job-titles/:id/edit", label: "Editar cargo", component: JobTitleEdit, meta: { protected: true, section: "management", sidebar: false } },
     { path: "/job-titles/organizational-chart", label: "Organigrama", component: JobTitleOrganizationalChart, meta: { protected: true, section: "management", sidebar: false } },
+    { path: "/employees", label: "Empleados", icon: "AccountGroup", component: Employees, meta: { protected: true, section: "management" } },
+    { path: "/employees/create", label: "Crear empleado", component: EmployeeCreate, meta: { protected: true, section: "management", sidebar: false } },
+    { path: "/employees/:id/edit", label: "Editar empleado", component: EmployeeEdit, meta: { protected: true, section: "management", sidebar: false } },
 ]
 
 export const icons = {
