@@ -44,7 +44,7 @@
                         </div>
                     </Column>
                     <Column>
-                        <p class="text-sm font-medium text-gray-900">{{ emp.names }} {{ emp.surnames }}</p>
+                        <p class="text-sm font-medium text-gray-900 cursor-pointer hover:text-blue-600" @click="router.push(`/employees/${emp._id}`)">{{ emp.names }} {{ emp.surnames }}</p>
                     </Column>
                     <Column>
                         <p class="text-sm text-gray-700">{{ emp.email || '-' }}</p>
@@ -69,6 +69,9 @@
                     </Column>
                     <Column>
                         <div class="flex items-center justify-center gap-2">
+                            <Button theme="icon" title="Ver detalle" @handle="router.push(`/employees/${emp._id}`)">
+                                <Icon icon="Eye" width="16" height="16" />
+                            </Button>
                             <Button theme="icon" title="Editar" @handle="router.push(`/employees/${emp._id}/edit`)">
                                 <Icon icon="Pencil" width="16" height="16" />
                             </Button>

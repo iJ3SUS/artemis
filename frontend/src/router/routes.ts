@@ -14,6 +14,7 @@ const JobTitleOrganizationalChart = () => import('@/pages/job-titles/Organizatio
 const Employees = () => import('@/pages/employees/Browse.vue')
 const EmployeeEdit = () => import('@/pages/employees/Edit.vue')
 const EmployeeCreate = () => import('@/pages/employees/Create.vue')
+const EmployeeShow = () => import('@/pages/employees/Show.vue')
 
 export const routes = [
     { path: '/login', label: 'Login', component: Login },
@@ -32,6 +33,7 @@ export const routes = [
     { path: "/employees", label: "Empleados", icon: "AccountGroup", component: Employees, meta: { protected: true, section: "management" } },
     { path: "/employees/create", label: "Crear empleado", component: EmployeeCreate, meta: { protected: true, section: "management", sidebar: false } },
     { path: "/employees/:id/edit", label: "Editar empleado", component: EmployeeEdit, meta: { protected: true, section: "management", sidebar: false } },
+    { path: "/employees/:id", label: "Detalle empleado", component: EmployeeShow, meta: { protected: true, section: "management", sidebar: false } },
 ]
 
 export const icons = {
