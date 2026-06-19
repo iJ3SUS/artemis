@@ -27,7 +27,7 @@
                     'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all',
                     isActive(item.path) ? 'bg-primary-600/10 text-primary-400 font-medium' : 'text-text-muted hover:bg-surface-hover hover:text-text'
                 ]">
-                    <Icon :icon="item.icon" width="18" height="18" />
+                    <Icon :icon="item.icon" width="18" height="18" class="text-inherit" />
                     <span>{{ item.label }}</span>
                 </router-link>
             </div>
@@ -39,7 +39,7 @@
                     'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all',
                     isActive(item.path) ? 'bg-primary-600/10 text-primary-400 font-medium' : 'text-text-muted hover:bg-surface-hover hover:text-text'
                 ]">
-                    <Icon :icon="item.icon" width="18" height="18" />
+                    <Icon :icon="item.icon" width="18" height="18" class="text-inherit" />
                     <span>{{ item.label }}</span>
                 </router-link>
             </div>
