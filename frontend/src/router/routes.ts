@@ -1,12 +1,12 @@
-import Login from '@/pages/Login.vue'
-import Home from '@/pages/Home.vue'
-import Settings from '@/pages/Settings.vue'
-import Users from '@/pages/users/Browse.vue'
-import UserEdit from '@/pages/users/Edit.vue'
-import UserCreate from "@/pages/users/Create.vue"
-import Roles from "@/pages/roles/Browse.vue"
-import RoleEdit from "@/pages/roles/Edit.vue"
-import RoleCreate from "@/pages/roles/Create.vue"
+const Login = () => import('@/pages/Login.vue')
+const Home = () => import('@/pages/Home.vue')
+const Settings = () => import('@/pages/Settings.vue')
+const Users = () => import('@/pages/users/Browse.vue')
+const UserEdit = () => import('@/pages/users/Edit.vue')
+const UserCreate = () => import('@/pages/users/Create.vue')
+const Roles = () => import('@/pages/roles/Browse.vue')
+const RoleEdit = () => import('@/pages/roles/Edit.vue')
+const RoleCreate = () => import('@/pages/roles/Create.vue')
 
 export const routes = [
     { path: '/login', label: 'Login', component: Login },
