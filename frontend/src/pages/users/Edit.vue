@@ -22,9 +22,6 @@
         <div v-if="user">
             <Form :form :errors></Form>
         </div>
-        <pre>
-            {{ form }}
-        </pre>
     </Page>
 </template>
 
