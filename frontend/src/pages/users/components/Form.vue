@@ -105,10 +105,10 @@
                             label="Agregar rol"
                             option_label="name"
                             option_value="_id"
-                            :options="roles"
+                            :options="options.roles"
                             @change="(e) => {
 
-                                const find = roles.find(role => role._id == e)
+                                const find = options.roles.find(role => role._id == e)
 
                                 if(find && !form.roles.includes(find._id)){
                                     form.roles.push(find._id)
@@ -147,18 +147,36 @@
 const props = defineProps({
     errors: Object,
     form: Object,
-    roles: Array,
     edit: Boolean
 })
+
+const optionStore = useOptionsStore()
 
 const ctx = window
 
 const role = ref(null)
 
+const options = computed(() => {
+
+    return {
+        roles: optionStore.data['roles'] || []
+    }
+
+})
+
 const selected_roles = computed(() => {
     return props.form.roles
         .map(id => props.roles.find(role => role._id == id))
         .filter(role => role !== undefined)
+})
+
+onMounted(() => {
+
+    optionStore.add({
+        key: 'roles',
+        source: 'dashboard/roles/list'
+    })
+
 })
 
 </script>

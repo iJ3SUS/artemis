@@ -1,4 +1,4 @@
-export const url = '/dashboard/roles'
+export const url = '/dashboard/roles/list'
 
 import Role from "#app/roles/models/role.js"
 
