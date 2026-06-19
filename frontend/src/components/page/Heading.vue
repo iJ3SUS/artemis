@@ -1,6 +1,6 @@
 <template>
     <div ref="headingRef" :class="[
-        'px-6 py-4 mb-4',
+        'px-6 py-6',
         sticky && 'sticky top-0 z-10 transition-colors duration-300'
     ]" :style="sticky ? headingStyle : {}">
         <div class="flex items-center justify-between">

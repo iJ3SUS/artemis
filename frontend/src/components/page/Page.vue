@@ -1,7 +1,7 @@
 <template>
     <div class="bg-gray-100 min-h-screen">
         <slot name="heading"></slot>
-        <hr class="border-gray-200/60 mx-6" />
+        <hr class="border-gray-200 mx-6 mb-6" />
         <Transition 
             name="fade-slide"
             appear
