@@ -10,7 +10,7 @@
                 </template>
                 <template #actions>
                     <Button color="primary" @handle="router.push('/users/create')">
-                        <Icon icon="Plus" width="16" height="16" />
+                        <Icon icon="Plus" width="16" height="16" class="text-inherit" />
                         Nuevo usuario
                     </Button>
                 </template>
@@ -80,10 +80,10 @@
                     <Column>
                         <div class="flex items-center justify-center gap-2">
                             <Button theme="icon" title="Editar" @handle="router.push(`/users/${user._id}/edit`)">
-                                <Icon icon="Pencil" width="16" height="16" />
+                                <Icon icon="Pencil" width="16" height="16" class="text-inherit" />
                             </Button>
                             <Button theme="icon" title="Cambiar contraseña">
-                                <Icon icon="Key" width="16" height="16" />
+                                <Icon icon="Key" width="16" height="16" class="text-inherit" />
                             </Button>
                         </div>
                     </Column>

@@ -4,7 +4,7 @@
             <Heading :sticky="true">
                 <template #back>
                     <Button color="gray" @handle="router.push('/users')">
-                        <Icon icon="ArrowLeft" width="16" height="16" />
+                        <Icon icon="ArrowLeft" width="16" height="16" class="text-inherit" />
                     </Button>
                 </template>
                 <template #title>

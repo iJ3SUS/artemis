@@ -10,11 +10,11 @@
                 </template>
                 <template #actions>
                     <Button color="primary" @handle="router.push('/job-titles/create')">
-                        <Icon icon="Plus" width="16" height="16" />
+                        <Icon icon="Plus" width="16" height="16" class="text-inherit" />
                         Nuevo cargo
                     </Button>
                     <Button color="gray" @handle="router.push('/job-titles/organizational-chart')">
-                        <Icon icon="Sitemap" width="16" height="16" />
+                        <Icon icon="Sitemap" width="16" height="16" class="text-inherit" />
                         Organigrama
                     </Button>
                 </template>
@@ -78,7 +78,7 @@
                     <Column>
                         <div class="flex items-center justify-center gap-2">
                             <Button theme="icon" title="Editar" @handle="router.push(`/job-titles/${jt._id}/edit`)">
-                                <Icon icon="Pencil" width="16" height="16" />
+                                <Icon icon="Pencil" width="16" height="16" class="text-inherit" />
                             </Button>
                         </div>
                     </Column>

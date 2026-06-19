@@ -4,7 +4,7 @@
             <Heading :sticky="true">
                 <template #back>
                     <Button color="gray" @handle="router.push('/employees')">
-                        <Icon icon="ArrowLeft" width="16" height="16" />
+                        <Icon icon="ArrowLeft" width="16" height="16" class="text-inherit" />
                     </Button>
                 </template>
                 <template #title>
@@ -15,7 +15,7 @@
                 </template>
                 <template #actions>
                     <Button color="primary" @handle="router.push(`/employees/${route.params.id}/edit`)">
-                        <Icon icon="Pencil" width="16" height="16" />
+                        <Icon icon="Pencil" width="16" height="16" class="text-inherit" />
                         Editar
                     </Button>
                 </template>

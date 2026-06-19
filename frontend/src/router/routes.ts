@@ -32,8 +32,8 @@ export const routes = [
     { path: "/job-titles/organizational-chart", label: "Organigrama", component: JobTitleOrganizationalChart, meta: { protected: true, section: "management", sidebar: false } },
     { path: "/employees", label: "Empleados", icon: "AccountGroup", component: Employees, meta: { protected: true, section: "management" } },
     { path: "/employees/create", label: "Crear empleado", component: EmployeeCreate, meta: { protected: true, section: "management", sidebar: false } },
-    { path: "/employees/:id/edit", label: "Editar empleado", component: EmployeeEdit, meta: { protected: true, section: "management", sidebar: false } },
     { path: "/employees/:id", label: "Detalle empleado", component: EmployeeShow, meta: { protected: true, section: "management", sidebar: false } },
+    { path: "/employees/:id/edit", label: "Editar empleado", component: EmployeeEdit, meta: { protected: true, section: "management", sidebar: false } },
 ]
 
 export const icons = {
