@@ -10,24 +10,47 @@
             </div>
         </div>
 
-        <div>
+        <div v-if="user">
 
-            <Form></Form>
-            <pre>
-                {{ form }}
-            </pre>
+            <Form :form></Form>
+
         </div>
     </Page>
 </template>
 
 <script setup lang="ts">
+import { UserSchema } from "./schemas.ts"
 
 import Form from './components/Form.vue'
 
-import { UserSchema } from "./schemas.ts"
-
-const { form } = useForm(UserSchema)
+const http = useHttp()
 
 const router = useRouter()
+const route = useRoute()
+
+const { form, fill } = useForm(UserSchema)
+
+const user = ref(null)
+
+const load = async () => {
+
+    const { success, response } = await http.request({
+        method: 'GET',
+        url: `dashboard/users/${route.params.id}`
+    })
+
+    if(!success) return
+
+    user.value = response
+
+    fill(response)
+
+}
+
+onMounted(() => {
+
+    load()
+
+})
 
 </script>

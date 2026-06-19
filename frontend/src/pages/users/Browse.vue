@@ -5,7 +5,7 @@
             <p class="text-gray-600 mt-1">Gestiona los usuarios del sistema</p>
         </div>
 
-        <Table v-if="module">
+        <Table v-if="users">
             <template #top>
                 <div class="p-4 flex justify-between items-center">
                     
@@ -25,7 +25,7 @@
             </template>
 
             <template #body>
-                <Row v-for="user in module.items" :key="user._id">
+                <Row v-for="user in users.items" :key="user._id">
                     <Column>
                         <div class="flex items-center gap-3">
                             <div class="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center">
@@ -67,7 +67,7 @@
 
             <template #pagination>
            
-                <Pagination :pagination="module.pagination" />
+                <Pagination :pagination="users.pagination" />
                
             </template>
         </Table>
@@ -81,7 +81,7 @@ const http = useHttp()
 const route = useRoute()
 const router = useRouter()
 
-const module = ref(null)
+const users = ref(null)
 
 const inputs = reactive({
     search: ''
@@ -100,7 +100,7 @@ const load = async () => {
 
     if(!success) return 
 
-    module.value = response
+    users.value = response
 
 }
 

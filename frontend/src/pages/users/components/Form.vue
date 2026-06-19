@@ -10,18 +10,18 @@
                 <Grid columns="6">
                     <Col size="3">
                         <Text
-                            v-model="form.name"
+                            v-model="form.names"
                             :errors="errors"
-                            name="name"
+                            name="names"
                             label="Nombres"
                             placeholder="Nombres"
                         />
                     </Col>
                     <Col size="3">
                         <Text
-                            v-model="form.last_name"
+                            v-model="form.surnames"
                             :errors="errors"
-                            name="last_name"
+                            name="surnames"
                             label="Apellidos"
                             placeholder="Apellidos"
                         />
@@ -86,28 +86,6 @@
                             label="Número de teléfono"
                             name="phone.number"
                             :errors="errors"
-                        />
-                    </Col>
-                </Grid>
-            </template>
-        </Card>
-
-        <Card>
-            <template #header>
-                Bodega
-            </template>
-
-            <template #content>
-                <Grid columns="1">
-                    <Col>
-                        <Select
-                            v-model="form.warehouse_id"
-                            label="Seleccionar bodega"
-                            option_label="name"
-                            option_value="_id"
-                            :options="warehouses"
-                            :errors="errors"
-                            name="warehouse_id"
                         />
                     </Col>
                 </Grid>
