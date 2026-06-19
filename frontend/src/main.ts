@@ -11,6 +11,7 @@ import { Table, Row, Column } from 'lite-ui/components/table'
 import { Icon } from 'lite-ui/components/icons'
 
 import Pagination from '@/components/page/Pagination.vue'
+import Page from '@/components/page/Page.vue'
 
 import App from './App.vue'
 import router from './router'
@@ -34,6 +35,7 @@ app.component('Row', Row)
 app.component('Column', Column)
 app.component('Icon', Icon)
 app.component('Pagination', Pagination)
+app.component('Page', Page)
 
 app.use(createPinia())
 app.use(router)

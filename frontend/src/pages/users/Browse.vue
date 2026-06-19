@@ -1,5 +1,5 @@
 <template>
-    <div class="p-6">
+    <Page>
         <div class="mb-6">
             <h1 class="text-2xl font-bold text-gray-900">Usuarios</h1>
             <p class="text-gray-600 mt-1">Gestiona los usuarios del sistema</p>
@@ -51,7 +51,7 @@
                     </Column>
                     <Column>
                         <div class="flex items-center justify-center gap-2">
-                            <Button theme="icon" title="Editar">
+                            <Button theme="icon" title="Editar" @handle="router.push(`/users/${user._id}/edit`)">
                                 <Icon icon="Pencil" width="16" height="16" />
                             </Button>
                             <Button theme="icon" title="Cambiar contraseña">
@@ -72,8 +72,7 @@
             </template>
         </Table>
         
-
-    </div>
+    </Page>
 </template>
 
 <script setup lang="ts">
@@ -104,7 +103,6 @@ const load = async () => {
     module.value = response
 
 }
-
 
 watch(() => route.query, () => {
     load()
