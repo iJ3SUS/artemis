@@ -6,4 +6,5 @@ export default Joi.object({
     parent_id: Joi.objectId().optional().allow(null),
     level: Joi.number().integer().min(0).required(),
     active: Joi.boolean().optional(),
+    functions: Joi.array().items(Joi.string()).optional(),
 }).options({ stripUnknown: true })
