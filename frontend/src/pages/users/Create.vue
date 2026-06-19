@@ -22,7 +22,6 @@
 </template>
 
 <script setup lang="ts">
-import Heading from '@/components/page/Heading.vue'
 import { UserSchema } from "./schemas.ts"
 
 import Form from './components/Form.vue'

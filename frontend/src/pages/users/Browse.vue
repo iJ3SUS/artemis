@@ -84,7 +84,6 @@
 </template>
 
 <script setup lang="ts">
-import Heading from '@/components/page/Heading.vue'
 
 const http = useHttp()
 const route = useRoute()

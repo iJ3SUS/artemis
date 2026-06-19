@@ -13,6 +13,7 @@ import { Icon } from 'lite-ui/components/icons'
 import Pagination from '@/components/page/Pagination.vue'
 import Page from '@/components/page/Page.vue'
 import Card from '@/components/page/Card.vue'
+import Heading from '@/components/page/Heading.vue'
 
 import App from './App.vue'
 import router from './router'
@@ -37,6 +38,7 @@ app.component('Icon', Icon)
 app.component('Pagination', Pagination)
 app.component('Page', Page)
 app.component('Card', Card)
+app.component('Heading', Heading)
 
 app.use(createPinia())
 app.use(router)
