@@ -1,7 +1,7 @@
 <template>
     <div ref="headingRef" :class="[
-        'px-6 py-4 mb-8',
-        sticky && 'sticky top-0 z-10 border-b border-gray-200/50 transition-colors duration-300'
+        'px-6 py-4 mb-4',
+        sticky && 'sticky top-0 z-10 transition-colors duration-300'
     ]" :style="sticky ? headingStyle : {}">
         <div class="flex items-center justify-between">
             <div class="flex items-center gap-4">
