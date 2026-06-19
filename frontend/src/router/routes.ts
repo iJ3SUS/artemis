@@ -1,7 +1,7 @@
 import Login from '@/pages/Login.vue'
 import Home from '@/pages/Home.vue'
 import Settings from '@/pages/Settings.vue'
-import Users from '@/pages/Users.vue'
+import Users from '@/pages/users/Browse.vue'
 
 export const routes = [
     { path: '/login', label: 'Login', component: Login },

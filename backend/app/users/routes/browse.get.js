@@ -22,8 +22,7 @@ export const controller = async (req, rep) => {
     }
 
     const result = await User.query(pipelines)
-        .limit(limit || 10)
-        .paginate()
+        .paginate(page || 1, limit || 10)
 
     return rep.send(result)
 

@@ -10,8 +10,11 @@ import { Modal } from 'lite-ui/components/modals'
 import { Table, Row, Column } from 'lite-ui/components/table'
 import { Icon } from 'lite-ui/components/icons'
 
+import Pagination from '@/components/page/Pagination.vue'
+
 import App from './App.vue'
 import router from './router'
+
 
 const app = createApp(App)
 
@@ -30,6 +33,7 @@ app.component('Table', Table)
 app.component('Row', Row)
 app.component('Column', Column)
 app.component('Icon', Icon)
+app.component('Pagination', Pagination)
 
 app.use(createPinia())
 app.use(router)
