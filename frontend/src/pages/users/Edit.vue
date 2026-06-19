@@ -51,8 +51,8 @@ const load = async () => {
 const update = async () => {
 
     const { success, response } = await http.request({
-        method: 'POST',
-        url: 'dashboard/users'
+        method: 'PUT',
+        url: `dashboard/users/${route.params.id}`
     })
 
     if(!success) return 

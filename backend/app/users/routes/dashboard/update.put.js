@@ -1,14 +1,14 @@
-export const url = '/dashboard/users/:user_id'
+export const url = '/dashboard/users/:_id'
 
 import User from "#app/users/models/user.js"
 
 export const controller = async (req, rep) => {
 
-    const { user_id } = req.params
-    const { email, roles, ...data } = req.body
+    const { _id } = req.params
+    const { body } = req
 
     const user = await User.query()
-        .match({ _id: user_id })
+        .match({ _id: _id })
         .first()
 
     if (!user) {
@@ -17,25 +17,11 @@ export const controller = async (req, rep) => {
         })
     }
 
-    if (email && email !== user.email) {
-        const existing = await User.query()
-            .match({ email: { $regex: new RegExp(`^${email}$`, 'i') } })
-            .first()
+    user.fill(body)
 
-        if (existing) {
-            return rep.status(409).send({
-                message: 'Ya existe un usuario con ese correo electrónico'
-            })
-        }
-    }
+    const response = await user.save()
 
-    await user.update({
-        ...data,
-        ...(email && { email }),
-        ...(roles && { roles })
-    })
-
-    return rep.send(user)
+    return rep.send(response)
 
 }
 
@@ -45,8 +31,10 @@ import UpdateSchema from "#app/users/schemas/update.js"
 export const middlewares = [
     new AuthMiddleware()
         .message("Debes estar autenticado para acceder a este recurso"),
+
     new ParseOidMiddleware()
-        .on('user_id'),
+        .on('_id'),
+
     new ValidateMiddleware()
         .on('pre-handler')
         .schema(UpdateSchema)
