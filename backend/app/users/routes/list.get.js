@@ -21,12 +21,11 @@ export const controller = async (req, rep) => {
         })
     }
 
-    const docs = await User.query(pipelines)
-        .page(page)
-        .limit(limit)
-        .get()
+    const result = await User.query(pipelines)
+        .limit(limit || 10)
+        .paginate()
 
-    return rep.send(docs)
+    return rep.send(result)
 
 }
 
