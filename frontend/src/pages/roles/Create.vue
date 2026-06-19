@@ -34,6 +34,8 @@ const http = useHttp()
 
 const router = useRouter()
 
+const optionStore = useOptionsStore()
+
 const { form, errors, submit } = useForm(RoleSchema)
 
 const create = async () => {
@@ -51,6 +53,8 @@ const create = async () => {
         text: 'El rol se guardó correctamente',
         confirmButtonText: 'Aceptar'
     })
+
+    optionStore.refresh('roles')
 
     router.push('/roles')
 

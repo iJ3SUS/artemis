@@ -37,6 +37,8 @@ const http = useHttp()
 const router = useRouter()
 const route = useRoute()
 
+const optionStore = useOptionsStore()
+
 const { form, errors, fill, submit } = useForm(JobTitleSchema)
 
 const jobTitle = ref(null)
@@ -71,6 +73,8 @@ const update = async () => {
         text: 'El cargo se actualizó correctamente',
         confirmButtonText: 'Aceptar'
     })
+
+    optionStore.refresh('job_titles')
 
 }
 
