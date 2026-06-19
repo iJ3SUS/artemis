@@ -10,7 +10,7 @@
                 <template #title>
                     <div>
                         <h1 class="text-2xl font-semibold text-gray-900">Crear empleado</h1>
-                        <p class="text-sm text-gray-500 mt-0.5">Agrega un nuevo empleado</p>
+                        <p class="text-sm text-gray-600 mt-0.5">Agrega un nuevo empleado</p>
                     </div>
                 </template>
                 <template #actions>

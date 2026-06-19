@@ -10,7 +10,7 @@
                 <template #title>
                     <div>
                         <h1 class="text-2xl font-semibold text-gray-900">Organigrama</h1>
-                        <p class="text-sm text-gray-500 mt-0.5">Estructura jerárquica de cargos</p>
+                        <p class="text-sm text-gray-600 mt-0.5">Estructura jerárquica de cargos</p>
                     </div>
                 </template>
             </Heading>

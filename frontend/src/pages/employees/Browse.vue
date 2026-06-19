@@ -5,7 +5,7 @@
                 <template #title>
                     <div>
                         <h1 class="text-2xl font-semibold text-gray-900">Empleados</h1>
-                        <p class="text-sm text-gray-500 mt-0.5">Gestiona los empleados de la empresa</p>
+                        <p class="text-sm text-gray-600 mt-0.5">Gestiona los empleados de la empresa</p>
                     </div>
                 </template>
                 <template #actions>
