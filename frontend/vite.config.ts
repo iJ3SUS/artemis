@@ -17,6 +17,7 @@ export default defineConfig({
         './src/composables',
         './src/components',
         './src/entities',
+        './src/utils'
       ]
     }),
   ],

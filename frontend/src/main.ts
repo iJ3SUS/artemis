@@ -20,6 +20,8 @@ import router from './router'
 
 const app = createApp(App)
 
+app.config.globalProperties.$ParseDate = ParseDate
+
 app.component('Button', Button)
 app.component('Grid', Grid)
 app.component('Col', Col)

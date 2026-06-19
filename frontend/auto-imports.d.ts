@@ -7,6 +7,7 @@
 export {}
 declare global {
   const EffectScope: typeof import('vue').EffectScope
+  const ParseDate: typeof import('./src/utils/globals').ParseDate
   const api: typeof import('./src/composables/useHttp').api
   const computed: typeof import('vue').computed
   const createApp: typeof import('vue').createApp
