@@ -1,6 +1,6 @@
 export const url = '/dashboard/users'
 
-import User from "../models/user.js"
+import User from "#app/users/models/user.js"
 
 export const controller = async (req, rep) => {
 
@@ -18,7 +18,7 @@ export const controller = async (req, rep) => {
 }
 
 import { AuthMiddleware, ExistsMiddleware, ValidateMiddleware, CanMiddleware } from "#src/middlewares/index.js"
-import CreateSchema from "../schemas/create.js"
+import CreateSchema from "#app/users/schemas/create.js"
 
 export const middlewares = [
     new AuthMiddleware()
