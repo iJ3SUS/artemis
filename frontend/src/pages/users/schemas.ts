@@ -1,6 +1,6 @@
 
 
-export const schema = {
+export const UserSchema = {
     "names": "",
     "surnames": "",
     "display_name": "",

@@ -9,10 +9,25 @@
                 <p class="text-gray-600 mt-1">Modifica los datos del usuario</p>
             </div>
         </div>
+
+        <div>
+
+            <Form></Form>
+            <pre>
+                {{ form }}
+            </pre>
+        </div>
     </Page>
 </template>
 
 <script setup lang="ts">
 
+import Form from './components/Form.vue'
+
+import { UserSchema } from "./schemas.ts"
+
+const { form } = useForm(UserSchema)
+
 const router = useRouter()
+
 </script>
