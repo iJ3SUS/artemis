@@ -3,7 +3,10 @@ import Home from '@/pages/Home.vue'
 import Settings from '@/pages/Settings.vue'
 import Users from '@/pages/users/Browse.vue'
 import UserEdit from '@/pages/users/Edit.vue'
-import UserCreate from '@/pages/users/Create.vue'
+import UserCreate from "@/pages/users/Create.vue"
+import Roles from "@/pages/roles/Browse.vue"
+import RoleEdit from "@/pages/roles/Edit.vue"
+import RoleCreate from "@/pages/roles/Create.vue"
 
 export const routes = [
     { path: '/login', label: 'Login', component: Login },
@@ -12,6 +15,9 @@ export const routes = [
     { path: '/users', label: 'Usuarios', icon: 'Account', component: Users, meta: { protected: true, section: 'management' } },
     { path: '/users/create', label: 'Crear usuario', component: UserCreate, meta: { protected: true, section: 'management', sidebar: false } },
     { path: '/users/:id/edit', label: 'Editar usuario', component: UserEdit, meta: { protected: true, section: 'management', sidebar: false } },
+    { path: "/roles", label: "Roles", icon: "ShieldAccount", component: Roles, meta: { protected: true, section: "management" } },
+    { path: "/roles/create", label: "Crear rol", component: RoleCreate, meta: { protected: true, section: "management", sidebar: false } },
+    { path: "/roles/:id/edit", label: "Editar rol", component: RoleEdit, meta: { protected: true, section: "management", sidebar: false } },
 ]
 
 export const icons = {
