@@ -1,16 +1,20 @@
 <template>
     <Page>
-        <div class="mb-6">
-            <h1 class="text-2xl font-bold text-gray-900">Usuarios</h1>
-            <p class="text-gray-600 mt-1">Gestiona los usuarios del sistema</p>
+        <div class="mb-6 flex items-center justify-between">
+            <div>
+                <h1 class="text-2xl font-bold text-gray-900">Usuarios</h1>
+                <p class="text-gray-600 mt-1">Gestiona los usuarios del sistema</p>
+            </div>
+            <Button color="primary" @handle="router.push('/users/create')">
+                <Icon icon="Plus" width="16" height="16" />
+                Nuevo usuario
+            </Button>
         </div>
 
         <Table v-if="users">
             <template #top>
-                <div class="p-4 flex justify-between items-center">
-                    
+                <div class="p-4">
                     <Text v-model="inputs.search" label="Buscar" name="search" placeholder="Nombre, email, identificación" />
-                    
                 </div>
             </template>
 

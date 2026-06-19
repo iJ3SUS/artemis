@@ -24,8 +24,8 @@ export const middlewares = [
     new AuthMiddleware()
         .message("Debes estar autenticado para acceder a este recurso"),
     
-    new CanMiddleware('users.create')
-        .on('pre-handler'),
+    // new CanMiddleware('users.create')
+    //     .on('pre-handler'),
 
     new ValidateMiddleware()
         .on('pre-handler')
