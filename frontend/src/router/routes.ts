@@ -9,7 +9,7 @@ export const routes = [
     { path: '/', label: 'Dashboard', icon: 'Home', component: Home, meta: { protected: true, section: 'main' } },
     { path: '/settings', label: 'Configuración', icon: 'Cog', component: Settings, meta: { protected: true, section: 'management' } },
     { path: '/users', label: 'Usuarios', icon: 'Account', component: Users, meta: { protected: true, section: 'management' } },
-    { path: '/users/:id/edit', label: 'Editar usuario', component: UserEdit, meta: { protected: true, section: 'management' } },
+    { path: '/users/:id/edit', label: 'Editar usuario', component: UserEdit, meta: { protected: true, section: 'management', sidebar: false } },
 ]
 
 export const icons = {
