@@ -1,7 +1,7 @@
 <template>
     <Page>
         <template #heading>
-            <Heading :sticky="true">
+            <Heading>
                 <template #title>
                     <div>
                         <h1 class="text-2xl font-semibold text-gray-900">Usuarios</h1>
