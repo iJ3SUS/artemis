@@ -11,6 +11,7 @@ export default Joi.object({
     }).optional().allow(null),
     gender: Joi.string().valid('male', 'female', 'other').allow('').optional(),
     job_title_id: Joi.objectId().optional().allow(null),
+    contract_type: Joi.number().valid(1, 2, 3, 4).allow(null).optional(),
     entry_date: Joi.date().optional().allow(null),
     retirement_date: Joi.date().optional().allow(null),
     active: Joi.boolean().default(true),

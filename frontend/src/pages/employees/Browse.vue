@@ -30,6 +30,7 @@
                     <Column class="text-center">Nombre</Column>
                     <Column class="text-center">Email</Column>
                     <Column class="text-center">Cargo</Column>
+                    <Column class="text-center">Tipo contrato</Column>
                     <Column class="text-center">Género</Column>
                     <Column class="text-center">Estado</Column>
                     <Column class="text-center">Acciones</Column>
@@ -52,6 +53,11 @@
                     <Column>
                         <div class="flex items-center justify-center">
                             <p class="text-sm text-gray-700">{{ getJobTitleName(emp.job_title_id) }}</p>
+                        </div>
+                    </Column>
+                    <Column>
+                        <div class="flex items-center justify-center">
+                            <p class="text-sm text-gray-700">{{ getContractTypeLabel(emp.contract_type) }}</p>
                         </div>
                     </Column>
                     <Column>
@@ -114,6 +120,11 @@ const getJobTitleName = (jobTitleId) => {
 const getGenderLabel = (gender) => {
     const labels = { male: 'Masculino', female: 'Femenino', other: 'Otro' }
     return labels[gender] || '-'
+}
+
+const getContractTypeLabel = (contract_type) => {
+    const labels = { 1: 'Fijo', 2: 'Indefinido', 3: 'Obra labor', 4: 'Prestación de servicios' }
+    return labels[contract_type] || '-'
 }
 
 const load = async () => {

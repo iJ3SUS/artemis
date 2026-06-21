@@ -80,6 +80,10 @@
                                     <p class="text-sm text-gray-900 mt-1">{{ employee.job_title?.name || '-' }}</p>
                                 </div>
                                 <div>
+                                    <label class="text-xs font-medium text-gray-500 uppercase">Tipo de contrato</label>
+                                    <p class="text-sm text-gray-900 mt-1">{{ getContractTypeLabel(employee.contract_type) }}</p>
+                                </div>
+                                <div>
                                     <label class="text-xs font-medium text-gray-500 uppercase">Fecha de ingreso</label>
                                     <p class="text-sm text-gray-900 mt-1">{{ $ParseDate(employee.entry_date).toFormat('dd/MM/yyyy') }}</p>
                                 </div>
@@ -140,6 +144,11 @@ const formatPhone = (phone) => {
 const getGenderLabel = (gender) => {
     const labels = { male: 'Masculino', female: 'Femenino', other: 'Otro' }
     return labels[gender] || '-'
+}
+
+const getContractTypeLabel = (contract_type) => {
+    const labels = { 1: 'Fijo', 2: 'Indefinido', 3: 'Obra labor', 4: 'Prestación de servicios' }
+    return labels[contract_type] || '-'
 }
 
 const load = async () => {

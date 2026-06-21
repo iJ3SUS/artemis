@@ -98,6 +98,17 @@
                         />
                     </Col>
                     <Col size="3">
+                        <Select
+                            v-model="form.contract_type"
+                            :errors="errors"
+                            name="contract_type"
+                            label="Tipo de contrato"
+                            :options="contractTypeOptions"
+                            placeholder="Seleccionar tipo"
+                            clearable
+                        />
+                    </Col>
+                    <Col size="3">
                         <Text
                             v-model="form.entry_date"
                             :errors="errors"
@@ -142,6 +153,13 @@ const genderOptions = [
     { label: 'Masculino', value: 'male' },
     { label: 'Femenino', value: 'female' },
     { label: 'Otro', value: 'other' }
+]
+
+const contractTypeOptions = [
+    { label: 'Fijo', value: 1 },
+    { label: 'Indefinido', value: 2 },
+    { label: 'Obra labor', value: 3 },
+    { label: 'Prestación de servicios', value: 4 }
 ]
 
 const options = computed(() => {

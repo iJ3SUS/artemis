@@ -10,6 +10,7 @@ export const EmployeeSchema = {
     },
     "gender": "",
     "job_title_id": null,
+    "contract_type": null,
     "entry_date": null,
     "retirement_date": null,
     "active": true
