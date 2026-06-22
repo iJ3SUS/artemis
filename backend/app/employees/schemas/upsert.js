@@ -10,6 +10,9 @@ export default Joi.object({
         number: Joi.string().allow('').optional()
     }).optional().allow(null),
     gender: Joi.string().valid('male', 'female', 'other').allow('').optional(),
+    birth_date: Joi.date().optional().allow(null),
+    stratum: Joi.number().valid(1, 2, 3, 4, 5, 6).allow(null).optional(),
+    dependents: Joi.number().integer().min(0).optional().allow(null),
     job_title_id: Joi.objectId().optional().allow(null),
     contract_type: Joi.number().valid(1, 2, 3, 4).allow(null).optional(),
     city: Joi.object({

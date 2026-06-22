@@ -73,6 +73,36 @@
                             clearable
                         />
                     </Col>
+                    <Col size="2">
+                        <Text
+                            v-model="form.birth_date"
+                            :errors="errors"
+                            name="birth_date"
+                            label="Fecha de nacimiento"
+                            type="date"
+                        />
+                    </Col>
+                    <Col size="2">
+                        <Select
+                            v-model="form.stratum"
+                            :errors="errors"
+                            name="stratum"
+                            label="Estrato"
+                            :options="stratumOptions"
+                            placeholder="Seleccionar"
+                            clearable
+                        />
+                    </Col>
+                    <Col size="2">
+                        <Text
+                            v-model="form.dependents"
+                            :errors="errors"
+                            name="dependents"
+                            label="Personas a cargo"
+                            type="number"
+                            placeholder="0"
+                        />
+                    </Col>
                     <Col size="3">
                         <Select
                             v-model="form.city.city_code"
@@ -156,7 +186,7 @@
     </div>
 </template>
 <script setup>
-import { genderOptions, contractTypeOptions } from '../options.ts'
+import { genderOptions, contractTypeOptions, stratumOptions } from '../options.ts'
 
 const props = defineProps({
     errors: Object,
