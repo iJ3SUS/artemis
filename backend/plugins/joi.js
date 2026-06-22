@@ -1,5 +1,7 @@
 import Joi from 'joi'
+import { DateTime } from 'luxon'
 import { ObjectId } from 'lemon-api/plugins/mongodb'
+import config from '#plugins/config.js'
 
 const objectId = () => Joi.custom((value, helpers) => {
     if (value instanceof ObjectId) return value
@@ -9,9 +11,31 @@ const objectId = () => Joi.custom((value, helpers) => {
     'any.invalid': 'ID inválido.'
 })
 
+const timezone = (opts = {}) => {
+    const { format } = typeof opts === 'string' ? { format: opts } : opts
+
+    return Joi.custom((value, helpers) => {
+        if (value instanceof Date) {
+            return DateTime.fromJSDate(value).setZone(config.timezone).toJSDate()
+        }
+        if (typeof value === 'string') {
+            const dt = format
+                ? DateTime.fromFormat(value, format, { zone: config.timezone })
+                : DateTime.fromISO(value, { zone: config.timezone })
+            if (dt.isValid) return dt.toJSDate()
+        }
+        return helpers.error('dateTimezone.invalid')
+    }).messages({
+        'dateTimezone.invalid': `Fecha inválida${format ? ` (formato esperado: ${format})` : ''}.`
+    })
+}
+
 const _joi = Joi.extend({
     type: 'objectId',
     base: objectId()
+}, {
+    type: 'timezone',
+    base: timezone()
 })
 
 export default _joi

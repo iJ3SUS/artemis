@@ -24,6 +24,8 @@ const createConfig = () => {
             secret: process.env.JWT_SECRET
         },
 
+        timezone: process.env.TIMEZONE || 'America/Bogota',
+
         meta: {
             verify_token: process.env.META_VERIFY_TOKEN,
             app_secret: process.env.META_APP_SECRET,
