@@ -9,6 +9,9 @@ export const EmployeeSchema = {
         "number": ""
     },
     "gender": "",
+    "birth_date": null,
+    "stratum": null,
+    "dependents": null,
     "job_title_id": null,
     "contract_type": null,
     "city": {

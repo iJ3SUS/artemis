@@ -62,7 +62,7 @@
                             placeholder="Número de teléfono"
                         />
                     </Col>
-                    <Col size="3">
+                    <Col size="2">
                         <Select
                             v-model="form.gender"
                             :errors="errors"
@@ -78,7 +78,7 @@
                             v-model="form.birth_date"
                             :errors="errors"
                             name="birth_date"
-                            label="Fecha de nacimiento"
+                            label="F. nacimiento"
                             type="date"
                         />
                     </Col>
@@ -103,7 +103,7 @@
                             placeholder="0"
                         />
                     </Col>
-                    <Col size="3">
+                    <Col size="4">
                         <Select
                             v-model="form.city.city_code"
                             :errors="errors"
@@ -169,7 +169,7 @@
                             type="date"
                         />
                     </Col>
-                    <Col size="3">
+                    <Col size="2">
                         <Switch
                             v-model="form.active"
                             :errors="errors"
@@ -180,8 +180,6 @@
                 </Grid>
             </template>
         </Card>
-
-        <pre class="mt-4 p-4 bg-gray-100 rounded text-xs overflow-auto">{{ JSON.stringify(form, null, 2) }}</pre>
 
     </div>
 </template>
