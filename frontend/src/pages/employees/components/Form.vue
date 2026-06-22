@@ -73,6 +73,19 @@
                             clearable
                         />
                     </Col>
+                    <Col size="3">
+                        <Select
+                            v-model="form.city.city_code"
+                            :errors="errors"
+                            name="city"
+                            label="Ciudad"
+                            option_label="label"
+                            option_value="city_code"
+                            :options="cities.data.value"
+                            placeholder="Seleccionar ciudad"
+                            @change="onCityChange"
+                        />
+                    </Col>
                 </Grid>
             </template>
         </Card>
@@ -92,7 +105,7 @@
                             label="Cargo"
                             option_label="name"
                             option_value="_id"
-                            :options="options.jobTitles"
+                            :options="options.job_titles"
                             placeholder="Seleccionar cargo"
                             clearable
                         />
@@ -138,6 +151,8 @@
             </template>
         </Card>
 
+        <pre class="mt-4 p-4 bg-gray-100 rounded text-xs overflow-auto">{{ JSON.stringify(form, null, 2) }}</pre>
+
     </div>
 </template>
 <script setup>
@@ -148,6 +163,7 @@ const props = defineProps({
 })
 
 const optionStore = useOptionsStore()
+const cities = useCities()
 
 const genderOptions = [
     { label: 'Masculino', value: 'male' },
@@ -164,15 +180,46 @@ const contractTypeOptions = [
 
 const options = computed(() => {
     return {
-        jobTitles: optionStore.data['job_titles'] || []
+        job_titles: optionStore.data['job_titles'] || []
     }
 })
 
+const onCityChange = (city_code) => {
+    
+    if (!city_code) {
+        props.form.city = {
+            country_code: 'Co',
+            country_name: 'Colombia',
+            state_code: '00',
+            state_name: 'No definido',
+            city_code: '00000',
+            city_name: 'No definido'
+        }
+        return
+    }
+    const option = cities.data.value.find(o => o.city_code === city_code)
+
+    if (option) {
+        props.form.city = {
+            country_code: option.country_code,
+            country_name: option.country_name,
+            state_code: option.state_code,
+            state_name: option.state_name,
+            city_code: option.city_code,
+            city_name: option.city_name
+        }
+    }
+
+}
+
 onMounted(() => {
+
     optionStore.add({
         key: 'job_titles',
         source: 'dashboard/job-titles/list'
     })
+    
+    cities.load()
 })
 
 </script>

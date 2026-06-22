@@ -32,6 +32,7 @@
                     <Column class="text-center">Cargo</Column>
                     <Column class="text-center">Tipo contrato</Column>
                     <Column class="text-center">Género</Column>
+                    <Column class="text-center">Ciudad</Column>
                     <Column class="text-center">Estado</Column>
                     <Column class="text-center">Acciones</Column>
                 </Row>
@@ -63,6 +64,11 @@
                     <Column>
                         <div class="flex items-center justify-center">
                             <span class="text-sm text-gray-700">{{ getGenderLabel(emp.gender) }}</span>
+                        </div>
+                    </Column>
+                    <Column>
+                        <div class="flex items-center justify-center">
+                            <p class="text-sm text-gray-700">{{ getCityLabel(emp.city) }}</p>
                         </div>
                     </Column>
                     <Column>
@@ -120,6 +126,11 @@ const getJobTitleName = (jobTitleId) => {
 const getGenderLabel = (gender) => {
     const labels = { male: 'Masculino', female: 'Femenino', other: 'Otro' }
     return labels[gender] || '-'
+}
+
+const getCityLabel = (city) => {
+    if (!city || !city.city_name || city.city_name === 'No definido') return '-'
+    return city.city_name
 }
 
 const getContractTypeLabel = (contract_type) => {

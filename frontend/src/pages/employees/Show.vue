@@ -60,6 +60,10 @@
                                     <label class="text-xs font-medium text-gray-500 uppercase">Género</label>
                                     <p class="text-sm text-gray-900 mt-1">{{ getGenderLabel(employee.gender) }}</p>
                                 </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 uppercase">Ciudad</label>
+                                    <p class="text-sm text-gray-900 mt-1">{{ getCityLabel(employee.city) }}</p>
+                                </div>
                             </div>
                         </Col>
                     </Grid>
@@ -134,6 +138,11 @@ const router = useRouter()
 const route = useRoute()
 
 const employee = ref(null)
+
+const getCityLabel = (city) => {
+    if (!city || !city.city_name || city.city_name === 'No definido') return '-'
+    return `${city.city_name} - ${city.state_name}`
+}
 
 const formatPhone = (phone) => {
     if (!phone || (!phone.indicative && !phone.number)) return '-'

@@ -12,6 +12,21 @@ export default Joi.object({
     gender: Joi.string().valid('male', 'female', 'other').allow('').optional(),
     job_title_id: Joi.objectId().optional().allow(null),
     contract_type: Joi.number().valid(1, 2, 3, 4).allow(null).optional(),
+    city: Joi.object({
+        country_code: Joi.string().optional().allow(''),
+        country_name: Joi.string().optional().allow(''),
+        state_code: Joi.string().optional().allow(''),
+        state_name: Joi.string().optional().allow(''),
+        city_code: Joi.string().optional().allow(''),
+        city_name: Joi.string().optional().allow('')
+    }).default({
+        country_code: 'Co',
+        country_name: 'Colombia',
+        state_code: '00',
+        state_name: 'No definido',
+        city_code: '00000',
+        city_name: 'No definido'
+    }).allow(null).optional(),
     entry_date: Joi.date().optional().allow(null),
     retirement_date: Joi.date().optional().allow(null),
     active: Joi.boolean().default(true),
