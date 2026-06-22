@@ -43,6 +43,8 @@ const employees = [
         dependents: 2,
         city: cities.bogota,
         job_title_id: new ObjectId('690000000000000000000001'),
+        contract_type: 2,
+
         entry_date: iso('2020-01-15'),
         retirement_date: null,
         active: true,
@@ -62,6 +64,8 @@ const employees = [
         dependents: 1,
         city: cities.medellin,
         job_title_id: new ObjectId('690000000000000000000002'),
+        contract_type: 2,
+
         entry_date: iso('2020-03-20'),
         retirement_date: null,
         active: true,
@@ -81,6 +85,8 @@ const employees = [
         dependents: 0,
         city: cities.cali,
         job_title_id: new ObjectId('690000000000000000000003'),
+        contract_type: 2,
+
         entry_date: iso('2019-11-10'),
         retirement_date: null,
         active: true,
@@ -100,6 +106,8 @@ const employees = [
         dependents: 3,
         city: cities.barranquilla,
         job_title_id: new ObjectId('690000000000000000000004'),
+        contract_type: 1,
+
         entry_date: iso('2021-02-01'),
         retirement_date: null,
         active: true,
@@ -119,6 +127,8 @@ const employees = [
         dependents: 2,
         city: cities.cartagena,
         job_title_id: new ObjectId('690000000000000000000005'),
+        contract_type: 2,
+
         entry_date: iso('2021-06-15'),
         retirement_date: null,
         active: true,
@@ -138,6 +148,8 @@ const employees = [
         dependents: 1,
         city: cities.bogota,
         job_title_id: new ObjectId('690000000000000000000006'),
+        contract_type: 2,
+
         entry_date: iso('2022-01-10'),
         retirement_date: null,
         active: true,
@@ -157,6 +169,8 @@ const employees = [
         dependents: 0,
         city: cities.bucaramanga,
         job_title_id: new ObjectId('690000000000000000000007'),
+        contract_type: 1,
+
         entry_date: iso('2022-04-18'),
         retirement_date: null,
         active: true,
@@ -176,6 +190,8 @@ const employees = [
         dependents: 2,
         city: cities.pereira,
         job_title_id: new ObjectId('690000000000000000000008'),
+        contract_type: 2,
+
         entry_date: iso('2021-09-01'),
         retirement_date: null,
         active: true,
@@ -195,6 +211,8 @@ const employees = [
         dependents: 1,
         city: cities.manizales,
         job_title_id: new ObjectId('690000000000000000000009'),
+        contract_type: 2,
+
         entry_date: iso('2020-07-20'),
         retirement_date: null,
         active: true,
@@ -214,6 +232,8 @@ const employees = [
         dependents: 0,
         city: cities.cucuta,
         job_title_id: new ObjectId('69000000000000000000000a'),
+        contract_type: 1,
+
         entry_date: iso('2022-08-05'),
         retirement_date: null,
         active: true,
@@ -233,6 +253,8 @@ const employees = [
         dependents: 1,
         city: cities.santa_marta,
         job_title_id: new ObjectId('69000000000000000000000b'),
+        contract_type: 2,
+
         entry_date: iso('2023-01-09'),
         retirement_date: null,
         active: true,
@@ -252,6 +274,8 @@ const employees = [
         dependents: 3,
         city: cities.ibague,
         job_title_id: new ObjectId('69000000000000000000000c'),
+        contract_type: 2,
+
         entry_date: iso('2022-11-14'),
         retirement_date: null,
         active: true,
@@ -271,6 +295,8 @@ const employees = [
         dependents: 0,
         city: cities.villavicencio,
         job_title_id: new ObjectId('69000000000000000000000d'),
+        contract_type: 3,
+
         entry_date: iso('2023-03-27'),
         retirement_date: null,
         active: true,
@@ -290,6 +316,8 @@ const employees = [
         dependents: 2,
         city: cities.armenia,
         job_title_id: new ObjectId('69000000000000000000000e'),
+        contract_type: 2,
+
         entry_date: iso('2021-05-12'),
         retirement_date: null,
         active: true,
@@ -309,6 +337,8 @@ const employees = [
         dependents: 1,
         city: cities.neiva,
         job_title_id: new ObjectId('69000000000000000000000f'),
+        contract_type: 2,
+
         entry_date: iso('2023-07-03'),
         retirement_date: null,
         active: true,
@@ -328,6 +358,8 @@ const employees = [
         dependents: 2,
         city: cities.bogota,
         job_title_id: new ObjectId('690000000000000000000010'),
+        contract_type: 1,
+
         entry_date: iso('2020-09-21'),
         retirement_date: null,
         active: true,
@@ -347,6 +379,8 @@ const employees = [
         dependents: 0,
         city: cities.valledupar,
         job_title_id: new ObjectId('690000000000000000000011'),
+        contract_type: 2,
+
         entry_date: iso('2023-10-16'),
         retirement_date: null,
         active: true,
@@ -366,6 +400,8 @@ const employees = [
         dependents: 1,
         city: cities.monteria,
         job_title_id: new ObjectId('690000000000000000000012'),
+        contract_type: 2,
+
         entry_date: iso('2024-01-08'),
         retirement_date: null,
         active: true,
@@ -385,6 +421,8 @@ const employees = [
         dependents: 3,
         city: cities.pasto,
         job_title_id: new ObjectId('690000000000000000000013'),
+        contract_type: 1,
+
         entry_date: iso('2023-05-22'),
         retirement_date: null,
         active: true,
@@ -404,6 +442,8 @@ const employees = [
         dependents: 2,
         city: cities.popayan,
         job_title_id: new ObjectId('690000000000000000000014'),
+        contract_type: 2,
+
         entry_date: iso('2022-12-01'),
         retirement_date: null,
         active: true,
@@ -423,6 +463,8 @@ const employees = [
         dependents: 1,
         city: cities.medellin,
         job_title_id: new ObjectId('69000000000000000000000e'),
+        contract_type: 2,
+
         entry_date: iso('2024-02-19'),
         retirement_date: null,
         active: true,
@@ -442,6 +484,8 @@ const employees = [
         dependents: 0,
         city: cities.cali,
         job_title_id: new ObjectId('690000000000000000000007'),
+        contract_type: 1,
+
         entry_date: iso('2024-04-01'),
         retirement_date: null,
         active: true,
@@ -461,6 +505,8 @@ const employees = [
         dependents: 4,
         city: cities.barranquilla,
         job_title_id: new ObjectId('690000000000000000000011'),
+        contract_type: 2,
+
         entry_date: iso('2023-08-14'),
         retirement_date: null,
         active: true,
@@ -480,6 +526,8 @@ const employees = [
         dependents: 1,
         city: cities.bucaramanga,
         job_title_id: new ObjectId('690000000000000000000013'),
+        contract_type: 4,
+
         entry_date: iso('2024-06-10'),
         retirement_date: null,
         active: true,
@@ -499,6 +547,8 @@ const employees = [
         dependents: 0,
         city: cities.cartagena,
         job_title_id: new ObjectId('69000000000000000000000f'),
+        contract_type: 2,
+
         entry_date: iso('2024-03-25'),
         retirement_date: null,
         active: true,
@@ -518,6 +568,8 @@ const employees = [
         dependents: 3,
         city: cities.bogota,
         job_title_id: new ObjectId('69000000000000000000000b'),
+        contract_type: 2,
+
         entry_date: iso('2023-11-06'),
         retirement_date: null,
         active: true,
@@ -537,6 +589,8 @@ const employees = [
         dependents: 4,
         city: cities.pereira,
         job_title_id: new ObjectId('690000000000000000000006'),
+        contract_type: 1,
+
         entry_date: iso('2021-04-12'),
         retirement_date: null,
         active: true,
@@ -556,6 +610,8 @@ const employees = [
         dependents: 0,
         city: cities.manizales,
         job_title_id: new ObjectId('690000000000000000000014'),
+        contract_type: 2,
+
         entry_date: iso('2024-07-29'),
         retirement_date: null,
         active: true,
@@ -575,6 +631,8 @@ const employees = [
         dependents: 1,
         city: cities.cucuta,
         job_title_id: new ObjectId('690000000000000000000008'),
+        contract_type: 2,
+
         entry_date: iso('2024-05-13'),
         retirement_date: null,
         active: true,
@@ -594,6 +652,8 @@ const employees = [
         dependents: 2,
         city: cities.santa_marta,
         job_title_id: new ObjectId('69000000000000000000000a'),
+        contract_type: 1,
+
         entry_date: iso('2024-08-05'),
         retirement_date: null,
         active: true,
@@ -616,6 +676,8 @@ const employees = [
         dependents: 3,
         city: cities.bogota,
         job_title_id: new ObjectId('69000000000000000000001a'),
+        contract_type: 2,
+
         entry_date: iso('2024-09-02'),
         retirement_date: null,
         active: true,
@@ -635,6 +697,8 @@ const employees = [
         dependents: 1,
         city: cities.medellin,
         job_title_id: new ObjectId('690000000000000000000019'),
+        contract_type: 2,
+
         entry_date: iso('2024-10-15'),
         retirement_date: null,
         active: true,
@@ -654,6 +718,8 @@ const employees = [
         dependents: 2,
         city: cities.cali,
         job_title_id: new ObjectId('690000000000000000000008'),
+        contract_type: 1,
+
         entry_date: iso('2024-11-01'),
         retirement_date: null,
         active: true,
@@ -673,6 +739,8 @@ const employees = [
         dependents: 0,
         city: cities.barranquilla,
         job_title_id: new ObjectId('690000000000000000000009'),
+        contract_type: 2,
+
         entry_date: iso('2025-01-13'),
         retirement_date: null,
         active: true,
@@ -692,6 +760,8 @@ const employees = [
         dependents: 1,
         city: cities.ibague,
         job_title_id: new ObjectId('69000000000000000000000f'),
+        contract_type: 2,
+
         entry_date: iso('2025-02-03'),
         retirement_date: null,
         active: true,
@@ -711,6 +781,8 @@ const employees = [
         dependents: 0,
         city: cities.bucaramanga,
         job_title_id: new ObjectId('69000000000000000000001f'),
+        contract_type: 1,
+
         entry_date: iso('2025-02-17'),
         retirement_date: null,
         active: true,
@@ -730,6 +802,8 @@ const employees = [
         dependents: 3,
         city: cities.cartagena,
         job_title_id: new ObjectId('69000000000000000000000c'),
+        contract_type: 2,
+
         entry_date: iso('2025-03-10'),
         retirement_date: null,
         active: true,
@@ -749,6 +823,8 @@ const employees = [
         dependents: 2,
         city: cities.santa_marta,
         job_title_id: new ObjectId('69000000000000000000000b'),
+        contract_type: 3,
+
         entry_date: iso('2025-03-24'),
         retirement_date: null,
         active: true,
@@ -768,6 +844,8 @@ const employees = [
         dependents: 1,
         city: cities.villavicencio,
         job_title_id: new ObjectId('690000000000000000000010'),
+        contract_type: 2,
+
         entry_date: iso('2025-04-07'),
         retirement_date: null,
         active: true,
@@ -787,6 +865,8 @@ const employees = [
         dependents: 0,
         city: cities.pereira,
         job_title_id: new ObjectId('690000000000000000000007'),
+        contract_type: 1,
+
         entry_date: iso('2025-05-12'),
         retirement_date: null,
         active: true,
@@ -806,6 +886,8 @@ const employees = [
         dependents: 4,
         city: cities.manizales,
         job_title_id: new ObjectId('69000000000000000000000d'),
+        contract_type: 2,
+
         entry_date: iso('2025-05-26'),
         retirement_date: null,
         active: true,
@@ -825,6 +907,8 @@ const employees = [
         dependents: 2,
         city: cities.bogota,
         job_title_id: new ObjectId('690000000000000000000015'),
+        contract_type: 2,
+
         entry_date: iso('2025-06-09'),
         retirement_date: null,
         active: true,
@@ -844,6 +928,8 @@ const employees = [
         dependents: 3,
         city: cities.armenia,
         job_title_id: new ObjectId('690000000000000000000014'),
+        contract_type: 1,
+
         entry_date: iso('2025-07-01'),
         retirement_date: null,
         active: true,
@@ -863,6 +949,8 @@ const employees = [
         dependents: 1,
         city: cities.neiva,
         job_title_id: new ObjectId('690000000000000000000013'),
+        contract_type: 4,
+
         entry_date: iso('2025-07-14'),
         retirement_date: null,
         active: true,
@@ -882,6 +970,8 @@ const employees = [
         dependents: 0,
         city: cities.valledupar,
         job_title_id: new ObjectId('690000000000000000000011'),
+        contract_type: 2,
+
         entry_date: iso('2025-08-04'),
         retirement_date: null,
         active: true,
@@ -901,6 +991,8 @@ const employees = [
         dependents: 1,
         city: cities.monteria,
         job_title_id: new ObjectId('690000000000000000000017'),
+        contract_type: 2,
+
         entry_date: iso('2025-08-18'),
         retirement_date: null,
         active: true,
@@ -920,6 +1012,8 @@ const employees = [
         dependents: 0,
         city: cities.pasto,
         job_title_id: new ObjectId('690000000000000000000016'),
+        contract_type: 2,
+
         entry_date: iso('2025-09-01'),
         retirement_date: null,
         active: true,
@@ -939,6 +1033,8 @@ const employees = [
         dependents: 2,
         city: cities.bogota,
         job_title_id: new ObjectId('690000000000000000000018'),
+        contract_type: 1,
+
         entry_date: iso('2025-09-15'),
         retirement_date: null,
         active: true,
@@ -958,6 +1054,8 @@ const employees = [
         dependents: 1,
         city: cities.cali,
         job_title_id: new ObjectId('69000000000000000000001b'),
+        contract_type: 2,
+
         entry_date: iso('2025-10-06'),
         retirement_date: null,
         active: true,
@@ -977,6 +1075,8 @@ const employees = [
         dependents: 0,
         city: cities.medellin,
         job_title_id: new ObjectId('69000000000000000000001c'),
+        contract_type: 2,
+
         entry_date: iso('2025-10-20'),
         retirement_date: null,
         active: true,
@@ -996,6 +1096,8 @@ const employees = [
         dependents: 0,
         city: cities.barranquilla,
         job_title_id: new ObjectId('69000000000000000000001d'),
+        contract_type: 1,
+
         entry_date: iso('2025-11-03'),
         retirement_date: null,
         active: true,
@@ -1015,6 +1117,8 @@ const employees = [
         dependents: 1,
         city: cities.cartagena,
         job_title_id: new ObjectId('69000000000000000000001e'),
+        contract_type: 2,
+
         entry_date: iso('2025-11-17'),
         retirement_date: null,
         active: true,
@@ -1034,6 +1138,8 @@ const employees = [
         dependents: 0,
         city: cities.bucaramanga,
         job_title_id: new ObjectId('690000000000000000000020'),
+        contract_type: 4,
+
         entry_date: iso('2025-12-01'),
         retirement_date: null,
         active: true,
