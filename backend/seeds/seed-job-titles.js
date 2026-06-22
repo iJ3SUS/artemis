@@ -22,6 +22,18 @@ const jobTitles = [
     { _id: new ObjectId('690000000000000000000012'), name: 'Auxiliar Contable', description: 'Apoyo en contabilidad', parent_id: new ObjectId('690000000000000000000006'), level: 3, active: true },
     { _id: new ObjectId('690000000000000000000013'), name: 'Vendedor', description: 'Ventas directas', parent_id: new ObjectId('69000000000000000000000c'), level: 3, active: true },
     { _id: new ObjectId('690000000000000000000014'), name: 'Diseñador Gráfico', description: 'Diseño visual y branding', parent_id: new ObjectId('69000000000000000000000d'), level: 3, active: true },
+    { _id: new ObjectId('690000000000000000000015'), name: 'Analista de Datos', description: 'Análisis de datos y BI', parent_id: new ObjectId('690000000000000000000008'), level: 3, active: true },
+    { _id: new ObjectId('690000000000000000000016'), name: 'QA Tester', description: 'Pruebas de calidad de software', parent_id: new ObjectId('690000000000000000000008'), level: 3, active: true },
+    { _id: new ObjectId('690000000000000000000017'), name: 'Analista de RRHH', description: 'Gestión de personal y clima laboral', parent_id: new ObjectId('69000000000000000000000a'), level: 3, active: true },
+    { _id: new ObjectId('690000000000000000000018'), name: 'Coordinador de Bienestar', description: 'Programas de bienestar laboral', parent_id: new ObjectId('690000000000000000000004'), level: 2, active: true },
+    { _id: new ObjectId('690000000000000000000019'), name: 'Contador Junior', description: 'Apoyo en procesos contables', parent_id: new ObjectId('690000000000000000000006'), level: 3, active: true },
+    { _id: new ObjectId('69000000000000000000001a'), name: 'Analista de Compras', description: 'Gestión de proveedores y compras', parent_id: new ObjectId('690000000000000000000002'), level: 2, active: true },
+    { _id: new ObjectId('69000000000000000000001b'), name: 'Ejecutivo de Cuenta', description: 'Atención a clientes clave', parent_id: new ObjectId('69000000000000000000000c'), level: 3, active: true },
+    { _id: new ObjectId('69000000000000000000001c'), name: 'Community Manager', description: 'Gestión de redes sociales', parent_id: new ObjectId('69000000000000000000000d'), level: 3, active: true },
+    { _id: new ObjectId('69000000000000000000001d'), name: 'Practicante de Desarrollo', description: 'Aprendiz de desarrollo de software', parent_id: new ObjectId('690000000000000000000008'), level: 3, active: true },
+    { _id: new ObjectId('69000000000000000000001e'), name: 'Asistente Administrativo', description: 'Apoyo en tareas administrativas', parent_id: new ObjectId('690000000000000000000001'), level: 1, active: true },
+    { _id: new ObjectId('69000000000000000000001f'), name: 'Coordinador de Capacitación', description: 'Planes de formación y desarrollo', parent_id: new ObjectId('69000000000000000000000b'), level: 3, active: true },
+    { _id: new ObjectId('690000000000000000000020'), name: 'Analista de Seguridad', description: 'Seguridad informática y cumplimiento', parent_id: new ObjectId('690000000000000000000009'), level: 3, active: true },
 ]
 
 async function seed() {
