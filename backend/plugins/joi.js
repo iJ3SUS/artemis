@@ -15,15 +15,10 @@ const timezone = (opts = {}) => {
     const { format } = typeof opts === 'string' ? { format: opts } : opts
 
     return Joi.custom((value, helpers) => {
-        if (value instanceof Date) {
-            return DateTime.fromJSDate(value).setZone(config.timezone).toJSDate()
-        }
-        if (typeof value === 'string') {
-            const dt = format
-                ? DateTime.fromFormat(value, format, { zone: config.timezone })
-                : DateTime.fromISO(value, { zone: config.timezone })
-            if (dt.isValid) return dt.toJSDate()
-        }
+        const dt = format
+            ? DateTime.fromFormat(value, format, { zone: config.timezone })
+            : DateTime.fromISO(value, { zone: config.timezone })
+        if (dt.isValid) return dt.toJSDate()
         return helpers.error('dateTimezone.invalid')
     }).messages({
         'dateTimezone.invalid': `Fecha inválida${format ? ` (formato esperado: ${format})` : ''}.`
