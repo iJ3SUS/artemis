@@ -156,6 +156,7 @@
     </div>
 </template>
 <script setup>
+import { genderOptions, contractTypeOptions } from '../options.ts'
 
 const props = defineProps({
     errors: Object,
@@ -164,19 +165,6 @@ const props = defineProps({
 
 const optionStore = useOptionsStore()
 const cities = useCities()
-
-const genderOptions = [
-    { label: 'Masculino', value: 'male' },
-    { label: 'Femenino', value: 'female' },
-    { label: 'Otro', value: 'other' }
-]
-
-const contractTypeOptions = [
-    { label: 'Fijo', value: 1 },
-    { label: 'Indefinido', value: 2 },
-    { label: 'Obra labor', value: 3 },
-    { label: 'Prestación de servicios', value: 4 }
-]
 
 const options = computed(() => {
     return {
