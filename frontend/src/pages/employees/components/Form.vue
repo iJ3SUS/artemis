@@ -80,6 +80,7 @@
                             name="birth_date"
                             label="F. nacimiento"
                             type="date"
+                            :transform="formatDateInput"
                         />
                     </Col>
                     <Col size="2">
@@ -158,6 +159,7 @@
                             name="entry_date"
                             label="Fecha de ingreso"
                             type="date"
+                            :transform="formatDateInput"
                         />
                     </Col>
                     <Col size="3">
@@ -167,6 +169,7 @@
                             name="retirement_date"
                             label="Fecha de retiro"
                             type="date"
+                            :transform="formatDateInput"
                         />
                     </Col>
                     <Col size="2">
@@ -181,10 +184,15 @@
             </template>
         </Card>
 
+        <pre>
+            {{ form }}
+        </pre>
+
     </div>
 </template>
 <script setup>
 import { genderOptions, contractTypeOptions, stratumOptions } from '../options.ts'
+
 
 const props = defineProps({
     errors: Object,
@@ -226,6 +234,17 @@ const onCityChange = (city_code) => {
         }
     }
 
+}
+
+
+const formatDateInput = (val) => {
+    if (!val) return ''
+    const str = String(val)
+    try {
+        return $ParseDate(str).toFormat('yyyy-MM-dd')
+    } catch {
+        return str.length >= 10 ? str.substring(0, 10) : str
+    }
 }
 
 onMounted(() => {
