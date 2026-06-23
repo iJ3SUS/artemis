@@ -2,11 +2,6 @@
     <Page :padding="false" class="org-chart-page">
         <template #heading>
             <Heading :sticky="false">
-                <template #back>
-                    <Button color="gray" @handle="router.push('/job-titles')">
-                        <Icon icon="ArrowLeft" width="16" height="16" class="text-inherit" />
-                    </Button>
-                </template>
                 <template #title>
                     <div>
                         <h1 class="text-2xl font-semibold text-gray-900">Organigrama</h1>

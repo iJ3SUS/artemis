@@ -19,6 +19,7 @@ const EmployeeShow = () => import('@/pages/employees/Show.vue')
 export const routes = [
     { path: '/login', label: 'Login', component: Login },
     { path: '/', label: 'Dashboard', icon: 'Home', component: Home, meta: { protected: true, section: 'main', order: 1 } },
+    { path: '/organizational-chart', label: 'Organigrama', icon: 'UserCog', component: JobTitleOrganizationalChart, meta: { protected: true, section: 'main', order: 2 } },
     { path: '/employees', label: 'Empleados', icon: 'Account', component: Employees, meta: { protected: true, section: 'management', order: 1 } },
     { path: '/employees/create', label: 'Crear empleado', component: EmployeeCreate, meta: { protected: true, section: 'management', sidebar: false } },
     { path: '/employees/:id', label: 'Detalle empleado', component: EmployeeShow, meta: { protected: true, section: 'management', sidebar: false } },
@@ -26,7 +27,6 @@ export const routes = [
     { path: '/job-titles', label: 'Cargos laborales', icon: 'Briefcase', component: JobTitles, meta: { protected: true, section: 'management', order: 2 } },
     { path: '/job-titles/create', label: 'Crear cargo', component: JobTitleCreate, meta: { protected: true, section: 'management', sidebar: false } },
     { path: '/job-titles/:id/edit', label: 'Editar cargo', component: JobTitleEdit, meta: { protected: true, section: 'management', sidebar: false } },
-    { path: '/job-titles/organizational-chart', label: 'Organigrama', component: JobTitleOrganizationalChart, meta: { protected: true, section: 'management', sidebar: false } },
     { path: '/users', label: 'Usuarios', icon: 'UserShare', component: Users, meta: { protected: true, section: 'management', order: 3 } },
     { path: '/users/create', label: 'Crear usuario', component: UserCreate, meta: { protected: true, section: 'management', sidebar: false } },
     { path: '/users/:id/edit', label: 'Editar usuario', component: UserEdit, meta: { protected: true, section: 'management', sidebar: false } },
