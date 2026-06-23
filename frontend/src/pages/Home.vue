@@ -1,9 +1,15 @@
 <template>
-    <div class="p-6">
-        <div class="mb-6">
-            <h1 class="text-2xl font-bold text-gray-900">Dashboard</h1>
-            <p class="text-gray-600 mt-1">Panel de demografía</p>
-        </div>
+    <Page>
+        <template #heading>
+            <Heading>
+                <template #title>
+                    <div>
+                        <h1 class="text-2xl font-semibold text-gray-900">Dashboard</h1>
+                        <p class="text-sm text-gray-500 mt-0.5">Panel de demografía</p>
+                    </div>
+                </template>
+            </Heading>
+        </template>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <Card v-if="gender_data">
@@ -50,7 +56,7 @@
                 </template>
             </Card>
         </div>
-    </div>
+    </Page>
 </template>
 
 <script setup lang="ts">
