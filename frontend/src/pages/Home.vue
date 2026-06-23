@@ -5,7 +5,7 @@
                 <template #title>
                     <div>
                         <h1 class="text-2xl font-semibold text-gray-900">Dashboard</h1>
-                        <p class="text-sm text-gray-500 mt-0.5">Panel de demografía</p>
+                        <p class="text-sm text-gray-500 mt-0.5">Demografía de los empleados</p>
                     </div>
                 </template>
             </Heading>
@@ -45,6 +45,17 @@
                 </template>
             </Card>
 
+            <Card v-if="job_title_data">
+                <template #header>
+                    Empleados por cargo
+                </template>
+                <template #content>
+                    <div :style="{ height: job_title_chart_height + 'px' }">
+                        <Bar :data="job_title_chart_data" :options="horizontal_bar_options" />
+                    </div>
+                </template>
+            </Card>
+
             <Card v-if="city_data">
                 <template #header>
                     Lugar de residencia
@@ -78,6 +89,7 @@ const http = useHttp()
 const gender_data = ref(null)
 const age_data = ref(null)
 const stratum_data = ref(null)
+const job_title_data = ref(null)
 const city_data = ref(null)
 
 const pie_options = {
@@ -150,6 +162,22 @@ const stratum_chart_data = computed(() => {
     }
 })
 
+const job_title_chart_height = computed(() => {
+    if (!job_title_data.value) return 256
+    return Math.max(256, job_title_data.value.length * 28)
+})
+
+const job_title_chart_data = computed(() => {
+    if (!job_title_data.value) return null
+    return {
+        labels: job_title_data.value.map((i: any) => i.name || 'Sin cargo'),
+        datasets: [{
+            data: job_title_data.value.map((i: any) => i.count),
+            backgroundColor: '#8B5CF6'
+        }]
+    }
+})
+
 const city_chart_height = computed(() => {
     if (!city_data.value) return 256
     return Math.max(256, city_data.value.length * 28)
@@ -175,16 +203,18 @@ const fetchDemographics = async (url: string) => {
 }
 
 onMounted(async () => {
-    const [gender, age, stratum, city] = await Promise.all([
+    const [gender, age, stratum, job_title, city] = await Promise.all([
         fetchDemographics('dashboard/charts/employees/gender'),
         fetchDemographics('dashboard/charts/employees/age-range'),
         fetchDemographics('dashboard/charts/employees/stratum'),
+        fetchDemographics('dashboard/charts/employees/job-title'),
         fetchDemographics('dashboard/charts/employees/city'),
     ])
 
     gender_data.value = gender
     age_data.value = age
     stratum_data.value = stratum
+    job_title_data.value = job_title
     city_data.value = city
 })
 </script>
