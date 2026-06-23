@@ -53,6 +53,9 @@ const load = async () => {
 
     tree.value = response
 
+    await nextTick()
+    centerRoot()
+
 }
 
 const startDrag = (e: MouseEvent) => {
@@ -132,6 +135,21 @@ const onTouchDrag = (e: TouchEvent) => {
     }
 }
 
+const centerRoot = () => {
+    if (!chartContainer.value || !chartContent.value) return
+    const container = chartContainer.value.getBoundingClientRect()
+    const rootNode = chartContent.value.querySelector('.tree-node.is-root')
+    if (!rootNode) return
+    const nodeRect = rootNode.getBoundingClientRect()
+    const offsetX = container.left - nodeRect.left + (container.width - nodeRect.width) / 2
+    const offsetY = container.top - nodeRect.top + (container.height - nodeRect.height) / 2
+    translateX.value = offsetX
+    translateY.value = Math.max(0, offsetY)
+    currentTranslateX = translateX.value
+    currentTranslateY = translateY.value
+    chartContent.value.style.transform = `translate(${translateX.value}px, ${translateY.value}px)`
+}
+
 const stopTouchDrag = () => {
     if (!isDragging.value) return
     isDragging.value = false
@@ -144,6 +162,11 @@ onMounted(() => {
     if (chartContainer.value) {
         chartContainer.value.style.cursor = 'grab'
     }
+    window.addEventListener('resize', centerRoot)
+})
+
+onUnmounted(() => {
+    window.removeEventListener('resize', centerRoot)
 })
 </script>
 
