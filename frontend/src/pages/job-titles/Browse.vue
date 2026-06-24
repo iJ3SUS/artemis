@@ -33,7 +33,6 @@
                     <Column class="text-center">Nombre</Column>
                     <Column class="text-center">Descripción</Column>
                     <Column class="text-center">Dependencia</Column>
-                    <Column class="text-center">Nivel</Column>
                     <Column class="text-center">Estado</Column>
                     <Column class="text-center">Creado</Column>
                     <Column class="text-center">Actualizado</Column>
@@ -51,13 +50,6 @@
                     </Column>
                     <Column>
                         <p class="text-sm text-gray-700">{{ jt.dependency || '-' }}</p>
-                    </Column>
-                    <Column>
-                        <div class="flex items-center justify-center">
-                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                                Nivel {{ jt.level }}
-                            </span>
-                        </div>
                     </Column>
                     <Column>
                         <div class="flex items-center justify-center">

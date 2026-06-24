@@ -18,25 +18,6 @@
                         />
                     </Col>
                     <Col size="2">
-                        <Text
-                            v-model.number="form.level"
-                            :errors="errors"
-                            name="level"
-                            label="Nivel"
-                            placeholder="0"
-                            type="number"
-                        />
-                    </Col>
-                    <Col size="6">
-                        <Textarea
-                            v-model="form.description"
-                            :errors="errors"
-                            name="description"
-                            label="Descripción"
-                            placeholder="Descripción del cargo"
-                        />
-                    </Col>
-                    <Col size="3">
                         <Select
                             v-model="form.parent_id"
                             :errors="errors"
@@ -47,6 +28,15 @@
                             :options="options.jobTitles"
                             placeholder="Sin cargo superior"
                             clearable
+                        />
+                    </Col>
+                    <Col size="6">
+                        <Textarea
+                            v-model="form.description"
+                            :errors="errors"
+                            name="description"
+                            label="Descripción"
+                            placeholder="Descripción del cargo"
                         />
                     </Col>
                     <Col size="3">

@@ -4,7 +4,6 @@
             <p class="card-title">{{ node.name }}</p>
             <p v-if="node.dependency" class="card-dependency">{{ node.dependency }}</p>
             <p v-if="node.description" class="card-desc">{{ node.description }}</p>
-            <span class="card-badge">Nivel {{ node.level }}</span>
         </div>
 
         <ul v-if="node.children && node.children.length > 0">
@@ -110,17 +109,6 @@ const props = defineProps({
     margin-top: 6px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-}
-
-.card-badge {
-    display: inline-block;
-    margin-top: 8px;
-    padding: 2px 10px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    background: #eff6ff;
-    color: #1d4ed8;
-    border-radius: 9999px;
 }
 
 .tree-node ul {
