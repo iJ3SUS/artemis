@@ -2,6 +2,7 @@
     <li class="tree-node" :class="{ 'is-root': isRoot }">
         <div class="card">
             <p class="card-title">{{ node.name }}</p>
+            <p v-if="node.dependency" class="card-dependency">{{ node.dependency }}</p>
             <p v-if="node.description" class="card-desc">{{ node.description }}</p>
             <span class="card-badge">Nivel {{ node.level }}</span>
         </div>
@@ -98,8 +99,17 @@ const props = defineProps({
 .card-desc {
     font-size: 0.75rem;
     color: #6b7280;
-    margin-top: 6px;
+    margin-top: 4px;
     line-height: 1.4;
+}
+
+.card-dependency {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #6d28d9;
+    margin-top: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .card-badge {

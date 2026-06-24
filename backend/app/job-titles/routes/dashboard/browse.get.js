@@ -13,7 +13,8 @@ export const controller = async (req, rep) => {
             $match: {
                 $or: [
                     { name: { $regex: search, $options: 'i' } },
-                    { description: { $regex: search, $options: 'i' } }
+                    { description: { $regex: search, $options: 'i' } },
+                    { dependency: { $regex: search, $options: 'i' } }
                 ]
             }
         })

@@ -50,6 +50,15 @@
                         />
                     </Col>
                     <Col size="3">
+                        <Text
+                            v-model="form.dependency"
+                            :errors="errors"
+                            name="dependency"
+                            label="Dependencia"
+                            placeholder="Ej: ADMINISTRACION"
+                        />
+                    </Col>
+                    <Col size="3">
                         <Switch
                             v-model="form.active"
                             :errors="errors"

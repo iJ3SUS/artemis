@@ -24,7 +24,7 @@
         <Table v-if="jobTitles">
             <template #top>
                 <div class="p-4">
-                    <Text v-model="inputs.search" label="Buscar" name="search" placeholder="Nombre, descripción" />
+                    <Text v-model="inputs.search" label="Buscar" name="search" placeholder="Nombre, descripción, dependencia" />
                 </div>
             </template>
 
@@ -32,6 +32,7 @@
                 <Row>
                     <Column class="text-center">Nombre</Column>
                     <Column class="text-center">Descripción</Column>
+                    <Column class="text-center">Dependencia</Column>
                     <Column class="text-center">Nivel</Column>
                     <Column class="text-center">Estado</Column>
                     <Column class="text-center">Creado</Column>
@@ -47,6 +48,9 @@
                     </Column>
                     <Column>
                         <p class="text-sm text-gray-700">{{ jt.description || '-' }}</p>
+                    </Column>
+                    <Column>
+                        <p class="text-sm text-gray-700">{{ jt.dependency || '-' }}</p>
                     </Column>
                     <Column>
                         <div class="flex items-center justify-center">
