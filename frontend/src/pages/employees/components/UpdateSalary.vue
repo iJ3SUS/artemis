@@ -10,7 +10,17 @@
                 v-model="form.salary"
                 label="Nuevo salario"
                 name="salary"
-                money
+                :mask="{
+                    mask: Number,
+                    scale: 0,
+                    thousandsSeparator: ' ',
+                    padFractionalZeros: false,
+                    normalizeZeros: true,
+                    radix: '.',
+                    mapToRadix: [','],
+                    min: 0,
+                    autofix: true,
+                }"
                 :errors="errors"
                 placeholder="0"
             />

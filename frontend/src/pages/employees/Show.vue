@@ -84,6 +84,10 @@
                                     <p class="text-sm text-gray-900 mt-1">{{ employee.job_title?.name || '-' }}</p>
                                 </div>
                                 <div>
+                                    <label class="text-xs font-medium text-gray-500 uppercase">Salario</label>
+                                    <p class="text-sm text-gray-900 mt-1">{{ formatCurrency(employee.salary) }}</p>
+                                </div>
+                                <div>
                                     <label class="text-xs font-medium text-gray-500 uppercase">Tipo de contrato</label>
                                     <p class="text-sm text-gray-900 mt-1">{{ getContractTypeLabel(employee.contract_type) }}</p>
                                 </div>
@@ -158,6 +162,15 @@ const getGenderLabel = (gender) => {
 const getContractTypeLabel = (contract_type) => {
     const labels = { 1: 'Fijo', 2: 'Indefinido', 3: 'Obra labor', 4: 'Prestación de servicios' }
     return labels[contract_type] || '-'
+}
+
+const formatCurrency = (value: number) => {
+    if (!value) return '-'
+    return new Intl.NumberFormat('es-CO', {
+        style: 'currency',
+        currency: 'COP',
+        minimumFractionDigits: 0
+    }).format(value)
 }
 
 const load = async () => {

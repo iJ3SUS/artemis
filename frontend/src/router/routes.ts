@@ -1,6 +1,5 @@
 const Login = () => import('@/pages/Login.vue')
 const Home = () => import('@/pages/Home.vue')
-const Settings = () => import('@/pages/Settings.vue')
 const Users = () => import('@/pages/users/Browse.vue')
 const UserEdit = () => import('@/pages/users/Edit.vue')
 const UserCreate = () => import('@/pages/users/Create.vue')
@@ -33,7 +32,6 @@ export const routes = [
     { path: '/roles', label: 'Roles', icon: 'ID', component: Roles, meta: { protected: true, section: 'management', order: 4 } },
     { path: '/roles/create', label: 'Crear rol', component: RoleCreate, meta: { protected: true, section: 'management', sidebar: false } },
     { path: '/roles/:id/edit', label: 'Editar rol', component: RoleEdit, meta: { protected: true, section: 'management', sidebar: false } },
-    { path: '/settings', label: 'Configuración', icon: 'Cog', component: Settings, meta: { protected: true, section: 'management', order: 5 } },
 ]
 
 export const icons = {
