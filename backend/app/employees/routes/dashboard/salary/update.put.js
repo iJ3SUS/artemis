@@ -18,23 +18,22 @@ export const controller = async (req, rep) => {
         })
     }
 
-    const previous_salary = employee.salary || 0
-
     employee.fill({ salary })
+
     await employee.save()
 
     const history = new SalaryHistory({
         employee_id: employee._id,
         job_title_id: employee.job_title_id || null,
-        previous_salary,
-        new_salary: salary,
+        salary,
         reason: reason || ''
     })
+    
     await history.save()
 
     return rep.send({
-        employee,
-        history
+        message: 'Salario actualizado correctamente',
+        resource_id: history._id
     })
 
 }

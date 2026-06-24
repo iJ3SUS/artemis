@@ -26,8 +26,7 @@
 
             <template #head>
                 <Row>
-                    <Column class="text-center">Identificación</Column>
-                    <Column class="text-center">Nombre</Column>
+                    <Column class="text-center">Empleado</Column>
                     <Column class="text-center">Email</Column>
                     <Column class="text-center">Cargo</Column>
                     <Column class="text-center">Tipo contrato</Column>
@@ -41,12 +40,8 @@
             <template #body>
                 <Row v-for="emp in employees.items" :key="emp._id">
                     <Column>
-                        <div class="flex items-center justify-center">
-                            <p class="text-sm text-gray-700">{{ emp.identification }}</p>
-                        </div>
-                    </Column>
-                    <Column>
                         <p class="text-sm font-medium text-gray-900 cursor-pointer hover:text-blue-600" @click="router.push(`/employees/${emp._id}`)">{{ emp.names }} {{ emp.surnames }}</p>
+                        <p class="text-xs text-gray-500">{{ emp.identification }}</p>
                     </Column>
                     <Column>
                         <p class="text-sm text-gray-700">{{ emp.email || '-' }}</p>
