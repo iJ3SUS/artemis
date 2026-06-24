@@ -87,6 +87,9 @@
                             <Button theme="icon" title="Editar" @handle="router.push(`/employees/${emp._id}/edit`)">
                                 <Icon icon="Pencil" width="16" height="16" class="text-inherit" />
                             </Button>
+                            <Button theme="icon" title="Actualizar salario" @handle="current.employee = emp; modal.salary = true">
+                                <Icon icon="EyeDolar" width="16" height="16" class="text-inherit" />
+                            </Button>
                         </div>
                     </Column>
                 </Row>
@@ -97,10 +100,19 @@
             </template>
         </Table>
 
+        <UpdateSalary
+            v-if="current.employee"
+            :show="modal.salary"
+            :employee="current.employee"
+            @close="modal.salary = false; current.employee = null"
+            @saved="load"
+        />
+
     </Page>
 </template>
 
 <script setup lang="ts">
+import UpdateSalary from './components/UpdateSalary.vue'
 
 const http = useHttp()
 const route = useRoute()
@@ -108,6 +120,14 @@ const router = useRouter()
 const optionStore = useOptionsStore()
 
 const employees = ref(null)
+
+const modal = reactive({
+    salary: false
+})
+
+const current = reactive({
+    employee: null
+})
 
 const inputs = reactive({
     search: ''
