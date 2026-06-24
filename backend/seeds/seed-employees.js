@@ -34,6 +34,7 @@ async function seed() {
         birth_date: e.birth_date,
         stratum: e.stratum,
         dependents: e.dependents,
+        city: e.city,
         job_title_id: e.job_title_id,
         contract_type: e.contract_type,
         entry_date: e.entry_date,

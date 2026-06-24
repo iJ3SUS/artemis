@@ -1,6 +1,6 @@
 [
   {
-    "_id": "6a3b62ff4ddefa918c824c7b",
+    "_id": "6a3b653205cd9683bec26bf9",
     "names": "RAMIRO",
     "surnames": "MORENO GONZALEZ",
     "identification": "",
@@ -13,7 +13,14 @@
     "birth_date": "1973-10-18T05:00:00.000Z",
     "stratum": 2,
     "dependents": 3,
-    "city_name": "TOCANCIPÁ",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25817",
+      "city_name": "Tocancipá"
+    },
     "cargo": "ALMACENISTA",
     "job_title_id": "6a3b57978f7736e514324ee7",
     "contract_type": 2,
@@ -22,7 +29,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c7c",
+    "_id": "6a3b653205cd9683bec26bfa",
     "names": "ADRIAN SAYARI",
     "surnames": "BARRERA VARGAS",
     "identification": "",
@@ -35,7 +42,14 @@
     "birth_date": "1993-01-17T04:00:00.000Z",
     "stratum": 2,
     "dependents": 2,
-    "city_name": "ZIPAQUIRA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25899",
+      "city_name": "Zipaquirá"
+    },
     "cargo": "ALMACENISTA",
     "job_title_id": "6a3b57978f7736e514324ee7",
     "contract_type": 2,
@@ -44,7 +58,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c7d",
+    "_id": "6a3b653205cd9683bec26bfb",
     "names": "DIANA CAROLINA",
     "surnames": "DIAZ CANO",
     "identification": "",
@@ -57,7 +71,14 @@
     "birth_date": "1993-05-29T05:00:00.000Z",
     "stratum": 3,
     "dependents": 2,
-    "city_name": "SOPO",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25758",
+      "city_name": "Sopó"
+    },
     "cargo": "ASISTENTE DE GERENCIA",
     "job_title_id": "6a3b57978f7736e514324ee8",
     "contract_type": 2,
@@ -66,7 +87,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c7e",
+    "_id": "6a3b653205cd9683bec26bfc",
     "names": "WILLIAM RICARDO",
     "surnames": "BOADA RODRIGUEZ",
     "identification": "",
@@ -79,7 +100,14 @@
     "birth_date": "1979-08-20T05:00:00.000Z",
     "stratum": 3,
     "dependents": 3,
-    "city_name": "SOPO",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25758",
+      "city_name": "Sopó"
+    },
     "cargo": "ASISTENTE DE INSTRUCTOR/GOLF",
     "job_title_id": "6a3b57978f7736e514324ee9",
     "contract_type": 2,
@@ -88,7 +116,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c7f",
+    "_id": "6a3b653205cd9683bec26bfd",
     "names": "CRISTOBAL",
     "surnames": "CASTRO PEÑA",
     "identification": "",
@@ -101,7 +129,14 @@
     "birth_date": "1965-05-17T05:00:00.000Z",
     "stratum": 2,
     "dependents": 6,
-    "city_name": "ZIPAQUIRA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25899",
+      "city_name": "Zipaquirá"
+    },
     "cargo": "AUX. ZONAS HUMEDAS / VESTIER CABALLEROS",
     "job_title_id": "6a3b57978f7736e514324eea",
     "contract_type": 2,
@@ -110,7 +145,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c80",
+    "_id": "6a3b653205cd9683bec26bfe",
     "names": "EDWIN ALEXANDER",
     "surnames": "JIMENEZ VELAZQUEZ",
     "identification": "",
@@ -123,7 +158,14 @@
     "birth_date": "2002-09-23T05:00:00.000Z",
     "stratum": 2,
     "dependents": 0,
-    "city_name": "TOCANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25817",
+      "city_name": "Tocancipá"
+    },
     "cargo": "AUX. ZONAS HUMEDAS / VESTIER CABALLEROS",
     "job_title_id": "6a3b57978f7736e514324eea",
     "contract_type": 2,
@@ -132,7 +174,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c81",
+    "_id": "6a3b653205cd9683bec26bff",
     "names": "VESNA YADITD",
     "surnames": "RODRIGUEZ SABOYA",
     "identification": "",
@@ -145,7 +187,14 @@
     "birth_date": "1972-02-23T05:00:00.000Z",
     "stratum": 2,
     "dependents": 1,
-    "city_name": "GACHANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25295",
+      "city_name": "Gachancipá"
+    },
     "cargo": "AUX. ZONAS HUMEDAS / VESTIER DAMAS",
     "job_title_id": "6a3b57978f7736e514324eeb",
     "contract_type": 2,
@@ -154,7 +203,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c82",
+    "_id": "6a3b653205cd9683bec26c00",
     "names": "AURA LIGIA",
     "surnames": "RAMOS TORRES",
     "identification": "",
@@ -167,7 +216,14 @@
     "birth_date": "1976-07-04T05:00:00.000Z",
     "stratum": 3,
     "dependents": 2,
-    "city_name": "SOPÓ",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25758",
+      "city_name": "Sopó"
+    },
     "cargo": "AUX. ZONAS HUMEDAS / VESTIER DAMAS",
     "job_title_id": "6a3b57978f7736e514324eeb",
     "contract_type": 2,
@@ -176,7 +232,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c83",
+    "_id": "6a3b653205cd9683bec26c01",
     "names": "KELLY DAYAN",
     "surnames": "NOVA HERNANDEZ",
     "identification": "",
@@ -189,7 +245,14 @@
     "birth_date": "2003-08-19T05:00:00.000Z",
     "stratum": 2,
     "dependents": 1,
-    "city_name": "ZIPAQUIRA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25899",
+      "city_name": "Zipaquirá"
+    },
     "cargo": "AUXILIAR ADMINISTRATIVA",
     "job_title_id": "6a3b57978f7736e514324eec",
     "contract_type": 2,
@@ -198,7 +261,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c84",
+    "_id": "6a3b653205cd9683bec26c02",
     "names": "JUAN NOE",
     "surnames": "RODRIGUEZ MONTERO",
     "identification": "",
@@ -211,7 +274,14 @@
     "birth_date": "1972-08-05T05:00:00.000Z",
     "stratum": 2,
     "dependents": 2,
-    "city_name": "GACHANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25295",
+      "city_name": "Gachancipá"
+    },
     "cargo": "AUXILIAR DE MANTENIMIENTO/CALDERAS",
     "job_title_id": "6a3b57978f7736e514324eed",
     "contract_type": 1,
@@ -220,7 +290,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c85",
+    "_id": "6a3b653205cd9683bec26c03",
     "names": "LUIS HENRY",
     "surnames": "CASTRO MORENO",
     "identification": "",
@@ -233,7 +303,14 @@
     "birth_date": "1972-03-12T05:00:00.000Z",
     "stratum": 3,
     "dependents": 3,
-    "city_name": "TOCANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25817",
+      "city_name": "Tocancipá"
+    },
     "cargo": "AUXILIAR DE MANTENIMIENTO/CALDERAS",
     "job_title_id": "6a3b57978f7736e514324eed",
     "contract_type": 2,
@@ -242,7 +319,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c86",
+    "_id": "6a3b653205cd9683bec26c04",
     "names": "FABIO IVAN",
     "surnames": "CASTRO COQUE",
     "identification": "",
@@ -255,7 +332,14 @@
     "birth_date": "2004-06-15T05:00:00.000Z",
     "stratum": 3,
     "dependents": 3,
-    "city_name": "TOCANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25817",
+      "city_name": "Tocancipá"
+    },
     "cargo": "AUXILIAR DE MANTENIMIENTO/CALDERAS",
     "job_title_id": "6a3b57978f7736e514324eed",
     "contract_type": 2,
@@ -264,7 +348,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c87",
+    "_id": "6a3b653205cd9683bec26c05",
     "names": "WILLIAM RAMON",
     "surnames": "DAVILA DELGADILLO",
     "identification": "",
@@ -277,7 +361,14 @@
     "birth_date": "1997-06-01T05:00:00.000Z",
     "stratum": 2,
     "dependents": 0,
-    "city_name": "CHIA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25175",
+      "city_name": "Chía"
+    },
     "cargo": "AUXILIAR DE MANTENIMIENTO/ELECTRICO",
     "job_title_id": "6a3b57978f7736e514324eee",
     "contract_type": 2,
@@ -286,7 +377,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c88",
+    "_id": "6a3b653205cd9683bec26c06",
     "names": "JUAN DAVID",
     "surnames": "GARZON PEDRAZA",
     "identification": "",
@@ -299,7 +390,14 @@
     "birth_date": "2004-09-30T05:00:00.000Z",
     "stratum": 3,
     "dependents": 3,
-    "city_name": "GUATAVITA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25335",
+      "city_name": "Guatavita"
+    },
     "cargo": "AUXILIAR DE MANTENIMIENTO/ELECTRICO",
     "job_title_id": "6a3b57978f7736e514324eee",
     "contract_type": 2,
@@ -308,7 +406,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c89",
+    "_id": "6a3b653205cd9683bec26c07",
     "names": "",
     "surnames": "DURAN JAIME",
     "identification": "",
@@ -321,7 +419,14 @@
     "birth_date": "1947-03-01T05:00:00.000Z",
     "stratum": 3,
     "dependents": 1,
-    "city_name": "SOPO",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25758",
+      "city_name": "Sopó"
+    },
     "cargo": "AUXILIAR DE MANTENIMIENTO/GENERAL",
     "job_title_id": "6a3b57978f7736e514324eef",
     "contract_type": 2,
@@ -330,7 +435,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c8a",
+    "_id": "6a3b653205cd9683bec26c08",
     "names": "JHON ALEXANDER",
     "surnames": "DAVILA ESPINOSA",
     "identification": "",
@@ -343,7 +448,14 @@
     "birth_date": "1987-02-04T05:00:00.000Z",
     "stratum": 2,
     "dependents": 2,
-    "city_name": "SOPO",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25758",
+      "city_name": "Sopó"
+    },
     "cargo": "AUXILIAR DE MANTENIMIENTO/GENERAL",
     "job_title_id": "6a3b57978f7736e514324eef",
     "contract_type": 2,
@@ -352,7 +464,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c8b",
+    "_id": "6a3b653205cd9683bec26c09",
     "names": "DONALDO",
     "surnames": "ECHAVEZ MIRANDA",
     "identification": "",
@@ -365,7 +477,14 @@
     "birth_date": "1989-07-26T05:00:00.000Z",
     "stratum": 3,
     "dependents": 3,
-    "city_name": "GACHANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25295",
+      "city_name": "Gachancipá"
+    },
     "cargo": "AUXILIAR DE MANTENIMIENTO/GENERAL",
     "job_title_id": "6a3b57978f7736e514324eef",
     "contract_type": 2,
@@ -374,7 +493,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c8c",
+    "_id": "6a3b653205cd9683bec26c0a",
     "names": "HERNANDO JAVIER",
     "surnames": "MOLINA MOLINA",
     "identification": "",
@@ -387,7 +506,14 @@
     "birth_date": "1964-12-21T05:00:00.000Z",
     "stratum": 1,
     "dependents": 1,
-    "city_name": "SOPÓ",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25758",
+      "city_name": "Sopó"
+    },
     "cargo": "AUXILIAR DE MANTENIMIENTO/HIDRAULICO",
     "job_title_id": "6a3b57978f7736e514324ef0",
     "contract_type": 2,
@@ -396,7 +522,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c8d",
+    "_id": "6a3b653205cd9683bec26c0b",
     "names": "RAFAEL ANTONIO",
     "surnames": "ALMANZA RIVERO",
     "identification": "",
@@ -409,7 +535,14 @@
     "birth_date": "1980-11-12T05:00:00.000Z",
     "stratum": 2,
     "dependents": 5,
-    "city_name": "SOPO",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25758",
+      "city_name": "Sopó"
+    },
     "cargo": "AUXILIAR DE MANTENIMIENTO/HIDRAULICO",
     "job_title_id": "6a3b57978f7736e514324ef0",
     "contract_type": 2,
@@ -418,7 +551,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c8e",
+    "_id": "6a3b653205cd9683bec26c0c",
     "names": "YAIR ANDRES",
     "surnames": "SANTOS AMANTE",
     "identification": "",
@@ -431,7 +564,14 @@
     "birth_date": "1991-03-25T05:00:00.000Z",
     "stratum": 2,
     "dependents": 4,
-    "city_name": "BRICEÑO",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25107",
+      "city_name": "Briceño"
+    },
     "cargo": "AUXILIAR DE MANTENIMIENTO/HIDRAULICO",
     "job_title_id": "6a3b57978f7736e514324ef0",
     "contract_type": 2,
@@ -440,7 +580,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c8f",
+    "_id": "6a3b653205cd9683bec26c0d",
     "names": "REINALDO",
     "surnames": "LONDOÑO OCHOA",
     "identification": "",
@@ -453,7 +593,14 @@
     "birth_date": "1958-12-07T05:00:00.000Z",
     "stratum": 1,
     "dependents": 3,
-    "city_name": "SOPO",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25758",
+      "city_name": "Sopó"
+    },
     "cargo": "AUXILIAR DE MANTENIMIENTO/HIPICA",
     "job_title_id": "6a3b57978f7736e514324ef1",
     "contract_type": 2,
@@ -462,7 +609,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c90",
+    "_id": "6a3b653205cd9683bec26c0e",
     "names": "LUIS ANTONIO",
     "surnames": "CARRILLO AGULLON",
     "identification": "",
@@ -475,7 +622,14 @@
     "birth_date": "1962-09-04T05:00:00.000Z",
     "stratum": 2,
     "dependents": 5,
-    "city_name": "TOCANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25817",
+      "city_name": "Tocancipá"
+    },
     "cargo": "AUXILIAR DE MANTENIMIENTO/PERIMETRAL Y LAGOS",
     "job_title_id": "6a3b57978f7736e514324ef2",
     "contract_type": 1,
@@ -484,7 +638,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c91",
+    "_id": "6a3b653205cd9683bec26c0f",
     "names": "JOSE IGNACIO",
     "surnames": "CANCHON RODRIGUEZ",
     "identification": "",
@@ -497,7 +651,14 @@
     "birth_date": "1965-07-09T05:00:00.000Z",
     "stratum": 3,
     "dependents": 1,
-    "city_name": "GACHANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25295",
+      "city_name": "Gachancipá"
+    },
     "cargo": "AUXILIAR DE MANTENIMIENTO/PERIMETRAL Y LAGOS",
     "job_title_id": "6a3b57978f7736e514324ef2",
     "contract_type": 2,
@@ -506,7 +667,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c92",
+    "_id": "6a3b653205cd9683bec26c10",
     "names": "MIGUEL ANGEL",
     "surnames": "OCAMPO DIAZ",
     "identification": "",
@@ -519,7 +680,14 @@
     "birth_date": "1979-02-06T05:00:00.000Z",
     "stratum": 3,
     "dependents": 6,
-    "city_name": "BRICEÑO",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25107",
+      "city_name": "Briceño"
+    },
     "cargo": "AUXILIAR DE MANTENIMIENTO/PERIMETRAL Y LAGOS",
     "job_title_id": "6a3b57978f7736e514324ef2",
     "contract_type": 2,
@@ -528,7 +696,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c93",
+    "_id": "6a3b653205cd9683bec26c11",
     "names": "MAURICIO",
     "surnames": "BOLAÑOS JACKSSON",
     "identification": "",
@@ -541,7 +709,14 @@
     "birth_date": "1986-02-27T05:00:00.000Z",
     "stratum": 1,
     "dependents": 1,
-    "city_name": "TOCANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25817",
+      "city_name": "Tocancipá"
+    },
     "cargo": "AUXILIAR DE MANTENIMIENTO/PERIMETRAL Y LAGOS",
     "job_title_id": "6a3b57978f7736e514324ef2",
     "contract_type": 2,
@@ -550,7 +725,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c94",
+    "_id": "6a3b653205cd9683bec26c12",
     "names": "WEIMAR YOHANI",
     "surnames": "MEDINA PEÑA",
     "identification": "",
@@ -563,7 +738,14 @@
     "birth_date": "1989-06-30T05:00:00.000Z",
     "stratum": 2,
     "dependents": 5,
-    "city_name": "SOPO",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25758",
+      "city_name": "Sopó"
+    },
     "cargo": "AUXILIAR DE MANTENIMIENTO/PERIMETRAL Y LAGOS",
     "job_title_id": "6a3b57978f7736e514324ef2",
     "contract_type": 2,
@@ -572,7 +754,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c95",
+    "_id": "6a3b653205cd9683bec26c13",
     "names": "BRAYAN STIDH",
     "surnames": "GARZON BOLIVAR",
     "identification": "",
@@ -585,7 +767,14 @@
     "birth_date": "1995-08-29T05:00:00.000Z",
     "stratum": 1,
     "dependents": 3,
-    "city_name": "ZIPAQUIRA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25899",
+      "city_name": "Zipaquirá"
+    },
     "cargo": "AUXILIAR DE MANTENIMIENTO/PERIMETRAL Y LAGOS",
     "job_title_id": "6a3b57978f7736e514324ef2",
     "contract_type": 2,
@@ -594,7 +783,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c96",
+    "_id": "6a3b653205cd9683bec26c14",
     "names": "SANTIAGO",
     "surnames": "MOLANO MANYOMA",
     "identification": "",
@@ -607,7 +796,14 @@
     "birth_date": "1998-08-06T05:00:00.000Z",
     "stratum": 1,
     "dependents": 0,
-    "city_name": "CHIA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25175",
+      "city_name": "Chía"
+    },
     "cargo": "AUXILIAR DE MANTENIMIENTO/PERIMETRAL Y LAGOS",
     "job_title_id": "6a3b57978f7736e514324ef2",
     "contract_type": 2,
@@ -616,7 +812,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c97",
+    "_id": "6a3b653205cd9683bec26c15",
     "names": "DANIEL ENRIQUE",
     "surnames": "FANDIÑO QUINTERO",
     "identification": "",
@@ -629,7 +825,14 @@
     "birth_date": "1998-06-03T05:00:00.000Z",
     "stratum": 1,
     "dependents": 0,
-    "city_name": "TOCANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25817",
+      "city_name": "Tocancipá"
+    },
     "cargo": "AUXILIAR DE MANTENIMIENTO/PERIMETRAL Y LAGOS",
     "job_title_id": "6a3b57978f7736e514324ef2",
     "contract_type": 1,
@@ -638,7 +841,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c98",
+    "_id": "6a3b653205cd9683bec26c16",
     "names": "WALTER MIGUEL",
     "surnames": "CORDOBA LINARES",
     "identification": "",
@@ -651,7 +854,14 @@
     "birth_date": "2001-03-25T05:00:00.000Z",
     "stratum": 3,
     "dependents": 2,
-    "city_name": "SOPO",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25758",
+      "city_name": "Sopó"
+    },
     "cargo": "AUXILIAR DE MANTENIMIENTO/PERIMETRAL Y LAGOS",
     "job_title_id": "6a3b57978f7736e514324ef2",
     "contract_type": 2,
@@ -660,7 +870,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c99",
+    "_id": "6a3b653205cd9683bec26c17",
     "names": "DIEGO ALEJANDRO",
     "surnames": "RUIZ PATIÑO",
     "identification": "",
@@ -673,7 +883,14 @@
     "birth_date": "2007-07-16T05:00:00.000Z",
     "stratum": 3,
     "dependents": 3,
-    "city_name": "TOCANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25817",
+      "city_name": "Tocancipá"
+    },
     "cargo": "AUXILIAR DE MANTENIMIENTO/PERIMETRAL Y LAGOS",
     "job_title_id": "6a3b57978f7736e514324ef2",
     "contract_type": 1,
@@ -682,7 +899,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c9a",
+    "_id": "6a3b653205cd9683bec26c18",
     "names": "LUIS ENRIQUE",
     "surnames": "LOPEZ REAL",
     "identification": "",
@@ -695,7 +912,14 @@
     "birth_date": "1962-11-10T05:00:00.000Z",
     "stratum": 2,
     "dependents": 1,
-    "city_name": "ZIPAQUIRA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25899",
+      "city_name": "Zipaquirá"
+    },
     "cargo": "AUXILIAR MANTENIMIENTO/TENIS",
     "job_title_id": "6a3b57978f7736e514324ef3",
     "contract_type": 2,
@@ -704,7 +928,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c9b",
+    "_id": "6a3b653205cd9683bec26c19",
     "names": "WILLIAM ALEXANDER",
     "surnames": "GUERRERO PAZ",
     "identification": "",
@@ -717,7 +941,14 @@
     "birth_date": "1981-08-05T05:00:00.000Z",
     "stratum": 1,
     "dependents": 6,
-    "city_name": "GACHANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25295",
+      "city_name": "Gachancipá"
+    },
     "cargo": "CADDIE MASTER GOLF",
     "job_title_id": "6a3b57978f7736e514324ef4",
     "contract_type": 2,
@@ -726,7 +957,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c9c",
+    "_id": "6a3b653205cd9683bec26c1a",
     "names": "MILENA",
     "surnames": "AYALA CASAS",
     "identification": "",
@@ -739,7 +970,14 @@
     "birth_date": "1974-06-16T05:00:00.000Z",
     "stratum": 2,
     "dependents": 1,
-    "city_name": "CHIA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25175",
+      "city_name": "Chía"
+    },
     "cargo": "CONSERJE",
     "job_title_id": "6a3b57978f7736e514324ef5",
     "contract_type": 2,
@@ -748,7 +986,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c9d",
+    "_id": "6a3b653205cd9683bec26c1b",
     "names": "HECTOR JAVIER",
     "surnames": "RUBIANO RODRIGUEZ",
     "identification": "",
@@ -761,7 +999,14 @@
     "birth_date": "1978-10-14T05:00:00.000Z",
     "stratum": 3,
     "dependents": 1,
-    "city_name": "TOCANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25817",
+      "city_name": "Tocancipá"
+    },
     "cargo": "CONSERJE",
     "job_title_id": "6a3b57978f7736e514324ef5",
     "contract_type": 2,
@@ -770,7 +1015,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c9e",
+    "_id": "6a3b653205cd9683bec26c1c",
     "names": "JONATAN",
     "surnames": "MARTINEZ CARDENAS",
     "identification": "",
@@ -783,7 +1028,14 @@
     "birth_date": "1981-12-24T05:00:00.000Z",
     "stratum": 2,
     "dependents": 3,
-    "city_name": "TOCANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25817",
+      "city_name": "Tocancipá"
+    },
     "cargo": "CONSERJE",
     "job_title_id": "6a3b57978f7736e514324ef5",
     "contract_type": 2,
@@ -792,7 +1044,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824c9f",
+    "_id": "6a3b653205cd9683bec26c1d",
     "names": "ANA YANNETH",
     "surnames": "CASTILLO MOLINA",
     "identification": "",
@@ -805,7 +1057,14 @@
     "birth_date": "1984-03-07T05:00:00.000Z",
     "stratum": 2,
     "dependents": 3,
-    "city_name": "CAJICA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25126",
+      "city_name": "Cajicá"
+    },
     "cargo": "CONSERJE",
     "job_title_id": "6a3b57978f7736e514324ef5",
     "contract_type": 2,
@@ -814,7 +1073,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824ca0",
+    "_id": "6a3b653205cd9683bec26c1e",
     "names": "JIMMY ALVEIRO",
     "surnames": "MUÑOZ RODRIGUEZ",
     "identification": "",
@@ -827,7 +1086,14 @@
     "birth_date": "1987-01-11T05:00:00.000Z",
     "stratum": 3,
     "dependents": 2,
-    "city_name": "CAJICA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25126",
+      "city_name": "Cajicá"
+    },
     "cargo": "CONSERJE",
     "job_title_id": "6a3b57978f7736e514324ef5",
     "contract_type": 2,
@@ -836,7 +1102,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824ca1",
+    "_id": "6a3b653205cd9683bec26c1f",
     "names": "JENNIFER CATHERINE",
     "surnames": "SUAREZ PEREZ",
     "identification": "",
@@ -849,7 +1115,14 @@
     "birth_date": "1990-10-24T05:00:00.000Z",
     "stratum": 2,
     "dependents": 5,
-    "city_name": "BRICEÑO",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25107",
+      "city_name": "Briceño"
+    },
     "cargo": "COORDINADOR COMPRAS E INVENTARIOS",
     "job_title_id": "6a3b57978f7736e514324ef6",
     "contract_type": 2,
@@ -858,7 +1131,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824ca2",
+    "_id": "6a3b653205cd9683bec26c20",
     "names": "OMAR ANDRES",
     "surnames": "CORTES MOYA",
     "identification": "",
@@ -871,7 +1144,14 @@
     "birth_date": "1996-01-11T05:00:00.000Z",
     "stratum": 3,
     "dependents": 0,
-    "city_name": "TOCANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25817",
+      "city_name": "Tocancipá"
+    },
     "cargo": "COORDINADOR DE TECNOLOGIA",
     "job_title_id": "6a3b57978f7736e514324ef7",
     "contract_type": 2,
@@ -880,7 +1160,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824ca3",
+    "_id": "6a3b653205cd9683bec26c21",
     "names": "ANGIE CATHERINE",
     "surnames": "MOLINA CARDENAS",
     "identification": "",
@@ -893,7 +1173,14 @@
     "birth_date": "1989-01-11T05:00:00.000Z",
     "stratum": 3,
     "dependents": 0,
-    "city_name": "TOCANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25817",
+      "city_name": "Tocancipá"
+    },
     "cargo": "COORDINADOR RRHH -SGSST",
     "job_title_id": "6a3b57978f7736e514324ef8",
     "contract_type": 2,
@@ -902,7 +1189,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824ca4",
+    "_id": "6a3b653205cd9683bec26c22",
     "names": "JUAN DAVID",
     "surnames": "ORDOÑEZ VALDERRAMA",
     "identification": "",
@@ -915,7 +1202,14 @@
     "birth_date": "1973-08-11T05:00:00.000Z",
     "stratum": 6,
     "dependents": 1,
-    "city_name": "BOGOTA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "11",
+      "state_name": "Bogotá D.C.",
+      "city_code": "11001",
+      "city_name": "Bogotá D.C."
+    },
     "cargo": "GERENTE",
     "job_title_id": "6a3b57978f7736e514324ef9",
     "contract_type": 2,
@@ -924,7 +1218,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824ca5",
+    "_id": "6a3b653205cd9683bec26c23",
     "names": "ISRAEL ANTONIO",
     "surnames": "RUIZ CAMELO",
     "identification": "",
@@ -937,7 +1231,14 @@
     "birth_date": "1971-07-30T05:00:00.000Z",
     "stratum": 3,
     "dependents": 3,
-    "city_name": "CAJICA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25126",
+      "city_name": "Cajicá"
+    },
     "cargo": "INSTRUCTOR DE GOLF",
     "job_title_id": "6a3b57978f7736e514324efa",
     "contract_type": 2,
@@ -946,7 +1247,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824ca6",
+    "_id": "6a3b653205cd9683bec26c24",
     "names": "MARCELA",
     "surnames": "GOMEZ RIVERA",
     "identification": "",
@@ -959,7 +1260,14 @@
     "birth_date": "1978-07-22T05:00:00.000Z",
     "stratum": 4,
     "dependents": 2,
-    "city_name": "CHIA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25175",
+      "city_name": "Chía"
+    },
     "cargo": "INSTRUCTOR DE HIPICA",
     "job_title_id": "6a3b57978f7736e514324efb",
     "contract_type": 2,
@@ -968,7 +1276,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824ca7",
+    "_id": "6a3b653205cd9683bec26c25",
     "names": "HELIBERTO",
     "surnames": "SANCHEZ SUAREZ",
     "identification": "",
@@ -981,7 +1289,14 @@
     "birth_date": "1965-08-29T05:00:00.000Z",
     "stratum": 3,
     "dependents": 1,
-    "city_name": "SOPO",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25758",
+      "city_name": "Sopó"
+    },
     "cargo": "INSTRUCTOR DE TENIS",
     "job_title_id": "6a3b57978f7736e514324efc",
     "contract_type": 2,
@@ -990,7 +1305,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824ca8",
+    "_id": "6a3b653205cd9683bec26c26",
     "names": "FREDDY ANTONIO",
     "surnames": "MONTAÑO BALLESTEROS",
     "identification": "",
@@ -1003,7 +1318,14 @@
     "birth_date": "1987-10-05T05:00:00.000Z",
     "stratum": 2,
     "dependents": 1,
-    "city_name": "CAJICA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25126",
+      "city_name": "Cajicá"
+    },
     "cargo": "INSTRUCTOR II DE TENIS",
     "job_title_id": "6a3b57978f7736e514324efd",
     "contract_type": 2,
@@ -1012,7 +1334,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824ca9",
+    "_id": "6a3b653205cd9683bec26c27",
     "names": "LUIS GEOVANY",
     "surnames": "MENDOZA NIÑO",
     "identification": "",
@@ -1025,7 +1347,14 @@
     "birth_date": "1978-03-26T05:00:00.000Z",
     "stratum": 2,
     "dependents": 2,
-    "city_name": "BRICEÑO",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25107",
+      "city_name": "Briceño"
+    },
     "cargo": "JEFE DE CABALLADA",
     "job_title_id": "6a3b57978f7736e514324efe",
     "contract_type": 2,
@@ -1034,7 +1363,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824caa",
+    "_id": "6a3b653205cd9683bec26c28",
     "names": "YAIRCIÑO ANTONIO",
     "surnames": "ROCHA MALDONADO",
     "identification": "",
@@ -1047,7 +1376,14 @@
     "birth_date": "1976-07-29T05:00:00.000Z",
     "stratum": 3,
     "dependents": 4,
-    "city_name": "SOPO",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25758",
+      "city_name": "Sopó"
+    },
     "cargo": "JEFE DE MANTENIMIENTO",
     "job_title_id": "6a3b57978f7736e514324eff",
     "contract_type": 2,
@@ -1056,7 +1392,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cab",
+    "_id": "6a3b653205cd9683bec26c29",
     "names": "SANDRA PATRICIA",
     "surnames": "TORRES CASTAÑEDA",
     "identification": "",
@@ -1069,7 +1405,14 @@
     "birth_date": "1986-07-27T05:00:00.000Z",
     "stratum": 3,
     "dependents": 1,
-    "city_name": "SOPO",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25758",
+      "city_name": "Sopó"
+    },
     "cargo": "JEFE DE PROYECTOS Y SUPERVISOR DE OBRA",
     "job_title_id": "6a3b57978f7736e514324f00",
     "contract_type": 2,
@@ -1078,7 +1421,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cac",
+    "_id": "6a3b653205cd9683bec26c2a",
     "names": "JOSE ANTONIO",
     "surnames": "DELGADO RAMIREZ",
     "identification": "",
@@ -1091,7 +1434,14 @@
     "birth_date": "1965-03-24T05:00:00.000Z",
     "stratum": 2,
     "dependents": 1,
-    "city_name": "CAJICA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25126",
+      "city_name": "Cajicá"
+    },
     "cargo": "MECANICO",
     "job_title_id": "6a3b57978f7736e514324f01",
     "contract_type": 2,
@@ -1100,7 +1450,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cad",
+    "_id": "6a3b653205cd9683bec26c2b",
     "names": "ARIEL DANILO",
     "surnames": "ORTIZ SANABRIA",
     "identification": "",
@@ -1113,7 +1463,14 @@
     "birth_date": "1967-04-14T05:00:00.000Z",
     "stratum": 2,
     "dependents": 1,
-    "city_name": "SOPO",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25758",
+      "city_name": "Sopó"
+    },
     "cargo": "OPERARIO CAMPO DE GOLF",
     "job_title_id": "6a3b57978f7736e514324f02",
     "contract_type": 2,
@@ -1122,7 +1479,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cae",
+    "_id": "6a3b653205cd9683bec26c2c",
     "names": "MAURICIO",
     "surnames": "VELANDIA RUEDA",
     "identification": "",
@@ -1135,7 +1492,14 @@
     "birth_date": "1973-01-17T05:00:00.000Z",
     "stratum": 3,
     "dependents": 3,
-    "city_name": "BRICEÑO",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25107",
+      "city_name": "Briceño"
+    },
     "cargo": "OPERARIO CAMPO DE GOLF",
     "job_title_id": "6a3b57978f7736e514324f02",
     "contract_type": 2,
@@ -1144,7 +1508,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824caf",
+    "_id": "6a3b653205cd9683bec26c2d",
     "names": "LUIS JORGE",
     "surnames": "PEREZ PINZON",
     "identification": "",
@@ -1157,7 +1521,14 @@
     "birth_date": "1974-03-18T05:00:00.000Z",
     "stratum": 1,
     "dependents": 1,
-    "city_name": "SOPO",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25758",
+      "city_name": "Sopó"
+    },
     "cargo": "OPERARIO CAMPO DE GOLF",
     "job_title_id": "6a3b57978f7736e514324f02",
     "contract_type": 1,
@@ -1166,7 +1537,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cb0",
+    "_id": "6a3b653205cd9683bec26c2e",
     "names": "EDUIN ALONSO",
     "surnames": "RUIZ RUIZ",
     "identification": "",
@@ -1179,7 +1550,14 @@
     "birth_date": "1983-06-24T05:00:00.000Z",
     "stratum": 2,
     "dependents": 4,
-    "city_name": "TOCANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25817",
+      "city_name": "Tocancipá"
+    },
     "cargo": "OPERARIO CAMPO DE GOLF",
     "job_title_id": "6a3b57978f7736e514324f02",
     "contract_type": 2,
@@ -1188,7 +1566,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cb1",
+    "_id": "6a3b653205cd9683bec26c2f",
     "names": "JOHN ALEXANDER",
     "surnames": "SIERRA SANTANA",
     "identification": "",
@@ -1201,7 +1579,14 @@
     "birth_date": "1983-04-12T05:00:00.000Z",
     "stratum": 2,
     "dependents": 3,
-    "city_name": "TOCANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25817",
+      "city_name": "Tocancipá"
+    },
     "cargo": "OPERARIO CAMPO DE GOLF",
     "job_title_id": "6a3b57978f7736e514324f02",
     "contract_type": 2,
@@ -1210,7 +1595,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cb2",
+    "_id": "6a3b653205cd9683bec26c30",
     "names": "FERNANDO JOSE",
     "surnames": "BRACHO ALBORNOZ",
     "identification": "",
@@ -1223,7 +1608,14 @@
     "birth_date": "1995-01-25T05:00:00.000Z",
     "stratum": 2,
     "dependents": 2,
-    "city_name": "SOPO",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25758",
+      "city_name": "Sopó"
+    },
     "cargo": "OPERARIO CAMPO DE GOLF",
     "job_title_id": "6a3b57978f7736e514324f02",
     "contract_type": 1,
@@ -1232,7 +1624,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cb3",
+    "_id": "6a3b653205cd9683bec26c31",
     "names": "LUIS CARLOS",
     "surnames": "FEO CARDENAS",
     "identification": "",
@@ -1245,7 +1637,14 @@
     "birth_date": "2004-12-22T05:00:00.000Z",
     "stratum": 2,
     "dependents": 3,
-    "city_name": "ZIPAQUIRA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25899",
+      "city_name": "Zipaquirá"
+    },
     "cargo": "OPERARIO CAMPO DE GOLF",
     "job_title_id": "6a3b57978f7736e514324f02",
     "contract_type": 1,
@@ -1254,7 +1653,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cb4",
+    "_id": "6a3b653205cd9683bec26c32",
     "names": "EDISON IVAN",
     "surnames": "MORENO GONZALEZ",
     "identification": "",
@@ -1267,7 +1666,14 @@
     "birth_date": "2004-08-17T05:00:00.000Z",
     "stratum": 2,
     "dependents": 2,
-    "city_name": "TOCANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25817",
+      "city_name": "Tocancipá"
+    },
     "cargo": "OPERARIO CAMPO DE GOLF",
     "job_title_id": "6a3b57978f7736e514324f02",
     "contract_type": 2,
@@ -1276,7 +1682,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cb5",
+    "_id": "6a3b653205cd9683bec26c33",
     "names": "NOLBERTO",
     "surnames": "URREA GARZON",
     "identification": "",
@@ -1289,7 +1695,14 @@
     "birth_date": "1965-07-16T05:00:00.000Z",
     "stratum": 1,
     "dependents": 3,
-    "city_name": "SOPO",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25758",
+      "city_name": "Sopó"
+    },
     "cargo": "OPERARIO MAQUINARIA CAMPO DE GOLF",
     "job_title_id": "6a3b57978f7736e514324f03",
     "contract_type": 2,
@@ -1298,7 +1711,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cb6",
+    "_id": "6a3b653205cd9683bec26c34",
     "names": "JUAN MANUEL",
     "surnames": "OVIEDO RODRIGUEZ",
     "identification": "",
@@ -1311,7 +1724,14 @@
     "birth_date": "1965-04-08T05:00:00.000Z",
     "stratum": 1,
     "dependents": 1,
-    "city_name": "TOCANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25817",
+      "city_name": "Tocancipá"
+    },
     "cargo": "OPERARIO MAQUINARIA CAMPO DE GOLF",
     "job_title_id": "6a3b57978f7736e514324f03",
     "contract_type": 2,
@@ -1320,7 +1740,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cb7",
+    "_id": "6a3b653205cd9683bec26c35",
     "names": "CARLOS ARTURO",
     "surnames": "GACHA NIÑO",
     "identification": "",
@@ -1333,7 +1753,14 @@
     "birth_date": "1967-02-01T05:00:00.000Z",
     "stratum": 2,
     "dependents": 2,
-    "city_name": "ZIPAQUIRA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25899",
+      "city_name": "Zipaquirá"
+    },
     "cargo": "OPERARIO MAQUINARIA CAMPO DE GOLF",
     "job_title_id": "6a3b57978f7736e514324f03",
     "contract_type": 2,
@@ -1342,7 +1769,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cb8",
+    "_id": "6a3b653205cd9683bec26c36",
     "names": "JHON JAIRO",
     "surnames": "TURIZO ALEAN",
     "identification": "",
@@ -1355,7 +1782,14 @@
     "birth_date": "1976-01-11T05:00:00.000Z",
     "stratum": 1,
     "dependents": 3,
-    "city_name": "BRICEÑO",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25107",
+      "city_name": "Briceño"
+    },
     "cargo": "OPERARIO MAQUINARIA CAMPO DE GOLF",
     "job_title_id": "6a3b57978f7736e514324f03",
     "contract_type": 2,
@@ -1364,7 +1798,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cb9",
+    "_id": "6a3b653205cd9683bec26c37",
     "names": "OMAR ALBERTO",
     "surnames": "ALFONSO DUARTE",
     "identification": "",
@@ -1377,7 +1811,14 @@
     "birth_date": "1978-09-17T05:00:00.000Z",
     "stratum": 1,
     "dependents": 5,
-    "city_name": "COGUA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25200",
+      "city_name": "Cogua"
+    },
     "cargo": "OPERARIO MAQUINARIA CAMPO DE GOLF",
     "job_title_id": "6a3b57978f7736e514324f03",
     "contract_type": 2,
@@ -1386,7 +1827,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cba",
+    "_id": "6a3b653205cd9683bec26c38",
     "names": "JOSE JAVIER",
     "surnames": "CASTRO MOLINA",
     "identification": "",
@@ -1399,7 +1840,14 @@
     "birth_date": "1969-04-04T05:00:00.000Z",
     "stratum": 1,
     "dependents": 2,
-    "city_name": "ZIPAQUIRA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25899",
+      "city_name": "Zipaquirá"
+    },
     "cargo": "PALAFRENERO",
     "job_title_id": "6a3b57978f7736e514324f04",
     "contract_type": 2,
@@ -1408,7 +1856,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cbb",
+    "_id": "6a3b653205cd9683bec26c39",
     "names": "JUAN FERNANDO",
     "surnames": "ARANGURI DUARTE",
     "identification": "",
@@ -1421,7 +1869,14 @@
     "birth_date": "1970-09-17T05:00:00.000Z",
     "stratum": 1,
     "dependents": 0,
-    "city_name": "GACHANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25295",
+      "city_name": "Gachancipá"
+    },
     "cargo": "PALAFRENERO",
     "job_title_id": "6a3b57978f7736e514324f04",
     "contract_type": 2,
@@ -1430,7 +1885,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cbc",
+    "_id": "6a3b653205cd9683bec26c3a",
     "names": "GABRIEL JAIME",
     "surnames": "RAMBAO LIÑAN",
     "identification": "",
@@ -1443,7 +1898,14 @@
     "birth_date": "1971-09-26T05:00:00.000Z",
     "stratum": 2,
     "dependents": 3,
-    "city_name": "SOPO",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25758",
+      "city_name": "Sopó"
+    },
     "cargo": "PALAFRENERO",
     "job_title_id": "6a3b57978f7736e514324f04",
     "contract_type": 2,
@@ -1452,7 +1914,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cbd",
+    "_id": "6a3b653205cd9683bec26c3b",
     "names": "JULIO ROBERTO",
     "surnames": "ANAYA LLERENA",
     "identification": "",
@@ -1465,7 +1927,14 @@
     "birth_date": "1977-08-25T05:00:00.000Z",
     "stratum": 2,
     "dependents": 3,
-    "city_name": "GACHANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25295",
+      "city_name": "Gachancipá"
+    },
     "cargo": "PALAFRENERO",
     "job_title_id": "6a3b57978f7736e514324f04",
     "contract_type": 2,
@@ -1474,7 +1943,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cbe",
+    "_id": "6a3b653205cd9683bec26c3c",
     "names": "YILDO",
     "surnames": "QUIROZ DIAZ",
     "identification": "",
@@ -1487,7 +1956,14 @@
     "birth_date": "1979-12-21T05:00:00.000Z",
     "stratum": 3,
     "dependents": 3,
-    "city_name": "BRICEÑO",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25107",
+      "city_name": "Briceño"
+    },
     "cargo": "PALAFRENERO",
     "job_title_id": "6a3b57978f7736e514324f04",
     "contract_type": 2,
@@ -1496,7 +1972,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cbf",
+    "_id": "6a3b653205cd9683bec26c3d",
     "names": "IVAN DARIO",
     "surnames": "CONTRERAS BERMON",
     "identification": "",
@@ -1509,7 +1985,14 @@
     "birth_date": "1980-05-29T05:00:00.000Z",
     "stratum": 3,
     "dependents": 0,
-    "city_name": "TOCANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25817",
+      "city_name": "Tocancipá"
+    },
     "cargo": "PALAFRENERO",
     "job_title_id": "6a3b57978f7736e514324f04",
     "contract_type": 2,
@@ -1518,7 +2001,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cc0",
+    "_id": "6a3b653205cd9683bec26c3e",
     "names": "WILMAR ISAIAS",
     "surnames": "GOMEZ BOLIVAR",
     "identification": "",
@@ -1531,7 +2014,14 @@
     "birth_date": "1990-06-24T05:00:00.000Z",
     "stratum": 2,
     "dependents": 5,
-    "city_name": "ZIPAQUIRA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25899",
+      "city_name": "Zipaquirá"
+    },
     "cargo": "PALAFRENERO",
     "job_title_id": "6a3b57978f7736e514324f04",
     "contract_type": 2,
@@ -1540,7 +2030,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cc1",
+    "_id": "6a3b653205cd9683bec26c3f",
     "names": "OMAR ALEXANDER",
     "surnames": "GOMEZ CORTES",
     "identification": "",
@@ -1553,7 +2043,14 @@
     "birth_date": "1993-02-23T05:00:00.000Z",
     "stratum": 2,
     "dependents": 4,
-    "city_name": "SOPO",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25758",
+      "city_name": "Sopó"
+    },
     "cargo": "PALAFRENERO",
     "job_title_id": "6a3b57978f7736e514324f04",
     "contract_type": 2,
@@ -1562,7 +2059,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cc2",
+    "_id": "6a3b653205cd9683bec26c40",
     "names": "YEFERSON",
     "surnames": "MARTINEZ CORZO",
     "identification": "",
@@ -1575,7 +2072,14 @@
     "birth_date": "1994-10-03T05:00:00.000Z",
     "stratum": 2,
     "dependents": 2,
-    "city_name": "TOCANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25817",
+      "city_name": "Tocancipá"
+    },
     "cargo": "PALAFRENERO",
     "job_title_id": "6a3b57978f7736e514324f04",
     "contract_type": 2,
@@ -1584,7 +2088,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cc3",
+    "_id": "6a3b653205cd9683bec26c41",
     "names": "CESAR DAVID",
     "surnames": "LOZANO ALMANZA",
     "identification": "",
@@ -1597,7 +2101,14 @@
     "birth_date": "2000-10-23T05:00:00.000Z",
     "stratum": 1,
     "dependents": 1,
-    "city_name": "BRICEÑO",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25107",
+      "city_name": "Briceño"
+    },
     "cargo": "PALAFRENERO",
     "job_title_id": "6a3b57978f7736e514324f04",
     "contract_type": 1,
@@ -1606,7 +2117,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cc4",
+    "_id": "6a3b653205cd9683bec26c42",
     "names": "FARIT ALDEMAR",
     "surnames": "ADARME ORTEGA",
     "identification": "",
@@ -1619,7 +2130,14 @@
     "birth_date": "2001-09-03T05:00:00.000Z",
     "stratum": 1,
     "dependents": 2,
-    "city_name": "TOCANCIPÁ",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25817",
+      "city_name": "Tocancipá"
+    },
     "cargo": "PALAFRENERO",
     "job_title_id": "6a3b57978f7736e514324f04",
     "contract_type": 2,
@@ -1628,7 +2146,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cc5",
+    "_id": "6a3b653205cd9683bec26c43",
     "names": "SIMON ANDRES",
     "surnames": "ANAYA ECHAVEZ",
     "identification": "",
@@ -1641,7 +2159,14 @@
     "birth_date": "2004-03-21T05:00:00.000Z",
     "stratum": 3,
     "dependents": 4,
-    "city_name": "GACHANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25295",
+      "city_name": "Gachancipá"
+    },
     "cargo": "PALAFRENERO",
     "job_title_id": "6a3b57978f7736e514324f04",
     "contract_type": 2,
@@ -1650,7 +2175,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cc6",
+    "_id": "6a3b653205cd9683bec26c44",
     "names": "DUVAN ESNEIDER",
     "surnames": "CASAS PENAGOS",
     "identification": "",
@@ -1663,7 +2188,14 @@
     "birth_date": "1999-11-09T05:00:00.000Z",
     "stratum": 2,
     "dependents": 2,
-    "city_name": "CAJICA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25126",
+      "city_name": "Cajicá"
+    },
     "cargo": "PASANTE SENA",
     "job_title_id": "6a3b57978f7736e514324f05",
     "contract_type": 2,
@@ -1672,7 +2204,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cc7",
+    "_id": "6a3b653205cd9683bec26c45",
     "names": "JOSE NICOLAS",
     "surnames": "CASTAÑEDA ROJAS",
     "identification": "",
@@ -1685,7 +2217,14 @@
     "birth_date": "2002-09-24T05:00:00.000Z",
     "stratum": 2,
     "dependents": 2,
-    "city_name": "COGUA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25200",
+      "city_name": "Cogua"
+    },
     "cargo": "PASANTE SENA",
     "job_title_id": "6a3b57978f7736e514324f05",
     "contract_type": 2,
@@ -1694,7 +2233,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cc8",
+    "_id": "6a3b653205cd9683bec26c46",
     "names": "SAMUEL",
     "surnames": "BARRETO ROJAS",
     "identification": "",
@@ -1707,7 +2246,14 @@
     "birth_date": "2006-03-07T05:00:00.000Z",
     "stratum": 2,
     "dependents": 3,
-    "city_name": "BOGOTA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "11",
+      "state_name": "Bogotá D.C.",
+      "city_code": "11001",
+      "city_name": "Bogotá D.C."
+    },
     "cargo": "PASANTE SENA",
     "job_title_id": "6a3b57978f7736e514324f05",
     "contract_type": 2,
@@ -1716,7 +2262,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cc9",
+    "_id": "6a3b653205cd9683bec26c47",
     "names": "FRANKLIN JOSE",
     "surnames": "SIERRA MARIN",
     "identification": "",
@@ -1729,7 +2275,14 @@
     "birth_date": "1977-06-29T05:00:00.000Z",
     "stratum": 3,
     "dependents": 3,
-    "city_name": "CAJICA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25126",
+      "city_name": "Cajicá"
+    },
     "cargo": "SALVAVIDAS",
     "job_title_id": "6a3b57978f7736e514324f06",
     "contract_type": 1,
@@ -1738,7 +2291,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cca",
+    "_id": "6a3b653205cd9683bec26c48",
     "names": "YONATHAN",
     "surnames": "GALLARDO NUÑEZ",
     "identification": "",
@@ -1751,7 +2304,14 @@
     "birth_date": "1994-08-08T05:00:00.000Z",
     "stratum": 3,
     "dependents": 0,
-    "city_name": "TOCANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25817",
+      "city_name": "Tocancipá"
+    },
     "cargo": "SALVAVIDAS",
     "job_title_id": "6a3b57978f7736e514324f06",
     "contract_type": 2,
@@ -1760,7 +2320,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824ccb",
+    "_id": "6a3b653205cd9683bec26c49",
     "names": "GLORIA ESTER",
     "surnames": "RODRIGUEZ SANCHEZ",
     "identification": "",
@@ -1773,7 +2333,14 @@
     "birth_date": "1972-01-05T05:00:00.000Z",
     "stratum": 2,
     "dependents": 2,
-    "city_name": "TOCANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25817",
+      "city_name": "Tocancipá"
+    },
     "cargo": "SERVICIOS GENERALES",
     "job_title_id": "6a3b57978f7736e514324f07",
     "contract_type": 2,
@@ -1782,7 +2349,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824ccc",
+    "_id": "6a3b653205cd9683bec26c4a",
     "names": "GLORIA INES",
     "surnames": "MEDRANO MORENO",
     "identification": "",
@@ -1795,7 +2362,14 @@
     "birth_date": "1973-07-26T05:00:00.000Z",
     "stratum": 2,
     "dependents": 2,
-    "city_name": "SOPO",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25758",
+      "city_name": "Sopó"
+    },
     "cargo": "SERVICIOS GENERALES",
     "job_title_id": "6a3b57978f7736e514324f07",
     "contract_type": 2,
@@ -1804,7 +2378,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824ccd",
+    "_id": "6a3b653205cd9683bec26c4b",
     "names": "RUTH MARLEN",
     "surnames": "GONZALEZ APONTE",
     "identification": "",
@@ -1817,7 +2391,14 @@
     "birth_date": "1976-09-16T05:00:00.000Z",
     "stratum": 1,
     "dependents": 2,
-    "city_name": "GACHANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25295",
+      "city_name": "Gachancipá"
+    },
     "cargo": "SERVICIOS GENERALES",
     "job_title_id": "6a3b57978f7736e514324f07",
     "contract_type": 2,
@@ -1826,7 +2407,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cce",
+    "_id": "6a3b653205cd9683bec26c4c",
     "names": "DIANA MARCELA",
     "surnames": "ROZO GALEANO",
     "identification": "",
@@ -1839,7 +2420,14 @@
     "birth_date": "1987-01-23T05:00:00.000Z",
     "stratum": 3,
     "dependents": 2,
-    "city_name": "SOPO",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25758",
+      "city_name": "Sopó"
+    },
     "cargo": "SERVICIOS GENERALES",
     "job_title_id": "6a3b57978f7736e514324f07",
     "contract_type": 2,
@@ -1848,7 +2436,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824ccf",
+    "_id": "6a3b653205cd9683bec26c4d",
     "names": "DIEGO ALEJANDRO",
     "surnames": "DUARTE ACOSTA",
     "identification": "",
@@ -1861,7 +2449,14 @@
     "birth_date": "2003-03-04T05:00:00.000Z",
     "stratum": 3,
     "dependents": 0,
-    "city_name": "GACHANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25295",
+      "city_name": "Gachancipá"
+    },
     "cargo": "STARTER DE GOLF",
     "job_title_id": "6a3b57978f7736e514324f08",
     "contract_type": 2,
@@ -1870,7 +2465,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cd0",
+    "_id": "6a3b653205cd9683bec26c4e",
     "names": "GEORGE STEFF",
     "surnames": "MARTINEZ TAPIAS",
     "identification": "",
@@ -1883,7 +2478,14 @@
     "birth_date": "1975-04-02T05:00:00.000Z",
     "stratum": 3,
     "dependents": 3,
-    "city_name": "TOCANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25817",
+      "city_name": "Tocancipá"
+    },
     "cargo": "SUBGERENTE",
     "job_title_id": "6a3b57978f7736e514324f09",
     "contract_type": 2,
@@ -1892,7 +2494,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cd1",
+    "_id": "6a3b653205cd9683bec26c4f",
     "names": "WILLIAM FERNANDO",
     "surnames": "GARCIA CASTRO",
     "identification": "",
@@ -1905,7 +2507,14 @@
     "birth_date": "1973-10-11T05:00:00.000Z",
     "stratum": 3,
     "dependents": 2,
-    "city_name": "COGUA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25200",
+      "city_name": "Cogua"
+    },
     "cargo": "SUPERVISOR MTTO CAMPO DE GOLF",
     "job_title_id": "6a3b57978f7736e514324f0a",
     "contract_type": 2,
@@ -1914,7 +2523,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cd2",
+    "_id": "6a3b653205cd9683bec26c50",
     "names": "FERNANDO ARLEY",
     "surnames": "SANTANA VIVAS",
     "identification": "",
@@ -1927,7 +2536,14 @@
     "birth_date": "1985-01-01T05:00:00.000Z",
     "stratum": 3,
     "dependents": 2,
-    "city_name": "CAJICA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25126",
+      "city_name": "Cajicá"
+    },
     "cargo": "SUPERVISOR MTTO ELECTRICO",
     "job_title_id": "6a3b57978f7736e514324f0b",
     "contract_type": 2,
@@ -1936,7 +2552,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cd3",
+    "_id": "6a3b653205cd9683bec26c51",
     "names": "JOSE GERMAN",
     "surnames": "SUAREZ RAMIREZ",
     "identification": "",
@@ -1949,7 +2565,14 @@
     "birth_date": "1968-06-12T05:00:00.000Z",
     "stratum": 2,
     "dependents": 2,
-    "city_name": "COGUA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25200",
+      "city_name": "Cogua"
+    },
     "cargo": "SUPERVISOR MTTO GENERAL",
     "job_title_id": "6a3b57978f7736e514324f0c",
     "contract_type": 2,
@@ -1958,7 +2581,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cd4",
+    "_id": "6a3b653205cd9683bec26c52",
     "names": "ANGEL CUSTODIO",
     "surnames": "PARADA AREVALO",
     "identification": "",
@@ -1971,7 +2594,14 @@
     "birth_date": "1966-11-01T05:00:00.000Z",
     "stratum": 2,
     "dependents": 2,
-    "city_name": "TOCANCIPA",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25817",
+      "city_name": "Tocancipá"
+    },
     "cargo": "SUPERVISOR MTTO HIDRAULICO",
     "job_title_id": "6a3b57978f7736e514324f0d",
     "contract_type": 2,
@@ -1980,7 +2610,7 @@
     "active": true
   },
   {
-    "_id": "6a3b62ff4ddefa918c824cd5",
+    "_id": "6a3b653205cd9683bec26c53",
     "names": "FLORESMIRO",
     "surnames": "CAMAYO FERNANDEZ",
     "identification": "",
@@ -1993,7 +2623,14 @@
     "birth_date": "1967-07-31T05:00:00.000Z",
     "stratum": 2,
     "dependents": 3,
-    "city_name": "SOPO",
+    "city": {
+      "country_code": "Co",
+      "country_name": "Colombia",
+      "state_code": "25",
+      "state_name": "Cundinamarca",
+      "city_code": "25758",
+      "city_name": "Sopó"
+    },
     "cargo": "SUPERVISOR MTTO LAGOS,JARDINERIA Y RIEGO",
     "job_title_id": "6a3b57978f7736e514324f0e",
     "contract_type": 2,

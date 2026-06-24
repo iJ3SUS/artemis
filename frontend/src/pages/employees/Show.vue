@@ -61,7 +61,7 @@
                                     <p class="text-sm text-gray-900 mt-1">{{ getGenderLabel(employee.gender) }}</p>
                                 </div>
                                 <div>
-                                    <label class="text-xs font-medium text-gray-500 uppercase">Ciudad</label>
+                                    <label class="text-xs font-medium text-gray-500 uppercase">Ciudad de residencia</label>
                                     <p class="text-sm text-gray-900 mt-1">{{ getCityLabel(employee.city) }}</p>
                                 </div>
                             </div>

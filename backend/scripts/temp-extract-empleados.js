@@ -24,6 +24,37 @@ const contractMap = {
 
 const genderMap = { 'M': 'male', 'F': 'female' }
 
+const cityMap = {
+    'BOGOTA':        { country_code: 'Co', country_name: 'Colombia', state_code: '11', state_name: 'Bogotá D.C.', city_code: '11001', city_name: 'Bogotá D.C.' },
+    'BOGOTÁ D.C.':   { country_code: 'Co', country_name: 'Colombia', state_code: '11', state_name: 'Bogotá D.C.', city_code: '11001', city_name: 'Bogotá D.C.' },
+    'ZIPAQUIRA':     { country_code: 'Co', country_name: 'Colombia', state_code: '25', state_name: 'Cundinamarca', city_code: '25899', city_name: 'Zipaquirá' },
+    'SOPO':          { country_code: 'Co', country_name: 'Colombia', state_code: '25', state_name: 'Cundinamarca', city_code: '25758', city_name: 'Sopó' },
+    'SOPÓ':          { country_code: 'Co', country_name: 'Colombia', state_code: '25', state_name: 'Cundinamarca', city_code: '25758', city_name: 'Sopó' },
+    'TOCANCIPA':     { country_code: 'Co', country_name: 'Colombia', state_code: '25', state_name: 'Cundinamarca', city_code: '25817', city_name: 'Tocancipá' },
+    'TOCANCIPÁ':     { country_code: 'Co', country_name: 'Colombia', state_code: '25', state_name: 'Cundinamarca', city_code: '25817', city_name: 'Tocancipá' },
+    'CAJICA':        { country_code: 'Co', country_name: 'Colombia', state_code: '25', state_name: 'Cundinamarca', city_code: '25126', city_name: 'Cajicá' },
+    'CAJICÁ':        { country_code: 'Co', country_name: 'Colombia', state_code: '25', state_name: 'Cundinamarca', city_code: '25126', city_name: 'Cajicá' },
+    'CHIA':          { country_code: 'Co', country_name: 'Colombia', state_code: '25', state_name: 'Cundinamarca', city_code: '25175', city_name: 'Chía' },
+    'CHÍA':          { country_code: 'Co', country_name: 'Colombia', state_code: '25', state_name: 'Cundinamarca', city_code: '25175', city_name: 'Chía' },
+    'COGUA':         { country_code: 'Co', country_name: 'Colombia', state_code: '25', state_name: 'Cundinamarca', city_code: '25200', city_name: 'Cogua' },
+    'GACHANCIPA':    { country_code: 'Co', country_name: 'Colombia', state_code: '25', state_name: 'Cundinamarca', city_code: '25295', city_name: 'Gachancipá' },
+    'GACHANCIPÁ':    { country_code: 'Co', country_name: 'Colombia', state_code: '25', state_name: 'Cundinamarca', city_code: '25295', city_name: 'Gachancipá' },
+    'GUATAVITA':     { country_code: 'Co', country_name: 'Colombia', state_code: '25', state_name: 'Cundinamarca', city_code: '25335', city_name: 'Guatavita' },
+    'BRICEÑO':       { country_code: 'Co', country_name: 'Colombia', state_code: '25', state_name: 'Cundinamarca', city_code: '25107', city_name: 'Briceño' },
+}
+
+function getCity(name) {
+    const key = name.trim().toUpperCase()
+    return cityMap[key] || {
+        country_code: 'Co',
+        country_name: 'Colombia',
+        state_code: '00',
+        state_name: 'No definido',
+        city_code: '00000',
+        city_name: name.trim()
+    }
+}
+
 const employees = raw.map(e => {
     const fullName = e['APELLIDOS Y NOMBRES'].trim()
     const parts = fullName.split(/\s+/)
@@ -46,7 +77,7 @@ const employees = raw.map(e => {
         birth_date: birthDate,
         stratum: e['ESTRATO SERVICIOS PÚBLICOS'] || 1,
         dependents: e['NÚMERO DE PERSONAS ECONÓMICAMENTE A CARGO'] || 0,
-        city_name: cityName,
+        city: getCity(cityName),
         cargo: e.CARGO,
         job_title_id: cargoToId[e.CARGO] || null,
         contract_type: contractMap[e['TIPO CONTRATO']] || 2,

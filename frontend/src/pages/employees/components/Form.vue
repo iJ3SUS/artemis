@@ -109,7 +109,7 @@
                             v-model="form.city.city_code"
                             :errors="errors"
                             name="city"
-                            label="Ciudad"
+                            label="Ciudad de residencia"
                             option_label="label"
                             option_value="city_code"
                             :options="cities.data.value"
