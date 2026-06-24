@@ -1,0 +1,242 @@
+[
+  {
+    "_id": "6a3b57978f7736e514324ee7",
+    "name": "ALMACENISTA",
+    "dependency": "MECANICO",
+    "jefe": "COORDINADOR COMPRAS E INVENTARIOS"
+  },
+  {
+    "_id": "6a3b57978f7736e514324ee8",
+    "name": "ASISTENTE DE GERENCIA",
+    "dependency": "ADMINISTRACION",
+    "jefe": "GERENTE"
+  },
+  {
+    "_id": "6a3b57978f7736e514324ee9",
+    "name": "ASISTENTE DE INSTRUCTOR/GOLF",
+    "dependency": "GOLF",
+    "jefe": "INSTRUCTOR DE GOLF"
+  },
+  {
+    "_id": "6a3b57978f7736e514324eea",
+    "name": "AUX. ZONAS HUMEDAS / VESTIER CABALLEROS",
+    "dependency": "SEDE SOCIAL",
+    "jefe": "COORDINADOR CASA CLUB Y EVENTOS"
+  },
+  {
+    "_id": "6a3b57978f7736e514324eeb",
+    "name": "AUX. ZONAS HUMEDAS / VESTIER DAMAS",
+    "dependency": "SEDE SOCIAL",
+    "jefe": "COORDINADOR CASA CLUB Y EVENTOS"
+  },
+  {
+    "_id": "6a3b57978f7736e514324eec",
+    "name": "AUXILIAR ADMINISTRATIVA",
+    "dependency": "ADMINISTRACION",
+    "jefe": "GERENTE"
+  },
+  {
+    "_id": "6a3b57978f7736e514324eed",
+    "name": "AUXILIAR DE MANTENIMIENTO/CALDERAS",
+    "dependency": "MTTO HIDRAULICO",
+    "jefe": "SUPERVISOR MTTO HIDRAULICO"
+  },
+  {
+    "_id": "6a3b57978f7736e514324eee",
+    "name": "AUXILIAR DE MANTENIMIENTO/ELECTRICO",
+    "dependency": "SEGURIDAD",
+    "jefe": "COORDINADOR DE TECNOLOGIA"
+  },
+  {
+    "_id": "6a3b57978f7736e514324eef",
+    "name": "AUXILIAR DE MANTENIMIENTO/GENERAL",
+    "dependency": "MTTO GENERAL",
+    "jefe": "SUPERVISOR MTTO GENERAL"
+  },
+  {
+    "_id": "6a3b57978f7736e514324ef0",
+    "name": "AUXILIAR DE MANTENIMIENTO/HIDRAULICO",
+    "dependency": "MTTO HIDRAULICO",
+    "jefe": "SUPERVISOR MTTO HIDRAULICO"
+  },
+  {
+    "_id": "6a3b57978f7736e514324ef1",
+    "name": "AUXILIAR DE MANTENIMIENTO/HIPICA",
+    "dependency": "HIPICA",
+    "jefe": "JEFE DE CABALLADA"
+  },
+  {
+    "_id": "6a3b57978f7736e514324ef2",
+    "name": "AUXILIAR DE MANTENIMIENTO/PERIMETRAL Y LAGOS",
+    "dependency": "MTTO LAGOS,JARDINERIA Y RIEGO",
+    "jefe": "SUPERVISOR MTTO LAGOS,JARDINERIA Y RIEGO"
+  },
+  {
+    "_id": "6a3b57978f7736e514324ef3",
+    "name": "AUXILIAR MANTENIMIENTO/TENIS",
+    "dependency": "TENIS",
+    "jefe": "INSTRUCTOR DE TENIS"
+  },
+  {
+    "_id": "6a3b57978f7736e514324ef4",
+    "name": "CADDIE MASTER GOLF",
+    "dependency": "GOLF",
+    "jefe": "INSTRUCTOR DE GOLF"
+  },
+  {
+    "_id": "6a3b57978f7736e514324ef5",
+    "name": "CONSERJE",
+    "dependency": "SEGURIDAD",
+    "jefe": "JEFE DE SEGURIDAD"
+  },
+  {
+    "_id": "6a3b57978f7736e514324ef6",
+    "name": "COORDINADOR COMPRAS E INVENTARIOS",
+    "dependency": "ADMINISTRACION",
+    "jefe": "GERENTE"
+  },
+  {
+    "_id": "6a3b57978f7736e514324ef7",
+    "name": "COORDINADOR DE TECNOLOGIA",
+    "dependency": "SEGURIDAD",
+    "jefe": "SUBGERENTE"
+  },
+  {
+    "_id": "6a3b57978f7736e514324ef8",
+    "name": "COORDINADOR RRHH -SGSST",
+    "dependency": "ADMINISTRACION",
+    "jefe": "GERENTE"
+  },
+  {
+    "_id": "6a3b57978f7736e514324ef9",
+    "name": "GERENTE",
+    "dependency": "ADMINISTRACION",
+    "jefe": null
+  },
+  {
+    "_id": "6a3b57978f7736e514324efa",
+    "name": "INSTRUCTOR DE GOLF",
+    "dependency": "GOLF",
+    "jefe": "GERENTE"
+  },
+  {
+    "_id": "6a3b57978f7736e514324efb",
+    "name": "INSTRUCTOR DE HIPICA",
+    "dependency": "HIPICA",
+    "jefe": "GERENTE"
+  },
+  {
+    "_id": "6a3b57978f7736e514324efc",
+    "name": "INSTRUCTOR DE TENIS",
+    "dependency": "TENIS",
+    "jefe": "GERENTE"
+  },
+  {
+    "_id": "6a3b57978f7736e514324efd",
+    "name": "INSTRUCTOR II DE TENIS",
+    "dependency": "TENIS",
+    "jefe": "INSTRUCTOR DE TENIS"
+  },
+  {
+    "_id": "6a3b57978f7736e514324efe",
+    "name": "JEFE DE CABALLADA",
+    "dependency": "HIPICA",
+    "jefe": "GERENTE"
+  },
+  {
+    "_id": "6a3b57978f7736e514324eff",
+    "name": "JEFE DE MANTENIMIENTO",
+    "dependency": "ADMINISTRACION",
+    "jefe": "GERENTE"
+  },
+  {
+    "_id": "6a3b57978f7736e514324f00",
+    "name": "JEFE DE PROYECTOS Y SUPERVISOR DE OBRA",
+    "dependency": "ADMINISTRACION",
+    "jefe": "GERENTE"
+  },
+  {
+    "_id": "6a3b57978f7736e514324f01",
+    "name": "MECANICO",
+    "dependency": "MECANICO",
+    "jefe": "SUPERVISOR MTTO CAMPO DE GOLF"
+  },
+  {
+    "_id": "6a3b57978f7736e514324f02",
+    "name": "OPERARIO CAMPO DE GOLF",
+    "dependency": "CAMPO DE GOLF",
+    "jefe": "SUPERVISOR MTTO CAMPO DE GOLF"
+  },
+  {
+    "_id": "6a3b57978f7736e514324f03",
+    "name": "OPERARIO MAQUINARIA CAMPO DE GOLF",
+    "dependency": "CAMPO DE GOLF",
+    "jefe": "SUPERVISOR MTTO CAMPO DE GOLF"
+  },
+  {
+    "_id": "6a3b57978f7736e514324f04",
+    "name": "PALAFRENERO",
+    "dependency": "HIPICA",
+    "jefe": "JEFE DE CABALLADA"
+  },
+  {
+    "_id": "6a3b57978f7736e514324f05",
+    "name": "PASANTE SENA",
+    "dependency": "MTTO ELECTRICO",
+    "jefe": "SUPERVISOR MTTO ELECTRICO"
+  },
+  {
+    "_id": "6a3b57978f7736e514324f06",
+    "name": "SALVAVIDAS",
+    "dependency": "SEDE SOCIAL",
+    "jefe": "COORDINADOR CASA CLUB Y EVENTOS"
+  },
+  {
+    "_id": "6a3b57978f7736e514324f07",
+    "name": "SERVICIOS GENERALES",
+    "dependency": "SEDE SOCIAL",
+    "jefe": null
+  },
+  {
+    "_id": "6a3b57978f7736e514324f08",
+    "name": "STARTER DE GOLF",
+    "dependency": "GOLF",
+    "jefe": "INSTRUCTOR DE GOLF"
+  },
+  {
+    "_id": "6a3b57978f7736e514324f09",
+    "name": "SUBGERENTE",
+    "dependency": "ADMINISTRACION",
+    "jefe": "GERENTE"
+  },
+  {
+    "_id": "6a3b57978f7736e514324f0a",
+    "name": "SUPERVISOR MTTO CAMPO DE GOLF",
+    "dependency": "CAMPO DE GOLF",
+    "jefe": "JEFE DE MANTENIMIENTO"
+  },
+  {
+    "_id": "6a3b57978f7736e514324f0b",
+    "name": "SUPERVISOR MTTO ELECTRICO",
+    "dependency": "MTTO ELECTRICO",
+    "jefe": "JEFE DE MANTENIMIENTO"
+  },
+  {
+    "_id": "6a3b57978f7736e514324f0c",
+    "name": "SUPERVISOR MTTO GENERAL",
+    "dependency": "MTTO GENERAL",
+    "jefe": "JEFE DE MANTENIMIENTO"
+  },
+  {
+    "_id": "6a3b57978f7736e514324f0d",
+    "name": "SUPERVISOR MTTO HIDRAULICO",
+    "dependency": "MTTO HIDRAULICO",
+    "jefe": "JEFE DE MANTENIMIENTO"
+  },
+  {
+    "_id": "6a3b57978f7736e514324f0e",
+    "name": "SUPERVISOR MTTO LAGOS,JARDINERIA Y RIEGO",
+    "dependency": "MTTO LAGOS,JARDINERIA Y RIEGO",
+    "jefe": "JEFE DE MANTENIMIENTO"
+  }
+]
