@@ -241,7 +241,7 @@ const formatDateInput = (val) => {
     if (!val) return ''
     const str = String(val)
     try {
-        return $ParseDate(str).toFormat('yyyy-MM-dd')
+        return $ParseDate(str)?.toFormat('yyyy-MM-dd') ?? ''
     } catch {
         return str.length >= 10 ? str.substring(0, 10) : str
     }

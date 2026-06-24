@@ -61,14 +61,14 @@
                     </Column>
                     <Column>
                         <div class="flex flex-col items-center">
-                            <p class="text-sm text-gray-900">{{ $ParseDate(jt.created_at).toFormat('dd/MM/yyyy') }}</p>
-                            <p class="text-xs text-gray-500">{{ $ParseDate(jt.created_at).toFormat('hh:mm a') }}</p>
+                            <p class="text-sm text-gray-900">{{ $ParseDate(jt.created_at)?.toFormat('dd/MM/yyyy') ?? '-' }}</p>
+                            <p class="text-xs text-gray-500">{{ $ParseDate(jt.created_at)?.toFormat('hh:mm a') ?? '-' }}</p>
                         </div>
                     </Column>
                     <Column>
                         <div class="flex flex-col items-center">
-                            <p class="text-sm text-gray-900">{{ $ParseDate(jt.updated_at).toFormat('dd/MM/yyyy') }}</p>
-                            <p class="text-xs text-gray-500">{{ $ParseDate(jt.updated_at).toFormat('hh:mm a') }}</p>
+                            <p class="text-sm text-gray-900">{{ $ParseDate(jt.updated_at)?.toFormat('dd/MM/yyyy') ?? '-' }}</p>
+                            <p class="text-xs text-gray-500">{{ $ParseDate(jt.updated_at)?.toFormat('hh:mm a') ?? '-' }}</p>
                         </div>
                     </Column>
                     <Column>

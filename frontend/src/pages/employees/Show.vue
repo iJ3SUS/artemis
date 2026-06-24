@@ -93,7 +93,7 @@
                                 </div>
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 uppercase">Fecha de ingreso</label>
-                                    <p class="text-sm text-gray-900 mt-1">{{ $ParseDate(employee.entry_date).toFormat('dd/MM/yyyy') }}</p>
+                                    <p class="text-sm text-gray-900 mt-1">{{ $ParseDate(employee.entry_date)?.toFormat('dd/MM/yyyy') ?? '-' }}</p>
                                 </div>
                             </div>
                         </Col>
@@ -110,7 +110,7 @@
                                 </div>
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 uppercase">Fecha de retiro</label>
-                                    <p class="text-sm text-gray-900 mt-1">{{ employee.retirement_date ? $ParseDate(employee.retirement_date).toFormat('dd/MM/yyyy') : '-' }}</p>
+                                    <p class="text-sm text-gray-900 mt-1">{{ $ParseDate(employee.retirement_date)?.toFormat('dd/MM/yyyy') ?? '-' }}</p>
                                 </div>
                             </div>
                         </Col>
