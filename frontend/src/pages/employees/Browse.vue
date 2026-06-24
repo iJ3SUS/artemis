@@ -48,7 +48,7 @@
                     </Column>
                     <Column>
                         <div class="flex items-center justify-center">
-                            <p class="text-sm text-gray-700">{{ getJobTitleName(emp.job_title_id) }}</p>
+                            <p class="text-xs text-gray-500">{{ getJobTitleName(emp.job_title_id) }}</p>
                         </div>
                     </Column>
                     <Column>
