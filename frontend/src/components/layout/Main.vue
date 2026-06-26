@@ -1,7 +1,8 @@
 <template>
     <div class="h-screen flex flex-col bg-background">
         <!-- Header Mobile -->
-        <header class="lg:hidden h-14 border-b border-border bg-surface flex items-center justify-between px-4 shrink-0">
+        <AuthWrapper>
+            <header class="lg:hidden h-14 border-b border-border bg-surface flex items-center justify-between px-4 shrink-0">
             <button @click="ui.menu_open = true" class="p-2 rounded-lg hover:bg-surface-hover transition-colors">
                 <Icon icon="Menu" width="20" height="20" class="text-text" />
             </button>
@@ -15,6 +16,7 @@
                 <Icon icon="Close" width="20" height="20" class="text-text-muted" />
             </button>
         </header>
+        </AuthWrapper>
 
         <div class="flex-1 flex overflow-hidden">
             <AuthWrapper>
