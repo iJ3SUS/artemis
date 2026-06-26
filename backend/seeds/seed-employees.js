@@ -2,7 +2,7 @@ import 'dotenv/config'
 import fs from 'fs'
 import { DB, ObjectId } from 'lemon-api/plugins/mongodb'
 
-const empleados = JSON.parse(fs.readFileSync('../temp/empleados.json', 'utf8'))
+const empleados = JSON.parse(fs.readFileSync(new URL('../../temp/empleados.json', import.meta.url), 'utf8'))
 
 empleados.forEach(e => {
     e._id = new ObjectId(e._id)
@@ -27,6 +27,7 @@ async function seed() {
         _id: e._id,
         names: e.names,
         surnames: e.surnames,
+        display_name: `${e.names} ${e.surnames}`.trim(),
         identification: e.identification,
         email: e.email,
         phone: e.phone,
