@@ -31,6 +31,33 @@ const _joi = Joi.extend({
 }, {
     type: 'timezone',
     base: timezone()
-})
+}).defaults(schema =>
+    schema.options({
+        messages: {
+            'any.required': 'Requerido.',
+            'any.only': 'Valor no válido.',
+            'any.invalid': 'Valor inválido.',
+            'string.empty': 'No puede estar vacío.',
+            'string.min': 'Mínimo {{#limit}} caracteres.',
+            'string.max': 'Máximo {{#limit}} caracteres.',
+            'string.email': 'Correo electrónico inválido.',
+            'string.alphanum': 'Solo caracteres alfanuméricos.',
+            'string.pattern.base': 'Formato inválido.',
+            'number.base': 'Debe ser un número.',
+            'number.min': 'Mínimo {{#limit}}.',
+            'number.max': 'Máximo {{#limit}}.',
+            'number.integer': 'Debe ser un número entero.',
+            'number.positive': 'Debe ser un número positivo.',
+            'date.base': 'Fecha inválida.',
+            'date.min': 'Fecha muy temprana.',
+            'date.max': 'Fecha muy tardía.',
+            'array.base': 'Debe ser un arreglo.',
+            'array.min': 'Mínimo {{#limit}} elemento(s).',
+            'array.max': 'Máximo {{#limit}} elemento(s).',
+            'boolean.base': 'Debe ser un booleano.',
+            'object.base': 'Debe ser un objeto.',
+        }
+    })
+)
 
 export default _joi
