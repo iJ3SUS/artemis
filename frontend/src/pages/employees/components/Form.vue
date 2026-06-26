@@ -183,11 +183,6 @@
                 </Grid>
             </template>
         </Card>
-
-        <pre>
-            {{ form }}
-        </pre>
-
     </div>
 </template>
 <script setup>
