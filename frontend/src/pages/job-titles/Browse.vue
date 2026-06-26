@@ -13,10 +13,6 @@
                         <Icon icon="Plus" width="16" height="16" class="text-inherit" />
                         Nuevo cargo
                     </Button>
-                    <Button color="gray" @handle="router.push('/organizational-chart')">
-                        <Icon icon="Sitemap" width="16" height="16" class="text-inherit" />
-                        Organigrama
-                    </Button>
                 </template>
             </Heading>
         </template>
