@@ -15,6 +15,7 @@ import Page from '@/components/page/Page.vue'
 import Card from '@/components/page/Card.vue'
 import Heading from '@/components/page/Heading.vue'
 import SearchInput from '@/components/inputs/SearchInput.vue'
+import Avatar from '@/components/Avatar.vue'
 
 import App from './App.vue'
 import router from './router'
@@ -43,6 +44,7 @@ app.component('Page', Page)
 app.component('Card', Card)
 app.component('Heading', Heading)
 app.component('SearchInput', SearchInput)
+app.component('Avatar', Avatar)
 
 app.use(createPinia())
 app.use(router)

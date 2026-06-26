@@ -40,8 +40,13 @@
             <template #body>
                 <Row v-for="emp in employees.items" :key="emp._id">
                     <Column>
-                        <p class="text-sm font-medium text-gray-900 cursor-pointer hover:text-blue-600" @click="router.push(`/employees/${emp._id}`)">{{ emp.display_name }}</p>
-                        <p class="text-xs text-gray-500">{{ emp.identification }}</p>
+                        <div class="flex items-center gap-3">
+                            <Avatar :name="emp.display_name" />
+                            <div>
+                                <p class="text-sm font-medium text-gray-900 cursor-pointer hover:text-blue-600 capitalize" @click="router.push(`/employees/${emp._id}`)">{{ emp.display_name }}</p>
+                                <p class="text-xs text-gray-500">{{ emp.identification }}</p>
+                            </div>
+                        </div>
                     </Column>
                     <Column>
                         <p class="text-sm text-gray-700">{{ emp.email || '-' }}</p>

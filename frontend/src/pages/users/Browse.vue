@@ -40,11 +40,9 @@
                 <Row v-for="user in users.items" :key="user._id">
                     <Column>
                         <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center">
-                                <span class="text-sm font-semibold text-primary-600">AB</span>
-                            </div>
+                            <Avatar :name="user.display_name" />
                             <div>
-                                <p class="text-sm font-medium text-gray-900">{{ user.display_name }}</p>
+                                <p class="text-sm font-medium text-gray-900 capitalize">{{ user.display_name }}</p>
                                 <p class="text-xs text-gray-500">{{ user.identification }}</p>
                             </div>
                         </div>
