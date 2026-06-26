@@ -17,6 +17,8 @@ import Heading from '@/components/page/Heading.vue'
 import SearchInput from '@/components/inputs/SearchInput.vue'
 import Avatar from '@/components/Avatar.vue'
 
+import tooltipDirective from '@/directives/tooltip'
+
 import App from './App.vue'
 import router from './router'
 
@@ -45,6 +47,8 @@ app.component('Card', Card)
 app.component('Heading', Heading)
 app.component('SearchInput', SearchInput)
 app.component('Avatar', Avatar)
+
+app.directive('tooltip', tooltipDirective)
 
 app.use(createPinia())
 app.use(router)

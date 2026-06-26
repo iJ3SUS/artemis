@@ -56,7 +56,7 @@
                     </Column>
                     <Column>
                         <div class="flex items-center justify-center gap-2">
-                            <Button theme="icon" title="Editar" @handle="router.push(`/roles/${role._id}/edit`)">
+                            <Button theme="icon" v-tooltip:left="'Editar'" @handle="router.push(`/roles/${role._id}/edit`)">
                                 <Icon icon="Pencil" width="16" height="16" class="text-inherit" />
                             </Button>
                         </div>
