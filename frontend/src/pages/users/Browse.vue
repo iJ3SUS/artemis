@@ -20,7 +20,7 @@
         <Table v-if="users">
             <template #top>
                 <div class="p-4">
-                    <Text v-model="inputs.search" label="Buscar" name="search" placeholder="Nombre, email, identificación" />
+                    <SearchInput v-model="inputs.search" @handle="onSearch" placeholder="Nombre, email, identificación" label="Buscar" />
                 </div>
             </template>
 
@@ -44,8 +44,8 @@
                                 <span class="text-sm font-semibold text-primary-600">AB</span>
                             </div>
                             <div>
-                                <p class="text-sm font-medium text-gray-900">{{ user.display_name || user.names }}</p>
-                                <p class="text-xs text-gray-500">{{ user.names }} {{ user.surnames }}</p>
+                                <p class="text-sm font-medium text-gray-900">{{ user.display_name }}</p>
+                                <p class="text-xs text-gray-500">{{ user.identification }}</p>
                             </div>
                         </div>
                     </Column>
@@ -112,6 +112,10 @@ const inputs = reactive({
     search: ''
 })
 
+const onSearch = (val) => {
+    router.push({ query: { ...route.query, search: val || undefined, page: 1 } })
+}
+
 const load = async () => {
    
     const { success, response } = await http.request({
@@ -119,7 +123,8 @@ const load = async () => {
         url: 'dashboard/users',
         params: {
             page: route.query?.page || 1,
-            limit: 10
+            limit: 10,
+            search: route.query?.search || ''
         }
     })
 
@@ -136,6 +141,7 @@ watch(() => route.query, () => {
 
 
 onMounted(() => {
+    if (route.query?.search) inputs.search = route.query.search
     load()
 })
 </script>

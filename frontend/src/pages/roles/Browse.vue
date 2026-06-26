@@ -20,7 +20,7 @@
         <Table v-if="roles">
             <template #top>
                 <div class="p-4">
-                    <Text v-model="inputs.search" label="Buscar" name="search" placeholder="Nombre, descripción" />
+                    <SearchInput v-model="inputs.search" @handle="onSearch" placeholder="Nombre, descripción" label="Buscar" />
                 </div>
             </template>
 
@@ -84,6 +84,10 @@ const inputs = reactive({
     search: ''
 })
 
+const onSearch = (val) => {
+    router.push({ query: { ...route.query, search: val || undefined, page: 1 } })
+}
+
 const load = async () => {
 
     const { success, response } = await http.request({
@@ -91,7 +95,8 @@ const load = async () => {
         url: 'dashboard/roles',
         params: {
             page: route.query?.page || 1,
-            limit: 10
+            limit: 10,
+            search: route.query?.search || ''
         }
     })
 
@@ -108,6 +113,7 @@ watch(() => route.query, () => {
 
 
 onMounted(() => {
+    if (route.query?.search) inputs.search = route.query.search
     load()
 })
 </script>

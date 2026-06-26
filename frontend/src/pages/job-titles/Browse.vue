@@ -24,7 +24,7 @@
         <Table v-if="jobTitles">
             <template #top>
                 <div class="p-4">
-                    <Text v-model="inputs.search" label="Buscar" name="search" placeholder="Nombre, descripción, dependencia" />
+                    <SearchInput v-model="inputs.search" @handle="onSearch" placeholder="Nombre, descripción, dependencia" label="Buscar" />
                 </div>
             </template>
 
@@ -101,6 +101,10 @@ const inputs = reactive({
     search: ''
 })
 
+const onSearch = (val) => {
+    router.push({ query: { ...route.query, search: val || undefined, page: 1 } })
+}
+
 const load = async () => {
 
     const { success, response } = await http.request({
@@ -108,7 +112,8 @@ const load = async () => {
         url: 'dashboard/job-titles',
         params: {
             page: route.query?.page || 1,
-            limit: 15
+            limit: 15,
+            search: route.query?.search || ''
         }
     })
 
@@ -125,6 +130,7 @@ watch(() => route.query, () => {
 
 
 onMounted(() => {
+    if (route.query?.search) inputs.search = route.query.search
     load()
 })
 </script>
