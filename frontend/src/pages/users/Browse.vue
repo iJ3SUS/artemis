@@ -42,7 +42,7 @@
                         <div class="flex items-center gap-3">
                             <Avatar :name="user.display_name" />
                             <div>
-                                <p class="text-sm font-medium text-gray-900 capitalize">{{ user.display_name }}</p>
+                                <p class="text-sm font-medium text-gray-900">{{ user.display_name }}</p>
                                 <p class="text-xs text-gray-500">{{ user.identification }}</p>
                             </div>
                         </div>

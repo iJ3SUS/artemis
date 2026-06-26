@@ -10,7 +10,7 @@
                 <template #title>
                     <div>
                         <h1 class="text-2xl font-semibold text-gray-900">Detalle del empleado</h1>
-                        <p class="text-sm text-gray-600 mt-0.5 capitalize">{{ employee?.display_name }}</p>
+                        <p class="text-sm text-gray-600 mt-0.5">{{ employee?.display_name }}</p>
                     </div>
                 </template>
                 <template #actions>
@@ -38,11 +38,11 @@
                                 </div>
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 uppercase">Nombres</label>
-                                    <p class="text-sm text-gray-900 mt-1 capitalize">{{ employee.names }}</p>
+                                    <p class="text-sm text-gray-900 mt-1">{{ employee.names }}</p>
                                 </div>
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 uppercase">Apellidos</label>
-                                    <p class="text-sm text-gray-900 mt-1 capitalize">{{ employee.surnames }}</p>
+                                    <p class="text-sm text-gray-900 mt-1">{{ employee.surnames }}</p>
                                 </div>
                             </div>
                         </Col>
