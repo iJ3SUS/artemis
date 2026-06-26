@@ -20,7 +20,7 @@
         <Table v-if="employees">
             <template #top>
                 <div class="p-4">
-                    <Text v-model="inputs.search" label="Buscar" name="search" placeholder="Nombre, identificación, email" />
+                    <SearchInput v-model="inputs.search" @handle="onSearch" placeholder="Nombre, identificación, email" label="Buscar" />
                 </div>
             </template>
 
@@ -128,6 +128,10 @@ const inputs = reactive({
     search: ''
 })
 
+const onSearch = (val) => {
+    router.push({ query: { ...route.query, search: val || undefined, page: 1 } })
+}
+
 const jobTitles = computed(() => {
     return optionStore.data['job_titles'] || []
 })
@@ -160,7 +164,8 @@ const load = async () => {
         url: 'dashboard/employees',
         params: {
             page: route.query?.page || 1,
-            limit: 15
+            limit: 15,
+            search: route.query?.search || ''
         }
     })
 
@@ -177,6 +182,7 @@ watch(() => route.query, () => {
 
 
 onMounted(() => {
+    if (route.query?.search) inputs.search = route.query.search
     load()
     optionStore.add({
         key: 'job_titles',
