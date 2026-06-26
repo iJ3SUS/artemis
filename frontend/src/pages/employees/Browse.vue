@@ -40,7 +40,7 @@
             <template #body>
                 <Row v-for="emp in employees.items" :key="emp._id">
                     <Column>
-                        <p class="text-sm font-medium text-gray-900 cursor-pointer hover:text-blue-600" @click="router.push(`/employees/${emp._id}`)">{{ emp.names }} {{ emp.surnames }}</p>
+                        <p class="text-sm font-medium text-gray-900 cursor-pointer hover:text-blue-600" @click="router.push(`/employees/${emp._id}`)">{{ emp.display_name }}</p>
                         <p class="text-xs text-gray-500">{{ emp.identification }}</p>
                     </Column>
                     <Column>

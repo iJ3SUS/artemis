@@ -3,6 +3,9 @@ import Joi from '#plugins/joi.js'
 export default Joi.object({
     names: Joi.string().required(),
     surnames: Joi.string().required(),
+    display_name: Joi.string().default((parent) => {
+        return `${parent.names} ${parent.surnames}`.trim()
+    }),
     identification: Joi.string().required(),
     email: Joi.string().email().required(),
     phone: Joi.object({
