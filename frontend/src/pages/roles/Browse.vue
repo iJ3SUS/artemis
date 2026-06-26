@@ -96,7 +96,7 @@ const load = async () => {
         params: {
             page: route.query?.page || 1,
             limit: 10,
-            search: route.query?.search || ''
+            search: String(route.query?.search || '')
         }
     })
 
@@ -113,7 +113,7 @@ watch(() => route.query, () => {
 
 
 onMounted(() => {
-    if (route.query?.search) inputs.search = route.query.search
+    if (route.query?.search) inputs.search = String(route.query.search)
     load()
 })
 </script>
