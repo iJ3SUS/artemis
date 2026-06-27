@@ -24,7 +24,7 @@ const PERMISSIONS = [
     { key: 'job-titles.update',      name: 'Actualizar cargo',        description: 'Editar datos de un cargo existente',                 module: 'job-titles' },
     { key: 'job-titles.tree',        name: 'Árbol de cargos',         description: 'Ver organigrama / árbol jerárquico de cargos',       module: 'job-titles' },
     { key: 'job-titles.list',        name: 'Lista simple de cargos',  description: 'Obtener lista liviana de cargos para selectores',    module: 'job-titles' },
-    { key: 'job-titles.employees',   name: 'Empleados del cargo',     description: 'Ver empleados pertenecientes a un cargo',            module: 'job-titles' },
+    { key: 'job-titles.employees.list', name: 'Empleados del cargo',  description: 'Ver empleados pertenecientes a un cargo',         module: 'job-titles' },
 
     // ── Employees ──
     { key: 'employees.browse',          name: 'Listar empleados',          description: 'Ver listado de empleados',                         module: 'employees' },

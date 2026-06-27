@@ -77,7 +77,7 @@ const onSelectNode = async (node) => {
 
     const { success, response } = await http.request({
         method: 'GET',
-        url: `dashboard/job-titles/${node._id}/employees`
+        url: `dashboard/job-titles/${node._id}/employees/list`
     })
 
     loading_employees.value = false

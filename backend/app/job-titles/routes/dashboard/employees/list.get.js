@@ -1,4 +1,4 @@
-export const url = '/dashboard/job-titles/:job_title_id/employees'
+export const url = '/dashboard/job-titles/:job_title_id/employees/list'
 
 import Employee from "#app/employees/models/employee.js"
 
@@ -24,6 +24,6 @@ export const middlewares = [
     new ParseOidMiddleware()
         .on('job_title_id'),
 
-    new CanMiddleware('job-titles.employees')
+    new CanMiddleware('job-titles.employees.list')
         .on('pre-handler'),
 ]
