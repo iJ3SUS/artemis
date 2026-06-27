@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-gray-100 min-h-screen">
+    <div class="min-h-full">
         <slot name="heading"></slot>
 
         <hr class="border-gray-200 mb-6" />

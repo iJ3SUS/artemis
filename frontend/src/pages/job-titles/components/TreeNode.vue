@@ -2,6 +2,7 @@
     <li class="tree-node" :class="{ 'is-root': isRoot }">
         <div class="card" @click="$emit('select', node)">
             <p class="card-title">{{ node.name }}</p>
+            <p v-if="node.employee_count" class="card-employees">{{ node.employee_count }} empleado(s)</p>
             <p v-if="node.dependency" class="card-dependency">{{ node.dependency }}</p>
             <p v-if="node.description" class="card-desc">{{ node.description }}</p>
         </div>
@@ -116,6 +117,13 @@ defineEmits(['select'])
     margin-top: 6px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+}
+
+.card-employees {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #059669;
+    margin-top: 4px;
 }
 
 .tree-node ul {

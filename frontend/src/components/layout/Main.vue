@@ -31,7 +31,7 @@
 
             <!-- Main Content -->
             <main class="flex-1 flex flex-col min-w-0 overflow-hidden bg-gray-50">
-                <div class="flex-1 overflow-y-auto">
+                <div class="flex-1 overflow-y-auto overscroll-contain">
                     <slot></slot>
                 </div>
             </main>
