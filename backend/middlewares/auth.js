@@ -1,5 +1,7 @@
 import { Middleware } from "lemon-api/plugins/server/middlewares"
 
+import { ObjectId } from "lemon-api/plugins/mongodb"
+
 import Session from "#plugins/session.js"
 
 import User from "#app/users/models/user.js"
@@ -53,7 +55,7 @@ export default class AuthMiddleware extends Middleware {
             }
 
             const user = await User.query()
-                .match({ _id: resource.sub })
+                .match({ _id: new ObjectId(resource.sub) })
                 .first()
 
             if (!user) {
