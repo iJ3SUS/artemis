@@ -67,6 +67,7 @@ declare global {
   const useHttp: typeof import('./src/composables/useHttp').useHttp
   const useId: typeof import('vue').useId
   const useLink: typeof import('vue-router').useLink
+  const useLogout: typeof import('./src/composables/useLogout').useLogout
   const useModel: typeof import('vue').useModel
   const useOptionsStore: typeof import('./src/stores/options').useOptionsStore
   const useRoute: typeof import('vue-router').useRoute

@@ -97,9 +97,8 @@ const navigate = (path: string) => {
 }
 
 const handleLogout = () => {
-    auth.logout()
-    router.push('/login')
     ui.menu_open = false
+    ui.logout()
 }
 </script>
 

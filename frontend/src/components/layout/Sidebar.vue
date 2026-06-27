@@ -55,7 +55,7 @@
                     <div class="text-sm font-medium text-text truncate">{{ userName }}</div>
                     <div class="text-xs text-text-muted truncate">{{ userEmail }}</div>
                 </div>
-                <button @click="handleLogout" class="p-1.5 rounded hover:bg-background transition-colors shrink-0" tooltip="Cerrar sesión" position="top">
+                <button @click="ui.logout" class="p-1.5 rounded hover:bg-background transition-colors shrink-0" tooltip="Cerrar sesión" position="top">
                     <Icon icon="Close" width="16" height="16" class="text-text-muted" />
                 </button>
             </div>
@@ -67,7 +67,6 @@
 import { routes as menuItems } from '@/router/routes'
 
 const route = useRoute()
-const router = useRouter()
 const auth = useAuthStore()
 const ui = useUiStore()
 
@@ -83,8 +82,4 @@ const userInitials = computed(() => {
     return name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()
 })
 
-const handleLogout = () => {
-    auth.logout()
-    router.push('/login')
-}
 </script>

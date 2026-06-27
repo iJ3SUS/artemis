@@ -1,5 +1,10 @@
 <template>
     <div class="h-screen flex flex-col bg-background">
+        <!-- Logout overlay -->
+        <Transition name="overlay">
+            <div v-if="ui.leaving" key="logout-overlay" class="fixed inset-0 z-50 bg-background pointer-events-none" />
+        </Transition>
+
         <!-- Header Mobile -->
         <AuthWrapper>
             <header class="lg:hidden h-14 border-b border-border bg-surface flex items-center justify-between px-4 shrink-0">
@@ -12,7 +17,7 @@
                 </div>
                 <div class="text-sm font-semibold text-text">{{ ui.empresa }}</div>
             </div>
-            <button @click="handleLogout" class="p-2 rounded-lg hover:bg-surface-hover transition-colors">
+            <button @click="ui.logout" class="p-2 rounded-lg hover:bg-surface-hover transition-colors">
                 <Icon icon="Close" width="20" height="20" class="text-text-muted" />
             </button>
         </header>
@@ -40,12 +45,4 @@ import Sidebar from '@/components/layout/Sidebar.vue'
 import Aside from '@/components/layout/Aside.vue'
 
 const ui = useUiStore()
-const router = useRouter()
-const auth = useAuthStore()
-const appName = import.meta.env.VITE_APP_NAME || 'ARTEMIS'
-
-const handleLogout = () => {
-    auth.logout()
-    router.push('/login')
-}
 </script>
