@@ -57,7 +57,7 @@
                 <form @submit.prevent="handleSubmit" class="space-y-4">
                     <Text v-model="form.email" label="Email" name="email" :errors="errors" placeholder="tu@correo.com" />
                     <Text v-model="form.password" label="Contraseña" name="password" :errors="errors" type="password" placeholder="••••••••" />
-                    <Button color="primary" :disabled="loading" @handle="handleSubmit" class="w-full">
+                    <Button color="primary" :disabled="loading || !form.email || !form.password" @handle="handleSubmit" class="w-full">
                         {{ loading ? 'Entrando...' : 'Entrar' }}
                     </Button>
                 </form>
