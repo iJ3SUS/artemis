@@ -22,23 +22,25 @@
         </div>
 
         <Modal v-if="selected_job_title" :title="selected_job_title.name" :subtitle="`${employees.length} empleado(s)`" size="sm:max-w-lg" @close="selected_job_title = null">
-            <div v-if="loading_employees" class="flex items-center justify-center py-8">
-                <p class="text-sm text-gray-500">Cargando empleados...</p>
-            </div>
+            <template #content>
+                <div v-if="loading_employees" class="flex items-center justify-center py-8">
+                    <p class="text-sm text-gray-500">Cargando empleados...</p>
+                </div>
 
-            <div v-else-if="employees.length === 0" class="flex items-center justify-center py-8">
-                <p class="text-sm text-gray-500">No hay empleados en este cargo</p>
-            </div>
+                <div v-else-if="employees.length === 0" class="flex items-center justify-center py-8">
+                    <p class="text-sm text-gray-500">No hay empleados en este cargo</p>
+                </div>
 
-            <div v-else class="flex flex-col gap-2 max-h-80 overflow-y-auto">
-                <div v-for="emp in employees" :key="emp._id" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer" @click="router.push(`/employees/${emp._id}`)">
-                    <Avatar :name="`${emp.names} ${emp.surnames}`" />
-                    <div>
-                        <p class="text-sm font-medium text-gray-900">{{ emp.names }} {{ emp.surnames }}</p>
-                        <p class="text-xs text-gray-500">{{ emp.identification || '—' }} · {{ emp.email || '—' }}</p>
+                <div v-else class="overflow-y-auto max-h-[50vh]">
+                    <div v-for="emp in employees" :key="emp._id" class="flex items-center gap-3 p-3 cursor-pointer hover:bg-gray-200 transition-colors odd:bg-gray-100" @click="router.push(`/employees/${emp._id}`)">
+                        <Avatar :name="`${emp.names} ${emp.surnames}`" />
+                        <div>
+                            <p class="text-sm font-medium text-gray-900">{{ emp.names }} {{ emp.surnames }}</p>
+                            <p class="text-xs text-gray-500">{{ emp.identification || '—' }} · {{ emp.email || '—' }}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </template>
 
             <template #footer>
                 <Button color="gray" @handle="selected_job_title = null">Cerrar</Button>
