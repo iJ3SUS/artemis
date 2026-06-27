@@ -75,7 +75,7 @@ const managementItems = computed(() => menuItems.filter(item => item.meta?.prote
 
 const isActive = (path: string) => route.path === path
 
-const userName = computed(() => auth.user?.name || 'Usuario')
+const userName = computed(() => auth.user?.display_name || 'Usuario')
 const userEmail = computed(() => auth.user?.email || 'usuario@email.com')
 const userInitials = computed(() => {
     const name = userName.value

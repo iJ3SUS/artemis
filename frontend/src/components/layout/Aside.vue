@@ -84,7 +84,7 @@ const auth = useAuthStore()
 const mainItems = computed(() => menuItems.filter(item => item.meta?.protected && item.meta?.section === 'main' && item.meta?.sidebar !== false).sort((a, b) => (a.meta?.order ?? 99) - (b.meta?.order ?? 99)))
 const managementItems = computed(() => menuItems.filter(item => item.meta?.protected && item.meta?.section === 'management' && item.meta?.sidebar !== false).sort((a, b) => (a.meta?.order ?? 99) - (b.meta?.order ?? 99)))
 
-const userName = computed(() => auth.user?.name || 'Usuario')
+const userName = computed(() => auth.user?.display_name || 'Usuario')
 const userEmail = computed(() => auth.user?.email || 'usuario@email.com')
 const userInitials = computed(() => {
     const name = userName.value
