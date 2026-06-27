@@ -67,6 +67,8 @@
 </template>
 
 <script setup lang="ts">
+import Swal from 'sweetalert2'
+
 const appName = import.meta.env.VITE_APP_NAME || 'ARTEMIS'
 const companyName = import.meta.env.VITE_COMPANY_NAME || 'APOSENTOS'
 const router = useRouter()
@@ -75,9 +77,17 @@ const auth = useAuthStore()
 const { form, loading, errors, submit } = useForm({ email: '', password: '' })
 
 const handleSubmit = async () => {
-    const { success, response } = await submit({ url: '/auth/login', method: 'POST' })
+    const { success, response, message } = await submit({ url: '/auth/login', method: 'POST' })
 
-    if (!success) return
+    if (!success) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error al iniciar sesión',
+            text: message || 'Credenciales no válidas',
+            confirmButtonColor: '#dc2626',
+        })
+        return
+    }
 
     await auth.login(response)
     router.push('/')
