@@ -17,7 +17,7 @@
             </Heading>
         </template>
 
-        <Table v-if="jobTitles">
+        <Table>
             <template #top>
                 <div class="p-4">
                     <SearchInput v-model="inputs.search" @handle="onSearch" placeholder="Nombre, descripción, dependencia" label="Buscar" />
@@ -37,7 +37,8 @@
             </template>
 
             <template #body>
-                <Row v-for="jt in jobTitles.items" :key="jt._id">
+                <template v-if="jobTitles">
+                    <Row v-for="jt in jobTitles.items" :key="jt._id">
                     <Column>
                         <p class="text-sm font-medium text-gray-900">{{ jt.name }}</p>
                     </Column>
@@ -75,10 +76,11 @@
                         </div>
                     </Column>
                 </Row>
+                </template>
             </template>
 
             <template #pagination>
-                <Pagination :pagination="jobTitles.pagination" />
+                <Pagination v-if="jobTitles" :pagination="jobTitles.pagination" />
             </template>
         </Table>
 

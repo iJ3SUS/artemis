@@ -17,7 +17,7 @@
             </Heading>
         </template>
 
-        <Table v-if="roles">
+        <Table>
             <template #top>
                 <div class="p-4">
                     <SearchInput v-model="inputs.search" @handle="onSearch" placeholder="Nombre, descripción" label="Buscar" />
@@ -35,7 +35,8 @@
             </template>
 
             <template #body>
-                <Row v-for="role in roles.items" :key="role._id">
+                <template v-if="roles">
+                    <Row v-for="role in roles.items" :key="role._id">
                     <Column>
                         <p class="text-sm font-medium text-gray-900">{{ role.name }}</p>
                     </Column>
@@ -62,10 +63,11 @@
                         </div>
                     </Column>
                 </Row>
+                </template>
             </template>
 
             <template #pagination>
-                <Pagination :pagination="roles.pagination" />
+                <Pagination v-if="roles" :pagination="roles.pagination" />
             </template>
         </Table>
 

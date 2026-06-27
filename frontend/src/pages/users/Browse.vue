@@ -17,7 +17,7 @@
             </Heading>
         </template>
 
-        <Table v-if="users">
+        <Table>
             <template #top>
                 <div class="p-4">
                     <SearchInput v-model="inputs.search" @handle="onSearch" placeholder="Nombre, email, identificación" label="Buscar" />
@@ -37,7 +37,8 @@
             </template>
 
             <template #body>
-                <Row v-for="user in users.items" :key="user._id">
+                <template v-if="users">
+                    <Row v-for="user in users.items" :key="user._id">
                     <Column>
                         <div class="flex items-center gap-3">
                             <Avatar :name="user.display_name" />
@@ -86,12 +87,11 @@
                         </div>
                     </Column>
                 </Row>
+                </template>
             </template>
 
             <template #pagination>
-           
-                <Pagination :pagination="users.pagination" />
-               
+                <Pagination v-if="users" :pagination="users.pagination" />
             </template>
         </Table>
         
