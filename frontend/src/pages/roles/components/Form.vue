@@ -30,9 +30,13 @@
             </template>
         </Card>
 
+        <PermissionsSelector v-model="form.permissions" />
+
     </div>
 </template>
 <script setup>
+
+import PermissionsSelector from './PermissionsSelector.vue'
 
 const props = defineProps({
     errors: Object,

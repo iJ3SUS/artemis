@@ -1,5 +1,6 @@
 
 export const RoleSchema = {
     "name": "",
-    "description": ""
+    "description": "",
+    "permissions": []
 }

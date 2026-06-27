@@ -6,4 +6,7 @@ export default Joi.object({
     description: Joi.string()
         .allow('')
         .optional(),
+    permissions: Joi.array()
+        .items(Joi.objectId())
+        .optional(),
 }).options({ stripUnknown: true })
