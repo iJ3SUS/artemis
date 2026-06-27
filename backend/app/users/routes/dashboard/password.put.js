@@ -1,30 +1,28 @@
 export const url = '/dashboard/users/:user_id/password'
 
-import Hash from "#src/plugins/hash.js"
 import User from "#app/users/models/user.js"
+import Hash from "#src/plugins/hash.js"
 
 export const controller = async (req, rep) => {
 
-    const { user_id } = req.params
-    const { password } = req.body
+    const { body, params } = req
 
-    const user = await User.query()
-        .match({ _id: user_id })
+    const doc = await User.query()
+        .match({ _id: params.user_id })
         .first()
 
-    if (!user) {
+    if (!doc) {
         return rep.status(404).send({
             message: 'Usuario no encontrado'
         })
     }
 
-    const hash = await Hash.make(password)
+    doc.password = await Hash.encrypt(body.password)
+    doc.hash = doc.randomHash()
 
-    await user.update({ password: hash })
+    const response = await doc.save()
 
-    return rep.send({
-        message: 'Contraseña actualizada correctamente'
-    })
+    return rep.send(response)
 
 }
 

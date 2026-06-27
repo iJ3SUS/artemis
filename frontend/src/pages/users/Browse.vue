@@ -81,7 +81,7 @@
                             <Button theme="icon" v-tooltip:left="'Editar'" @handle="router.push(`/users/${user._id}/edit`)">
                                 <Icon icon="Pencil" width="16" height="16" class="text-inherit" />
                             </Button>
-                            <Button theme="icon" v-tooltip:left="'Cambiar contraseña'">
+                            <Button theme="icon" v-tooltip:left="'Cambiar contraseña'" @handle="current.user = user; modals.password = true">
                                 <Icon icon="Key" width="16" height="16" class="text-inherit" />
                             </Button>
                         </div>
@@ -94,17 +94,35 @@
                 <Pagination v-if="users" :pagination="users.pagination" />
             </template>
         </Table>
+
+        <Transition name="modal" @after-leave="current.user = null">
+            <ChangePassword
+                v-if="modals.password"
+                :show="modals.password"
+                :user="current.user"
+                @close="modals.password = false"
+            />
+        </Transition>
         
     </Page>
 </template>
 
 <script setup lang="ts">
+import ChangePassword from './components/ChangePassword.vue'
 
 const http = useHttp()
 const route = useRoute()
 const router = useRouter()
 
 const users = ref(null)
+
+const modals = reactive({
+    password: false
+})
+
+const current = reactive({
+    user: null
+})
 
 const inputs = reactive({
     search: ''
@@ -143,3 +161,15 @@ onMounted(() => {
     load()
 })
 </script>
+
+<style scoped>
+.modal-enter-active,
+.modal-leave-active {
+    transition: opacity 0.2s ease;
+}
+
+.modal-enter-from,
+.modal-leave-to {
+    opacity: 0;
+}
+</style>
