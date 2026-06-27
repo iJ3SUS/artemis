@@ -3,7 +3,7 @@ import { DB, ObjectId } from 'lemon-api/plugins/mongodb'
 import Hash from '#src/plugins/hash.js'
 
 const ADMIN_EMAIL = 'jesus.rueda.04@gmail.com'
-const ADMIN_ROLE_NAME = 'IT'
+const ADMIN_ROLE_NAME = 'IAD'
 
 async function main() {
     DB().setDefaultConnection('default', {
@@ -28,7 +28,6 @@ async function main() {
 
     const permissionIds = allPermissions.map(p => p._id)
 
-    // ── 2. Crear o actualizar rol Administrador ──
     const existingRole = await rolesCol.findOne({ name: ADMIN_ROLE_NAME })
 
     if (existingRole) {

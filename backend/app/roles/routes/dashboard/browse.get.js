@@ -7,6 +7,7 @@ export const controller = async (req, rep) => {
     const { page, limit, search } = req.query
 
     const result = await Role.query()
+        //.match({ name: { $ne: 'IAD' } })
         .when(search, (q) => {
             q.match({
                 $or: [
