@@ -52,7 +52,21 @@ export default class AuthMiddleware extends Middleware {
                 })
             }
 
-            const user = await User.find(resource.sub)
+            const user = await User.query()
+                .match({ _id: resource.sub })
+                .first()
+
+            if (!user) {
+                return rep.status(401).send({
+                    message: this._message
+                })
+            }
+
+            if (user.hash !== resource.hash) {
+                return rep.status(401).send({
+                    message: this._message
+                })
+            }
 
             if(user?.active === false) {
                 return rep.status(401).send({
