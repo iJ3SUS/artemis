@@ -38,7 +38,7 @@ export const controller = async (req, rep) => {
 
 }
 
-import { AuthMiddleware, ParseOidMiddleware, ValidateMiddleware } from "#src/middlewares/index.js"
+import { AuthMiddleware, ParseOidMiddleware, ValidateMiddleware, CanMiddleware } from "#src/middlewares/index.js"
 import UpdateSalarySchema from "#app/employees/schemas/salary/upsert.js"
 
 export const middlewares = [
@@ -52,4 +52,7 @@ export const middlewares = [
         .on('pre-handler')
         .schema(UpdateSalarySchema)
         .message("Hay errores en el formulario. Revisa los campos marcados e inténtalo de nuevo."),
+
+    new CanMiddleware('employees.salary.update')
+        .on('pre-handler'),
 ]

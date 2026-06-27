@@ -22,11 +22,14 @@ export const controller = async (req, rep) => {
 
 }
 
-import { AuthMiddleware, ParseOidMiddleware } from "#src/middlewares/index.js"
+import { AuthMiddleware, ParseOidMiddleware, CanMiddleware } from "#src/middlewares/index.js"
 
 export const middlewares = [
     new AuthMiddleware()
         .message("Debes estar autenticado para acceder a este recurso"),
     new ParseOidMiddleware()
-        .on('employee_id')
+        .on('employee_id'),
+
+    new CanMiddleware('employees.delete')
+        .on('pre-handler'),
 ]

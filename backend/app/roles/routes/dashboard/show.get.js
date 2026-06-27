@@ -20,11 +20,14 @@ export const controller = async (req, rep) => {
 
 }
 
-import { AuthMiddleware, ParseOidMiddleware } from "#src/middlewares/index.js"
+import { AuthMiddleware, ParseOidMiddleware, CanMiddleware } from "#src/middlewares/index.js"
 
 export const middlewares = [
     new AuthMiddleware()
         .message("Debes estar autenticado para acceder a este recurso"),
     new ParseOidMiddleware()
-        .on('role_id')
+        .on('role_id'),
+
+    new CanMiddleware('roles.show')
+        .on('pre-handler'),
 ]

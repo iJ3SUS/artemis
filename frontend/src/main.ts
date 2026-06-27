@@ -18,6 +18,7 @@ import SearchInput from '@/components/inputs/SearchInput.vue'
 import Avatar from '@/components/Avatar.vue'
 
 import tooltipDirective from '@/directives/tooltip'
+import canDirective from '@/directives/can'
 
 import App from './App.vue'
 import router from './router'
@@ -49,6 +50,7 @@ app.component('SearchInput', SearchInput)
 app.component('Avatar', Avatar)
 
 app.directive('tooltip', tooltipDirective)
+app.directive('can', canDirective)
 
 app.use(createPinia())
 app.use(router)

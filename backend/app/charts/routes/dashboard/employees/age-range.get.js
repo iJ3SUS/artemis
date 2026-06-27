@@ -49,9 +49,12 @@ export const controller = async (req, rep) => {
 
 }
 
-import { AuthMiddleware } from "#src/middlewares/index.js"
+import { AuthMiddleware, CanMiddleware } from "#src/middlewares/index.js"
 
 export const middlewares = [
     new AuthMiddleware()
-        .message("Debes estar autenticado para acceder a este recurso")
+        .message("Debes estar autenticado para acceder a este recurso"),
+
+    new CanMiddleware('charts.employees.age-range')
+        .on('pre-handler'),
 ]

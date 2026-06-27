@@ -21,6 +21,6 @@ export const middlewares = [
     new AuthMiddleware()
         .message("Debes estar autenticado para acceder a este recurso"),
     
-    // new CanMiddleware('permissions.browse')
-    //     .on('pre-handler')
+    new CanMiddleware('permissions.browse')
+        .on('pre-handler')
 ]
