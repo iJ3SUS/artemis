@@ -12,10 +12,11 @@ export const useUiStore = defineStore('ui', () => {
 
         if (leaving.value) return
         leaving.value = true
+
         setTimeout(() => {
             auth.logout()
             router.push('/login')
-            setTimeout(() => { leaving.value = false }, 300)
+            setTimeout(() => { leaving.value = false }, 100)
         }, 300)
     }
 
