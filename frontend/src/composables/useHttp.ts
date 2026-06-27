@@ -1,5 +1,7 @@
 import axios from 'axios'
 import { ref } from 'vue'
+import Swal from 'sweetalert2'
+import { useUiStore } from '@/stores/ui'
 
 const SESSION_KEY = import.meta.env.VITE_SESSION_KEY || 'session'
 
@@ -24,10 +26,19 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use(
     (response) => response,
     (error) => {
-        // if (error.response?.status === 401) {
-        //     localStorage.removeItem('token')
-        //     window.location.href = '/login'
-        // }
+        if (error.response?.status === 401) {
+            if (!Swal.isVisible()) {
+                Swal.fire({
+                    title: 'Sesión expirada',
+                    text: 'Tu sesión ha expirado, inicia sesión nuevamente',
+                    icon: 'warning',
+                    allowOutsideClick: false,
+                    confirmButtonText: 'Aceptar',
+                }).then(() => {
+                    useUiStore().logout()
+                })
+            }
+        }
         return Promise.reject(error)
     }
 )
