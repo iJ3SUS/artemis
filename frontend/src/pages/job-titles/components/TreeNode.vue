@@ -1,23 +1,25 @@
 <template>
     <li class="tree-node" :class="{ 'is-root': isRoot }">
-        <div class="card">
+        <div class="card" @click="$emit('select', node)">
             <p class="card-title">{{ node.name }}</p>
             <p v-if="node.dependency" class="card-dependency">{{ node.dependency }}</p>
             <p v-if="node.description" class="card-desc">{{ node.description }}</p>
         </div>
 
         <ul v-if="node.children && node.children.length > 0">
-            <TreeNode v-for="child in node.children" :key="child._id" :node="child" />
+            <TreeNode v-for="child in node.children" :key="child._id" :node="child" @select="(n) => $emit('select', n)" />
         </ul>
     </li>
 </template>
 
 <script setup lang="ts">
 
-const props = defineProps({
+defineProps({
     node: Object,
     isRoot: { type: Boolean, default: false }
 })
+
+defineEmits(['select'])
 
 </script>
 
@@ -85,8 +87,13 @@ const props = defineProps({
     transition: box-shadow 0.2s;
 }
 
+.card {
+    cursor: pointer;
+}
+
 .card:hover {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    border-color: #6d28d9;
 }
 
 .card-title {

@@ -13,13 +13,37 @@
 
         <div v-if="tree" ref="chartContainer" class="org-chart-container" @mousedown="startDrag" @mousemove="onDrag" @mouseup="stopDrag" @mouseleave="stopDrag" @wheel.prevent="onWheel" @touchstart="startTouchDrag" @touchmove="onTouchDrag" @touchend="stopTouchDrag">
             <div ref="chartContent" class="org-chart-root">
-                <TreeNode v-for="node in tree" :key="node._id" :node="node" :is-root="true" />
+                <TreeNode v-for="node in tree" :key="node._id" :node="node" :is-root="true" @select="onSelectNode" />
             </div>
         </div>
 
         <div v-else-if="!tree" class="org-chart-container flex items-center justify-center">
             <p class="text-gray-500">Cargando organigrama...</p>
         </div>
+
+        <Modal v-if="selected_job_title" :title="selected_job_title.name" :subtitle="`${employees.length} empleado(s)`" size="sm:max-w-lg" @close="selected_job_title = null">
+            <div v-if="loading_employees" class="flex items-center justify-center py-8">
+                <p class="text-sm text-gray-500">Cargando empleados...</p>
+            </div>
+
+            <div v-else-if="employees.length === 0" class="flex items-center justify-center py-8">
+                <p class="text-sm text-gray-500">No hay empleados en este cargo</p>
+            </div>
+
+            <div v-else class="flex flex-col gap-2 max-h-80 overflow-y-auto">
+                <div v-for="emp in employees" :key="emp._id" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer" @click="router.push(`/employees/${emp._id}`)">
+                    <Avatar :name="`${emp.names} ${emp.surnames}`" />
+                    <div>
+                        <p class="text-sm font-medium text-gray-900">{{ emp.names }} {{ emp.surnames }}</p>
+                        <p class="text-xs text-gray-500">{{ emp.identification || '—' }} · {{ emp.email || '—' }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <template #footer>
+                <Button color="gray" @handle="selected_job_title = null">Cerrar</Button>
+            </template>
+        </Modal>
 
     </Page>
 </template>
@@ -34,6 +58,10 @@ const tree = ref(null)
 const chartContainer = ref(null)
 const chartContent = ref(null)
 
+const selected_job_title = ref(null)
+const employees = ref([])
+const loading_employees = ref(false)
+
 const isDragging = ref(false)
 const startX = ref(0)
 const startY = ref(0)
@@ -41,6 +69,23 @@ const translateX = ref(0)
 const translateY = ref(0)
 let currentTranslateX = 0
 let currentTranslateY = 0
+
+const onSelectNode = async (node) => {
+    selected_job_title.value = node
+    loading_employees.value = true
+    employees.value = []
+
+    const { success, response } = await http.request({
+        method: 'GET',
+        url: `dashboard/job-titles/${node._id}/employees`
+    })
+
+    loading_employees.value = false
+
+    if (success && response) {
+        employees.value = Array.isArray(response) ? response : (response.items || response.data || [])
+    }
+}
 
 const load = async () => {
 
