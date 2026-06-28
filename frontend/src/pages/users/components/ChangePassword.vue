@@ -14,7 +14,7 @@
         <template #footer>
             <div class="flex justify-end gap-3">
                 <Button color="gray" @handle="close">Cancelar</Button>
-                <Button color="primary" @handle="change" :disabled="loading">Cambiar</Button>
+                <Button v-if="$can('users.password')" color="primary" @handle="change" :disabled="loading">Cambiar</Button>
             </div>
         </template>
     </Modal>

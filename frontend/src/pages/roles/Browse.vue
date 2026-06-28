@@ -9,7 +9,7 @@
                     </div>
                 </template>
                 <template #actions>
-                    <Button color="primary" @handle="router.push('/roles/create')">
+                    <Button v-if="$can('roles.create')" color="primary" @handle="router.push('/roles/create')">
                         <Icon icon="Plus" width="16" height="16" class="text-inherit" />
                         Nuevo rol
                     </Button>
@@ -57,7 +57,7 @@
                     </Column>
                     <Column>
                         <div class="flex items-center justify-center gap-2">
-                            <Button theme="icon" v-tooltip:left="'Editar'" @handle="router.push(`/roles/${role._id}/edit`)">
+                            <Button v-if="$can('roles.update')" theme="icon" v-tooltip:left="'Editar'" @handle="router.push(`/roles/${role._id}/edit`)">
                                 <Icon icon="Pencil" width="16" height="16" class="text-inherit" />
                             </Button>
                         </div>

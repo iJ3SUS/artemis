@@ -9,7 +9,7 @@
                     </div>
                 </template>
                 <template #actions>
-                    <Button color="primary" @handle="router.push('/job-titles/create')">
+                    <Button v-if="$can('job-titles.create')" color="primary" @handle="router.push('/job-titles/create')">
                         <Icon icon="Plus" width="16" height="16" class="text-inherit" />
                         Nuevo cargo
                     </Button>
@@ -70,7 +70,7 @@
                     </Column>
                     <Column>
                         <div class="flex items-center justify-center gap-2">
-                            <Button theme="icon" v-tooltip:left="'Editar'" @handle="router.push(`/job-titles/${jt._id}/edit`)">
+                            <Button v-if="$can('job-titles.update')" theme="icon" v-tooltip:left="'Editar'" @handle="router.push(`/job-titles/${jt._id}/edit`)">
                                 <Icon icon="Pencil" width="16" height="16" class="text-inherit" />
                             </Button>
                         </div>

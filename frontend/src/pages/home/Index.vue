@@ -12,11 +12,11 @@
         </template>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <GenderChart />
-            <AgeRangeChart />
-            <StratumChart />
-            <JobTitleChart />
-            <CityChart />
+            <GenderChart v-if="$can('charts.employees.gender')" />
+            <AgeRangeChart v-if="$can('charts.employees.age-range')" />
+            <StratumChart v-if="$can('charts.employees.stratum')" />
+            <JobTitleChart v-if="$can('charts.employees.job-title')" />
+            <CityChart v-if="$can('charts.employees.city')" />
         </div>
     </Page>
 </template>

@@ -9,7 +9,7 @@
                     </div>
                 </template>
                 <template #actions>
-                    <Button color="primary" @handle="router.push('/employees/create')">
+                    <Button v-if="$can('employees.create')" color="primary" @handle="router.push('/employees/create')">
                         <Icon icon="Plus" width="16" height="16" class="text-inherit" />
                         Nuevo empleado
                     </Button>
@@ -82,13 +82,13 @@
                     </Column>
                     <Column>
                         <div class="flex items-center justify-center gap-2">
-                            <Button theme="icon" v-tooltip:left="'Ver detalle'" @handle="router.push(`/employees/${emp._id}`)">
+                            <Button v-if="$can('employees.show')" theme="icon" v-tooltip:left="'Ver detalle'" @handle="router.push(`/employees/${emp._id}`)">
                                 <Icon icon="Eye" width="16" height="16" class="text-inherit" />
                             </Button>
-                            <Button theme="icon" v-tooltip:left="'Editar'" @handle="router.push(`/employees/${emp._id}/edit`)">
+                            <Button v-if="$can('employees.update')" theme="icon" v-tooltip:left="'Editar'" @handle="router.push(`/employees/${emp._id}/edit`)">
                                 <Icon icon="Pencil" width="16" height="16" class="text-inherit" />
                             </Button>
-                            <Button theme="icon" v-tooltip:left="'Actualizar salario'" @handle="current.employee = emp; modal.salary = true">
+                            <Button v-if="$can('employees.salary.update')" theme="icon" v-tooltip:left="'Actualizar salario'" @handle="current.employee = emp; modal.salary = true">
                                 <Icon icon="EyeDolar" width="16" height="16" class="text-inherit" />
                             </Button>
                         </div>

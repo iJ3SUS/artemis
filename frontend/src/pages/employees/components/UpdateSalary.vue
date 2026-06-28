@@ -37,7 +37,7 @@
         <template #footer>
             <div class="flex justify-end gap-3">
                 <Button color="gray" @handle="close">Cancelar</Button>
-                <Button color="primary" @handle="update" :disabled="loading">Guardar</Button>
+                <Button v-if="$can('employees.salary.update')" color="primary" @handle="update" :disabled="loading">Guardar</Button>
             </div>
         </template>
     </Modal>
