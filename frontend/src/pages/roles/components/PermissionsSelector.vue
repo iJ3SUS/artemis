@@ -104,6 +104,7 @@ const moduleLabels: Record<string, string> = {
     'job-titles': 'Cargos',
     'employees': 'Empleados',
     'charts': 'Gráficos',
+    'permissions': 'Permisos',
 }
 
 const moduleColors: Record<string, { bg: string; dot: string }> = {
@@ -112,6 +113,7 @@ const moduleColors: Record<string, { bg: string; dot: string }> = {
     'job-titles': { bg: 'bg-amber-50', dot: 'bg-amber-500' },
     'employees': { bg: 'bg-emerald-50', dot: 'bg-emerald-500' },
     'charts': { bg: 'bg-rose-50', dot: 'bg-rose-500' },
+    'permissions': { bg: 'bg-cyan-50', dot: 'bg-cyan-500' },
 }
 
 const http = useHttp()

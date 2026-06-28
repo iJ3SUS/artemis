@@ -2,9 +2,9 @@ import Joi from '#src/plugins/joi'
 
 export default Joi.object({
 
-    name: Joi.string().min(3).max(100).required(),
+    name: Joi.string().min(3).max(100).optional(),
 
-    key: Joi.string().min(3).max(100).required(),
+    key: Joi.string().min(3).max(100).optional(),
 
     description: Joi.string()
         .allow('')
@@ -14,6 +14,6 @@ export default Joi.object({
     module: Joi.string()
         .min(2)
         .max(50)
-        .required(),
+        .optional(),
 
 }).options({ stripUnknown: true })

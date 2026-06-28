@@ -6,6 +6,9 @@ const UserCreate = () => import('@/pages/users/Create.vue')
 const Roles = () => import('@/pages/roles/Browse.vue')
 const RoleEdit = () => import('@/pages/roles/Edit.vue')
 const RoleCreate = () => import('@/pages/roles/Create.vue')
+const Permissions = () => import('@/pages/permissions/Browse.vue')
+const PermissionEdit = () => import('@/pages/permissions/Edit.vue')
+const PermissionCreate = () => import('@/pages/permissions/Create.vue')
 const JobTitles = () => import('@/pages/job-titles/Browse.vue')
 const JobTitleEdit = () => import('@/pages/job-titles/Edit.vue')
 const JobTitleCreate = () => import('@/pages/job-titles/Create.vue')
@@ -32,6 +35,9 @@ export const routes = [
     { path: '/roles', label: 'Roles', icon: 'ID', component: Roles, meta: { protected: true, section: 'management', order: 4 } },
     { path: '/roles/create', label: 'Crear rol', component: RoleCreate, meta: { protected: true, section: 'management', sidebar: false } },
     { path: '/roles/:id/edit', label: 'Editar rol', component: RoleEdit, meta: { protected: true, section: 'management', sidebar: false } },
+    { path: '/permissions', label: 'Permisos', icon: 'Key', component: Permissions, meta: { protected: true, section: 'management', order: 5 } },
+    { path: '/permissions/create', label: 'Crear permiso', component: PermissionCreate, meta: { protected: true, section: 'management', sidebar: false } },
+    { path: '/permissions/:id/edit', label: 'Editar permiso', component: PermissionEdit, meta: { protected: true, section: 'management', sidebar: false } },
 ]
 
 export const icons = {

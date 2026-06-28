@@ -4,14 +4,23 @@ import Permission from "../models/permission.js"
 
 export const controller = async (req, rep) => {
 
-    const { page, limit } = req.query
+    const { page, limit, search } = req.query
 
-    const pipelines = req.pipelines ?? []
+    const result = await Permission.query()
+        .when(search, (q) => {
+            q.match({
+                $or: [
+                    { name: { $regex: search, $options: 'i' } },
+                    { key: { $regex: search, $options: 'i' } },
+                    { module: { $regex: search, $options: 'i' } },
+                    { description: { $regex: search, $options: 'i' } },
+                ]
+            })
+        })
+        .sort({ module: 1, name: 1 })
+        .paginate(page || 1, limit || 10)
 
-    const docs = await Permission.query(pipelines)
-        .get()
-
-    return rep.send(docs)
+    return rep.send(result)
 
 }
 
