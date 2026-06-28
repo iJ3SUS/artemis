@@ -1,4 +1,4 @@
-import Joi from '#src/plugins/joi'
+import Joi from '#src/plugins/joi.js'
 
 export default Joi.object({
 
