@@ -1,10 +1,10 @@
 <template>
-    <Card v-if="data">
+    <Card>
         <template #header>
             Nivel socioeconómico (estrato)
         </template>
         <template #content>
-            <div class="h-64">
+            <div v-if="data" class="h-64">
                 <Bar :data="chart_data" :options="bar_options" />
             </div>
         </template>

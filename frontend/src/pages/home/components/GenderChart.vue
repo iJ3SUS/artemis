@@ -1,10 +1,10 @@
 <template>
-    <Card v-if="data">
+    <Card>
         <template #header>
             Distribución por género
         </template>
         <template #content>
-            <div class="h-64">
+            <div v-if="data" class="h-64">
                 <Pie :data="chart_data" :options="pie_options" />
             </div>
         </template>

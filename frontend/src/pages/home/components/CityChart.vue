@@ -1,10 +1,10 @@
 <template>
-    <Card v-if="data">
+    <Card>
         <template #header>
             Lugar de residencia
         </template>
         <template #content>
-            <div :style="{ height: chart_height + 'px' }">
+            <div v-if="data" :style="{ height: chart_height + 'px' }">
                 <Bar :data="chart_data" :options="horizontal_bar_options" />
             </div>
         </template>

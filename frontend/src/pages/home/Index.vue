@@ -11,6 +11,10 @@
             </Heading>
         </template>
 
+        <div v-can="'jesus'">
+            we
+        </div>
+
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <GenderChart v-can="'charts.employees.gender'" />
             <AgeRangeChart v-can="'charts.employees.age-range'" />
