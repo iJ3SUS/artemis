@@ -1,5 +1,5 @@
 <template>
-    <Card v-if="data" v-can="'charts.employees.job-title'">
+    <Card v-if="data">
         <template #header>
             Empleados por cargo
         </template>

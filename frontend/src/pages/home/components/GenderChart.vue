@@ -1,5 +1,5 @@
 <template>
-    <Card v-if="data" v-can="'charts.employees.gender'">
+    <Card v-if="data">
         <template #header>
             Distribución por género
         </template>

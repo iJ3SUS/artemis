@@ -1,5 +1,5 @@
 <template>
-    <Card v-if="data" v-can="'charts.employees.stratum'">
+    <Card v-if="data">
         <template #header>
             Nivel socioeconómico (estrato)
         </template>

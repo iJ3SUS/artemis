@@ -12,11 +12,11 @@
         </template>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <GenderChart />
-            <AgeRangeChart />
-            <StratumChart />
-            <JobTitleChart />
-            <CityChart />
+            <GenderChart v-can="'charts.employees.gender'" />
+            <AgeRangeChart v-can="'charts.employees.age-range'" />
+            <StratumChart v-can="'charts.employees.stratum'" />
+            <JobTitleChart v-can="'charts.employees.job-title'" />
+            <CityChart v-can="'charts.employees.city'" />
         </div>
     </Page>
 </template>

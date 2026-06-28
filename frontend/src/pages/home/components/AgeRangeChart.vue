@@ -1,5 +1,5 @@
 <template>
-    <Card v-if="data" v-can="'charts.employees.age-range'">
+    <Card v-if="data">
         <template #header>
             Distribución por rango de edad
         </template>

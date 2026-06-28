@@ -1,5 +1,5 @@
 <template>
-    <Card v-if="data" v-can="'charts.employees.city'">
+    <Card v-if="data">
         <template #header>
             Lugar de residencia
         </template>
