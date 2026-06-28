@@ -14,66 +14,77 @@
                 <div class="animate-pulse">Cargando permisos...</div>
             </div>
 
-            <div v-else class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div
-                    v-for="(group, module) in grouped"
-                    :key="module"
-                    class="bg-surface border border-border rounded-xl overflow-hidden"
-                >
+            <template v-else>
+                <div class="pb-4">
+                    <input
+                        v-model="search"
+                        type="text"
+                        placeholder="Buscar permiso..."
+                        class="w-full px-3 py-2 text-sm bg-white border border-gray-200 rounded shadow-xs text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-gray-300"
+                    />
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <div
-                        class="flex items-center justify-between px-4 py-2.5 border-b border-border"
-                        :class="moduleColors[module]?.bg || 'bg-gray-50'"
+                        v-for="(group, module) in filteredGroups"
+                        :key="module"
+                        class="border border-gray-200 rounded overflow-hidden"
                     >
-                        <div class="flex items-center gap-2">
-                            <div
-                                class="w-2 h-2 rounded-full"
-                                :class="moduleColors[module]?.dot || 'bg-gray-400'"
-                            />
-                            <h4 class="text-sm font-semibold text-gray-800">{{ moduleLabels[module] || module }}</h4>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-xs text-gray-500">
-                                {{ selectedCount(module) }}/{{ group.length }}
-                            </span>
+                        <div
+                            class="flex items-center justify-between px-3 py-2 text-sm font-semibold text-gray-800 border-b border-gray-200"
+                        >
+                            <div class="flex items-center gap-2">
+                                <div
+                                    class="w-2 h-2 rounded-full"
+                                    :class="moduleColors[module]?.dot || 'bg-gray-400'"
+                                />
+                                {{ moduleLabels[module] || module }}
+                                <span class="text-xs font-normal text-gray-400">({{ selectedCount(module) }}/{{ group.length }})</span>
+                            </div>
                             <button
                                 type="button"
-                                class="text-xs font-medium transition-colors px-2 py-0.5 rounded-full border"
+                                class="text-xs transition-colors px-2 py-0.5 rounded-full border"
                                 :class="isModuleFullySelected(group)
                                     ? 'border-red-200 text-red-600 hover:bg-red-50 bg-red-50/50'
-                                    : 'border-primary-200 text-primary-600 hover:bg-primary-50 bg-primary-50/50'"
+                                    : 'border-blue-200 text-blue-600 hover:bg-blue-50 bg-blue-50/50'"
                                 @click="toggleModule(module, group)"
                             >
                                 {{ isModuleFullySelected(group) ? 'Quitar todos' : 'Todos' }}
                             </button>
                         </div>
-                    </div>
 
-                    <div class="px-3 py-2.5 space-y-0.5">
-                        <label
-                            v-for="perm in group"
-                            :key="perm._id"
-                            class="flex items-center gap-2.5 px-2 py-1.5 rounded-lg cursor-pointer transition-colors"
-                            :class="selected.includes(perm._id)
-                                ? 'bg-primary-50/60'
-                                : 'hover:bg-gray-50'"
-                        >
-                            <input
-                                type="checkbox"
-                                :value="perm._id"
-                                :checked="selected.includes(perm._id)"
-                                class="w-4 h-4 rounded border-gray-300 text-primary-600 focus:ring-2 focus:ring-primary-500/30 focus:ring-offset-0 cursor-pointer"
-                                @change="toggle(perm._id)"
-                            />
-                            <div class="flex-1 min-w-0">
-                                <span
-                                    class="text-sm block truncate"
-                                    :class="selected.includes(perm._id) ? 'text-primary-800 font-medium' : 'text-gray-700'"
-                                >{{ perm.name }}</span>
-                            </div>
-                        </label>
+                        <div class="divide-y divide-gray-100">
+                            <label
+                                v-for="perm in group"
+                                :key="perm._id"
+                                class="flex items-start gap-2.5 px-3 py-2.5 cursor-pointer transition-colors"
+                                :class="selected.includes(perm._id)
+                                    ? 'bg-blue-50/60'
+                                    : 'hover:bg-gray-50'"
+                            >
+                                <input
+                                    type="checkbox"
+                                    :value="perm._id"
+                                    :checked="selected.includes(perm._id)"
+                                    class="mt-0.5 w-4 h-4 rounded border-gray-300 text-blue-600 cursor-pointer flex-shrink-0"
+                                    @change="toggle(perm._id)"
+                                />
+                                <div class="min-w-0">
+                                    <div
+                                        class="text-sm leading-snug"
+                                        :class="selected.includes(perm._id) ? 'text-blue-800 font-medium' : 'text-gray-700'"
+                                    >{{ perm.name }}</div>
+                                    <div v-if="perm.description" class="text-xs text-gray-400 mt-0.5 leading-relaxed">{{ perm.description }}</div>
+                                </div>
+                            </label>
+                        </div>
                     </div>
                 </div>
-            </div>
+
+                <div v-if="Object.keys(filteredGroups).length === 0" class="text-sm text-gray-500 py-8 text-center">
+                    No hay permisos que coincidan con "{{ search }}"
+                </div>
+            </template>
         </template>
     </Card>
 </template>
@@ -106,6 +117,7 @@ const moduleColors: Record<string, { bg: string; dot: string }> = {
 const http = useHttp()
 const loading = ref(true)
 const permissions = ref<any[]>([])
+const search = ref('')
 
 const selected = computed({
     get: () => props.modelValue,
@@ -128,6 +140,22 @@ const grouped = computed(() => {
         groups[p.module].push(p)
     }
     return groups
+})
+
+const filteredGroups = computed(() => {
+    const q = search.value.toLowerCase().trim()
+    if (!q) return grouped.value
+
+    const result: Record<string, any[]> = {}
+    for (const [module, perms] of Object.entries(grouped.value)) {
+        const filtered = perms.filter(p =>
+            p.name.toLowerCase().includes(q) ||
+            (p.key && p.key.toLowerCase().includes(q)) ||
+            (p.description && p.description.toLowerCase().includes(q))
+        )
+        if (filtered.length > 0) result[module] = filtered
+    }
+    return result
 })
 
 function isModuleFullySelected(group: any[]): boolean {
