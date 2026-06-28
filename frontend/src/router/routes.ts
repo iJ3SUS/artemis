@@ -1,5 +1,5 @@
 const Login = () => import('@/pages/Login.vue')
-const Home = () => import('@/pages/Home.vue')
+const Home = () => import('@/pages/home/Index.vue')
 const Users = () => import('@/pages/users/Browse.vue')
 const UserEdit = () => import('@/pages/users/Edit.vue')
 const UserCreate = () => import('@/pages/users/Create.vue')
