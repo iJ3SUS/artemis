@@ -26,20 +26,24 @@ async function setup() {
 
     const db = DB().connections.get('default').client.db(process.env.MONGODB_NAME)
 
+    let created = 0
+
     for (const name of COLLECTIONS) {
-        try {
-            await db.dropCollection(name)
-        } catch (_) {}
+        const exists = await db.listCollections({ name }).hasNext()
 
-        await db.createCollection(name, {
-            collation: COLLATION
-        })
-
-        console.log(`Colección "${name}" creada con collation es`)
+        if (exists) {
+            console.log(`Colección "${name}" ya existe`)
+        } else {
+            await db.createCollection(name, {
+                collation: COLLATION
+            })
+            console.log(`Colección "${name}" creada con collation es`)
+            created++
+        }
     }
 
     await DB().closeAll()
-    console.log(`\n${COLLECTIONS.length} colecciones configuradas`)
+    console.log(`\n${created} colecciones creadas, ${COLLECTIONS.length - created} ya existían`)
 }
 
 setup()

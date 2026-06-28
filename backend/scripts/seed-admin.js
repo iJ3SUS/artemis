@@ -21,7 +21,7 @@ async function main() {
     const allPermissions = await permissionsCol.find({}).toArray()
 
     if (allPermissions.length === 0) {
-        console.log('  No hay permisos en la BD. Ejecuta primero: node scripts/map-permissions.js seed')
+        console.log('  No hay permisos en la BD. Ejecuta primero: node scripts/create-permissions.js seed')
         await DB().closeAll()
         return
     }
