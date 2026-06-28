@@ -43,54 +43,6 @@ const PERMISSIONS = [
     { key: 'charts.employees.stratum',   name: 'Gráfico estrato',        description: 'Ver gráfico de distribución por estrato',           module: 'charts' },
 ]
 
-async function main() {
-    const mode = process.argv[2] || 'table'
-
-    if (mode === 'seed') {
-        await seed()
-    } else if (mode === 'json') {
-        printJson()
-    } else {
-        printTable()
-    }
-}
-
-function printTable() {
-    const header = `${'#'.padEnd(3)} ${'Key'.padEnd(30)} ${'Nombre'.padEnd(25)} ${'Módulo'.padEnd(15)}`
-    const sep = '─'.repeat(80)
-
-    console.log(`\n  MAPEO DE PERMISOS — RRHH\n`)
-    console.log(sep)
-    console.log(header)
-    console.log(sep)
-
-    PERMISSIONS.forEach((p, i) => {
-        const idx = String(i + 1).padEnd(3)
-        const key = p.key.padEnd(30)
-        const name = p.name.padEnd(25)
-        const mod = p.module.padEnd(15)
-        console.log(` ${idx} ${key} ${name} ${mod}`)
-    })
-
-    console.log(sep)
-    console.log(`\n  Total: ${PERMISSIONS.length} permisos\n`)
-
-    // Group summary
-    const groups = {}
-    PERMISSIONS.forEach(p => {
-        groups[p.module] = (groups[p.module] || 0) + 1
-    })
-    console.log('  Por módulo:')
-    Object.entries(groups).forEach(([mod, count]) => {
-        console.log(`    ${mod.padEnd(15)} ${count} permisos`)
-    })
-    console.log()
-}
-
-function printJson() {
-    console.log(JSON.stringify(PERMISSIONS, null, 4))
-}
-
 async function seed() {
     DB().setDefaultConnection('default', {
         uri: process.env.MONGODB_URI,
@@ -101,19 +53,36 @@ async function seed() {
     const db = DB().connections.get('default').client.db(process.env.MONGODB_NAME)
     const col = db.collection('permissions')
 
-    await col.deleteMany({})
+    let created = 0
+    let updated = 0
 
-    const docs = PERMISSIONS.map(p => ({
-        ...p,
-        created_at: new Date(),
-        updated_at: new Date(),
-    }))
+    for (const p of PERMISSIONS) {
+        const result = await col.updateOne(
+            { key: p.key },
+            {
+                $set: {
+                    name: p.name,
+                    description: p.description,
+                    module: p.module,
+                    updated_at: new Date(),
+                },
+                $setOnInsert: {
+                    created_at: new Date(),
+                }
+            },
+            { upsert: true }
+        )
 
-    const result = await col.insertMany(docs)
+        if (result.upsertedCount > 0) {
+            created++
+        } else if (result.modifiedCount > 0) {
+            updated++
+        }
+    }
 
-    console.log(`\n  ✓ ${result.insertedCount} permisos insertados en la colección "permissions"\n`)
+    console.log(`\n  ✓ ${created} creados, ${updated} actualizados, ${PERMISSIONS.length - created - updated} sin cambios\n`)
 
     await DB().closeAll()
 }
 
-main()
+seed()
