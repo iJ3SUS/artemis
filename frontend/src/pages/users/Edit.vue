@@ -14,7 +14,7 @@
                     </div>
                 </template>
                 <template #actions>
-                    <Button color="primary" v-can="'users.update'" @handle="update" :disabled="!http.loading">Guardar</Button>
+                    <Button color="primary" @handle="update" :disabled="!http.loading">Guardar</Button>
                 </template>
             </Heading>
         </template>

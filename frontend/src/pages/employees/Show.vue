@@ -14,7 +14,7 @@
                     </div>
                 </template>
                 <template #actions>
-                    <Button color="primary" v-can="'employees.update'" @handle="router.push(`/employees/${route.params.id}/edit`)">
+                    <Button color="primary" @handle="router.push(`/employees/${route.params.id}/edit`)">
                         <Icon icon="Pencil" width="16" height="16" class="text-inherit" />
                         Editar
                     </Button>

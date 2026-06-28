@@ -11,16 +11,12 @@
             </Heading>
         </template>
 
-        <div v-can="'jesus'">
-            we
-        </div>
-
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <GenderChart v-can="'charts.employees.gender'" />
-            <AgeRangeChart v-can="'charts.employees.age-range'" />
-            <StratumChart v-can="'charts.employees.stratum'" />
-            <JobTitleChart v-can="'charts.employees.job-title'" />
-            <CityChart v-can="'charts.employees.city'" />
+            <GenderChart />
+            <AgeRangeChart />
+            <StratumChart />
+            <JobTitleChart />
+            <CityChart />
         </div>
     </Page>
 </template>
