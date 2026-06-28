@@ -41,13 +41,6 @@ const PERMISSIONS = [
     { key: 'charts.employees.gender',    name: 'Gráfico género',         description: 'Ver gráfico de distribución por género',            module: 'charts' },
     { key: 'charts.employees.job-title', name: 'Gráfico cargos',         description: 'Ver gráfico de empleados por cargo',                module: 'charts' },
     { key: 'charts.employees.stratum',   name: 'Gráfico estrato',        description: 'Ver gráfico de distribución por estrato',           module: 'charts' },
-
-    // ── Permisos ──
-    { key: 'permissions.browse',  name: 'Listar permisos',       description: 'Ver listado de permisos del sistema',                  module: 'permissions' },
-    { key: 'permissions.show',    name: 'Ver permiso',           description: 'Ver detalle de un permiso',                            module: 'permissions' },
-    { key: 'permissions.create',  name: 'Crear permiso',         description: 'Crear nuevos permisos en el sistema',                  module: 'permissions' },
-    { key: 'permissions.update',  name: 'Actualizar permiso',    description: 'Editar datos de un permiso existente',                 module: 'permissions' },
-    { key: 'permissions.delete',  name: 'Eliminar permiso',      description: 'Eliminar permisos del sistema',                        module: 'permissions' },
 ]
 
 async function main() {
