@@ -68,6 +68,26 @@ export const useAuthStore = defineStore('auth', () => {
         return user.value?.permissions?.includes(permission) || false
     }
 
+    const refresh = async () => {
+        const session = localStorage.getItem(SESSION_KEY)
+        if (!session) return false
+
+        const parsed = JSON.parse(session)
+
+        const result = await request({
+            url: 'auth/me',
+            headers: {
+                'Authorization': 'Bearer ' + parsed.access_token,
+            }
+        })
+
+        if (!result.success) return false
+
+        user.value = result.response
+
+        return true
+    }
+
     const access_token = () => {
         const session = JSON.parse(localStorage.getItem(SESSION_KEY))
 
@@ -80,6 +100,7 @@ export const useAuthStore = defineStore('auth', () => {
         check,
         login,
         logout,
+        refresh,
         can,
         access_token
     }
