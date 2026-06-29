@@ -5,5 +5,7 @@ export const JobTitleSchema = {
     "parent_id": null,
     "dependency": "",
     "active": true,
-    "functions": []
+    "functions": [],
+    "requirements": [],
+    "risks": []
 }

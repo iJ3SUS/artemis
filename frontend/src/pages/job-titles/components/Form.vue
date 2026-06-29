@@ -60,42 +60,35 @@
             </template>
         </Card>
 
-        <Card>
-            <template #header>
-                Funciones del cargo
-            </template>
+        <RequirementsList
+            v-model="form.functions"
+            title="Funciones del cargo"
+            label="Función"
+            placeholder="Escribe una función y presiona Enter"
+            empty-text="Sin funciones asignadas"
+        />
 
-            <template #content>
-                <Grid columns="12">
-                    <Col size="12">
-                        <Text
-                            v-model="newFunction"
-                            label="Función"
-                            placeholder="Escribe una función y presiona Enter"
-                            @keydown.enter.prevent="addFunction"
-                        />
-                    </Col>
-                    <Col size="12">
-                        <ul v-if="form.functions.length" class="ml-5 list-disc text-sm space-y-1">
-                            <li v-for="(func, index) in form.functions" :key="index" class="flex items-center justify-between">
-                                <span>{{ func }}</span>
-                                <span
-                                    class="text-orange-600 font-medium text-xs cursor-pointer ml-2"
-                                    @click="() => removeFunction(index)"
-                                >
-                                    Eliminar
-                                </span>
-                            </li>
-                        </ul>
-                        <p v-else class="text-sm text-gray-400">Sin funciones asignadas</p>
-                    </Col>
-                </Grid>
-            </template>
-        </Card>
+        <RequirementsList
+            v-model="form.requirements"
+            title="Requisitos del cargo"
+            label="Requisito"
+            placeholder="Escribe un requisito y presiona Enter"
+            empty-text="Sin requisitos asignados"
+        />
+
+        <RequirementsList
+            v-model="form.risks"
+            title="Riesgos del cargo"
+            label="Riesgo"
+            placeholder="Escribe un riesgo y presiona Enter"
+            empty-text="Sin riesgos asignados"
+        />
 
     </div>
 </template>
 <script setup>
+
+import RequirementsList from './RequirementsList.vue'
 
 const props = defineProps({
     errors: Object,
@@ -104,25 +97,11 @@ const props = defineProps({
 
 const optionStore = useOptionsStore()
 
-const newFunction = ref('')
-
 const options = computed(() => {
     return {
         jobTitles: optionStore.data['job_titles'] || []
     }
 })
-
-const addFunction = () => {
-    const value = newFunction.value.trim()
-    if (value && !props.form.functions.includes(value)) {
-        props.form.functions.push(value)
-        newFunction.value = ''
-    }
-}
-
-const removeFunction = (index) => {
-    props.form.functions.splice(index, 1)
-}
 
 onMounted(() => {
     optionStore.add({

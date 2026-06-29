@@ -7,4 +7,6 @@ export default Joi.object({
     active: Joi.boolean().default(true),
     dependency: Joi.string().allow('').optional(),
     functions: Joi.array().items(Joi.string()).default([]),
+    requirements: Joi.array().items(Joi.string()).default([]),
+    risks: Joi.array().items(Joi.string()).default([]),
 }).options({ stripUnknown: true })
