@@ -245,13 +245,4 @@ onUnmounted(() => {
     left: 0;
 }
 
-.modal-enter-active,
-.modal-leave-active {
-    transition: opacity 0.2s ease;
-}
-
-.modal-enter-from,
-.modal-leave-to {
-    opacity: 0;
-}
 </style>

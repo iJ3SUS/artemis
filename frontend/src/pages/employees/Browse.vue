@@ -102,13 +102,15 @@
             </template>
         </Table>
 
-        <UpdateSalary
-            v-if="current.employee"
-            :show="modal.salary"
-            :employee="current.employee"
-            @close="modal.salary = false; current.employee = null"
-            @saved="load"
-        />
+        <Transition name="modal" @after-leave="current.employee = null">
+            <UpdateSalary
+                v-if="current.employee"
+                :show="modal.salary"
+                :employee="current.employee"
+                @close="modal.salary = false; current.employee = null"
+                @saved="load"
+            />
+        </Transition>
 
     </Page>
 </template>
@@ -196,4 +198,6 @@ onMounted(() => {
         source: 'dashboard/job-titles/list'
     })
 })
+
 </script>
+
