@@ -21,7 +21,8 @@
             <p class="text-gray-500">Cargando organigrama...</p>
         </div>
 
-        <Modal v-if="selected_job_title" :title="selected_job_title.name" :subtitle="`${employees.length} empleado(s)`" size="sm:max-w-lg" @close="selected_job_title = null">
+        <Transition name="modal">
+            <Modal v-if="selected_job_title" :title="selected_job_title.name" :subtitle="`${employees.length} empleado(s)`" size="sm:max-w-lg" @close="selected_job_title = null">
             <template #content>
                 <div v-if="loading_employees" class="flex items-center justify-center py-8">
                     <p class="text-sm text-gray-500">Cargando empleados...</p>
@@ -46,6 +47,7 @@
                 <Button color="gray" @handle="selected_job_title = null">Cerrar</Button>
             </template>
         </Modal>
+        </Transition>
 
     </Page>
 </template>
@@ -241,5 +243,15 @@ onUnmounted(() => {
     position: absolute;
     top: 0;
     left: 0;
+}
+
+.modal-enter-active,
+.modal-leave-active {
+    transition: opacity 0.2s ease;
+}
+
+.modal-enter-from,
+.modal-leave-to {
+    opacity: 0;
 }
 </style>
