@@ -9,8 +9,8 @@ export default Joi.object({
         indicative: Joi.string().required(),
         number: Joi.string().required()
     }).required(),
-    active: Joi.boolean().optional(),
+    active: Joi.boolean().default(true),
     identification: Joi.string().min(5).max(20).required(),
-    properties: Joi.object().optional().pattern(Joi.string(), Joi.any()),
-    roles: Joi.array().items(Joi.objectId()).optional()
+    properties: Joi.object().pattern(Joi.string(), Joi.any()).default({}),
+    roles: Joi.array().items(Joi.objectId()).default([])
 }).options({ stripUnknown: true })
