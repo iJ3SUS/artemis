@@ -45,12 +45,20 @@ const jobTitle = ref(null)
 
 const load = async () => {
 
-    const { success, response } = await http.request({
+    const { success, response, message } = await http.request({
         method: 'GET',
         url: `dashboard/job-titles/${route.params.id}`
     })
 
-    if(!success) return
+    if(!success) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: message || 'Ocurrió un error al cargar el cargo',
+            confirmButtonText: 'Aceptar'
+        })
+        return
+    }
 
     jobTitle.value = response
 
@@ -60,12 +68,20 @@ const load = async () => {
 
 const update = async () => {
 
-    const { success, response } = await submit({
+    const { success, response, message } = await submit({
         method: 'PUT',
         url: `dashboard/job-titles/${route.params.id}`
     })
 
-    if(!success) return
+    if(!success) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: message || 'Ocurrió un error al actualizar el cargo',
+            confirmButtonText: 'Aceptar'
+        })
+        return
+    }
 
     Swal.fire({
         icon: 'success',

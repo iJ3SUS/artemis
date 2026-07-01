@@ -43,12 +43,20 @@ const employee = ref(null)
 
 const load = async () => {
 
-    const { success, response } = await http.request({
+    const { success, response, message } = await http.request({
         method: 'GET',
         url: `dashboard/employees/${route.params.id}`
     })
 
-    if(!success) return
+    if(!success) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: message || 'Ocurrió un error al cargar el empleado',
+            confirmButtonText: 'Aceptar'
+        })
+        return
+    }
 
     employee.value = response
 
@@ -58,12 +66,20 @@ const load = async () => {
 
 const update = async () => {
 
-    const { success, response } = await submit({
+    const { success, response, message } = await submit({
         method: 'PUT',
         url: `dashboard/employees/${route.params.id}`
     })
 
-    if(!success) return
+    if(!success) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: message || 'Ocurrió un error al actualizar el empleado',
+            confirmButtonText: 'Aceptar'
+        })
+        return
+    }
 
     Swal.fire({
         icon: 'success',

@@ -40,12 +40,20 @@ const { form, errors, submit } = useForm(RoleSchema)
 
 const create = async () => {
 
-    const { success, response } = await submit({
+    const { success, response, message } = await submit({
         method: 'POST',
         url: 'dashboard/roles'
     })
 
-    if(!success) return
+    if(!success) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: message || 'Ocurrió un error al guardar el rol',
+            confirmButtonText: 'Aceptar'
+        })
+        return
+    }
 
     Swal.fire({
         icon: 'success',

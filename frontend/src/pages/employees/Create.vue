@@ -38,12 +38,20 @@ const { form, errors, submit } = useForm(EmployeeSchema)
 
 const create = async () => {
 
-    const { success, response } = await submit({
+    const { success, response, message } = await submit({
         method: 'POST',
         url: 'dashboard/employees'
     })
 
-    if(!success) return
+    if(!success) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: message || 'Ocurrió un error al guardar el empleado',
+            confirmButtonText: 'Aceptar'
+        })
+        return
+    }
 
     Swal.fire({
         icon: 'success',

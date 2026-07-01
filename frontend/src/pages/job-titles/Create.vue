@@ -40,12 +40,20 @@ const { form, errors, submit } = useForm(JobTitleSchema)
 
 const create = async () => {
 
-    const { success, response } = await submit({
+    const { success, response, message } = await submit({
         method: 'POST',
         url: 'dashboard/job-titles'
     })
 
-    if(!success) return
+    if(!success) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: message || 'Ocurrió un error al guardar el cargo',
+            confirmButtonText: 'Aceptar'
+        })
+        return
+    }
 
     Swal.fire({
         icon: 'success',

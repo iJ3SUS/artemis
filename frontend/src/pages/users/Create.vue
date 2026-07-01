@@ -40,12 +40,20 @@ const create = async () => {
 
     form.display_name = `${form.names} ${form.surnames}`.trim()
 
-    const { success, response } = await submit({
+    const { success, response, message } = await submit({
         method: 'POST',
         url: 'dashboard/users'
     })
 
-    if(!success) return
+    if(!success) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: message || 'Ocurrió un error al guardar el usuario',
+            confirmButtonText: 'Aceptar'
+        })
+        return
+    }
 
     Swal.fire({
         icon: 'success',
