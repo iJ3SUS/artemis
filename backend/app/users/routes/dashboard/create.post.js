@@ -44,16 +44,16 @@ export const middlewares = [
             }
         ),
 
-    new ExistsMiddleware()
-        .on('pre-handler')
-        .collection('users')
-        .message("Ya existe un usuario con este número de identificación")
-        .criteria(
-            ({ body }) => {
-                return {
-                    identification: { $regex: `^${body.identification}$`, $options: 'i' }
-                }
-            }
-        ),
+    // new ExistsMiddleware()
+    //     .on('pre-handler')
+    //     .collection('users')
+    //     .message("Ya existe un usuario con este número de identificación")
+    //     .criteria(
+    //         ({ body }) => {
+    //             return {
+    //                 identification: { $regex: `^${body.identification}$`, $options: 'i' }
+    //             }
+    //         }
+    //     ),
 
 ]
