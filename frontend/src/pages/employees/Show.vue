@@ -169,11 +169,11 @@
                             <div class="space-y-4">
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 uppercase">Calzado</label>
-                                    <p class="text-sm text-gray-900 mt-1">{{ employee.shoe_size || '-' }}</p>
+                                    <p class="text-sm text-gray-900 mt-1">{{ employee.clothing?.shoe_size || '-' }}</p>
                                 </div>
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 uppercase">Camisa</label>
-                                    <p class="text-sm text-gray-900 mt-1">{{ employee.shirt_size || '-' }}</p>
+                                    <p class="text-sm text-gray-900 mt-1">{{ employee.clothing?.shirt_size || '-' }}</p>
                                 </div>
                             </div>
                         </Col>
@@ -181,11 +181,11 @@
                             <div class="space-y-4">
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 uppercase">Chaqueta</label>
-                                    <p class="text-sm text-gray-900 mt-1">{{ employee.jacket_size || '-' }}</p>
+                                    <p class="text-sm text-gray-900 mt-1">{{ employee.clothing?.jacket_size || '-' }}</p>
                                 </div>
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 uppercase">Pantalón</label>
-                                    <p class="text-sm text-gray-900 mt-1">{{ employee.pants_size || '-' }}</p>
+                                    <p class="text-sm text-gray-900 mt-1">{{ employee.clothing?.pants_size || '-' }}</p>
                                 </div>
                             </div>
                         </Col>

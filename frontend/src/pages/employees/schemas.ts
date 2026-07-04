@@ -29,10 +29,12 @@ export const EmployeeSchema = {
     "eps": "",
     "afp": "",
     "afc": "",
-    "shoe_size": "",
-    "shirt_size": "",
-    "jacket_size": "",
-    "pants_size": "",
+    "clothing": {
+        "shoe_size": "",
+        "shirt_size": "",
+        "jacket_size": "",
+        "pants_size": ""
+    },
     "blood_type": "",
     "medications": [],
     "allergies": [],

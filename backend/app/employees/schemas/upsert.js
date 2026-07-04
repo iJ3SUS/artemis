@@ -40,10 +40,12 @@ export default Joi.object({
     eps: Joi.string().allow('').optional(),
     afp: Joi.string().allow('').optional(),
     afc: Joi.string().allow('').optional(),
-    shoe_size: Joi.string().allow('').optional(),
-    shirt_size: Joi.string().allow('').optional(),
-    jacket_size: Joi.string().allow('').optional(),
-    pants_size: Joi.string().allow('').optional(),
+    clothing: Joi.object({
+        shoe_size: Joi.string().allow('').optional(),
+        shirt_size: Joi.string().allow('').optional(),
+        jacket_size: Joi.string().allow('').optional(),
+        pants_size: Joi.string().allow('').optional()
+    }).optional().allow(null),
     blood_type: Joi.string().valid('A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-').allow('').optional(),
     medications: Joi.array().items(Joi.string()).default([]),
     allergies: Joi.array().items(Joi.string()).default([]),

@@ -244,36 +244,36 @@
                 <Grid columns="6">
                     <Col size="3">
                         <Text
-                            v-model="form.shoe_size"
+                            v-model="form.clothing.shoe_size"
                             :errors="errors"
-                            name="shoe_size"
+                            name="clothing.shoe_size"
                             label="Calzado"
                             placeholder="Talla de calzado"
                         />
                     </Col>
                     <Col size="3">
                         <Text
-                            v-model="form.shirt_size"
+                            v-model="form.clothing.shirt_size"
                             :errors="errors"
-                            name="shirt_size"
+                            name="clothing.shirt_size"
                             label="Camisa"
                             placeholder="Talla de camisa"
                         />
                     </Col>
                     <Col size="3">
                         <Text
-                            v-model="form.jacket_size"
+                            v-model="form.clothing.jacket_size"
                             :errors="errors"
-                            name="jacket_size"
+                            name="clothing.jacket_size"
                             label="Chaqueta"
                             placeholder="Talla de chaqueta"
                         />
                     </Col>
                     <Col size="3">
                         <Text
-                            v-model="form.pants_size"
+                            v-model="form.clothing.pants_size"
                             :errors="errors"
-                            name="pants_size"
+                            name="clothing.pants_size"
                             label="Pantalón"
                             placeholder="Talla de pantalón"
                         />
