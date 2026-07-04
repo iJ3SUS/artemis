@@ -36,5 +36,10 @@ export const EmployeeSchema = {
     "blood_type": "",
     "medications": [],
     "allergies": [],
-    "illnesses": []
+    "illnesses": [],
+    "emergency_contact": {
+        "name": "",
+        "relationship": "",
+        "phone": ""
+    }
 }

@@ -304,7 +304,7 @@
             </template>
 
             <template #footer>
-                <div class="border-t border-gray-200 divide-y divide-gray-200">
+                <div class="border-t border-gray-200 divide-y divide-gray-200 bg-gray-50">
                     <ListInput
                         v-model="form.medications"
                         title="Medicamentos"
@@ -326,6 +326,44 @@
                         empty-text="Sin enfermedades registradas"
                     />
                 </div>
+            </template>
+        </Card>
+
+        <Card>
+            <template #header>
+                Contacto de emergencia
+            </template>
+
+            <template #content>
+                <Grid columns="6">
+                    <Col size="2">
+                        <Text
+                            v-model="form.emergency_contact.name"
+                            :errors="errors"
+                            name="emergency_contact.name"
+                            label="Nombre"
+                            placeholder="Nombre del contacto"
+                        />
+                    </Col>
+                    <Col size="2">
+                        <Text
+                            v-model="form.emergency_contact.relationship"
+                            :errors="errors"
+                            name="emergency_contact.relationship"
+                            label="Parentezco"
+                            placeholder="Ej: Esposo, Madre"
+                        />
+                    </Col>
+                    <Col size="2">
+                        <Text
+                            v-model="form.emergency_contact.phone"
+                            :errors="errors"
+                            name="emergency_contact.phone"
+                            label="Teléfono"
+                            placeholder="Número de contacto"
+                        />
+                    </Col>
+                </Grid>
             </template>
         </Card>
     </div>

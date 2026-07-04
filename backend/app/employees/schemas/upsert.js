@@ -48,4 +48,9 @@ export default Joi.object({
     medications: Joi.array().items(Joi.string()).default([]),
     allergies: Joi.array().items(Joi.string()).default([]),
     illnesses: Joi.array().items(Joi.string()).default([]),
+    emergency_contact: Joi.object({
+        name: Joi.string().allow('').optional(),
+        relationship: Joi.string().allow('').optional(),
+        phone: Joi.string().allow('').optional()
+    }).optional().allow(null),
 }).options({ stripUnknown: true })

@@ -212,7 +212,7 @@
                 </template>
 
                 <template #footer>
-                    <div class="border-t border-gray-200 divide-y divide-gray-200">
+                    <div class="border-t border-gray-200 divide-y divide-gray-200 bg-gray-50">
                         <div class="px-4 py-5 space-y-3">
                             <h4 class="text-sm font-semibold text-gray-700">Medicamentos</h4>
                             <div v-if="employee.medications?.length" class="flex flex-wrap gap-2">
@@ -246,6 +246,37 @@
                             <p v-else class="text-sm text-gray-400">Sin enfermedades registradas</p>
                         </div>
                     </div>
+                </template>
+            </Card>
+
+            <Card>
+                <template #header>
+                    Contacto de emergencia
+                </template>
+
+                <template #content>
+                    <Grid columns="2">
+                        <Col>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 uppercase">Nombre</label>
+                                    <p class="text-sm text-gray-900 mt-1">{{ employee.emergency_contact?.name || '-' }}</p>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 uppercase">Parentezco</label>
+                                    <p class="text-sm text-gray-900 mt-1">{{ employee.emergency_contact?.relationship || '-' }}</p>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 uppercase">Teléfono</label>
+                                    <p class="text-sm text-gray-900 mt-1">{{ employee.emergency_contact?.phone || '-' }}</p>
+                                </div>
+                            </div>
+                        </Col>
+                    </Grid>
                 </template>
             </Card>
 
