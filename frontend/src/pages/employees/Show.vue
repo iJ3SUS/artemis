@@ -199,51 +199,50 @@
                 </template>
 
                 <template #content>
-                    <div class="space-y-6">
-                        <Grid columns="2">
-                            <Col>
-                                <div class="space-y-4">
-                                    <div>
-                                        <label class="text-xs font-medium text-gray-500 uppercase">Tipo de sangre</label>
-                                        <p class="text-sm text-gray-900 mt-1">{{ employee.blood_type || '-' }}</p>
-                                    </div>
+                    <Grid columns="2">
+                        <Col>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 uppercase">Tipo de sangre</label>
+                                    <p class="text-sm text-gray-900 mt-1">{{ employee.blood_type || '-' }}</p>
                                 </div>
-                            </Col>
-                        </Grid>
+                            </div>
+                        </Col>
+                    </Grid>
+                </template>
 
-                        <hr class="border-gray-200">
-
-                        <div>
-                            <h4 class="text-sm font-semibold text-gray-700 mb-2">Medicamentos</h4>
-                            <ul v-if="employee.medications?.length" class="ml-5 list-disc text-sm space-y-1">
-                                <li v-for="(item, index) in employee.medications" :key="index" class="text-gray-700">
+                <template #footer>
+                    <div class="border-t border-gray-200 divide-y divide-gray-200">
+                        <div class="px-4 py-5 space-y-3">
+                            <h4 class="text-sm font-semibold text-gray-700">Medicamentos</h4>
+                            <div v-if="employee.medications?.length" class="flex flex-wrap gap-2">
+                                <span v-for="(item, index) in employee.medications" :key="index"
+                                    class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm text-white bg-blue-600 rounded-full">
                                     {{ item }}
-                                </li>
-                            </ul>
+                                </span>
+                            </div>
                             <p v-else class="text-sm text-gray-400">Sin medicamentos registrados</p>
                         </div>
 
-                        <hr class="border-gray-200">
-
-                        <div>
-                            <h4 class="text-sm font-semibold text-gray-700 mb-2">Alergias</h4>
-                            <ul v-if="employee.allergies?.length" class="ml-5 list-disc text-sm space-y-1">
-                                <li v-for="(item, index) in employee.allergies" :key="index" class="text-gray-700">
+                        <div class="px-4 py-5 space-y-3">
+                            <h4 class="text-sm font-semibold text-gray-700">Alergias</h4>
+                            <div v-if="employee.allergies?.length" class="flex flex-wrap gap-2">
+                                <span v-for="(item, index) in employee.allergies" :key="index"
+                                    class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm text-white bg-blue-600 rounded-full">
                                     {{ item }}
-                                </li>
-                            </ul>
+                                </span>
+                            </div>
                             <p v-else class="text-sm text-gray-400">Sin alergias registradas</p>
                         </div>
 
-                        <hr class="border-gray-200">
-
-                        <div>
-                            <h4 class="text-sm font-semibold text-gray-700 mb-2">Enfermedades</h4>
-                            <ul v-if="employee.illnesses?.length" class="ml-5 list-disc text-sm space-y-1">
-                                <li v-for="(item, index) in employee.illnesses" :key="index" class="text-gray-700">
+                        <div class="px-4 py-5 space-y-3">
+                            <h4 class="text-sm font-semibold text-gray-700">Enfermedades</h4>
+                            <div v-if="employee.illnesses?.length" class="flex flex-wrap gap-2">
+                                <span v-for="(item, index) in employee.illnesses" :key="index"
+                                    class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm text-white bg-blue-600 rounded-full">
                                     {{ item }}
-                                </li>
-                            </ul>
+                                </span>
+                            </div>
                             <p v-else class="text-sm text-gray-400">Sin enfermedades registradas</p>
                         </div>
                     </div>

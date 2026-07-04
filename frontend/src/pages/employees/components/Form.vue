@@ -288,47 +288,43 @@
             </template>
 
             <template #content>
-                <div class="space-y-6">
-                    <Grid columns="6">
-                        <Col size="2">
-                            <Select
-                                v-model="form.blood_type"
-                                :errors="errors"
-                                name="blood_type"
-                                label="Tipo de sangre"
-                                :options="bloodTypeOptions"
-                                placeholder="Seleccionar"
-                                clearable
-                            />
-                        </Col>
-                    </Grid>
-
-                    <div class="space-y-4">
-                        <ListInput
-                            v-model="form.medications"
-                            title="Medicamentos"
-                            placeholder="Escribe un medicamento y presiona Enter"
-                            empty-text="Sin medicamentos registrados"
+                <Grid columns="6">
+                    <Col size="2">
+                        <Select
+                            v-model="form.blood_type"
+                            :errors="errors"
+                            name="blood_type"
+                            label="Tipo de sangre"
+                            :options="bloodTypeOptions"
+                            placeholder="Seleccionar"
+                            clearable
                         />
+                    </Col>
+                </Grid>
+            </template>
 
-                        <hr class="border-gray-200">
+            <template #footer>
+                <div class="border-t border-gray-200 divide-y divide-gray-200">
+                    <ListInput
+                        v-model="form.medications"
+                        title="Medicamentos"
+                        placeholder="Escribe un medicamento y presiona Enter"
+                        empty-text="Sin medicamentos registrados"
+                    />
 
-                        <ListInput
-                            v-model="form.allergies"
-                            title="Alergias"
-                            placeholder="Escribe una alergia y presiona Enter"
-                            empty-text="Sin alergias registradas"
-                        />
+                    <ListInput
+                        v-model="form.allergies"
+                        title="Alergias"
+                        placeholder="Escribe una alergia y presiona Enter"
+                        empty-text="Sin alergias registradas"
+                    />
 
-                        <hr class="border-gray-200">
-
-                        <ListInput
-                            v-model="form.illnesses"
-                            title="Enfermedades"
-                            placeholder="Escribe una enfermedad y presiona Enter"
-                            empty-text="Sin enfermedades registradas"
-                        />
-                    </div>
+                    <ListInput
+                        v-model="form.illnesses"
+                        title="Enfermedades"
+                        placeholder="Escribe una enfermedad y presiona Enter"
+                        empty-text="Sin enfermedades registradas"
+                    />
                 </div>
             </template>
         </Card>
