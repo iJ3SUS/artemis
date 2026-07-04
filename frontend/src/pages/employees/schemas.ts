@@ -12,6 +12,7 @@ export const EmployeeSchema = {
     "birth_date": null,
     "stratum": null,
     "dependents": null,
+    "housing_type": "",
     "job_title_id": null,
     "contract_type": null,
     "education_level": "",

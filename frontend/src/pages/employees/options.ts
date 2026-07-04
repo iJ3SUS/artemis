@@ -42,6 +42,13 @@ export const educationLevelOptions = [
     { label: 'Doctorado', value: 'doctorate' }
 ]
 
+export const housingTypeOptions = [
+    { label: 'Propia', value: 'own' },
+    { label: 'Arrendada', value: 'rented' },
+    { label: 'Familiar', value: 'family' },
+    { label: 'Otro', value: 'other' }
+]
+
 export const stratumOptions = [
     { label: '1', value: 1 },
     { label: '2', value: 2 },

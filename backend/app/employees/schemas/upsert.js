@@ -16,6 +16,7 @@ export default Joi.object({
     birth_date: Joi.timezone().optional().allow(null),
     stratum: Joi.number().valid(1, 2, 3, 4, 5, 6).allow(null).optional(),
     dependents: Joi.number().integer().min(0).optional().allow(null),
+    housing_type: Joi.string().valid('own', 'rented', 'family', 'other').allow('').optional(),
     job_title_id: Joi.objectId().optional().allow(null),
     contract_type: Joi.number().valid(1, 2, 3, 4).allow(null).optional(),
     education_level: Joi.string().valid('primary', 'secondary', 'technical', 'technologist', 'professional', 'specialization', 'master', 'doctorate').allow('').optional(),

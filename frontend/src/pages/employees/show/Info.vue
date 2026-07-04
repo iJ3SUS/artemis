@@ -6,44 +6,63 @@
             </template>
 
             <template #content>
-                <Grid columns="2">
-                    <Col>
-                        <div class="space-y-4">
-                            <div>
-                                <label class="text-xs font-medium text-gray-500 uppercase">Identificación</label>
-                                <p class="text-sm text-gray-900 mt-1">{{ employee.identification }}</p>
+                <div class="space-y-6">
+                    <Grid columns="2">
+                        <Col>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 uppercase">Identificación</label>
+                                    <p class="text-sm text-gray-900 mt-1">{{ employee.identification }}</p>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 uppercase">Nombres</label>
+                                    <p class="text-sm text-gray-900 mt-1">{{ employee.names }}</p>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 uppercase">Apellidos</label>
+                                    <p class="text-sm text-gray-900 mt-1">{{ employee.surnames }}</p>
+                                </div>
                             </div>
-                            <div>
-                                <label class="text-xs font-medium text-gray-500 uppercase">Nombres</label>
-                                <p class="text-sm text-gray-900 mt-1">{{ employee.names }}</p>
+                        </Col>
+                        <Col>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 uppercase">Email</label>
+                                    <p class="text-sm text-gray-900 mt-1">{{ employee.email || '-' }}</p>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 uppercase">Teléfono</label>
+                                    <p class="text-sm text-gray-900 mt-1">{{ formatPhone(employee.phone) }}</p>
+                                </div>
                             </div>
-                            <div>
-                                <label class="text-xs font-medium text-gray-500 uppercase">Apellidos</label>
-                                <p class="text-sm text-gray-900 mt-1">{{ employee.surnames }}</p>
+                        </Col>
+                    </Grid>
+
+                    <hr class="border-gray-200">
+
+                    <Grid columns="2">
+                        <Col>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 uppercase">Género</label>
+                                    <p class="text-sm text-gray-900 mt-1">{{ getGenderLabel(employee.gender) }}</p>
+                                </div>
                             </div>
-                        </div>
-                    </Col>
-                    <Col>
-                        <div class="space-y-4">
-                            <div>
-                                <label class="text-xs font-medium text-gray-500 uppercase">Email</label>
-                                <p class="text-sm text-gray-900 mt-1">{{ employee.email || '-' }}</p>
+                        </Col>
+                        <Col>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 uppercase">Ciudad de residencia</label>
+                                    <p class="text-sm text-gray-900 mt-1">{{ getCityLabel(employee.city) }}</p>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 uppercase">Tipo de vivienda</label>
+                                    <p class="text-sm text-gray-900 mt-1">{{ getHousingTypeLabel(employee.housing_type) }}</p>
+                                </div>
                             </div>
-                            <div>
-                                <label class="text-xs font-medium text-gray-500 uppercase">Teléfono</label>
-                                <p class="text-sm text-gray-900 mt-1">{{ formatPhone(employee.phone) }}</p>
-                            </div>
-                            <div>
-                                <label class="text-xs font-medium text-gray-500 uppercase">Género</label>
-                                <p class="text-sm text-gray-900 mt-1">{{ getGenderLabel(employee.gender) }}</p>
-                            </div>
-                            <div>
-                                <label class="text-xs font-medium text-gray-500 uppercase">Ciudad de residencia</label>
-                                <p class="text-sm text-gray-900 mt-1">{{ getCityLabel(employee.city) }}</p>
-                            </div>
-                        </div>
-                    </Col>
-                </Grid>
+                        </Col>
+                    </Grid>
+                </div>
             </template>
         </Card>
 
@@ -310,6 +329,11 @@ const getContractTypeLabel = (contract_type) => {
 
 const getEducationLevelLabel = (value) => {
     const labels = { primary: 'Primaria', secondary: 'Secundaria', technical: 'Técnico', technologist: 'Tecnólogo', professional: 'Profesional', specialization: 'Especialización', master: 'Maestría', doctorate: 'Doctorado' }
+    return labels[value] || '-'
+}
+
+const getHousingTypeLabel = (value) => {
+    const labels = { own: 'Propia', rented: 'Arrendada', family: 'Familiar', other: 'Otro' }
     return labels[value] || '-'
 }
 

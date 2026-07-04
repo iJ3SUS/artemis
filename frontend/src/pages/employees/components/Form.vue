@@ -7,126 +7,154 @@
             </template>
 
             <template #content>
-                <Grid columns="6">
-                    <Col size="3">
-                        <Text
-                            v-model="form.names"
-                            :errors="errors"
-                            name="names"
-                            label="Nombres"
-                            placeholder="Nombres del empleado"
-                        />
-                    </Col>
-                    <Col size="3">
-                        <Text
-                            v-model="form.surnames"
-                            :errors="errors"
-                            name="surnames"
-                            label="Apellidos"
-                            placeholder="Apellidos del empleado"
-                        />
-                    </Col>
-                    <Col size="3">
-                        <Text
-                            v-model="form.identification"
-                            :errors="errors"
-                            name="identification"
-                            label="Identificación"
-                            placeholder="Número de identificación"
-                        />
-                    </Col>
-                    <Col size="3">
-                        <Text
-                            v-model="form.email"
-                            :errors="errors"
-                            name="email"
-                            label="Email"
-                            placeholder="Correo electrónico"
-                        />
-                    </Col>
-                    <Col size="2">
-                        <Text
-                            v-model="form.phone.indicative"
-                            :errors="errors"
-                            name="phone.indicative"
-                            label="Indicativo"
-                            placeholder="311"
-                            disabled
-                        />
-                    </Col>
-                    <Col size="4">
-                        <Text
-                            v-model="form.phone.number"
-                            :errors="errors"
-                            name="phone.number"
-                            label="Teléfono"
-                            placeholder="Número de teléfono"
-                        />
-                    </Col>
-                    <Col size="2">
-                        <Select
-                            v-model="form.gender"
-                            :errors="errors"
-                            name="gender"
-                            label="Género"
-                            :options="genderOptions"
-                            placeholder="Seleccionar"
-                            clearable
-                        />
-                    </Col>
-                    <Col size="2">
-                        <Text
-                            v-model="form.birth_date"
-                            :errors="errors"
-                            name="birth_date"
-                            label="F. nacimiento"
-                            type="date"
-                            :transform="formatDateInput"
-                        />
-                    </Col>
-                    <Col size="2">
-                        <Select
-                            v-model="form.stratum"
-                            :errors="errors"
-                            name="stratum"
-                            label="Estrato"
-                            :options="stratumOptions"
-                            placeholder="Seleccionar"
-                            clearable
-                        />
-                    </Col>
-                    <Col size="2">
-                        <Text
-                            v-model="form.dependents"
-                            :errors="errors"
-                            name="dependents"
-                            label="Personas a cargo"
-                            type="number"
-                            placeholder="0"
-                        />
-                    </Col>
-                    <Col size="4">
-                        <Select
-                            v-model="form.city.city_code"
-                            :errors="errors"
-                            name="city"
-                            label="Ciudad de residencia"
-                            option_label="label"
-                            option_value="city_code"
-                            :options="cities.data.value"
-                            placeholder="Seleccionar ciudad"
-                            @change="onCityChange"
-                        />
-                    </Col>
-                    <Col size="2">
-                        <Switch
-                            v-model="form.active"
-                            :errors="errors"
-                            name="active"
-                            label="Activo"
-                        />
-                    </Col>
-                </Grid>
+                <div class="space-y-6">
+                    <Grid columns="6">
+                        <Col size="3">
+                            <Text
+                                v-model="form.names"
+                                :errors="errors"
+                                name="names"
+                                label="Nombres"
+                                placeholder="Nombres del empleado"
+                            />
+                        </Col>
+                        <Col size="3">
+                            <Text
+                                v-model="form.surnames"
+                                :errors="errors"
+                                name="surnames"
+                                label="Apellidos"
+                                placeholder="Apellidos del empleado"
+                            />
+                        </Col>
+                        <Col size="3">
+                            <Text
+                                v-model="form.identification"
+                                :errors="errors"
+                                name="identification"
+                                label="Identificación"
+                                placeholder="Número de identificación"
+                            />
+                        </Col>
+                        <Col size="3">
+                            <Text
+                                v-model="form.email"
+                                :errors="errors"
+                                name="email"
+                                label="Email"
+                                placeholder="Correo electrónico"
+                            />
+                        </Col>
+                    </Grid>
+
+                    <hr class="border-gray-200">
+
+                    <Grid columns="6">
+                        <Col size="2">
+                            <Text
+                                v-model="form.phone.indicative"
+                                :errors="errors"
+                                name="phone.indicative"
+                                label="Indicativo"
+                                placeholder="311"
+                                disabled
+                            />
+                        </Col>
+                        <Col size="4">
+                            <Text
+                                v-model="form.phone.number"
+                                :errors="errors"
+                                name="phone.number"
+                                label="Teléfono"
+                                placeholder="Número de teléfono"
+                            />
+                        </Col>
+                    </Grid>
+
+                    <hr class="border-gray-200">
+
+                    <Grid columns="6">
+                        <Col size="2">
+                            <Select
+                                v-model="form.gender"
+                                :errors="errors"
+                                name="gender"
+                                label="Género"
+                                :options="genderOptions"
+                                placeholder="Seleccionar"
+                                clearable
+                            />
+                        </Col>
+                        <Col size="2">
+                            <Text
+                                v-model="form.birth_date"
+                                :errors="errors"
+                                name="birth_date"
+                                label="F. nacimiento"
+                                type="date"
+                                :transform="formatDateInput"
+                            />
+                        </Col>
+                        <Col size="2">
+                            <Select
+                                v-model="form.stratum"
+                                :errors="errors"
+                                name="stratum"
+                                label="Estrato"
+                                :options="stratumOptions"
+                                placeholder="Seleccionar"
+                                clearable
+                            />
+                        </Col>
+                        <Col size="2">
+                            <Text
+                                v-model="form.dependents"
+                                :errors="errors"
+                                name="dependents"
+                                label="Personas a cargo"
+                                type="number"
+                                placeholder="0"
+                            />
+                        </Col>
+                        <Col size="2">
+                            <Select
+                                v-model="form.housing_type"
+                                :errors="errors"
+                                name="housing_type"
+                                label="Tipo de vivienda"
+                                :options="housingTypeOptions"
+                                placeholder="Seleccionar"
+                                clearable
+                            />
+                        </Col>
+                        <Col size="2">
+                            <Select
+                                v-model="form.city.city_code"
+                                :errors="errors"
+                                name="city"
+                                label="Ciudad de residencia"
+                                option_label="label"
+                                option_value="city_code"
+                                :options="cities.data.value"
+                                placeholder="Seleccionar ciudad"
+                                @change="onCityChange"
+                            />
+                        </Col>
+                    </Grid>
+
+                    <hr class="border-gray-200">
+
+                    <Grid columns="6">
+                        <Col size="2">
+                            <Switch
+                                v-model="form.active"
+                                :errors="errors"
+                                name="active"
+                                label="Activo"
+                            />
+                        </Col>
+                    </Grid>
+                </div>
             </template>
         </Card>
 
@@ -380,7 +408,7 @@
     </div>
 </template>
 <script setup>
-import { genderOptions, contractTypeOptions, stratumOptions, transportTypeOptions, bloodTypeOptions, educationLevelOptions } from '../options.ts'
+import { genderOptions, contractTypeOptions, stratumOptions, transportTypeOptions, bloodTypeOptions, educationLevelOptions, housingTypeOptions } from '../options.ts'
 import ListInput from './ListInput.vue'
 
 const props = defineProps({
