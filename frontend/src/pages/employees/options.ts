@@ -31,6 +31,17 @@ export const bloodTypeOptions = [
     { label: 'O-', value: 'O-' }
 ]
 
+export const educationLevelOptions = [
+    { label: 'Primaria', value: 'primary' },
+    { label: 'Secundaria', value: 'secondary' },
+    { label: 'Técnico', value: 'technical' },
+    { label: 'Tecnólogo', value: 'technologist' },
+    { label: 'Profesional', value: 'professional' },
+    { label: 'Especialización', value: 'specialization' },
+    { label: 'Maestría', value: 'master' },
+    { label: 'Doctorado', value: 'doctorate' }
+]
+
 export const stratumOptions = [
     { label: '1', value: 1 },
     { label: '2', value: 2 },

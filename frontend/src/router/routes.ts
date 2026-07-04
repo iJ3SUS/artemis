@@ -14,6 +14,8 @@ const Employees = () => import('@/pages/employees/Browse.vue')
 const EmployeeEdit = () => import('@/pages/employees/Edit.vue')
 const EmployeeCreate = () => import('@/pages/employees/Create.vue')
 const EmployeeShow = () => import('@/pages/employees/Show.vue')
+const EmployeeShowInfo = () => import('@/pages/employees/show/Info.vue')
+const EmployeeShowFamily = () => import('@/pages/employees/show/Family.vue')
 
 export const routes = [
     { path: '/login', label: 'Login', component: Login },
@@ -21,7 +23,11 @@ export const routes = [
     { path: '/organizational-chart', label: 'Organigrama', icon: 'UserCog', component: JobTitleOrganizationalChart, meta: { protected: true, section: 'main', order: 2 } },
     { path: '/employees', label: 'Empleados', icon: 'Account', component: Employees, meta: { protected: true, section: 'management', order: 1 } },
     { path: '/employees/create', label: 'Crear empleado', component: EmployeeCreate, meta: { protected: true, section: 'management', sidebar: false } },
-    { path: '/employees/:id', label: 'Detalle empleado', component: EmployeeShow, meta: { protected: true, section: 'management', sidebar: false } },
+    { path: '/employees/:id', label: 'Detalle empleado', component: EmployeeShow, meta: { protected: true, section: 'management', sidebar: false }, children: [
+        { path: '', redirect: (to) => `/employees/${to.params.id}/info` },
+        { path: 'info', label: 'Información', component: EmployeeShowInfo, meta: { protected: true } },
+        { path: 'family', label: 'Familiares', component: EmployeeShowFamily, meta: { protected: true } },
+    ] },
     { path: '/employees/:id/edit', label: 'Editar empleado', component: EmployeeEdit, meta: { protected: true, section: 'management', sidebar: false } },
     { path: '/job-titles', label: 'Cargos laborales', icon: 'Briefcase', component: JobTitles, meta: { protected: true, section: 'management', order: 2 } },
     { path: '/job-titles/create', label: 'Crear cargo', component: JobTitleCreate, meta: { protected: true, section: 'management', sidebar: false } },

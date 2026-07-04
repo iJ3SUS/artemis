@@ -14,6 +14,7 @@ export const EmployeeSchema = {
     "dependents": null,
     "job_title_id": null,
     "contract_type": null,
+    "education_level": "",
     "city": {
         "country_code": "Co",
         "country_name": "Colombia",

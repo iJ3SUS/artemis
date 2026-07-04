@@ -219,7 +219,18 @@
                     <hr class="border-gray-200">
 
                     <Grid columns="6">
-                        <Col size="2">
+                        <Col size="3">
+                            <Select
+                                v-model="form.education_level"
+                                :errors="errors"
+                                name="education_level"
+                                label="Escolaridad"
+                                :options="educationLevelOptions"
+                                placeholder="Seleccionar"
+                                clearable
+                            />
+                        </Col>
+                        <Col size="3">
                             <Select
                                 v-model="form.transport_type"
                                 :errors="errors"
@@ -369,7 +380,7 @@
     </div>
 </template>
 <script setup>
-import { genderOptions, contractTypeOptions, stratumOptions, transportTypeOptions, bloodTypeOptions } from '../options.ts'
+import { genderOptions, contractTypeOptions, stratumOptions, transportTypeOptions, bloodTypeOptions, educationLevelOptions } from '../options.ts'
 import ListInput from './ListInput.vue'
 
 const props = defineProps({

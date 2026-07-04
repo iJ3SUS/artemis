@@ -18,6 +18,7 @@ export default Joi.object({
     dependents: Joi.number().integer().min(0).optional().allow(null),
     job_title_id: Joi.objectId().optional().allow(null),
     contract_type: Joi.number().valid(1, 2, 3, 4).allow(null).optional(),
+    education_level: Joi.string().valid('primary', 'secondary', 'technical', 'technologist', 'professional', 'specialization', 'master', 'doctorate').allow('').optional(),
     city: Joi.object({
         country_code: Joi.string().optional().allow(''),
         country_name: Joi.string().optional().allow(''),
