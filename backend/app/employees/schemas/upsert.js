@@ -36,4 +36,5 @@ export default Joi.object({
     entry_date: Joi.timezone().optional().allow(null),
     retirement_date: Joi.timezone().optional().allow(null),
     active: Joi.boolean().default(true),
+    transport_type: Joi.string().valid('car', 'motorcycle', 'bicycle', 'public', 'walking', 'other').allow('').optional(),
 }).options({ stripUnknown: true })

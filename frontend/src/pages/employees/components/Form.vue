@@ -180,13 +180,24 @@
                             label="Activo"
                         />
                     </Col>
+                    <Col size="2">
+                        <Select
+                            v-model="form.transport_type"
+                            :errors="errors"
+                            name="transport_type"
+                            label="Medio de transporte"
+                            :options="transportTypeOptions"
+                            placeholder="Seleccionar"
+                            clearable
+                        />
+                    </Col>
                 </Grid>
             </template>
         </Card>
     </div>
 </template>
 <script setup>
-import { genderOptions, contractTypeOptions, stratumOptions } from '../options.ts'
+import { genderOptions, contractTypeOptions, stratumOptions, transportTypeOptions } from '../options.ts'
 
 
 const props = defineProps({

@@ -11,6 +11,15 @@ export const contractTypeOptions = [
     { label: 'Prestación de servicios', value: 4 }
 ]
 
+export const transportTypeOptions = [
+    { label: 'Moto', value: 'motorcycle' },
+    { label: 'Carro', value: 'car' },
+    { label: 'Bicicleta', value: 'bicycle' },
+    { label: 'Transporte público', value: 'public' },
+    { label: 'A pie', value: 'walking' },
+    { label: 'Otro', value: 'other' }
+]
+
 export const stratumOptions = [
     { label: '1', value: 1 },
     { label: '2', value: 2 },

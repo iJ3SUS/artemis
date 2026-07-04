@@ -112,6 +112,10 @@
                                     <label class="text-xs font-medium text-gray-500 uppercase">Fecha de retiro</label>
                                     <p class="text-sm text-gray-900 mt-1">{{ $ParseDate(employee.retirement_date)?.toFormat('dd/MM/yyyy') ?? '-' }}</p>
                                 </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 uppercase">Medio de transporte</label>
+                                    <p class="text-sm text-gray-900 mt-1">{{ getTransportTypeLabel(employee.transport_type) }}</p>
+                                </div>
                             </div>
                         </Col>
                     </Grid>
@@ -162,6 +166,11 @@ const getGenderLabel = (gender) => {
 const getContractTypeLabel = (contract_type) => {
     const labels = { 1: 'Fijo', 2: 'Indefinido', 3: 'Obra labor', 4: 'Prestación de servicios' }
     return labels[contract_type] || '-'
+}
+
+const getTransportTypeLabel = (value) => {
+    const labels = { car: 'Carro', motorcycle: 'Moto', bicycle: 'Bicicleta', public: 'Transporte público', walking: 'A pie', other: 'Otro' }
+    return labels[value] || '-'
 }
 
 const formatCurrency = (value: number) => {
