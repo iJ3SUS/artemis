@@ -28,5 +28,13 @@ export const EmployeeSchema = {
     "transport_type": "",
     "eps": "",
     "afp": "",
-    "afc": ""
+    "afc": "",
+    "shoe_size": "",
+    "shirt_size": "",
+    "jacket_size": "",
+    "pants_size": "",
+    "blood_type": "",
+    "medications": [],
+    "allergies": [],
+    "illnesses": []
 }

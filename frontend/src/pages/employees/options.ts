@@ -20,6 +20,17 @@ export const transportTypeOptions = [
     { label: 'Otro', value: 'other' }
 ]
 
+export const bloodTypeOptions = [
+    { label: 'A+', value: 'A+' },
+    { label: 'A-', value: 'A-' },
+    { label: 'B+', value: 'B+' },
+    { label: 'B-', value: 'B-' },
+    { label: 'AB+', value: 'AB+' },
+    { label: 'AB-', value: 'AB-' },
+    { label: 'O+', value: 'O+' },
+    { label: 'O-', value: 'O-' }
+]
+
 export const stratumOptions = [
     { label: '1', value: 1 },
     { label: '2', value: 2 },

@@ -51,6 +51,7 @@
                             name="phone.indicative"
                             label="Indicativo"
                             placeholder="311"
+                            disabled
                         />
                     </Col>
                     <Col size="4">
@@ -117,6 +118,14 @@
                             @change="onCityChange"
                         />
                     </Col>
+                    <Col size="2">
+                        <Switch
+                            v-model="form.active"
+                            :errors="errors"
+                            name="active"
+                            label="Activo"
+                        />
+                    </Col>
                 </Grid>
             </template>
         </Card>
@@ -127,105 +136,207 @@
             </template>
 
             <template #content>
+                <div class="space-y-6">
+                    <Grid columns="6">
+                        <Col size="3">
+                            <Select
+                                v-model="form.job_title_id"
+                                :errors="errors"
+                                name="job_title_id"
+                                label="Cargo"
+                                option_label="name"
+                                option_value="_id"
+                                :options="options.job_titles"
+                                placeholder="Seleccionar cargo"
+                                clearable
+                            />
+                        </Col>
+                        <Col size="3">
+                            <Select
+                                v-model="form.contract_type"
+                                :errors="errors"
+                                name="contract_type"
+                                label="Tipo de contrato"
+                                :options="contractTypeOptions"
+                                placeholder="Seleccionar tipo"
+                                clearable
+                            />
+                        </Col>
+                        <Col size="3">
+                            <Text
+                                v-model="form.entry_date"
+                                :errors="errors"
+                                name="entry_date"
+                                label="Fecha de ingreso"
+                                type="date"
+                                :transform="formatDateInput"
+                            />
+                        </Col>
+                        <Col size="3">
+                            <Text
+                                v-model="form.retirement_date"
+                                :errors="errors"
+                                name="retirement_date"
+                                label="Fecha de retiro"
+                                type="date"
+                                :transform="formatDateInput"
+                            />
+                        </Col>
+                    </Grid>
+
+                    <hr class="border-gray-200">
+
+                    <Grid columns="6">
+                        <Col size="2">
+                            <Text
+                                v-model="form.eps"
+                                :errors="errors"
+                                name="eps"
+                                label="EPS"
+                                placeholder="Nombre de la EPS"
+                            />
+                        </Col>
+                        <Col size="2">
+                            <Text
+                                v-model="form.afp"
+                                :errors="errors"
+                                name="afp"
+                                label="AFP"
+                                placeholder="Nombre de la AFP"
+                            />
+                        </Col>
+                        <Col size="2">
+                            <Text
+                                v-model="form.afc"
+                                :errors="errors"
+                                name="afc"
+                                label="AFC"
+                                placeholder="Nombre de la AFC"
+                            />
+                        </Col>
+                    </Grid>
+
+                    <hr class="border-gray-200">
+
+                    <Grid columns="6">
+                        <Col size="2">
+                            <Select
+                                v-model="form.transport_type"
+                                :errors="errors"
+                                name="transport_type"
+                                label="Medio de transporte"
+                                :options="transportTypeOptions"
+                                placeholder="Seleccionar"
+                                clearable
+                            />
+                        </Col>
+                    </Grid>
+                </div>
+            </template>
+        </Card>
+
+        <Card>
+            <template #header>
+                Información de dotación
+            </template>
+
+            <template #content>
                 <Grid columns="6">
                     <Col size="3">
-                        <Select
-                            v-model="form.job_title_id"
+                        <Text
+                            v-model="form.shoe_size"
                             :errors="errors"
-                            name="job_title_id"
-                            label="Cargo"
-                            option_label="name"
-                            option_value="_id"
-                            :options="options.job_titles"
-                            placeholder="Seleccionar cargo"
-                            clearable
-                        />
-                    </Col>
-                    <Col size="3">
-                        <Select
-                            v-model="form.contract_type"
-                            :errors="errors"
-                            name="contract_type"
-                            label="Tipo de contrato"
-                            :options="contractTypeOptions"
-                            placeholder="Seleccionar tipo"
-                            clearable
+                            name="shoe_size"
+                            label="Calzado"
+                            placeholder="Talla de calzado"
                         />
                     </Col>
                     <Col size="3">
                         <Text
-                            v-model="form.entry_date"
+                            v-model="form.shirt_size"
                             :errors="errors"
-                            name="entry_date"
-                            label="Fecha de ingreso"
-                            type="date"
-                            :transform="formatDateInput"
+                            name="shirt_size"
+                            label="Camisa"
+                            placeholder="Talla de camisa"
                         />
                     </Col>
                     <Col size="3">
                         <Text
-                            v-model="form.retirement_date"
+                            v-model="form.jacket_size"
                             :errors="errors"
-                            name="retirement_date"
-                            label="Fecha de retiro"
-                            type="date"
-                            :transform="formatDateInput"
+                            name="jacket_size"
+                            label="Chaqueta"
+                            placeholder="Talla de chaqueta"
                         />
                     </Col>
-                    <Col size="2">
-                        <Switch
-                            v-model="form.active"
-                            :errors="errors"
-                            name="active"
-                            label="Activo"
-                        />
-                    </Col>
-                    <Col size="2">
-                        <Select
-                            v-model="form.transport_type"
-                            :errors="errors"
-                            name="transport_type"
-                            label="Medio de transporte"
-                            :options="transportTypeOptions"
-                            placeholder="Seleccionar"
-                            clearable
-                        />
-                    </Col>
-                    <Col size="2">
+                    <Col size="3">
                         <Text
-                            v-model="form.eps"
+                            v-model="form.pants_size"
                             :errors="errors"
-                            name="eps"
-                            label="EPS"
-                            placeholder="Nombre de la EPS"
-                        />
-                    </Col>
-                    <Col size="2">
-                        <Text
-                            v-model="form.afp"
-                            :errors="errors"
-                            name="afp"
-                            label="AFP"
-                            placeholder="Nombre de la AFP"
-                        />
-                    </Col>
-                    <Col size="2">
-                        <Text
-                            v-model="form.afc"
-                            :errors="errors"
-                            name="afc"
-                            label="AFC"
-                            placeholder="Nombre de la AFC"
+                            name="pants_size"
+                            label="Pantalón"
+                            placeholder="Talla de pantalón"
                         />
                     </Col>
                 </Grid>
             </template>
         </Card>
+
+        <Card>
+            <template #header>
+                Información clínica
+            </template>
+
+            <template #content>
+                <div class="space-y-6">
+                    <Grid columns="6">
+                        <Col size="2">
+                            <Select
+                                v-model="form.blood_type"
+                                :errors="errors"
+                                name="blood_type"
+                                label="Tipo de sangre"
+                                :options="bloodTypeOptions"
+                                placeholder="Seleccionar"
+                                clearable
+                            />
+                        </Col>
+                    </Grid>
+
+                    <div class="space-y-4">
+                        <ListInput
+                            v-model="form.medications"
+                            title="Medicamentos"
+                            placeholder="Escribe un medicamento y presiona Enter"
+                            empty-text="Sin medicamentos registrados"
+                        />
+
+                        <hr class="border-gray-200">
+
+                        <ListInput
+                            v-model="form.allergies"
+                            title="Alergias"
+                            placeholder="Escribe una alergia y presiona Enter"
+                            empty-text="Sin alergias registradas"
+                        />
+
+                        <hr class="border-gray-200">
+
+                        <ListInput
+                            v-model="form.illnesses"
+                            title="Enfermedades"
+                            placeholder="Escribe una enfermedad y presiona Enter"
+                            empty-text="Sin enfermedades registradas"
+                        />
+                    </div>
+                </div>
+            </template>
+        </Card>
     </div>
 </template>
 <script setup>
-import { genderOptions, contractTypeOptions, stratumOptions, transportTypeOptions } from '../options.ts'
-
+import { genderOptions, contractTypeOptions, stratumOptions, transportTypeOptions, bloodTypeOptions } from '../options.ts'
+import ListInput from './ListInput.vue'
 
 const props = defineProps({
     errors: Object,

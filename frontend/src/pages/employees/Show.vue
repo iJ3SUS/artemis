@@ -76,61 +76,177 @@
                 </template>
 
                 <template #content>
+                    <div class="space-y-6">
+                        <Grid columns="2">
+                            <Col>
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="text-xs font-medium text-gray-500 uppercase">Cargo</label>
+                                        <p class="text-sm text-gray-900 mt-1">{{ employee.job_title?.name || '-' }}</p>
+                                    </div>
+                                    <div>
+                                        <label class="text-xs font-medium text-gray-500 uppercase">Salario</label>
+                                        <p class="text-sm text-gray-900 mt-1">{{ formatCurrency(employee.salary) }}</p>
+                                    </div>
+                                    <div>
+                                        <label class="text-xs font-medium text-gray-500 uppercase">Tipo de contrato</label>
+                                        <p class="text-sm text-gray-900 mt-1">{{ getContractTypeLabel(employee.contract_type) }}</p>
+                                    </div>
+                                    <div>
+                                        <label class="text-xs font-medium text-gray-500 uppercase">Fecha de ingreso</label>
+                                        <p class="text-sm text-gray-900 mt-1">{{ $ParseDate(employee.entry_date)?.toFormat('dd/MM/yyyy') ?? '-' }}</p>
+                                    </div>
+                                </div>
+                            </Col>
+                            <Col>
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="text-xs font-medium text-gray-500 uppercase">Estado</label>
+                                        <div class="mt-1">
+                                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium"
+                                                :class="employee.active ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'">
+                                                {{ employee.active ? 'Activo' : 'Inactivo' }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="text-xs font-medium text-gray-500 uppercase">Fecha de retiro</label>
+                                        <p class="text-sm text-gray-900 mt-1">{{ $ParseDate(employee.retirement_date)?.toFormat('dd/MM/yyyy') ?? '-' }}</p>
+                                    </div>
+                                </div>
+                            </Col>
+                        </Grid>
+
+                        <hr class="border-gray-200">
+
+                        <Grid columns="2">
+                            <Col>
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="text-xs font-medium text-gray-500 uppercase">EPS</label>
+                                        <p class="text-sm text-gray-900 mt-1">{{ employee.eps || '-' }}</p>
+                                    </div>
+                                </div>
+                            </Col>
+                            <Col>
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="text-xs font-medium text-gray-500 uppercase">AFP</label>
+                                        <p class="text-sm text-gray-900 mt-1">{{ employee.afp || '-' }}</p>
+                                    </div>
+                                    <div>
+                                        <label class="text-xs font-medium text-gray-500 uppercase">AFC</label>
+                                        <p class="text-sm text-gray-900 mt-1">{{ employee.afc || '-' }}</p>
+                                    </div>
+                                </div>
+                            </Col>
+                        </Grid>
+
+                        <hr class="border-gray-200">
+
+                        <Grid columns="2">
+                            <Col>
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="text-xs font-medium text-gray-500 uppercase">Medio de transporte</label>
+                                        <p class="text-sm text-gray-900 mt-1">{{ getTransportTypeLabel(employee.transport_type) }}</p>
+                                    </div>
+                                </div>
+                            </Col>
+                        </Grid>
+                    </div>
+                </template>
+            </Card>
+
+            <Card>
+                <template #header>
+                    Información de dotación
+                </template>
+
+                <template #content>
                     <Grid columns="2">
                         <Col>
                             <div class="space-y-4">
                                 <div>
-                                    <label class="text-xs font-medium text-gray-500 uppercase">Cargo</label>
-                                    <p class="text-sm text-gray-900 mt-1">{{ employee.job_title?.name || '-' }}</p>
+                                    <label class="text-xs font-medium text-gray-500 uppercase">Calzado</label>
+                                    <p class="text-sm text-gray-900 mt-1">{{ employee.shoe_size || '-' }}</p>
                                 </div>
                                 <div>
-                                    <label class="text-xs font-medium text-gray-500 uppercase">Salario</label>
-                                    <p class="text-sm text-gray-900 mt-1">{{ formatCurrency(employee.salary) }}</p>
-                                </div>
-                                <div>
-                                    <label class="text-xs font-medium text-gray-500 uppercase">Tipo de contrato</label>
-                                    <p class="text-sm text-gray-900 mt-1">{{ getContractTypeLabel(employee.contract_type) }}</p>
-                                </div>
-                                <div>
-                                    <label class="text-xs font-medium text-gray-500 uppercase">Fecha de ingreso</label>
-                                    <p class="text-sm text-gray-900 mt-1">{{ $ParseDate(employee.entry_date)?.toFormat('dd/MM/yyyy') ?? '-' }}</p>
+                                    <label class="text-xs font-medium text-gray-500 uppercase">Camisa</label>
+                                    <p class="text-sm text-gray-900 mt-1">{{ employee.shirt_size || '-' }}</p>
                                 </div>
                             </div>
                         </Col>
                         <Col>
                             <div class="space-y-4">
                                 <div>
-                                    <label class="text-xs font-medium text-gray-500 uppercase">Estado</label>
-                                    <div class="mt-1">
-                                        <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium"
-                                            :class="employee.active ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'">
-                                            {{ employee.active ? 'Activo' : 'Inactivo' }}
-                                        </span>
-                                    </div>
+                                    <label class="text-xs font-medium text-gray-500 uppercase">Chaqueta</label>
+                                    <p class="text-sm text-gray-900 mt-1">{{ employee.jacket_size || '-' }}</p>
                                 </div>
                                 <div>
-                                    <label class="text-xs font-medium text-gray-500 uppercase">Fecha de retiro</label>
-                                    <p class="text-sm text-gray-900 mt-1">{{ $ParseDate(employee.retirement_date)?.toFormat('dd/MM/yyyy') ?? '-' }}</p>
-                                </div>
-                                <div>
-                                    <label class="text-xs font-medium text-gray-500 uppercase">Medio de transporte</label>
-                                    <p class="text-sm text-gray-900 mt-1">{{ getTransportTypeLabel(employee.transport_type) }}</p>
-                                </div>
-                                <div>
-                                    <label class="text-xs font-medium text-gray-500 uppercase">EPS</label>
-                                    <p class="text-sm text-gray-900 mt-1">{{ employee.eps || '-' }}</p>
-                                </div>
-                                <div>
-                                    <label class="text-xs font-medium text-gray-500 uppercase">AFP</label>
-                                    <p class="text-sm text-gray-900 mt-1">{{ employee.afp || '-' }}</p>
-                                </div>
-                                <div>
-                                    <label class="text-xs font-medium text-gray-500 uppercase">AFC</label>
-                                    <p class="text-sm text-gray-900 mt-1">{{ employee.afc || '-' }}</p>
+                                    <label class="text-xs font-medium text-gray-500 uppercase">Pantalón</label>
+                                    <p class="text-sm text-gray-900 mt-1">{{ employee.pants_size || '-' }}</p>
                                 </div>
                             </div>
                         </Col>
                     </Grid>
+                </template>
+            </Card>
+
+            <Card>
+                <template #header>
+                    Información clínica
+                </template>
+
+                <template #content>
+                    <div class="space-y-6">
+                        <Grid columns="2">
+                            <Col>
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="text-xs font-medium text-gray-500 uppercase">Tipo de sangre</label>
+                                        <p class="text-sm text-gray-900 mt-1">{{ employee.blood_type || '-' }}</p>
+                                    </div>
+                                </div>
+                            </Col>
+                        </Grid>
+
+                        <hr class="border-gray-200">
+
+                        <div>
+                            <h4 class="text-sm font-semibold text-gray-700 mb-2">Medicamentos</h4>
+                            <ul v-if="employee.medications?.length" class="ml-5 list-disc text-sm space-y-1">
+                                <li v-for="(item, index) in employee.medications" :key="index" class="text-gray-700">
+                                    {{ item }}
+                                </li>
+                            </ul>
+                            <p v-else class="text-sm text-gray-400">Sin medicamentos registrados</p>
+                        </div>
+
+                        <hr class="border-gray-200">
+
+                        <div>
+                            <h4 class="text-sm font-semibold text-gray-700 mb-2">Alergias</h4>
+                            <ul v-if="employee.allergies?.length" class="ml-5 list-disc text-sm space-y-1">
+                                <li v-for="(item, index) in employee.allergies" :key="index" class="text-gray-700">
+                                    {{ item }}
+                                </li>
+                            </ul>
+                            <p v-else class="text-sm text-gray-400">Sin alergias registradas</p>
+                        </div>
+
+                        <hr class="border-gray-200">
+
+                        <div>
+                            <h4 class="text-sm font-semibold text-gray-700 mb-2">Enfermedades</h4>
+                            <ul v-if="employee.illnesses?.length" class="ml-5 list-disc text-sm space-y-1">
+                                <li v-for="(item, index) in employee.illnesses" :key="index" class="text-gray-700">
+                                    {{ item }}
+                                </li>
+                            </ul>
+                            <p v-else class="text-sm text-gray-400">Sin enfermedades registradas</p>
+                        </div>
+                    </div>
                 </template>
             </Card>
 
