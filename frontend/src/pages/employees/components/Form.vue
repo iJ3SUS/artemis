@@ -191,6 +191,33 @@
                             clearable
                         />
                     </Col>
+                    <Col size="2">
+                        <Text
+                            v-model="form.eps"
+                            :errors="errors"
+                            name="eps"
+                            label="EPS"
+                            placeholder="Nombre de la EPS"
+                        />
+                    </Col>
+                    <Col size="2">
+                        <Text
+                            v-model="form.afp"
+                            :errors="errors"
+                            name="afp"
+                            label="AFP"
+                            placeholder="Nombre de la AFP"
+                        />
+                    </Col>
+                    <Col size="2">
+                        <Text
+                            v-model="form.afc"
+                            :errors="errors"
+                            name="afc"
+                            label="AFC"
+                            placeholder="Nombre de la AFC"
+                        />
+                    </Col>
                 </Grid>
             </template>
         </Card>

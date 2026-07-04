@@ -116,6 +116,18 @@
                                     <label class="text-xs font-medium text-gray-500 uppercase">Medio de transporte</label>
                                     <p class="text-sm text-gray-900 mt-1">{{ getTransportTypeLabel(employee.transport_type) }}</p>
                                 </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 uppercase">EPS</label>
+                                    <p class="text-sm text-gray-900 mt-1">{{ employee.eps || '-' }}</p>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 uppercase">AFP</label>
+                                    <p class="text-sm text-gray-900 mt-1">{{ employee.afp || '-' }}</p>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 uppercase">AFC</label>
+                                    <p class="text-sm text-gray-900 mt-1">{{ employee.afc || '-' }}</p>
+                                </div>
                             </div>
                         </Col>
                     </Grid>

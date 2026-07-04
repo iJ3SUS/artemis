@@ -25,5 +25,8 @@ export const EmployeeSchema = {
     "entry_date": null,
     "retirement_date": null,
     "active": true,
-    "transport_type": ""
+    "transport_type": "",
+    "eps": "",
+    "afp": "",
+    "afc": ""
 }
