@@ -20,6 +20,16 @@ export const transportTypeOptions = [
     { label: 'Otro', value: 'other' }
 ]
 
+export const relationshipOptions = [
+    { label: 'Esposo(a)', value: 'spouse' },
+    { label: 'Hijo(a)', value: 'child' },
+    { label: 'Padre', value: 'father' },
+    { label: 'Madre', value: 'mother' },
+    { label: 'Hermano(a)', value: 'sibling' },
+    { label: 'Abuelo(a)', value: 'grandparent' },
+    { label: 'Otro', value: 'other' }
+]
+
 export const bloodTypeOptions = [
     { label: 'A+', value: 'A+' },
     { label: 'A-', value: 'A-' },

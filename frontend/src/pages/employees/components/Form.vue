@@ -385,12 +385,14 @@
                         />
                     </Col>
                     <Col size="2">
-                        <Text
+                        <Select
                             v-model="form.emergency_contact.relationship"
                             :errors="errors"
                             name="emergency_contact.relationship"
                             label="Parentezco"
-                            placeholder="Ej: Esposo, Madre"
+                            :options="relationshipOptions"
+                            placeholder="Seleccionar"
+                            clearable
                         />
                     </Col>
                     <Col size="2">
@@ -408,7 +410,7 @@
     </div>
 </template>
 <script setup>
-import { genderOptions, contractTypeOptions, stratumOptions, transportTypeOptions, bloodTypeOptions, educationLevelOptions, housingTypeOptions } from '../options.ts'
+import { genderOptions, contractTypeOptions, stratumOptions, transportTypeOptions, bloodTypeOptions, educationLevelOptions, housingTypeOptions, relationshipOptions } from '../options.ts'
 import ListInput from './ListInput.vue'
 
 const props = defineProps({

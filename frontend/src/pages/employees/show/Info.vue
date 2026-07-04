@@ -268,7 +268,7 @@
                             </div>
                             <div>
                                 <label class="text-xs font-medium text-gray-500 uppercase">Parentezco</label>
-                                <p class="text-sm text-gray-900 mt-1">{{ employee.emergency_contact?.relationship || '-' }}</p>
+                                <p class="text-sm text-gray-900 mt-1">{{ getRelationshipLabel(employee.emergency_contact?.relationship) }}</p>
                             </div>
                         </div>
                     </Col>
@@ -329,6 +329,11 @@ const getContractTypeLabel = (contract_type) => {
 
 const getEducationLevelLabel = (value) => {
     const labels = { primary: 'Primaria', secondary: 'Secundaria', technical: 'Técnico', technologist: 'Tecnólogo', professional: 'Profesional', specialization: 'Especialización', master: 'Maestría', doctorate: 'Doctorado' }
+    return labels[value] || '-'
+}
+
+const getRelationshipLabel = (value) => {
+    const labels = { spouse: 'Esposo(a)', child: 'Hijo(a)', father: 'Padre', mother: 'Madre', sibling: 'Hermano(a)', grandparent: 'Abuelo(a)', other: 'Otro' }
     return labels[value] || '-'
 }
 
