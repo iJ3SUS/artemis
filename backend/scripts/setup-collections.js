@@ -8,6 +8,8 @@ const COLLECTIONS = [
     'roles',
     'permissions',
     'salary_histories',
+    'disabilities',
+    'diseases',
 ]
 
 const COLLATION = {
