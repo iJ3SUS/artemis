@@ -18,7 +18,7 @@ export const controller = async (req, rep) => {
     }
 
     member.fill(body)
-    
+
     const response = await member.save()
 
     return rep.send(response)
@@ -31,6 +31,7 @@ import UpsertSchema from "#app/employees/schemas/family-member/upsert.js"
 export const middlewares = [
     new AuthMiddleware()
         .message("Debes estar autenticado para acceder a este recurso"),
+        
     new ParseOidMiddleware()
         .on('employee_id')
         .on('id'),
