@@ -35,6 +35,14 @@ const PERMISSIONS = [
     { key: 'employees.list',            name: 'Lista simple empleados',   description: 'Obtener lista liviana de empleados para selectores', module: 'employees' },
     { key: 'employees.salary.update',   name: 'Actualizar salario',       description: 'Actualizar el salario de un empleado',             module: 'employees' },
 
+    // ── Disabilities ──
+    { key: 'disabilities.browse',      name: 'Listar incapacidades',       description: 'Ver listado de incapacidades',                          module: 'disabilities' },
+    { key: 'disabilities.show',        name: 'Ver incapacidad',            description: 'Ver detalle de una incapacidad',                       module: 'disabilities' },
+    { key: 'disabilities.create',      name: 'Crear incapacidad',          description: 'Crear nuevas incapacidades en el sistema',             module: 'disabilities' },
+    { key: 'disabilities.update',      name: 'Actualizar incapacidad',     description: 'Editar datos de una incapacidad existente',             module: 'disabilities' },
+    { key: 'disabilities.delete',      name: 'Eliminar incapacidad',       description: 'Eliminar incapacidades del sistema',                    module: 'disabilities' },
+    { key: 'disabilities.list',        name: 'Lista simple incapacidades', description: 'Obtener lista liviana de incapacidades para selectores', module: 'disabilities' },
+
     // ── Charts ──
     { key: 'charts.employees.age-range', name: 'Gráfico edades',         description: 'Ver gráfico de rangos etarios de empleados',        module: 'charts' },
     { key: 'charts.employees.city',      name: 'Gráfico ciudades',       description: 'Ver gráfico de distribución por ciudades',          module: 'charts' },

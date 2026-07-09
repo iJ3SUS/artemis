@@ -16,6 +16,9 @@ const EmployeeCreate = () => import('@/pages/employees/Create.vue')
 const EmployeeShow = () => import('@/pages/employees/Show.vue')
 const EmployeeShowInfo = () => import('@/pages/employees/show/Info.vue')
 const EmployeeShowFamily = () => import('@/pages/employees/show/Family.vue')
+const Disabilities = () => import('@/pages/disabilities/Browse.vue')
+const DisabilityCreate = () => import('@/pages/disabilities/Create.vue')
+const DisabilityEdit = () => import('@/pages/disabilities/Edit.vue')
 
 export const routes = [
     { path: '/login', label: 'Login', component: Login },
@@ -38,6 +41,9 @@ export const routes = [
     { path: '/roles', label: 'Roles', icon: 'ID', component: Roles, meta: { protected: true, section: 'management', order: 4 } },
     { path: '/roles/create', label: 'Crear rol', component: RoleCreate, meta: { protected: true, section: 'management', sidebar: false } },
     { path: '/roles/:id/edit', label: 'Editar rol', component: RoleEdit, meta: { protected: true, section: 'management', sidebar: false } },
+    { path: '/disabilities', label: 'Incapacidades', icon: 'ExclamationCircle', component: Disabilities, meta: { protected: true, section: 'management', order: 5 } },
+    { path: '/disabilities/create', label: 'Crear incapacidad', component: DisabilityCreate, meta: { protected: true, section: 'management', sidebar: false } },
+    { path: '/disabilities/:id/edit', label: 'Editar incapacidad', component: DisabilityEdit, meta: { protected: true, section: 'management', sidebar: false } },
 ]
 
 export const icons = {
