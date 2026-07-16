@@ -112,9 +112,9 @@
                     <span
                         v-for="(d, i) in form.diseases"
                         :key="d._id"
-                        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium bg-blue-100 text-blue-800 border border-blue-200"
+                        class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 border border-blue-200"
                     >
-                        {{ d.code }}
+                        {{ d.code }}<span v-if="d.description" class="font-normal ml-1">— {{ d.description }}</span>
                         <button
                             type="button"
                             class="w-4 h-4 inline-flex items-center justify-center rounded-full hover:bg-blue-200 text-blue-600 shrink-0"
