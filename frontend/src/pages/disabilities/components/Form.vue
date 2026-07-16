@@ -47,7 +47,7 @@
                             name="start_date"
                             label="Fecha de inicio"
                             type="date"
-                            :transform="formatDateInput"
+                            :transform="(val) => $ParseDate(val)?.toFormat('yyyy-MM-dd') ?? ''"
                         />
                     </Col>
                     <Col size="3">
@@ -57,7 +57,7 @@
                             name="end_date"
                             label="Fecha de terminación"
                             type="date"
-                            :transform="formatDateInput"
+                            :transform="(val) => $ParseDate(val)?.toFormat('yyyy-MM-dd') ?? ''"
                         />
                     </Col>
                     <Col size="12">
@@ -152,10 +152,7 @@ const selectEmployee = (item) => {
     props.form.employee = {
         _id: item._id,
         display_name: item.display_name,
-        identification: item.identification,
-        email: item.email
     }
-    search.employee = `${item.display_name} — ${item.identification}`
 }
 
 const isDiseaseSelected = (item) => {
@@ -183,15 +180,5 @@ watch(() => props.form?.employee, (val) => {
         search.employee = `${val.display_name}`
     }
 }, { immediate: true })
-
-const formatDateInput = (val) => {
-    if (!val) return ''
-    const str = String(val)
-    try {
-        return $ParseDate(str)?.toFormat('yyyy-MM-dd') ?? ''
-    } catch {
-        return str.length >= 10 ? str.substring(0, 10) : str
-    }
-}
 
 </script>
