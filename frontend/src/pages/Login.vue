@@ -69,12 +69,19 @@
 <script setup lang="ts">
 import Swal from 'sweetalert2'
 
+const REMEMBER_EMAIL_KEY = 'remembered_email'
+
 const appName = import.meta.env.VITE_APP_NAME || 'ARTEMIS'
 const companyName = import.meta.env.VITE_COMPANY_NAME || 'APOSENTOS'
 const router = useRouter()
 const auth = useAuthStore()
 
 const { form, loading, errors, submit } = useForm({ email: '', password: '' })
+
+const saved = localStorage.getItem(REMEMBER_EMAIL_KEY)
+if (saved) {
+    form.email = saved
+}
 
 const handleSubmit = async () => {
     const { success, response, message } = await submit({ url: '/auth/login', method: 'POST' })
@@ -90,6 +97,9 @@ const handleSubmit = async () => {
     }
 
     await auth.login(response)
+
+    localStorage.setItem(REMEMBER_EMAIL_KEY, form.email)
+
     router.push('/')
 }
 </script>
