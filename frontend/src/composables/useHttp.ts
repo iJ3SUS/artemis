@@ -13,11 +13,15 @@ const api = axios.create({
 })
 
 api.interceptors.request.use((config) => {
-    const session = localStorage.getItem(SESSION_KEY)
-    if (session) {
-        const token = JSON.parse(session)?.access_token
-        if (token) {
-            config.headers.Authorization = `Bearer ${token}`
+    const raw = localStorage.getItem(SESSION_KEY)
+    if (raw) {
+        try {
+            const session = JSON.parse(raw)
+            if (session?.access_token) {
+                config.headers.Authorization = `Bearer ${session.access_token}`
+            }
+        } catch {
+            // ignore malformed session
         }
     }
     return config

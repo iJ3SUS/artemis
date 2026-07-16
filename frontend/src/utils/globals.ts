@@ -15,3 +15,9 @@ export const can = (permission: string): boolean => {
     const auth = useAuthStore()
     return auth.can(permission)
 }
+
+const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:3000'
+
+export const url = (path: string): string => {
+    return `${apiBase}/${path}`
+}

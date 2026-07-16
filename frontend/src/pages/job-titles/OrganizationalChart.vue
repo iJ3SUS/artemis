@@ -34,9 +34,9 @@
 
                 <div v-else class="overflow-y-auto max-h-[50vh]">
                     <div v-for="emp in employees" :key="emp._id" class="flex items-center gap-3 p-3 cursor-pointer hover:bg-gray-200 transition-colors odd:bg-gray-100" @click="router.push(`/employees/${emp._id}`)">
-                        <Avatar :name="`${emp.names} ${emp.surnames}`" />
+                        <Avatar :name="emp.display_name" />
                         <div>
-                            <p class="text-sm font-medium text-gray-900">{{ emp.names }} {{ emp.surnames }}</p>
+                            <p class="text-sm font-medium text-gray-900">{{ emp.display_name }}</p>
                             <p class="text-xs text-gray-500">{{ emp.identification || '—' }} · {{ emp.email || '—' }}</p>
                         </div>
                     </div>

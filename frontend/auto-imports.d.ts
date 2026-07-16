@@ -58,6 +58,7 @@ declare global {
   const toValue: typeof import('vue').toValue
   const triggerRef: typeof import('vue').triggerRef
   const unref: typeof import('vue').unref
+  const url: typeof import('./src/utils/globals').url
   const useAttrs: typeof import('vue').useAttrs
   const useAuthStore: typeof import('./src/stores/auth').useAuthStore
   const useCities: typeof import('./src/composables/useCities').useCities

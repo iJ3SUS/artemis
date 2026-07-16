@@ -41,17 +41,24 @@ export const useAuthStore = defineStore('auth', () => {
 
     const check = async () => {
 
-        let session = localStorage.getItem(SESSION_KEY)
+        let raw = localStorage.getItem(SESSION_KEY)
 
-        if (!session) {
+        if (!raw) {
             is_logged_in.value = false
 
             return false
         }
 
-        session = JSON.parse(session)
+        try {
+            raw = JSON.parse(raw)
+        } catch {
+            localStorage.removeItem(SESSION_KEY)
+            is_logged_in.value = false
 
-        const response = await login(session)
+            return false
+        }
+
+        const response = await login(raw)
 
         return response
     }
@@ -69,10 +76,15 @@ export const useAuthStore = defineStore('auth', () => {
     }
 
     const refresh = async () => {
-        const session = localStorage.getItem(SESSION_KEY)
-        if (!session) return false
+        const raw = localStorage.getItem(SESSION_KEY)
+        if (!raw) return false
 
-        const parsed = JSON.parse(session)
+        let parsed
+        try {
+            parsed = JSON.parse(raw)
+        } catch {
+            return false
+        }
 
         const result = await request({
             url: 'auth/me',
@@ -89,9 +101,13 @@ export const useAuthStore = defineStore('auth', () => {
     }
 
     const access_token = () => {
-        const session = JSON.parse(localStorage.getItem(SESSION_KEY))
+        try {
+            const session = JSON.parse(localStorage.getItem(SESSION_KEY))
 
-        return session?.access_token
+            return session?.access_token
+        } catch {
+            return null
+        }
     }
 
     return {

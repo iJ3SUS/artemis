@@ -35,6 +35,9 @@ const PERMISSIONS = [
     { key: 'employees.list',            name: 'Lista simple empleados',   description: 'Obtener lista liviana de empleados para selectores', module: 'employees' },
     { key: 'employees.salary.update',   name: 'Actualizar salario',       description: 'Actualizar el salario de un empleado',             module: 'employees' },
 
+    // ── Diseases ──
+    { key: 'diseases.browse',      name: 'Buscar enfermedades',     description: 'Buscar enfermedades en el sistema',                     module: 'diseases' },
+
     // ── Disabilities ──
     { key: 'disabilities.browse',      name: 'Listar incapacidades',       description: 'Ver listado de incapacidades',                          module: 'disabilities' },
     { key: 'disabilities.show',        name: 'Ver incapacidad',            description: 'Ver detalle de una incapacidad',                       module: 'disabilities' },

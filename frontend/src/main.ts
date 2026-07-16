@@ -15,9 +15,12 @@ import Page from '@/components/page/Page.vue'
 import Card from '@/components/page/Card.vue'
 import Heading from '@/components/page/Heading.vue'
 import SearchInput from '@/components/inputs/SearchInput.vue'
+import SearchSelect from '@/components/inputs/SearchSelect.vue'
 import Avatar from '@/components/Avatar.vue'
 
 import tooltipDirective from '@/directives/tooltip'
+
+import { url } from '@/utils/globals'
 
 import App from './App.vue'
 import router from './router'
@@ -26,6 +29,7 @@ const app = createApp(App)
 
 app.config.globalProperties.$ParseDate = ParseDate
 app.config.globalProperties.$can = can
+app.config.globalProperties.$url = url
 
 app.component('Button', Button)
 app.component('Grid', Grid)
@@ -47,6 +51,7 @@ app.component('Page', Page)
 app.component('Card', Card)
 app.component('Heading', Heading)
 app.component('SearchInput', SearchInput)
+app.component('SearchSelect', SearchSelect)
 app.component('Avatar', Avatar)
 
 app.directive('tooltip', tooltipDirective)

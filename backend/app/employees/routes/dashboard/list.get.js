@@ -16,9 +16,9 @@ export const controller = async (req, rep) => {
                 { email: { $regex: search, $options: 'i' } }
             ]
         }))
-        .project({ _id: 1, names: 1, surnames: 1, identification: 1, email: 1, job_title_id: 1 })
+        .project({ _id: 1, display_name: 1, identification: 1, email: 1, job_title_id: 1 })
         .limit(limit || 20)
-        .sort({ names: 1, surnames: 1 })
+        .sort({ display_name: 1 })
         .get()
 
     return rep.send(result)

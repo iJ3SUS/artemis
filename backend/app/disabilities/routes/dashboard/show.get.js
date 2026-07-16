@@ -6,18 +6,9 @@ export const controller = async (req, rep) => {
 
     const { disability_id } = req.params
 
-    const disability = await Disability.query([
-        { $match: { _id: disability_id } },
-        {
-            $lookup: {
-                from: 'employees',
-                localField: 'employee_id',
-                foreignField: '_id',
-                as: 'employee'
-            }
-        },
-        { $unwind: { path: '$employee', preserveNullAndEmptyArrays: true } }
-    ]).first()
+    const disability = await Disability.query()
+        .match({ _id: disability_id })
+        .first()
 
     if (!disability) {
         return rep.status(404).send({
