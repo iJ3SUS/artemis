@@ -60,36 +60,7 @@
                             :transform="formatDateInput"
                         />
                     </Col>
-                    <Col size="3">
-                        <Text
-                            v-model="form.paid_days"
-                            :errors="errors"
-                            name="paid_days"
-                            label="Días pagados"
-                            type="number"
-                        />
-                    </Col>
-                    <Col size="3">
-                        <Text
-                            v-model="form.payment_date"
-                            :errors="errors"
-                            name="payment_date"
-                            label="Fecha de pago"
-                            type="date"
-                            :transform="formatDateInput"
-                        />
-                    </Col>
-                    <Col size="3">
-                        <Text
-                            v-model="form.amount"
-                            :errors="errors"
-                            name="amount"
-                            label="Monto"
-                            type="number"
-                            money
-                        />
-                    </Col>
-                    <Col size="9">
+                    <Col size="12">
                         <Textarea
                             v-model="form.notes"
                             :errors="errors"
