@@ -10,7 +10,6 @@
                 <Grid columns="12">
                     <Col size="12">
                         <SearchSelect
-                            ref="employeeSelect"
                             v-model="search.employee"
                             :errors="errors"
                             name="employee._id"
@@ -79,9 +78,8 @@
             </template>
 
             <template #content>
-                <SearchSelect
-                    ref="diseaseSelect"
-                    v-model="search.diseaseQuery"
+                        <SearchSelect
+                            v-model="search.diseaseQuery"
                     :errors="errors"
                     name="diseases"
                     label="Buscar enfermedad"
@@ -139,9 +137,6 @@ const props = defineProps({
     errors: Object,
     form: Object
 })
-
-const employeeSelect = ref(null)
-const diseaseSelect = ref(null)
 
 const search = reactive({
     employee: '',
