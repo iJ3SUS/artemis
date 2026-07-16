@@ -122,8 +122,18 @@ const onInput = (val) => {
     inputTimeout = setTimeout(fetchData, 300)
 }
 
-onMounted(() => {
-    fetchData()
+onMounted(async () => {
+    try {
+        const url = new URL(props.route, window.location.origin)
+        const response = await fetch(url, { headers: apiHeaders.value })
+        if (response.ok) {
+            const jsonData = await response.json()
+            const data = Array.isArray(jsonData) ? jsonData : jsonData.data || []
+            result.value = props.transform ? props.transform(data) : data
+        }
+    } catch (e) {
+        // ignore
+    }
 })
 
 watch(() => props.modelValue, (newValue) => {

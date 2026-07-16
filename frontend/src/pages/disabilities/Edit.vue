@@ -20,7 +20,7 @@
         </template>
 
         <div v-if="disability">
-            <Form :form :errors></Form>
+            <Form :form :errors disabled></Form>
         </div>
     </Page>
 </template>

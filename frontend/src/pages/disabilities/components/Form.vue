@@ -15,6 +15,7 @@
                             name="employee._id"
                             label="Empleado"
                             :route="$url('dashboard/employees/list')"
+                            :disabled="disabled"
                         >
                             <template #items="{ result }">
                                 <div
@@ -83,7 +84,7 @@
                     :errors="errors"
                     name="diseases"
                     label="Buscar enfermedad"
-                    :route="$url('dashboard/diseases')"
+                    :route="$url('dashboard/diseases/list')"
                 >
                     <template #items="{ result }">
                         <div
@@ -135,7 +136,8 @@
 
 const props = defineProps({
     errors: Object,
-    form: Object
+    form: Object,
+    disabled: Boolean
 })
 
 const search = reactive({
@@ -148,6 +150,7 @@ const selectEmployee = (item) => {
         _id: item._id,
         display_name: item.display_name,
     }
+    search.employee = item.display_name
 }
 
 const isDiseaseSelected = (item) => {
