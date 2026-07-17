@@ -39,8 +39,8 @@
             <template #body>
                 <template v-if="disabilities">
                     <Row v-for="d in disabilities.items" :key="d._id">
-                        <Column>
-                            <p class="text-sm font-medium text-gray-900">{{ d.number }}</p>
+                        <Column class="text-center">
+                            <p class="text-sm font-medium text-gray-900">{{ String(d.number).padStart(5, '0') }}</p>
                         </Column>
                         <Column>
                             <p class="text-sm text-gray-700">{{ d.employee?.display_name || '-' }}</p>
@@ -79,9 +79,13 @@
             </template>
         </Table>
 
-        <PaymentModal :show="showPaymentModal" :disability="paymentData" @close="closePayment" @success="onPaymentSuccess" />
-
     </Page>
+
+    <Transition name="fade">
+        <Modal v-if="modal.payment" title="Pagar incapacidad" :subtitle="`#${current.payment.number} - ${current.payment.employee?.display_name}`" size="sm:max-w-md" @close="modal.payment = false; current.payment = null">
+            <PaymentModal :disability="current.payment" @close="modal.payment = false; current.payment = null" @success="modal.payment = false; current.payment = null; load()" />
+        </Modal>
+    </Transition>
 </template>
 
 <script setup lang="ts">
@@ -98,8 +102,8 @@ const inputs = reactive({
     search: ''
 })
 
-const showPaymentModal = ref(false)
-const paymentData = ref(null)
+const modal = reactive({ payment: false })
+const current = reactive({ payment: null })
 
 const onSearch = (val) => {
     router.push({ query: { ...route.query, search: val || undefined, page: 1 } })
@@ -124,18 +128,8 @@ const load = async () => {
 }
 
 const openPayment = (disability) => {
-    paymentData.value = disability
-    showPaymentModal.value = true
-}
-
-const closePayment = () => {
-    showPaymentModal.value = false
-    paymentData.value = null
-}
-
-const onPaymentSuccess = () => {
-    closePayment()
-    load()
+    current.payment = disability
+    modal.payment = true
 }
 
 watch(() => route.query, () => {
