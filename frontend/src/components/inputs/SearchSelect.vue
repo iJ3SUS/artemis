@@ -4,11 +4,12 @@
             :modelValue="search"
             @update:modelValue="onInput"
             v-bind="$attrs"
-            @focus="visible = true"
+            :disabled="disabled"
+            @focus="onFocus"
             @blur="onBlur"
         />
         <Transition name="fade">
-            <div v-if="visible && result.length" class="mt-0.5 absolute bg-white w-full max-h-48 overflow-y-auto shadow-lg rounded-b-md z-50" @mouseleave="onDropdownLeave">
+            <div v-if="visible && result.length && !disabled" class="mt-0.5 absolute bg-white w-full max-h-48 overflow-y-auto shadow-lg rounded-b-md z-50" @mouseleave="onDropdownLeave">
                 <slot name="items" :result="result" />
             </div>
         </Transition>
@@ -54,6 +55,11 @@ const apiHeaders = computed(() => {
 
     return { Accept: 'application/json', 'Content-Type': 'application/json', ...authHeaders, ...props.headers }
 })
+
+const onFocus = () => {
+    if (props.disabled) return
+    visible.value = true
+}
 
 const onBlur = () => {
     if (blurTimeout) clearTimeout(blurTimeout)
@@ -123,6 +129,7 @@ const onInput = (val) => {
 }
 
 onMounted(async () => {
+    if (props.disabled) return
     try {
         const url = new URL(props.route, window.location.origin)
         const response = await fetch(url, { headers: apiHeaders.value })
