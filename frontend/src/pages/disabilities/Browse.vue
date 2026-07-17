@@ -94,7 +94,7 @@
                         label="Fecha de pago"
                         name="payment_date"
                         type="date"
-                        :transform="formatDateInput"
+                        :transform="(val) => String(val || '').substring(0, 10)"
                         :errors="paymentErrors"
                     />
                     <Textarea
@@ -211,16 +211,6 @@ const pay = async () => {
     closePayment()
     load()
 
-}
-
-const formatDateInput = (val) => {
-    if (!val) return ''
-    const str = String(val)
-    try {
-        return $ParseDate(str)?.toFormat('yyyy-MM-dd') ?? ''
-    } catch {
-        return str.length >= 10 ? str.substring(0, 10) : str
-    }
 }
 
 watch(() => route.query, () => {

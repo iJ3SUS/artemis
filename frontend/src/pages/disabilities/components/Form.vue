@@ -47,7 +47,7 @@
                             name="start_date"
                             label="Fecha de inicio"
                             type="date"
-                            :transform="(val) => $ParseDate(val)?.toFormat('yyyy-MM-dd') ?? ''"
+                            :transform="(val) => val?.substring(0, 10) ?? val"
                         />
                     </Col>
                     <Col size="3">
@@ -57,7 +57,7 @@
                             name="end_date"
                             label="Fecha de terminación"
                             type="date"
-                            :transform="(val) => $ParseDate(val)?.toFormat('yyyy-MM-dd') ?? ''"
+                            :transform="(val) => val?.substring(0, 10) ?? val"
                         />
                     </Col>
                     <Col size="12">
