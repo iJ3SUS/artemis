@@ -48,13 +48,13 @@
                         <Column>
                             <p class="text-sm text-gray-700">{{ d.diseases?.map(dz => dz.code).join(', ') || '-' }}</p>
                         </Column>
-                        <Column>
+                        <Column class="text-center">
                             <p class="text-sm text-gray-700">{{ $ParseDate(d.start_date)?.toFormat('dd/MM/yyyy') ?? '-' }}</p>
                         </Column>
-                        <Column>
+                        <Column class="text-center">
                             <p class="text-sm text-gray-700">{{ $ParseDate(d.end_date)?.toFormat('dd/MM/yyyy') ?? '-' }}</p>
                         </Column>
-                        <Column>
+                        <Column class="text-center">
                             <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold"
                                 :class="d.status === 'paid' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'">
                                 {{ d.status === 'paid' ? 'Pagada' : 'Pendiente' }}
@@ -62,8 +62,8 @@
                         </Column>
                         <Column>
                             <div class="flex items-center justify-center gap-2">
-                                <Button v-if="d.status !== 'paid' && $can('disabilities.update')" color="primary" @handle="openPayment(d)">
-                                    Pagar
+                                <Button v-if="d.status?.stage === 1 && $can('disabilities.update')" theme="icon" v-tooltip:left="'Pagar'" @handle="openPayment(d)">
+                                    <Icon icon="Dollar" width="16" height="16" class="text-inherit" />
                                 </Button>
                                 <Button v-if="$can('disabilities.update')" theme="icon" v-tooltip:left="'Editar'" @handle="router.push(`/disabilities/${d._id}/edit`)">
                                     <Icon icon="Pencil" width="16" height="16" class="text-inherit" />
@@ -79,46 +79,14 @@
             </template>
         </Table>
 
-        <Modal v-if="showPaymentModal" title="Pagar incapacidad" :subtitle="`#${paymentData.number} - ${paymentData.employee?.display_name}`" size="sm:max-w-md" @close="closePayment">
-            <template #content>
-                <div class="space-y-4 p-1">
-                    <Text
-                        v-model="paymentForm.paid_days"
-                        label="Días pagados"
-                        name="paid_days"
-                        type="number"
-                        :errors="paymentErrors"
-                    />
-                    <Text
-                        v-model="paymentForm.payment_date"
-                        label="Fecha de pago"
-                        name="payment_date"
-                        type="date"
-                        :transform="(val) => String(val || '').substring(0, 10)"
-                        :errors="paymentErrors"
-                    />
-                    <Textarea
-                        v-model="paymentForm.notes"
-                        label="Información adicional"
-                        name="notes"
-                        :errors="paymentErrors"
-                    />
-                </div>
-            </template>
-            <template #footer>
-                <div class="flex justify-end gap-2">
-                    <Button color="gray" @handle="closePayment">Cancelar</Button>
-                    <Button color="primary" @handle="pay" :disabled="!http.loading">Confirmar pago</Button>
-                </div>
-            </template>
-        </Modal>
+        <PaymentModal :show="showPaymentModal" :disability="paymentData" @close="closePayment" @success="onPaymentSuccess" />
 
     </Page>
 </template>
 
 <script setup lang="ts">
 
-import Swal from 'sweetalert2'
+import PaymentModal from './components/PaymentModal.vue'
 
 const http = useHttp()
 const route = useRoute()
@@ -132,12 +100,6 @@ const inputs = reactive({
 
 const showPaymentModal = ref(false)
 const paymentData = ref(null)
-const paymentForm = reactive({
-    paid_days: 0,
-    payment_date: null,
-    notes: ''
-})
-const paymentErrors = ref({})
 
 const onSearch = (val) => {
     router.push({ query: { ...route.query, search: val || undefined, page: 1 } })
@@ -163,10 +125,6 @@ const load = async () => {
 
 const openPayment = (disability) => {
     paymentData.value = disability
-    paymentForm.paid_days = disability.paid_days || 0
-    paymentForm.payment_date = disability.payment_date || null
-    paymentForm.notes = disability.notes || ''
-    paymentErrors.value = {}
     showPaymentModal.value = true
 }
 
@@ -175,42 +133,9 @@ const closePayment = () => {
     paymentData.value = null
 }
 
-const pay = async () => {
-
-    const { success, response, message } = await http.request({
-        method: 'PUT',
-        url: `dashboard/disabilities/${paymentData.value._id}`,
-        data: {
-            paid_days: paymentForm.paid_days,
-            payment_date: paymentForm.payment_date,
-            notes: paymentForm.notes,
-            status: 'paid'
-        }
-    })
-
-    if(!success) {
-        if (response?.errors) {
-            paymentErrors.value = response.errors
-        }
-        Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: message || 'Ocurrió un error al procesar el pago',
-            confirmButtonText: 'Aceptar'
-        })
-        return
-    }
-
-    Swal.fire({
-        icon: 'success',
-        title: 'Pagada',
-        text: 'La incapacidad se marcó como pagada correctamente',
-        confirmButtonText: 'Aceptar'
-    })
-
+const onPaymentSuccess = () => {
     closePayment()
     load()
-
 }
 
 watch(() => route.query, () => {
