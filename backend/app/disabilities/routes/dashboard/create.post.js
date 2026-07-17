@@ -17,7 +17,7 @@ export const controller = async (req, rep) => {
 }
 
 import { AuthMiddleware, ValidateMiddleware, CanMiddleware } from "#src/middlewares/index.js"
-import UpsertSchema from "#app/disabilities/schemas/upsert.js"
+import CreateSchema from "#app/disabilities/schemas/create.js"
 
 export const middlewares = [
     new AuthMiddleware()
@@ -25,7 +25,7 @@ export const middlewares = [
 
     new ValidateMiddleware()
         .on('pre-handler')
-        .schema(UpsertSchema)
+        .schema(CreateSchema)
         .message("Hay errores en el formulario. Revisa los campos marcados e inténtalo de nuevo."),
 
     new CanMiddleware('disabilities.create')
