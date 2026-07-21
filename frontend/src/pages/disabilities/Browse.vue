@@ -19,8 +19,13 @@
 
         <Table>
             <template #top>
-                <div class="p-4">
-                    <SearchInput v-model="inputs.search" @handle="(val) => onSearch(val)" placeholder="Número, observación" label="Buscar" />
+                <div class="p-4 flex items-center gap-3">
+                    <div class="flex-1">
+                        <SearchInput v-model="inputs.search" @handle="(val) => onSearch(val)" placeholder="Número o nombre del empleado" label="Buscar" />
+                    </div>
+                    <div class="w-44">
+                        <Select v-model="inputs.stage" :options="statusOptions" option_label="label" option_value="value" label="Estado" @change="onStageFilter" />
+                    </div>
                 </div>
             </template>
 
@@ -139,7 +144,8 @@ const router = useRouter()
 const disabilities = ref(null)
 
 const inputs = reactive({
-    search: ''
+    search: '',
+    stage: ''
 })
 
 const modal = reactive({ payment: false, timeline: false, detail: false })
@@ -147,6 +153,10 @@ const current = reactive({ payment: null, timeline: null, detail: null })
 
 const onSearch = (val) => {
     router.push({ query: { ...route.query, search: val || undefined, page: 1 } })
+}
+
+const onStageFilter = (val) => {
+    router.push({ query: { ...route.query, stage: val || undefined, page: 1 } })
 }
 
 const load = async () => {
@@ -157,7 +167,8 @@ const load = async () => {
         params: {
             page: route.query?.page || 1,
             limit: 15,
-            search: String(route.query?.search || '')
+            search: String(route.query?.search || ''),
+            stage: route.query?.stage || undefined,
         }
     })
 
@@ -240,6 +251,7 @@ watch(() => route.query, () => {
 
 onMounted(() => {
     if (route.query?.search) inputs.search = String(route.query.search)
+    if (route.query?.stage) inputs.stage = String(route.query.stage)
     load()
 })
 </script>

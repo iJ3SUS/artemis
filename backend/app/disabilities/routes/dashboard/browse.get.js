@@ -4,18 +4,21 @@ import Disability from "#app/disabilities/models/Disability.js"
 
 export const controller = async (req, rep) => {
 
-    const { page, limit, search } = req.query
+    const { page, limit, search, stage } = req.query
 
     const result = await Disability.query()
         .when(search, (q) => {
             const searchNumber = isNaN(parseInt(search)) ? undefined : parseInt(search)
             const or = [
-                { notes: { $regex: search, $options: 'i' } }
+                { 'employee.display_name': { $regex: search, $options: 'i' } }
             ]
             if (searchNumber !== undefined) {
                 or.unshift({ number: searchNumber })
             }
             q.match({ $or: or })
+        })
+        .when(stage, (q) => {
+            q.match({ 'status.stage': parseInt(stage) })
         })
         .sort({ number: -1 })
         .paginate(page || 1, limit || 15)
