@@ -9,7 +9,7 @@
                     </div>
                 </template>
                 <template #actions>
-                    <Button v-if="$can('disabilities.create')" color="primary" @handle="router.push('/disabilities/create')">
+                    <Button v-if="$can('disabilities.create')" color="primary" @handle="() => router.push('/disabilities/create')">
                         <Icon icon="Plus" width="16" height="16" class="text-inherit" />
                         Nueva incapacidad
                     </Button>
@@ -20,7 +20,7 @@
         <Table>
             <template #top>
                 <div class="p-4">
-                    <SearchInput v-model="inputs.search" @handle="onSearch" placeholder="Número, observación" label="Buscar" />
+                    <SearchInput v-model="inputs.search" @handle="(val) => onSearch(val)" placeholder="Número, observación" label="Buscar" />
                 </div>
             </template>
 
@@ -56,16 +56,16 @@
                         </Column>
                         <Column class="text-center">
                             <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold"
-                                :class="d.status === 'paid' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'">
-                                {{ d.status === 'paid' ? 'Pagada' : 'Pendiente' }}
+                                :class="statusOptions.find(s => s.value === d.status?.stage)?.color || 'bg-gray-100 text-gray-800'">
+                                {{ statusOptions.find(s => s.value === d.status?.stage)?.label || '-' }}
                             </span>
                         </Column>
                         <Column>
                             <div class="flex items-center justify-center gap-2">
-                                <Button v-if="d.status?.stage === 1 && $can('disabilities.update')" theme="icon" v-tooltip:left="'Pagar'" @handle="openPayment(d)">
+                                <Button v-if="d.status?.stage === 1 && $can('disabilities.update')" theme="icon" v-tooltip:left="'Pagar'" @handle="() => openPayment(d)">
                                     <Icon icon="Dollar" width="16" height="16" class="text-inherit" />
                                 </Button>
-                                <Button v-if="$can('disabilities.update')" theme="icon" v-tooltip:left="'Editar'" @handle="router.push(`/disabilities/${d._id}/edit`)">
+                                <Button v-if="d.status?.stage === 1 && $can('disabilities.update')" theme="icon" v-tooltip:left="'Editar'" @handle="() => router.push(`/disabilities/${d._id}/edit`)">
                                     <Icon icon="Pencil" width="16" height="16" class="text-inherit" />
                                 </Button>
                             </div>
@@ -82,14 +82,15 @@
     </Page>
 
     <Transition name="fade">
-        <Modal v-if="modal.payment" title="Pagar incapacidad" :subtitle="`#${current.payment.number} - ${current.payment.employee?.display_name}`" size="sm:max-w-md" @close="modal.payment = false; current.payment = null">
-            <PaymentModal :disability="current.payment" @close="modal.payment = false; current.payment = null" @success="modal.payment = false; current.payment = null; load()" />
+        <Modal v-if="modal.payment" title="Pagar incapacidad" :subtitle="`#${current.payment.number} - ${current.payment.employee?.display_name}`" size="sm:max-w-md" @close="() => { modal.payment = false; current.payment = null }">
+            <PaymentModal :disability="current.payment" @close="() => { modal.payment = false; current.payment = null }" @success="() => { modal.payment = false; current.payment = null; load() }" />
         </Modal>
     </Transition>
 </template>
 
 <script setup lang="ts">
 
+import { statusOptions } from './options'
 import PaymentModal from './components/PaymentModal.vue'
 
 const http = useHttp()

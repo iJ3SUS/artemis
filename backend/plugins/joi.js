@@ -55,7 +55,7 @@ const _joi = Joi.extend({
             'array.min': 'Mínimo {{#limit}} elemento(s).',
             'array.max': 'Máximo {{#limit}} elemento(s).',
             'boolean.base': 'Debe ser un booleano.',
-            'object.base': 'Debe ser un objeto.',
+            'object.base': 'Debe ser seleccionado.',
         }
     })
 )

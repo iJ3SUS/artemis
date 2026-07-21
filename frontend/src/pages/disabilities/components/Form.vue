@@ -12,7 +12,7 @@
                         <SearchSelect
                             v-model="search.employee"
                             :errors="errors"
-                            name="employee._id"
+                            name="employee"
                             label="Empleado"
                             :route="$url('dashboard/employees/list')"
                             :disabled="disabled"
