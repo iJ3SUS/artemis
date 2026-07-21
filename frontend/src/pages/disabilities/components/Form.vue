@@ -40,6 +40,26 @@
                             </template>
                         </SearchSelect>
                     </Col>
+
+                    <Col v-if="employeeInfo" size="12">
+                        <div class="rounded-lg border border-gray-200 bg-white overflow-hidden">
+                            <div class="grid grid-cols-3 divide-x divide-gray-200">
+                                <div class="px-4 py-3">
+                                    <p class="text-[11px] font-semibold text-gray-500 uppercase tracking-wide">EPS</p>
+                                    <p class="text-sm font-medium text-gray-900 mt-0.5">{{ employeeInfo.eps || '-' }}</p>
+                                </div>
+                                <div class="px-4 py-3">
+                                    <p class="text-[11px] font-semibold text-gray-500 uppercase tracking-wide">AFP</p>
+                                    <p class="text-sm font-medium text-gray-900 mt-0.5">{{ employeeInfo.afp || '-' }}</p>
+                                </div>
+                                <div class="px-4 py-3">
+                                    <p class="text-[11px] font-semibold text-gray-500 uppercase tracking-wide">AFC</p>
+                                    <p class="text-sm font-medium text-gray-900 mt-0.5">{{ employeeInfo.afc || '-' }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </Col>
+
                     <Col size="3">
                         <Text
                             v-model="form.start_date"
@@ -128,7 +148,6 @@
             </template>
         </Card>
 
-        <pre class="mt-4 p-4 bg-gray-100 rounded-lg text-xs overflow-x-auto">{{ JSON.stringify(form, null, 4) }}</pre>
     </div>
 </template>
 
@@ -140,17 +159,29 @@ const props = defineProps({
     disabled: Boolean
 })
 
+const http = useHttp()
+const employeeInfo = ref(null)
+
 const search = reactive({
     employee: '',
     diseaseQuery: ''
 })
 
-const selectEmployee = (item) => {
+const selectEmployee = async (item) => {
     props.form.employee = {
         _id: item._id,
         display_name: item.display_name,
     }
     search.employee = item.display_name
+
+    const { success, response } = await http.request({
+        method: 'GET',
+        url: `dashboard/employees/${item._id}`,
+    })
+
+    if (success) {
+        employeeInfo.value = response
+    }
 }
 
 const isDiseaseSelected = (item) => {

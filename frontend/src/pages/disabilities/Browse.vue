@@ -31,6 +31,8 @@
                     <Column class="text-center">Enfermedad</Column>
                     <Column class="text-center">Inicio</Column>
                     <Column class="text-center">Terminación</Column>
+                    <Column class="text-center">Días</Column>
+                    <Column class="text-center">Vigencia</Column>
                     <Column class="text-center">Estado</Column>
                     <Column class="text-center">Acciones</Column>
                 </Row>
@@ -53,6 +55,17 @@
                         </Column>
                         <Column class="text-center">
                             <p class="text-sm text-gray-700">{{ $ParseDate(d.end_date)?.toFormat('dd/MM/yyyy') ?? '-' }}</p>
+                        </Column>
+                        <Column class="text-center">
+                            <p class="text-sm text-gray-900 font-medium">
+                                {{ $ParseDate(d.end_date)?.diff($ParseDate(d.start_date), 'days').days || '-' }}
+                            </p>
+                        </Column>
+                        <Column class="text-center">
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold"
+                                :class="isActive(d) ? 'bg-emerald-100 text-emerald-800' : 'bg-gray-100 text-gray-500'">
+                                {{ isActive(d) ? 'Vigente' : 'Vencida' }}
+                            </span>
                         </Column>
                         <Column class="text-center">
                             <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold"
@@ -113,6 +126,7 @@
 <script setup lang="ts">
 
 import Swal from 'sweetalert2'
+import { DateTime } from 'luxon'
 import { statusOptions } from './options'
 import PaymentModal from './components/PaymentModal.vue'
 import TimelineModal from './components/TimelineModal.vue'
@@ -151,6 +165,14 @@ const load = async () => {
 
     disabilities.value = response
 
+}
+
+const isActive = (d) => {
+    const today = DateTime.now().startOf('day')
+    const start = ParseDate(d.start_date)?.startOf('day')
+    const end = ParseDate(d.end_date)?.startOf('day')
+    if (!start || !end) return false
+    return today >= start && today <= end
 }
 
 const openPayment = (disability) => {

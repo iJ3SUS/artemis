@@ -19,6 +19,23 @@
             <p class="text-sm font-medium text-gray-900 mt-0.5">{{ disability.employee?.display_name || '-' }}</p>
         </div>
 
+        <div v-if="employee" class="rounded-lg border border-gray-200 bg-white overflow-hidden">
+            <div class="grid grid-cols-3 divide-x divide-gray-200">
+                <div class="px-4 py-3">
+                    <p class="text-[11px] font-semibold text-gray-500 uppercase tracking-wide">EPS</p>
+                    <p class="text-sm font-medium text-gray-900 mt-0.5">{{ employee.eps || '-' }}</p>
+                </div>
+                <div class="px-4 py-3">
+                    <p class="text-[11px] font-semibold text-gray-500 uppercase tracking-wide">AFP</p>
+                    <p class="text-sm font-medium text-gray-900 mt-0.5">{{ employee.afp || '-' }}</p>
+                </div>
+                <div class="px-4 py-3">
+                    <p class="text-[11px] font-semibold text-gray-500 uppercase tracking-wide">AFC</p>
+                    <p class="text-sm font-medium text-gray-900 mt-0.5">{{ employee.afc || '-' }}</p>
+                </div>
+            </div>
+        </div>
+
         <div class="grid grid-cols-2 gap-4">
             <div class="rounded-lg bg-gray-50 border border-gray-200 px-4 py-3">
                 <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Inicio</p>
@@ -61,7 +78,28 @@
 <script setup lang="ts">
 import { statusOptions } from '../options'
 
-defineProps<{
+const props = defineProps<{
     disability: Record<string, any> | null
 }>()
+
+const http = useHttp()
+const employee = ref(null)
+
+const loadEmployee = async () => {
+    if (!props.disability?.employee?._id) return
+
+    const { success, response } = await http.request({
+        method: 'GET',
+        url: `dashboard/employees/${props.disability.employee._id}`,
+    })
+
+    if (success) {
+        employee.value = response
+    }
+}
+
+watch(() => props.disability, () => {
+    employee.value = null
+    loadEmployee()
+}, { immediate: true })
 </script>
