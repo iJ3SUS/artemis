@@ -62,10 +62,10 @@
                         </Column>
                         <Column>
                             <div class="flex items-center justify-center gap-2">
-                                <Button v-if="d.status?.stage === 1 && $can('disabilities.update')" theme="icon" v-tooltip:left="'Pagar'" @handle="() => openPayment(d)">
+                                <Button v-if="$can('disabilities.update')" :disabled="d.status?.stage !== 1" theme="icon" v-tooltip:left="'Pagar'" @handle="() => openPayment(d)">
                                     <Icon icon="Dollar" width="16" height="16" class="text-inherit" />
                                 </Button>
-                                <Button v-if="d.status?.stage === 1 && $can('disabilities.update')" theme="icon" v-tooltip:left="'Editar'" @handle="() => router.push(`/disabilities/${d._id}/edit`)">
+                                <Button v-if="$can('disabilities.update')" :disabled="d.status?.stage !== 1" theme="icon" v-tooltip:left="'Editar'" @handle="() => router.push(`/disabilities/${d._id}/edit`)">
                                     <Icon icon="Pencil" width="16" height="16" class="text-inherit" />
                                 </Button>
                             </div>
@@ -79,6 +79,11 @@
             </template>
         </Table>
 
+        
+        <pre>
+            {{ disabilities }}
+        </pre>
+
     </Page>
 
     <Transition name="fade">
@@ -86,6 +91,7 @@
             <PaymentModal :disability="current.payment" @close="() => { modal.payment = false; current.payment = null }" @success="() => { modal.payment = false; current.payment = null; load() }" />
         </Modal>
     </Transition>
+
 </template>
 
 <script setup lang="ts">
