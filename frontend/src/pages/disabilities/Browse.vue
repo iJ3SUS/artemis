@@ -65,6 +65,9 @@
                                 <Button v-if="$can('disabilities.update')" :disabled="d.status?.stage !== 1" theme="icon" v-tooltip:left="'Pagar'" @handle="() => openPayment(d)">
                                     <Icon icon="Dollar" width="16" height="16" class="text-inherit" />
                                 </Button>
+                                <Button v-if="$can('disabilities.update')" :disabled="d.status?.stage !== 1" theme="icon" v-tooltip:left="'Cancelar'" @handle="() => handleCancel(d)">
+                                    <Icon icon="Cancel" width="16" height="16" class="text-inherit" />
+                                </Button>
                                 <Button v-if="$can('disabilities.update')" :disabled="d.status?.stage !== 1" theme="icon" v-tooltip:left="'Editar'" @handle="() => router.push(`/disabilities/${d._id}/edit`)">
                                     <Icon icon="Pencil" width="16" height="16" class="text-inherit" />
                                 </Button>
@@ -109,6 +112,7 @@
 
 <script setup lang="ts">
 
+import Swal from 'sweetalert2'
 import { statusOptions } from './options'
 import PaymentModal from './components/PaymentModal.vue'
 import TimelineModal from './components/TimelineModal.vue'
@@ -162,6 +166,49 @@ const openTimeline = (disability) => {
 const openDetail = (disability) => {
     current.detail = disability
     modal.detail = true
+}
+
+const handleCancel = async (disability) => {
+    const { value: observation } = await Swal.fire({
+        title: 'Cancelar incapacidad',
+        text: `#${String(disability.number).padStart(5, '0')} - ${disability.employee?.display_name}`,
+        icon: 'warning',
+        input: 'textarea',
+        inputPlaceholder: 'Motivo de cancelación (opcional)',
+        inputAttributes: { 'aria-label': 'Motivo de cancelación' },
+        showCancelButton: true,
+        confirmButtonText: 'Sí, cancelar',
+        cancelButtonText: 'Volver',
+        confirmButtonColor: '#dc2626',
+        reverseButtons: true,
+    })
+
+    if (observation === undefined) return
+
+    const { success, message } = await http.request({
+        method: 'PUT',
+        url: `dashboard/disabilities/${disability._id}/cancel`,
+        data: { observation: observation || '' },
+    })
+
+    if (!success) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: message || 'No se pudo cancelar la incapacidad',
+            confirmButtonText: 'Aceptar',
+        })
+        return
+    }
+
+    Swal.fire({
+        icon: 'success',
+        title: 'Cancelada',
+        text: 'La incapacidad se canceló correctamente',
+        confirmButtonText: 'Aceptar',
+    })
+
+    load()
 }
 
 watch(() => route.query, () => {

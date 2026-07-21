@@ -20,6 +20,7 @@
                     <p v-if="entry.observation" class="text-gray-500 mt-1.5 bg-gray-50 rounded-md px-3 py-2 leading-relaxed">
                         {{ entry.observation }}
                     </p>
+                    <p v-else class="text-gray-400 mt-1.5 text-[12px] italic">Sin observación</p>
                 </div>
             </div>
         </div>
