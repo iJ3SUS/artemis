@@ -68,6 +68,12 @@
                                 <Button v-if="$can('disabilities.update')" :disabled="d.status?.stage !== 1" theme="icon" v-tooltip:left="'Editar'" @handle="() => router.push(`/disabilities/${d._id}/edit`)">
                                     <Icon icon="Pencil" width="16" height="16" class="text-inherit" />
                                 </Button>
+                                <Button theme="icon" v-tooltip:left="'Línea de tiempo'" @handle="() => openTimeline(d)">
+                                    <Icon icon="Logs" width="16" height="16" class="text-inherit" />
+                                </Button>
+                                <Button theme="icon" v-tooltip:left="'Detalle'" @handle="() => openDetail(d)">
+                                    <Icon icon="Eye" width="16" height="16" class="text-inherit" />
+                                </Button>
                             </div>
                         </Column>
                     </Row>
@@ -79,16 +85,23 @@
             </template>
         </Table>
 
-        
-        <pre>
-            {{ disabilities }}
-        </pre>
-
     </Page>
 
     <Transition name="fade">
         <Modal v-if="modal.payment" title="Pagar incapacidad" :subtitle="`#${current.payment.number} - ${current.payment.employee?.display_name}`" size="sm:max-w-md" @close="() => { modal.payment = false; current.payment = null }">
             <PaymentModal :disability="current.payment" @close="() => { modal.payment = false; current.payment = null }" @success="() => { modal.payment = false; current.payment = null; load() }" />
+        </Modal>
+    </Transition>
+
+    <Transition name="fade">
+        <Modal v-if="modal.timeline" title="Línea de tiempo" :subtitle="`#${current.timeline.number} - ${current.timeline.employee?.display_name}`" size="sm:max-w-lg" @close="() => { modal.timeline = false; current.timeline = null }">
+            <TimelineModal :timeline="current.timeline.timeline" />
+        </Modal>
+    </Transition>
+
+    <Transition name="fade">
+        <Modal v-if="modal.detail" title="Detalle de incapacidad" :subtitle="`#${current.detail.number} - ${current.detail.employee?.display_name}`" size="sm:max-w-lg" @close="() => { modal.detail = false; current.detail = null }">
+            <DetailModal :disability="current.detail" />
         </Modal>
     </Transition>
 
@@ -98,6 +111,8 @@
 
 import { statusOptions } from './options'
 import PaymentModal from './components/PaymentModal.vue'
+import TimelineModal from './components/TimelineModal.vue'
+import DetailModal from './components/DetailModal.vue'
 
 const http = useHttp()
 const route = useRoute()
@@ -109,8 +124,8 @@ const inputs = reactive({
     search: ''
 })
 
-const modal = reactive({ payment: false })
-const current = reactive({ payment: null })
+const modal = reactive({ payment: false, timeline: false, detail: false })
+const current = reactive({ payment: null, timeline: null, detail: null })
 
 const onSearch = (val) => {
     router.push({ query: { ...route.query, search: val || undefined, page: 1 } })
@@ -137,6 +152,16 @@ const load = async () => {
 const openPayment = (disability) => {
     current.payment = disability
     modal.payment = true
+}
+
+const openTimeline = (disability) => {
+    current.timeline = disability
+    modal.timeline = true
+}
+
+const openDetail = (disability) => {
+    current.detail = disability
+    modal.detail = true
 }
 
 watch(() => route.query, () => {
