@@ -20,14 +20,13 @@
         <Table>
             <template #top>
                 <div class="p-4">
-                    <SearchInput v-model="inputs.search" @handle="(val) => onSearch(val)" placeholder="Nombre, descripción, dependencia" label="Buscar" />
+                    <SearchInput v-model="inputs.search" @handle="(val) => onSearch(val)" placeholder="Nombre, dependencia" label="Buscar" />
                 </div>
             </template>
 
             <template #head>
                 <Row>
                     <Column class="text-center">Nombre</Column>
-                    <Column class="text-center">Descripción</Column>
                     <Column class="text-center">Dependencia</Column>
                     <Column class="text-center">Estado</Column>
                     <Column class="text-center">Creado</Column>
@@ -41,9 +40,6 @@
                     <Row v-for="jt in jobTitles.items" :key="jt._id">
                     <Column>
                         <p class="text-sm font-medium text-gray-900">{{ jt.name }}</p>
-                    </Column>
-                    <Column>
-                        <p class="text-sm text-gray-700">{{ jt.description || '-' }}</p>
                     </Column>
                     <Column>
                         <p class="text-sm text-gray-700">{{ jt.dependency || '-' }}</p>
