@@ -71,12 +71,12 @@ const onDropdownLeave = () => {
     if (leaveTimeout) clearTimeout(leaveTimeout)
     leaveTimeout = setTimeout(() => {
         visible.value = false
-        document.activeElement?.blur()
+        (document.activeElement as HTMLElement)?.blur()
     }, 200)
 }
 
 const fetchData = async () => {
-    const cacheKey = search.value.toLowerCase().trim()
+    const cacheKey = String(search.value).toLowerCase().trim()
 
     if (cache.has(cacheKey)) {
         result.value = cache.get(cacheKey)
@@ -87,7 +87,7 @@ const fetchData = async () => {
 
     try {
         const url = new URL(props.route, window.location.origin)
-        url.searchParams.append('search', search.value.trim())
+        url.searchParams.append('search', String(search.value).trim())
         for (const [key, value] of Object.entries(props.params)) {
             if (value !== undefined && value !== null) {
                 url.searchParams.append(key, value)

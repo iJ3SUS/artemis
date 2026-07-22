@@ -1,17 +1,17 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 import { routes } from './routes'
 import { useAuthStore } from '@/stores/auth'
 
 function get_label(path: string): string {
     for (const r of routes) {
-        if (r.path === path) return r.label
+        if (r.path === path) return (r as any).label
     }
     return ''
 }
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
-    routes,
+    routes: routes as unknown as RouteRecordRaw[],
 })
 
 router.beforeEach(async (to) => {
