@@ -9,20 +9,28 @@
 
         .container { width: 100%; }
 
-        .header-table { width: 100%; background: #f5f5f5; padding: 16px; margin-bottom: 24px; border-radius: 4px; }
+        .header-table { width: 100%; margin-bottom: 24px; border-collapse: collapse; }
         .header-table td { vertical-align: middle; }
-        .logo-cell { width: 64px; }
-        .logo-box { width: 56px; height: 56px; border: 2px solid #d0d0d0; text-align: center; vertical-align: middle; background: #fafafa; border-radius: 4px; }
-        .logo-box span { font-size: 9px; color: #aaaaaa; text-transform: uppercase; font-weight: 600; }
-        .title-cell { padding-left: 14px; }
-        .title-cell h1 { font-size: 24px; font-weight: 700; color: #3a3a3a; letter-spacing: -0.5px; }
-        .title-cell .dep { font-size: 13px; color: #777777; margin-top: 3px; }
-        .meta-cell { width: 180px; text-align: right; }
-        .meta-cell .doc-tag { font-size: 10px; color: #999999; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; font-weight: 600; }
-        .meta-cell .badge { display: inline-block; padding: 4px 20px; border-radius: 3px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; }
+        .logo-cell { width: 80px; padding-right: 14px; }
+        .logo-wrapper { width: 80px; height: 80px; background: #ffffff; border: 1px solid #e8e8e8; border-radius: 6px; text-align: center; overflow: hidden; }
+        .logo-wrapper img { max-width: 64px; max-height: 64px; vertical-align: middle; }
+        .logo-helper { display: inline-block; height: 100%; vertical-align: middle; }
+        .logo-img { max-width: 64px; max-height: 64px; vertical-align: middle; }
+        .logo-placeholder { width: 80px; height: 80px; background: #ffffff; border: 1px solid #e0e0e0; border-radius: 6px; text-align: center; }
+        .logo-placeholder span { font-size: 9px; color: #aaaaaa; text-transform: uppercase; font-weight: 600; vertical-align: middle; }
+        .info-cell { background: #f5f5f5; border-radius: 6px; padding: 10px 0; }
+        .header-info-table { width: 100%; }
+        .header-info-table td { vertical-align: top; }
+        .title-area { padding-right: 14px; }
+        .company-name { font-size: 11px; color: #999999; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
+        .title-area h1 { font-size: 24px; font-weight: 700; color: #3a3a3a; letter-spacing: -0.5px; margin: 0; }
+        .title-area .dep { font-size: 13px; color: #777777; margin-top: 3px; }
+        .header-meta { text-align: right; }
+        .header-meta .doc-tag { font-size: 10px; color: #999999; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; font-weight: 600; }
+        .header-meta .badge { display: inline-block; padding: 4px 20px; border-radius: 3px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; }
         .badge-active { color: #5a8a5a; background: #edf5ed; border: 1px solid #c0dcc0; }
         .badge-inactive { color: #9a7a7a; background: #faf0f0; border: 1px solid #e0c8c8; }
-        .meta-cell .date { font-size: 11px; color: #aaaaaa; margin-top: 10px; }
+        .header-meta .date { font-size: 11px; color: #aaaaaa; margin-top: 10px; }
 
         .section { margin-bottom: 16px; border: 1px solid #e0e0e0; border-radius: 4px; overflow: hidden; }
         .section-title { font-size: 11px; font-weight: 700; color: #555555; text-transform: uppercase; letter-spacing: 1.5px; background: #f0f0f0; padding: 8px 16px; margin: 0; text-align: center; border-bottom: 1px solid #e0e0e0; }
@@ -62,16 +70,33 @@
         <table class="header-table" cellpadding="0" cellspacing="0">
             <tr>
                 <td class="logo-cell">
-                    <table cellpadding="0" cellspacing="0"><tr><td class="logo-box"><span>Logo</span></td></tr></table>
+                    <% if (company && company.logo) { %>
+                        <div class="logo-wrapper">
+                            <span class="logo-helper"></span><img class="logo-img" src="<%= company.logo %>" alt="Logo" />
+                        </div>
+                    <% } else { %>
+                        <div class="logo-placeholder">
+                            <span class="logo-helper"></span><span>Logo</span>
+                        </div>
+                    <% } %>
                 </td>
-                <td class="title-cell">
-                    <h1><%= jt.name %></h1>
-                    <div class="dep"><%= jt.dependency || '' %></div>
-                </td>
-                <td class="meta-cell">
-                    <div class="doc-tag">Ficha del cargo</div>
-                    <span class="badge <%= jt.active ? 'badge-active' : 'badge-inactive' %>"><%= jt.active ? 'Activo' : 'Inactivo' %></span>
-                    <div class="date"><%= generatedAt %></div>
+                <td class="info-cell">
+                    <table class="header-info-table" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="title-area">
+                                <% if (company && company.name) { %>
+                                    <div class="company-name"><%= company.name %></div>
+                                <% } %>
+                                <h1><%= jt.name %></h1>
+                                <div class="dep"><%= jt.dependency || '' %></div>
+                            </td>
+                            <td class="header-meta">
+                                <div class="doc-tag">Ficha del cargo</div>
+                                <span class="badge <%= jt.active ? 'badge-active' : 'badge-inactive' %>"><%= jt.active ? 'Activo' : 'Inactivo' %></span>
+                                <div class="date"><%= generatedAt %></div>
+                            </td>
+                        </tr>
+                    </table>
                 </td>
             </tr>
         </table>

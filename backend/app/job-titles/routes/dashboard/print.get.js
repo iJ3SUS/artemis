@@ -3,6 +3,7 @@ export const url = '/dashboard/job-titles/:_id/print'
 import { ObjectId } from 'lemon-api/plugins/mongodb'
 import JobTitle from "#app/job-titles/models/job-title.js"
 import Employee from "#app/employees/models/employee.js"
+import Setting from "#app/settings/models/setting.js"
 import Pdf from "#plugins/pdf.js"
 import Html from "#plugins/html.js"
 
@@ -46,6 +47,10 @@ export const controller = async (req, rep) => {
 
     const now = new Date()
 
+    const company = await Setting.query()
+        .match({ key: 'company' })
+        .first()
+
     const html = await new Html()
         .from('app/job-titles/templates/print.ejs')
         .render({
@@ -53,6 +58,7 @@ export const controller = async (req, rep) => {
             emp,
             empPhone,
             emergencyContact,
+            company,
             contractLabels,
             educationLabels,
             fmtDate,
