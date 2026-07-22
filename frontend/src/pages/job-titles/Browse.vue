@@ -9,7 +9,7 @@
                     </div>
                 </template>
                 <template #actions>
-                    <Button v-if="$can('job-titles.create')" color="primary" @handle="router.push('/job-titles/create')">
+                    <Button v-if="$can('job-titles.create')" color="primary" @handle="() => router.push('/job-titles/create')">
                         <Icon icon="Plus" width="16" height="16" class="text-inherit" />
                         Nuevo cargo
                     </Button>
@@ -20,7 +20,7 @@
         <Table>
             <template #top>
                 <div class="p-4">
-                    <SearchInput v-model="inputs.search" @handle="onSearch" placeholder="Nombre, descripción, dependencia" label="Buscar" />
+                    <SearchInput v-model="inputs.search" @handle="(val) => onSearch(val)" placeholder="Nombre, descripción, dependencia" label="Buscar" />
                 </div>
             </template>
 
@@ -70,8 +70,11 @@
                     </Column>
                     <Column>
                         <div class="flex items-center justify-center gap-2">
-                            <Button v-if="$can('job-titles.update')" theme="icon" v-tooltip:left="'Editar'" @handle="router.push(`/job-titles/${jt._id}/edit`)">
+                            <Button v-if="$can('job-titles.update')" theme="icon" v-tooltip:left="'Editar'" @handle="() => router.push(`/job-titles/${jt._id}/edit`)">
                                 <Icon icon="Pencil" width="16" height="16" class="text-inherit" />
+                            </Button>
+                            <Button theme="icon" v-tooltip:left="'Imprimir PDF'" @handle="() => openPrintModal(jt)">
+                                <Icon icon="Order" width="16" height="16" class="text-inherit" />
                             </Button>
                         </div>
                     </Column>
@@ -85,6 +88,48 @@
         </Table>
 
     </Page>
+
+    <Transition name="fade">
+        <Modal v-if="modal.print" title="Imprimir ficha del cargo" :subtitle="current.print?.name" size="sm:max-w-lg" @close="() => { modal.print = false; current.print = null; selectedEmployee = null }">
+            <div class="space-y-4 p-1 min-h-[280px]">
+                <SearchSelect
+                    v-model="searchEmployee"
+                    label="Empleado"
+                    name="employee"
+                    :route="$url('dashboard/employees/list')"
+                >
+                    <template #items="{ result }">
+                        <div
+                            v-for="item in result"
+                            :key="item._id"
+                            class="px-3 py-2.5 cursor-pointer hover:bg-gray-50 text-sm border-b border-gray-100 last:border-b-0"
+                            @mousedown.prevent="selectEmployee(item)"
+                        >
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center text-sm font-semibold shrink-0">
+                                    {{ item.display_name?.charAt(0)?.toUpperCase() }}
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <p class="font-medium text-gray-900 truncate">{{ item.display_name }}</p>
+                                    <div class="flex items-center gap-3 text-xs text-gray-500 mt-0.5">
+                                        <span>{{ item.identification }}</span>
+                                        <span v-if="item.email" class="truncate">{{ item.email }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </SearchSelect>
+            </div>
+            <template #footer>
+                <div class="flex justify-end">
+                    <Button color="primary" :disabled="!selectedEmployee" @handle="() => generatePdf()">
+                        Generar PDF
+                    </Button>
+                </div>
+            </template>
+        </Modal>
+    </Transition>
 </template>
 
 <script setup lang="ts">
@@ -94,6 +139,10 @@ const route = useRoute()
 const router = useRouter()
 
 const jobTitles = ref(null)
+const modal = reactive({ print: false })
+const current = reactive({ print: null })
+const searchEmployee = ref('')
+const selectedEmployee = ref(null)
 
 const inputs = reactive({
     search: ''
@@ -121,6 +170,48 @@ const load = async () => {
 
 }
 
+const openPrintModal = (jt) => {
+    current.print = jt
+    selectedEmployee.value = null
+    searchEmployee.value = ''
+    modal.print = true
+}
+
+const selectEmployee = (item) => {
+    searchEmployee.value = item.display_name
+    selectedEmployee.value = item
+}
+
+const getToken = () => {
+    const raw = localStorage.getItem(import.meta.env.VITE_SESSION_KEY || 'session')
+    if (!raw) return ''
+    try {
+        const session = JSON.parse(raw)
+        return session?.access_token || ''
+    } catch {
+        return ''
+    }
+}
+
+const generatePdf = async () => {
+    if (!selectedEmployee.value || !current.print) return
+
+    const url = `${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/dashboard/job-titles/${current.print._id}/print?employee_id=${encodeURIComponent(selectedEmployee.value._id)}`
+
+    const response = await fetch(url, {
+        headers: { Authorization: `Bearer ${getToken()}` },
+    })
+
+    if (!response.ok) return
+
+    const blob = await response.blob()
+    const blobUrl = URL.createObjectURL(blob)
+    window.open(blobUrl, '_blank')
+
+    modal.print = false
+    current.print = null
+    selectedEmployee.value = null
+}
 
 watch(() => route.query, () => {
     load()

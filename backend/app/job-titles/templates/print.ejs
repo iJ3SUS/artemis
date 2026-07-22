@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title><%= jt.name %></title>
+    <style>
+        * { margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Arial, Helvetica, sans-serif; color: #333333; font-size: 13px; }
+
+        .container { width: 100%; }
+
+        .header-table { width: 100%; border-bottom: 3px solid #1a3a6b; padding-bottom: 12px; margin-bottom: 24px; }
+        .header-table td { vertical-align: middle; }
+        .logo-cell { width: 64px; }
+        .logo-box { width: 56px; height: 56px; border: 2px dashed #b0b0b0; text-align: center; vertical-align: middle; background: #f5f5f5; }
+        .logo-box span { font-size: 9px; color: #888888; text-transform: uppercase; }
+        .title-cell { padding-left: 14px; }
+        .title-cell h1 { font-size: 24px; font-weight: 700; color: #111111; letter-spacing: -0.5px; }
+        .title-cell .dep { font-size: 13px; color: #555555; margin-top: 3px; }
+        .meta-cell { width: 180px; text-align: right; }
+        .meta-cell .doc-tag { font-size: 10px; color: #888888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .meta-cell .badge { display: inline-block; padding: 4px 18px; border: 1px solid #666666; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+        .badge-active { color: #1a6b30; border-color: #1a6b30; }
+        .badge-inactive { color: #9b2020; border-color: #9b2020; }
+        .meta-cell .date { font-size: 11px; color: #888888; margin-top: 10px; }
+
+        .section { margin-bottom: 20px; }
+        .section-title { font-size: 12px; font-weight: 700; color: #1a3a6b; text-transform: uppercase; letter-spacing: 1.2px; border-bottom: 1px solid #cccccc; padding-bottom: 5px; margin-bottom: 10px; }
+
+        .info-table { width: 100%; border-collapse: collapse; }
+        .info-table td { padding: 5px 10px; font-size: 12px; vertical-align: top; border: none; }
+        .info-table .lbl { width: 120px; color: #666666; font-weight: 600; }
+        .info-table .val { color: #111111; }
+
+        .two-col { width: 100%; }
+        .two-col td { width: 50%; vertical-align: top; padding-right: 10px; }
+        .two-col td:last-child { padding-right: 0; padding-left: 10px; }
+
+        ul { margin: 0; padding-left: 16px; }
+        li { padding: 3px 0; font-size: 12px; color: #333333; line-height: 1.5; }
+        li.empty { color: #999999; font-style: italic; list-style-type: none; margin-left: -16px; }
+
+        .signatures-table { width: 100%; margin-top: 40px; border-top: 1px solid #cccccc; padding-top: 24px; }
+        .signatures-table td { width: 50%; text-align: center; vertical-align: top; padding: 0 15px; }
+        .sig-label { font-size: 9px; color: #888888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 50px; }
+        .sig-line { border-bottom: 1px solid #333333; width: 220px; margin: 0 auto 10px; }
+        .sig-name { font-size: 13px; font-weight: 600; color: #111111; margin-top: 45px; }
+        .sig-role { font-size: 11px; color: #666666; margin-top: 3px; }
+
+        .footer-table { width: 100%; margin-top: 32px; border-top: 1px solid #cccccc; padding-top: 12px; }
+        .footer-table td { text-align: center; font-size: 10px; color: #999999; }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <table class="header-table" cellpadding="0" cellspacing="0">
+            <tr>
+                <td class="logo-cell">
+                    <table cellpadding="0" cellspacing="0"><tr><td class="logo-box"><span>Logo</span></td></tr></table>
+                </td>
+                <td class="title-cell">
+                    <h1><%= jt.name %></h1>
+                    <div class="dep"><%= jt.dependency || '' %></div>
+                </td>
+                <td class="meta-cell">
+                    <div class="doc-tag">Ficha del cargo</div>
+                    <span class="badge <%= jt.active ? 'badge-active' : 'badge-inactive' %>"><%= jt.active ? 'Activo' : 'Inactivo' %></span>
+                    <div class="date"><%= generatedAt %></div>
+                </td>
+            </tr>
+        </table>
+
+        <% if (emp) { %>
+        <div class="section">
+            <div class="section-title">Datos del empleado</div>
+            <table class="info-table" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="lbl">Nombre completo</td>
+                    <td class="val" colspan="3"><%= emp.display_name || '-' %></td>
+                </tr>
+                <tr>
+                    <td class="lbl">Identificación</td>
+                    <td class="val"><%= emp.identification || '-' %></td>
+                    <td class="lbl">Correo electrónico</td>
+                    <td class="val"><%= emp.email || '-' %></td>
+                </tr>
+                <tr>
+                    <td class="lbl">Teléfono</td>
+                    <td class="val"><%= empPhone || '-' %></td>
+                    <td class="lbl">Fecha de ingreso</td>
+                    <td class="val"><%= fmtDate(emp.entry_date) %></td>
+                </tr>
+                <tr>
+                    <td class="lbl">Tipo de contrato</td>
+                    <td class="val"><%= contractLabels[emp.contract_type] || '-' %></td>
+                    <td class="lbl">Nivel educativo</td>
+                    <td class="val"><%= educationLabels[emp.education_level] || '-' %></td>
+                </tr>
+                <tr>
+                    <td class="lbl">EPS</td>
+                    <td class="val"><%= emp.eps || '-' %></td>
+                    <td class="lbl">AFP</td>
+                    <td class="val"><%= emp.afp || '-' %></td>
+                </tr>
+                <tr>
+                    <td class="lbl">AFC</td>
+                    <td class="val"><%= emp.afc || '-' %></td>
+                    <td class="lbl">Tipo de sangre</td>
+                    <td class="val"><%= emp.blood_type || '-' %></td>
+                </tr>
+                <tr>
+                    <td class="lbl">Contacto emergencia</td>
+                    <td class="val" colspan="3"><%= emergencyContact %></td>
+                </tr>
+            </table>
+        </div>
+        <% } %>
+
+        <div class="section">
+            <div class="section-title">Información del cargo</div>
+            <table class="info-table" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="lbl">Nombre</td>
+                    <td class="val"><%= jt.name || '-' %></td>
+                    <td class="lbl">Dependencia</td>
+                    <td class="val"><%= jt.dependency || '-' %></td>
+                </tr>
+                <tr>
+                    <td class="lbl" style="vertical-align: top; padding-top: 6px;">Descripción</td>
+                    <td class="val" colspan="3" style="line-height: 1.6;"><%= jt.description || 'Sin descripción' %></td>
+                </tr>
+            </table>
+        </div>
+
+        <table class="two-col" cellpadding="0" cellspacing="0">
+            <tr>
+                <td>
+                    <div class="section">
+                        <div class="section-title">Funciones del cargo</div>
+                        <ul>
+                            <% if (jt.functions && jt.functions.length) { %>
+                                <% jt.functions.forEach(f => { %><li><%= f %></li><% }) %>
+                            <% } else { %>
+                                <li class="empty">No registradas</li>
+                            <% } %>
+                        </ul>
+                    </div>
+                </td>
+                <td>
+                    <div class="section">
+                        <div class="section-title">Requisitos</div>
+                        <ul>
+                            <% if (jt.requirements && jt.requirements.length) { %>
+                                <% jt.requirements.forEach(r => { %><li><%= r %></li><% }) %>
+                            <% } else { %>
+                                <li class="empty">No registrados</li>
+                            <% } %>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <div class="section">
+            <div class="section-title">Riesgos</div>
+            <ul>
+                <% if (jt.risks && jt.risks.length) { %>
+                    <% jt.risks.forEach(r => { %><li><%= r %></li><% }) %>
+                <% } else { %>
+                    <li class="empty">No registrados</li>
+                <% } %>
+            </ul>
+        </div>
+
+        <table class="signatures-table" cellpadding="0" cellspacing="0">
+            <tr>
+                <td>
+                    <div class="sig-label">Firma del empleado</div>
+                    <div class="sig-line"></div>
+                    <div class="sig-name"><%= (emp && emp.display_name) || '_______________________' %></div>
+                    <div class="sig-role">Empleado</div>
+                </td>
+                <td>
+                    <div class="sig-label">Firma del gerente</div>
+                    <div class="sig-line"></div>
+                    <div class="sig-name">_______________________</div>
+                    <div class="sig-role">Gerente / Jefe inmediato</div>
+                </td>
+            </tr>
+        </table>
+
+        <table class="footer-table" cellpadding="0" cellspacing="0">
+            <tr>
+                <td>Documento generado por el sistema de Recursos Humanos &middot; <%= generatedAtFull %></td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+</html>
