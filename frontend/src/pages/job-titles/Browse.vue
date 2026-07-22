@@ -97,6 +97,7 @@
                     label="Empleado"
                     name="employee"
                     :route="$url('dashboard/employees/list')"
+                    :params="{ job_title_id: current.print?._id }"
                 >
                     <template #items="{ result }">
                         <div

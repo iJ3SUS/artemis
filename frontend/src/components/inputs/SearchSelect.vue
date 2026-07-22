@@ -25,6 +25,7 @@ const props = defineProps({
     transform: { type: Function, default: null },
     disabled: { type: Boolean, default: false },
     headers: { type: Object, default: () => ({}) },
+    params: { type: Object, default: () => ({}) },
 })
 
 const emit = defineEmits(['update:modelValue'])
@@ -87,6 +88,11 @@ const fetchData = async () => {
     try {
         const url = new URL(props.route, window.location.origin)
         url.searchParams.append('search', search.value.trim())
+        for (const [key, value] of Object.entries(props.params)) {
+            if (value !== undefined && value !== null) {
+                url.searchParams.append(key, value)
+            }
+        }
 
         const response = await fetch(url, {
             signal: abortController.signal,
@@ -132,6 +138,11 @@ onMounted(async () => {
     if (props.disabled) return
     try {
         const url = new URL(props.route, window.location.origin)
+        for (const [key, value] of Object.entries(props.params)) {
+            if (value !== undefined && value !== null) {
+                url.searchParams.append(key, value)
+            }
+        }
         const response = await fetch(url, { headers: apiHeaders.value })
         if (response.ok) {
             const jsonData = await response.json()
