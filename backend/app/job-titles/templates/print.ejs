@@ -11,29 +11,25 @@
 
         .header-table { width: 100%; margin-bottom: 24px; border-collapse: collapse; }
         .header-table td { vertical-align: middle; border: none; }
-        .logo-cell { width: 80px; padding-right: 14px; }
-        .logo-wrapper { width: 80px; height: 80px; background: #ffffff; border: 1px solid #e8e8e8; text-align: center; overflow: hidden; }
-        .logo-wrapper img { max-width: 64px; max-height: 64px; vertical-align: middle; }
+        .header-logo { width: 80px; padding-right: 14px; }
+        .logo-box { width: 80px; height: 80px; background: #ffffff; border: 1px solid #e8e8e8; text-align: center; overflow: hidden; }
+        .logo-box img { max-width: 64px; max-height: 64px; vertical-align: middle; }
         .logo-helper { display: inline-block; height: 100%; vertical-align: middle; }
-        .logo-img { max-width: 64px; max-height: 64px; vertical-align: middle; }
-        .logo-placeholder { width: 80px; height: 80px; background: #ffffff; border: 1px solid #e0e0e0; text-align: center; }
-        .logo-placeholder span { font-size: 9px; color: #aaaaaa; text-transform: uppercase; font-weight: 600; vertical-align: middle; }
-        .info-cell { background: #f5f5f5; padding: 10px 14px; }
-        .header-info-table { width: 100%; }
-        .header-info-table td { vertical-align: top; }
-        .title-area { padding-right: 14px; }
-        .company-name { font-size: 11px; color: #999999; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
-        .title-area h1 { font-size: 24px; font-weight: 700; color: #3a3a3a; letter-spacing: -0.5px; margin: 0; }
-        .title-area .dep { font-size: 13px; color: #777777; margin-top: 3px; }
+        .logo-placeholder { font-size: 9px; color: #aaaaaa; text-transform: uppercase; font-weight: 600; }
+        .header-info { background: #f5f5f5; padding: 10px 14px; }
+        .header-info .company { font-size: 11px; color: #999999; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
+        .header-info h1 { font-size: 24px; font-weight: 700; color: #3a3a3a; letter-spacing: -0.5px; margin: 0; }
+        .header-info .dep { font-size: 13px; color: #777777; margin-top: 3px; }
         .header-meta { text-align: right; }
-        .header-meta .doc-tag { font-size: 10px; color: #999999; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; font-weight: 600; }
+        .header-meta .tag { font-size: 10px; color: #999999; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; font-weight: 600; }
         .header-meta .badge { display: inline-block; padding: 4px 20px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; }
         .badge-active { color: #5a8a5a; background: #edf5ed; border: 1px solid #c0dcc0; }
         .badge-inactive { color: #9a7a7a; background: #faf0f0; border: 1px solid #e0c8c8; }
         .header-meta .date { font-size: 11px; color: #aaaaaa; margin-top: 10px; }
 
         .section { margin-bottom: 16px; border: 1px solid #e0e0e0; }
-        .section-title { font-size: 11px; font-weight: 700; color: #555555; text-transform: uppercase; letter-spacing: 1.5px; background: #f0f0f0; padding: 8px 16px; margin: 0; text-align: center; border-bottom: 1px solid #e0e0e0; }
+        .section-title { font-size: 11px; font-weight: 700; color: #555555; text-transform: uppercase; letter-spacing: 1.5px; background: #f0f0f0; padding: 8px 16px; text-align: center; border-bottom: 1px solid #e0e0e0; }
+        .section-text { font-size: 12px; color: #4a4a4a; line-height: 1.6; padding: 10px 14px; }
 
         .info-table { width: 100%; border-collapse: collapse; }
         .info-table td { padding: 6px 12px; font-size: 12px; vertical-align: top; border-bottom: 1px solid #f0f0f0; }
@@ -41,18 +37,15 @@
         .info-table .lbl { width: 120px; color: #888888; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.3px; background: #fafafa; }
         .info-table .val { color: #3a3a3a; }
 
-        .single-line { font-size: 12px; color: #4a4a4a; line-height: 1.6; padding: 10px 14px; }
+        .declaration { font-size: 12px; color: #3a3a3a; line-height: 1.8; padding: 14px 16px; text-align: justify; }
+        .declaration strong { color: #2a2a2a; }
+
         .empty-text { color: #bbbbbb; font-style: italic; }
 
-        .declaration-text { font-size: 12px; color: #3a3a3a; line-height: 1.8; padding: 14px 16px; text-align: justify; }
-        .declaration-text p { margin: 0; }
-        .declaration-text strong { color: #2a2a2a; }
-
-        .signatures-section { margin-top: 40px; border: 1px solid #e0e0e0; }
-        .signatures-section .section-title { border-bottom: 1px solid #e0e0e0; }
-        .signatures-table { width: 100%; }
-        .signatures-table td { width: 50%; text-align: center; vertical-align: top; padding: 20px 16px 12px; }
-        .signatures-table td:first-child { border-right: 1px solid #e0e0e0; }
+        .signatures { margin-top: 40px; border: 1px solid #e0e0e0; }
+        .sig-table { width: 100%; border-collapse: collapse; }
+        .sig-table td { width: 50%; text-align: center; vertical-align: top; padding: 20px 16px 12px; }
+        .sig-table td:first-child { border-right: 1px solid #e0e0e0; }
         .sig-label { font-size: 9px; color: #aaaaaa; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 50px; font-weight: 600; }
         .sig-line { border-bottom: 1px solid #aaaaaa; width: 220px; margin: 0 auto 6px; }
         .sig-name { font-size: 13px; font-weight: 600; color: #3a3a3a; margin-top: 40px; }
@@ -60,8 +53,7 @@
         .sig-role { font-size: 10px; color: #999999; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
         .sig-date { font-size: 10px; color: #aaaaaa; margin-top: 16px; }
 
-        .footer-table { width: 100%; margin-top: 36px; border-top: 1px solid #d0d0d0; padding-top: 14px; }
-        .footer-table td { text-align: center; font-size: 10px; color: #bbbbbb; }
+        .footer { width: 100%; margin-top: 36px; border-top: 1px solid #d0d0d0; padding-top: 14px; text-align: center; font-size: 10px; color: #bbbbbb; }
     </style>
 </head>
 <body>
@@ -69,29 +61,25 @@
 
         <table class="header-table" cellpadding="0" cellspacing="0">
             <tr>
-                <td class="logo-cell">
-                    <% if (company && company.logo) { %>
-                        <div class="logo-wrapper">
-                            <span class="logo-helper"></span><img class="logo-img" src="<%= company.logo %>" alt="Logo" />
-                        </div>
-                    <% } else { %>
-                        <div class="logo-placeholder">
-                            <span class="logo-helper"></span><span>Logo</span>
-                        </div>
-                    <% } %>
+                <td class="header-logo">
+                    <div class="logo-box">
+                        <% if (company && company.logo) { %>
+                            <span class="logo-helper"></span><img src="<%= company.logo %>" alt="Logo" style="max-width:64px;max-height:64px;vertical-align:middle;" />
+                        <% } else { %>
+                            <span class="logo-helper"></span><span class="logo-placeholder">Logo</span>
+                        <% } %>
+                    </div>
                 </td>
-                <td class="info-cell">
-                    <table class="header-info-table" cellpadding="0" cellspacing="0">
+                <td class="header-info">
+                    <table cellpadding="0" cellspacing="0" style="width:100%;">
                         <tr>
-                            <td class="title-area">
-                                <% if (company && company.name) { %>
-                                    <div class="company-name"><%= company.name %></div>
-                                <% } %>
+                            <td style="padding-right:14px;vertical-align:top;">
+                                <% if (company && company.name) { %><div class="company"><%= company.name %></div><% } %>
                                 <h1><%= jt.name %></h1>
                                 <div class="dep"><%= jt.dependency || '' %></div>
                             </td>
-                            <td class="header-meta">
-                                <div class="doc-tag">Ficha del cargo</div>
+                            <td class="header-meta" style="vertical-align:top;">
+                                <div class="tag">Ficha del cargo</div>
                                 <span class="badge <%= jt.active ? 'badge-active' : 'badge-inactive' %>"><%= jt.active ? 'Activo' : 'Inactivo' %></span>
                                 <div class="date"><%= generatedAt %></div>
                             </td>
@@ -127,7 +115,6 @@
                     <td class="lbl">Nivel educativo</td>
                     <td class="val"><%= educationLabels[emp.education_level] || '-' %></td>
                 </tr>
-
             </table>
         </div>
         <% } %>
@@ -142,51 +129,49 @@
                     <td class="val"><%= jt.dependency || '-' %></td>
                 </tr>
                 <tr>
-                    <td class="lbl" style="vertical-align: top; padding-top: 6px;">Descripción</td>
-                    <td class="val" colspan="3" style="line-height: 1.6;"><%= jt.description || 'Sin descripción' %></td>
+                    <td class="lbl" style="padding-top:6px;">Descripción</td>
+                    <td class="val" colspan="3" style="line-height:1.6;"><%= jt.description || 'Sin descripción' %></td>
                 </tr>
             </table>
         </div>
 
         <div class="section">
             <div class="section-title">Funciones del cargo</div>
-            <div class="single-line">
+            <div class="section-text">
                 <%- (jt.functions && jt.functions.length) ? jt.functions.join('; ') : '<span class="empty-text">No registradas</span>' %>
             </div>
         </div>
 
         <div class="section">
             <div class="section-title">Requisitos</div>
-            <div class="single-line">
+            <div class="section-text">
                 <%- (jt.requirements && jt.requirements.length) ? jt.requirements.join('; ') : '<span class="empty-text">No registrados</span>' %>
             </div>
         </div>
 
         <div class="section">
             <div class="section-title">Riesgos</div>
-            <div class="single-line">
+            <div class="section-text">
                 <%- (jt.risks && jt.risks.length) ? jt.risks.join('; ') : '<span class="empty-text">No registrados</span>' %>
             </div>
         </div>
 
         <div class="section">
             <div class="section-title">Declaración de recepción</div>
-            <div class="declaration-text">
-                <p>Yo, <strong><%= (emp && emp.display_name) || '_________________________________' %></strong>, identificado con C.C. No. <strong><%= (emp && emp.identification) || '__________________________' %></strong>, doy fe de que recibí y comprendí completamente la descripción del cargo a desempeñar y me comprometo con la empresa a cumplir con las funciones, responsabilidades y autoridades propias del cargo y las específicas al Sistema de Gestión de Seguridad y Salud en el Trabajo definidas en este documento.</p>
+            <div class="declaration">
+                Yo, <strong><%= (emp && emp.display_name) || '_________________________________' %></strong>, identificado con C.C. No. <strong><%= (emp && emp.identification) || '__________________________' %></strong>, doy fe de que recibí y comprendí completamente la descripción del cargo a desempeñar y me comprometo con la empresa a cumplir con las funciones, responsabilidades y autoridades propias del cargo y las específicas al Sistema de Gestión de Seguridad y Salud en el Trabajo definidas en este documento.
             </div>
         </div>
 
-        <div class="signatures-section">
+        <div class="signatures">
             <div class="section-title">Firmas</div>
-            <table class="signatures-table" cellpadding="0" cellspacing="0">
+            <table class="sig-table" cellpadding="0" cellspacing="0">
                 <tr>
                     <td>
                         <div class="sig-label">Firma del empleado</div>
                         <div class="sig-line"></div>
                         <div class="sig-name"><%= (emp && emp.display_name) || '_______________________' %></div>
-                        <% if (emp && emp.identification) { %>
-                        <div class="sig-id">C.C. <%= emp.identification %></div>
-                        <% } %>
+                        <% if (emp && emp.identification) { %><div class="sig-id">C.C. <%= emp.identification %></div><% } %>
                         <div class="sig-role">Empleado</div>
                         <div class="sig-date">Fecha: ___________________</div>
                     </td>
@@ -201,11 +186,7 @@
             </table>
         </div>
 
-        <table class="footer-table" cellpadding="0" cellspacing="0">
-            <tr>
-                <td>Documento generado por el sistema de Recursos Humanos &middot; <%= generatedAtFull %></td>
-            </tr>
-        </table>
+        <div class="footer">Documento generado por el sistema de Recursos Humanos &middot; <%= generatedAtFull %></div>
 
     </div>
 </body>
