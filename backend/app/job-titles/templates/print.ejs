@@ -12,7 +12,7 @@
         .header-table { width: 100%; margin-bottom: 24px; border-collapse: collapse; }
         .header-table td { vertical-align: middle; border: none; }
         .header-logo { width: 80px; padding-right: 14px; }
-        .logo-box { width: 80px; height: 80px; background: #ffffff; border: 1px solid #e8e8e8; text-align: center; overflow: hidden; }
+        .logo-box { width: 80px; height: 80px; background: #ffffff; text-align: center; overflow: hidden; }
         .logo-box img { max-width: 64px; max-height: 64px; vertical-align: middle; }
         .logo-helper { display: inline-block; height: 100%; vertical-align: middle; }
         .logo-placeholder { font-size: 9px; color: #aaaaaa; text-transform: uppercase; font-weight: 600; }
@@ -51,7 +51,6 @@
         .sig-name { font-size: 13px; font-weight: 600; color: #3a3a3a; margin-top: 40px; }
         .sig-id { font-size: 10px; color: #888888; margin-top: 2px; }
         .sig-role { font-size: 10px; color: #999999; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .sig-date { font-size: 10px; color: #aaaaaa; margin-top: 16px; }
 
         .footer { width: 100%; margin-top: 36px; border-top: 1px solid #d0d0d0; padding-top: 14px; text-align: center; font-size: 10px; color: #bbbbbb; }
     </style>
@@ -76,7 +75,7 @@
                             <td style="padding-right:14px;vertical-align:top;">
                                 <% if (company && company.name) { %><div class="company"><%= company.name %></div><% } %>
                                 <h1><%= jt.name %></h1>
-                                <div class="dep"><%= jt.dependency || '' %></div>
+                                <div class="dep"><% if (jt.dependency) { %>ÁREA: <%= jt.dependency %><% } %></div>
                             </td>
                             <td class="header-meta" style="vertical-align:top;">
                                 <div class="tag">Ficha del cargo</div>
@@ -173,14 +172,12 @@
                         <div class="sig-name"><%= (emp && emp.display_name) || '_______________________' %></div>
                         <% if (emp && emp.identification) { %><div class="sig-id">C.C. <%= emp.identification %></div><% } %>
                         <div class="sig-role">Empleado</div>
-                        <div class="sig-date">Fecha: ___________________</div>
                     </td>
                     <td>
                         <div class="sig-label">Firma del gerente</div>
                         <div class="sig-line"></div>
                         <div class="sig-name">_______________________</div>
                         <div class="sig-role">Gerente / Jefe inmediato</div>
-                        <div class="sig-date">Fecha: ___________________</div>
                     </td>
                 </tr>
             </table>
