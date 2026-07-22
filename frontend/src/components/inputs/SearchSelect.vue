@@ -71,7 +71,9 @@ const onDropdownLeave = () => {
     if (leaveTimeout) clearTimeout(leaveTimeout)
     leaveTimeout = setTimeout(() => {
         visible.value = false
-        (document.activeElement as HTMLElement)?.blur()
+        if (document.activeElement instanceof HTMLElement) {
+            document.activeElement.blur()
+        }
     }, 200)
 }
 
