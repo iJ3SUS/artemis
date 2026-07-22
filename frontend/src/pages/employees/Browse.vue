@@ -19,8 +19,16 @@
 
         <Table>
             <template #top>
-                <div class="p-4">
-                    <SearchInput v-model="inputs.search" @handle="onSearch" placeholder="Nombre, identificación, email" label="Buscar" />
+                <div class="p-4 flex flex-wrap items-end gap-3">
+                    <div class="flex-1 min-w-[200px]">
+                        <SearchInput v-model="inputs.search" @handle="onSearch" placeholder="Nombre, identificación, email" label="Buscar" />
+                    </div>
+                    <div class="w-36">
+                        <Select v-model="inputs.active" label="Estado" name="active" :options="statusOptions" @update:modelValue="onFilterChange" />
+                    </div>
+                    <div class="w-48">
+                        <Select v-model="inputs.job_title_id" label="Cargo" name="job_title_id" :options="jobTitleOptions" @update:modelValue="onFilterChange" />
+                    </div>
                 </div>
             </template>
 
@@ -134,11 +142,33 @@ const current = reactive({
 })
 
 const inputs = reactive({
-    search: ''
+    search: '',
+    active: '',
+    job_title_id: '',
+})
+
+const statusOptions = [
+    { value: 'true', label: 'Activo' },
+    { value: 'false', label: 'Inactivo' },
+]
+
+const jobTitleOptions = computed(() => {
+    return jobTitles.value.map(jt => ({ value: jt._id, label: jt.name }))
 })
 
 const onSearch = (val) => {
     router.push({ query: { ...route.query, search: val || undefined, page: 1 } })
+}
+
+const onFilterChange = () => {
+    router.push({
+        query: {
+            ...route.query,
+            active: inputs.active || undefined,
+            job_title_id: inputs.job_title_id || undefined,
+            page: 1,
+        }
+    })
 }
 
 const jobTitles = computed(() => {
@@ -174,7 +204,9 @@ const load = async () => {
         params: {
             page: route.query?.page || 1,
             limit: 15,
-            search: String(route.query?.search || '')
+            search: String(route.query?.search || ''),
+            active: route.query?.active || undefined,
+            job_title_id: route.query?.job_title_id || undefined,
         }
     })
 
@@ -192,6 +224,8 @@ watch(() => route.query, () => {
 
 onMounted(() => {
     if (route.query?.search) inputs.search = String(route.query.search)
+    if (route.query?.active) inputs.active = String(route.query.active)
+    if (route.query?.job_title_id) inputs.job_title_id = String(route.query.job_title_id)
     load()
     optionStore.add({
         key: 'job_titles',
